@@ -15,12 +15,6 @@
 
 ## Capturas de Tela (se apropriado):
 
-## PRs relacionados, se houver
-
-branch | PR
------- | ------
-outro_pr_relacionado | [link]
-
 ## Tarefas gerais realizadas
 * Tarefa 1
 * Tarefa 2
