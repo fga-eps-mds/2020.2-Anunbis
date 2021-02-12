@@ -1,8 +1,8 @@
-# Como contribuir
-
-
-
-
+## Como contribuir
+  
+  Contribuir para o desenvolvimento de um projeto open source é uma boa forma de ganhar experiência e novas habilidades em programação.
+Se você se interessou em nosso trabalho, sinta-se livre para melhorá-lo, leia os protocolos técnicos e siga as intruções para ser capaz de contribuir corretamente.
+Nos ajude no desenvolvimento desse projeto.
 
 ## Processo de criação de issues
 
