@@ -1,6 +1,6 @@
-site_name: MDS-2020-2-G6
-site_description: Repositório da disciplina de MDS
-repo_url: https://github.com/fga-eps-mds/MDS-2020-2-G6 
+site_name: MDS-2020-2-G5
+site_description: Repositório do Grupo 05
+repo_url: https://github.com/fga-eps-mds/MDS-2020-2-G5.git
 
 theme:
     name: material
