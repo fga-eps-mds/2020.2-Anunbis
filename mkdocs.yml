@@ -3,7 +3,7 @@ site_description: Repositório do Grupo 05
 repo_url: https://github.com/fga-eps-mds/MDS-2020-2-G5.git
 
 theme:
-    name: bootswatch
+    name: material
 
 plugins:
     - search
