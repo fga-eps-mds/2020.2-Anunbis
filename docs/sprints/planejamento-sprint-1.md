@@ -3,7 +3,6 @@
 <p align="justify">Esta <i>Sprint</i> tem como objetivo:</p>
 
 - Estudo das Tecnologias Básicas
-- Definição das Tecnologias do Projeto
 - Criar arquivo de Contributing
 - Criação da Wiki
 
