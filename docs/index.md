@@ -1,17 +1,10 @@
 # Grupo 05
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
-
 ## Equipe
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+* [Eduardo Afonso](https://github.com/oEduardoAfonso)
+* [Rafael Cleydson](https://github.com/RcleydsonR)
+* [Roberto Gabriel](https://github.com/mangabeiras)
+* [Rodrigo Balbino](https://github.com/Balbinoo)
+* [Thiago Sampaio](https://github.com/thiagohdaqw)
+* [Victor Hugo](https://github.com/victorhugo21)
