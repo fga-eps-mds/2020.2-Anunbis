@@ -1,0 +1,20 @@
+site_name: MDS-2020-2-G5
+site_description: Repositório do Grupo 05
+repo_url: https://github.com/fga-eps-mds/MDS-2020-2-G5.git
+
+theme:
+    name: mkdocs
+
+
+plugins:
+    - search
+
+nav:
+    - Home: "index.md"
+    - Sprints:
+        - Sprint 0:
+            - Planejamento: sprints/planejamento-sprint-0.md
+            - Revisão: sprints/revisao-sprint-0.md
+        - Sprint 1:
+            - Planejamento: sprints/planejamento-sprint-1.md
+            - Revisão: sprints/revisao-sprint-1.md
