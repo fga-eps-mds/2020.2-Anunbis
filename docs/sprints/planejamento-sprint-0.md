@@ -8,9 +8,9 @@
 
 ## 2. Tamanho da _Sprint_
 
-| Data de Início | 09/02/2021 |
+| Data de Início | 02/02/2021 |
 |:--|:--:|
-| **Data de Término** | **15/01/2021** |
+| **Data de Término** | **08/01/2021** |
 | **Duração** | **7 dias** |
 
 
