@@ -5,12 +5,15 @@
 
 ------------
 ## 2. Reuniões da _Sprint_ 
-### Reuniao dia DD/MM/2021
-#### Duração:
-#### Temas Debatidos:
-* A
-* B
-#### Conclusão: 
+##### Data:
+- DD/MM/2021
+##### Participantes:
+- 
+##### Duração:
+- 
+##### _Temas Debatidos:_
+-  
+##### Conclusão: 
 <p align="justify">&emsp;&emsp; </p>
 
 ------------
