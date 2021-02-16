@@ -14,12 +14,7 @@
 | **Duração** | **7 dias** |
 
 
-## 3. Pareamento
-
- DUPLAS DE PAREAMENTO
-
-
-## 4. Sprint Backlog
+## 3. Sprint Backlog
 
 A Milestone da _Sprint_ "NUMERO" encontra-se neste [link](https://github.com/fga-eps-mds/MDS-2020-2-G5/milestone/...)
 
