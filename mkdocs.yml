@@ -3,7 +3,7 @@ site_description: Repositório do Grupo 05
 repo_url: https://github.com/fga-eps-mds/MDS-2020-2-G5.git
 
 theme:
-    name: mkdocs
+    name: 'mkdocs'
 
 
 plugins:
@@ -21,3 +21,4 @@ nav:
         - Sprint 2:
             - Planejamento: sprints/planejamento-sprint-2.md
             - Revisão: sprints/revisao-sprint-2.md
+    - Documento de Visão: documentacao/documento-de-visao.md
