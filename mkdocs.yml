@@ -26,3 +26,4 @@ nav:
             - Planejamento: sprints/planejamento-sprint-2.md
             - Revisão: sprints/revisao-sprint-2.md
     - Documento de Visão: documentacao/documento-de-visao.md
+    - Documento de Arquitetura: documentacao/documento-de-arquitetura.md
