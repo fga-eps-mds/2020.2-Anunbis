@@ -27,3 +27,5 @@ nav:
             - Revisão: sprints/revisao-sprint-2.md
     - Documento de Visão: documentacao/documento-de-visao.md
     - Documento de Arquitetura: documentacao/documento-de-arquitetura.md
+    - Produto: 
+            - Backlog do Produto: produto/backlog.md
