@@ -7,14 +7,14 @@ theme:
     palette:
         primary: 'black'
         accent: 'amber'
-
-
+    features:
+        navigation.tabs
 
 plugins:
     - search
 
 nav:
-    - Home: "index.md"
+    - Início: "index.md"
     - Sprints:
         - Sprint 0:
             - Planejamento: sprints/planejamento-sprint-0.md
@@ -25,8 +25,9 @@ nav:
         - Sprint 2:
             - Planejamento: sprints/planejamento-sprint-2.md
             - Revisão: sprints/revisao-sprint-2.md
-    - Documento de Visão: documentacao/documento-de-visao.md
-    - Documento de Arquitetura: documentacao/documento-de-arquitetura.md
-    - Roadmap: documentacao/roadmap.md
+    - Projeto:
+            - Documento de Visão: documentacao/documento-de-visao.md
+            - Documento de Arquitetura: documentacao/documento-de-arquitetura.md
+            - Roadmap: documentacao/roadmap.md
     - Produto: 
-            - Backlog do Produto: produto/backlog.md
+        - Backlog do Produto: produto/backlog.md

@@ -14,7 +14,7 @@
 ##### Duração:
 - 2 horas.
 ##### _Temas Debatidos:_
-- Coonclusão da sprint 1.
+- Conclusão da sprint 1.
 - Objetivos da sprint 2.
 - Escopo do projeto.
 - Épicos do Projeto.
@@ -48,6 +48,27 @@ Foi criado de forma colaborativa por todos os membros o documento de visão do p
 
 ---
 
+## 2.3. Reunião 3
+##### Data:
+- 19/02/2021
+##### Participantes:
+- Toda a equipe.
+##### Duração:
+- 1 hora.
+##### _Temas Debatidos:_
+- Tecnologias de front-end, back-end e banco de dados.
+- Interesse dos participantes.
+- Viabilidade para o projeto.
+- Curva de apredizado das tecnologias.
+
+##### Conclusão: 
+De acordo com a pesquisa realizada pelo [Thiago](https://github.com/thiagohdaqw) e com os conselhos dos monitores, a equipe fez uma votação e decidiu que:
+
+- A tecnologia para o front-end será: JavaScript com ReactJS
+- A tecnologia para o back-end será: Python com Flask
+- A tecnologia para o banco de dados será: MySQL
+
+---
 # 3. Fechamento da _Sprint_ 2
 <p align="justify">&emsp;&emsp; Será relatado ao término do prazo da sprint.</p>
 

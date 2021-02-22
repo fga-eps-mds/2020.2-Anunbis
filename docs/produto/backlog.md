@@ -9,7 +9,7 @@ Data|Versão|Descrição|Autor
 
 |    ID   | Descrição | 
 |:---:|:---:| 
-|EP01|Autentificação|
+|EP01|Autenticação|
 |EP02|Postagem|
 |EP03|Interação|
 
