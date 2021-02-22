@@ -7,8 +7,8 @@ theme:
     palette:
         primary: 'black'
         accent: 'amber'
-
-
+    features:
+        navigation.tabs
 
 plugins:
     - search
