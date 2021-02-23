@@ -1,7 +1,6 @@
 # 1. Relato da _Sprint_ 2
 
-<p align="justify">&emsp;&emsp; Será relatado ao término do prazo da sprint.</p>
-
+<p align="justify">&emsp;&emsp; A Sprint 2 teve como objetivo geral criar a documentação do projeto. Foi a primeira semana em que o grupo tinha um tema definido então começamos a trabalhar em cima disso, definindo uma visão geral sobre a aplicação, quais tecnologias seriam utilizadas na produção, quais funcionalidades nós gostariamos de implementar e quais as necessidades do usuário nós gostaríamos resolver.</p>
 
 ---
 # 2. Reuniões da _Sprint_ 2
@@ -69,7 +68,10 @@ De acordo com a pesquisa realizada pelo [Thiago](https://github.com/thiagohdaqw)
 - A tecnologia para o banco de dados será: MySQL
 
 ---
+
 # 3. Fechamento da _Sprint_ 2
-<p align="justify">&emsp;&emsp; Será relatado ao término do prazo da sprint.</p>
+<p align="justify">&emsp;&emsp; Pela equipe estar em processo de adaptação a metodologia scrum, nossas reuniões diárias estão tendo uma duração muito alta então esperamos com o tempo diminuir esse tempo.</p>
+
+<p align="justify">&emsp;&emsp; As expectativas para a próxima sprint são começar a configurar o ambiente de desenvolvimento para começarmos a programar o mais cedo possível a fim de conseguirmos implementar a maior quantidade de funcionalidades no tempo limite.</p>
 
 ---
