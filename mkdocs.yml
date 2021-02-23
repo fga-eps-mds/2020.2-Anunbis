@@ -29,5 +29,6 @@ nav:
             - Documento de Visão: documentacao/documento-de-visao.md
             - Documento de Arquitetura: documentacao/documento-de-arquitetura.md
             - Roadmap: documentacao/roadmap.md
+            - Termo de Abertura: documentacao/termo-de-abertura.md
     - Produto: 
         - Backlog do Produto: produto/backlog.md
