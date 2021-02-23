@@ -5,7 +5,7 @@ Data|Versão|Descrição|Autor
 19/02|0.1|Abertura do Documento do Backlog do Produto| Equipe|
 
 
-# 1. <a name="1">Épicos</a>
+## 1. <a name="1">Épicos</a>
 
 |    ID   | Descrição | 
 |:---:|:---:| 
@@ -13,7 +13,7 @@ Data|Versão|Descrição|Autor
 |EP02|Postagem|
 |EP03|Interação|
 
-# 2. <a name="2">Funcionalidades</a>
+## 2. <a name="2">Funcionalidades</a>
 
 |    Épicos   |    ID   | Descrição | 
 |:---:|:---:|:---:|
@@ -27,7 +27,7 @@ Data|Versão|Descrição|Autor
 |EP03|FT08|Concordar ou discordar de avaliações|
 |EP03|FT09|Visualizar ranking de professor por disciplina|
 
-# 3. <a name="3">Histórias de Usuários</a>
+## 3. <a name="3">Histórias de Usuários</a>
 
 |    Épicos   |Funcionalidades|    ID   | Descrição | Pontuação |
 |:---:|:---:|:---:|:---:|:---:|

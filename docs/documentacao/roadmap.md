@@ -5,7 +5,7 @@
 | 19/02/2021 |   0.1  | Criação do documento e elaboração das sprints 0,1,2 | Equipe|
 
 
-# Release 1
+## Release 1
 
 ### Sprint 0
 | ID | Issue |
