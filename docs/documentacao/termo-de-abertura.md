@@ -24,11 +24,11 @@ Data|Versão|Descrição|Autor
 
 |**Nome**|**Email**|**Papel**|
 |:-|:-|:-|
-| Rodrigo Balbino|| Product Owner, Dev|
+| Rodrigo Balbino| rodrigo080599@hotmail.com| Product Owner, Dev|
 | Rafael Cleydson| rafael.cleydson@gmail.com| Scrum Master, Dev|
-| Eduardo Afonso| | Dev |
+| Eduardo Afonso| oeduardoafonso@gmail.com| Dev |
 | Roberto Gabriel| robertosantana2001@gmail.com| Dev |
-| Thiago Sampaio|| Dev |
-| Victor Hugo|| Dev |
+| Thiago Sampaio| thiagohdaqw@gmail.com| Dev |
+| Victor Hugo| hugo.victorcsi@gmail.com| Dev |
 
 ___
