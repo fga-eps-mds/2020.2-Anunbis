@@ -28,6 +28,22 @@
 
 
 ------------
+
+## 2.2. Reunião 2
+##### Data:
+- 24/02/2021
+##### Participantes:
+- Toda a equipe.
+##### Duração:
+- 40 minutos.
+##### _Temas Debatidos:_
+- Nome do projeto
+
+##### Conclusão:
+<p align="justify">&emsp;&emsp; Foi realizada uma votação individual para cada nome proposto. Depois foi realizada uma nova votação apenas com os nomes mais votados anteriormente. O nome escolhido foi Anunbis.</p>
+
+
+------------
 ## 3. Fechamento da _Sprint_
 <p align="justify">&emsp;&emsp; Será preenchido ao término da sprint.</p>
 
