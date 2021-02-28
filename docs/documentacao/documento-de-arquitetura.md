@@ -3,13 +3,14 @@
 Data|Versão|Descrição|Autor
 -|-|-|-
 18/02|0.1|Abertura do Documento de Arquitetura|Rafael e Roberto|
+28/02|0.2|Atualização do Documento de Arquitetura|Rodrigo e Thiago|
 
 
 ## 1 <a name="1">Introdução</a>
 
 ### 1.1 <a name="1_1">Finalidade</a>
 
- <p align = "justify"> &emsp;&emsp; Essa documentação tem como finalidade fornecer uma visão geral da arquitetura do projeto, demonstrando, inicialmente, metas e objetivos dele. </p>
+<p align = "justify"> &emsp;&emsp; Essa documentação tem como finalidade fornecer uma visão geral da arquitetura do projeto Anunbis, demonstrando inicialmente, suas metas e objetivos. Para assim exclarecer as decisões de desenvolvimento que foram tomadas ao longo do projeto. </p>
 
 ### 1.2 <a name="1_2">Escopo</a>
 
@@ -20,15 +21,15 @@ Data|Versão|Descrição|Autor
 |Abreviação|Significado
 |:-|:-|
 |**MDS**| Métodos de Desenvolvimento de Software|
-|**FGA**| Engenharia de Produto de Software|
+|**EPS**| Engenharia de Produto de Software|
+|**PWA**| Programming Web Aplication|
 
 ### 1.4 <a name="1_4">Visão Geral</a>
 <p align="justify"> &emsp;&emsp; Este documento é dividido, atualmente, em 2 tópicos, descrevendo de maneira concisa o projeto. Esses tópicos são divididos em:
 </p>
 
 * Introdução: Fornece uma visão geral do documento inteiro;
-* Metas e restrições da arquitetura: Descreve os requisitos e objetivos do software que têm algum impacto sobre a arquitetura.
-
+* Metas e restrições da arquitetura: Descreve os requisitos e objetivos do software que possui algum impacto sobre a arquitetura.
 
 ## 2 <a name="2">Metas e Restrições de Arquitetura</a>
 
@@ -38,16 +39,5 @@ Data|Versão|Descrição|Autor
 
 ### 2.2 <a name="2_2">Restrições</a>
 
-<p align = "justify">&emsp;&emsp;A aplicação irá ser executada num navegador e ainda não foram definidas as tecnologias a serem usadas. 
-<!--
-e a interface gráfica desenvolvida com <i>HTML</i> e <i>CSS</i>, utilizando o <i>Vue.js</i>. A linguagem de programação usada na implementação do <i>front-end</i> é o <i>JavaScript</i> e no <i>back-end</i> é o <i>Python.</i> 
---> 
-</p>
+<p align = "justify">&emsp;&emsp;A aplicação, por ser PWA, será executada em um navegador, que foi gerada por meio da framework React.js, que é implementada com o Javascript, CSS e HTML. Sobre a comunicação front-end e back-end, ela ocorre por meio de uma API RestFul implementada por uma microframework de python chamada Flask.
 
-<!-- 
-Quando definirmos as tecnologias, preenchemos esse item
--->
-
-<!--
-<p align = "justify">Por ser uma <i>PWA</i>, a aplicação poderá ser utilizada em qualquer dispositivo móvel com um navegador e uma câmera.</p> 
--->
