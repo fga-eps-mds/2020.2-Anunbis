@@ -1,6 +1,6 @@
-site_name: MDS-2020-2-G5
+site_name: Anunbis
 site_description: Repositório do Grupo 05
-repo_url: https://github.com/fga-eps-mds/MDS-2020-2-G5.git
+repo_url: https://github.com/fga-eps-mds/2020.2-Anunbis.git
 
 theme:
     name: 'material'
