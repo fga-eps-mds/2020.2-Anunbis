@@ -9,6 +9,7 @@ Data|Versão|Descrição|Autor
 28/02|0.5|Adição do tópico Modelo MVC|Thiago e Rodrigo|
 28/02|0.6|Adição do conteúdo do tópico Flask|Thiago e Rodrigo|
 
+
 ## 1 <a name="1">Introdução</a>
 
 ### 1.1 <a name="1_1">Finalidade</a>
@@ -49,6 +50,11 @@ Data|Versão|Descrição|Autor
 
 
 ### 2.3 <a name="3_2">MySQL</a>
+
+<p align = "justify"> &emsp;&emsp;Para a persistência dos dados, o banco utilizado é o MySQL, pois utiliza a linguagem SQL, que é <a href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do mercado</a>. No entanto, não há a necessidade de utilizar a linguagem SQL diretamente, pois o SQLAlchemy juntamente com o micro framework Flask realizam esse trabalho.</p>
+
+<p align = "justify">&emsp;&emsp;Sendo assim, o SQLAlchemy é capaz de mediar todas as tarefas necessárias, como por exemplo, criar tabelas, relacionamentos, realizar  consultas, adicionar e remover informações, para o pleno funcionamento desse projeto.</p>
+
 ### 2.4 <a name="3_4">Modelo MVC</a>
 
 ## 3 <a name="3">Metas e Restrições de Arquitetura</a>
