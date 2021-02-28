@@ -2,9 +2,69 @@
 
 Data|Versão|Descrição|Autor
 -|-|-|-
-18/02|0.1|Abertura do Documento de Metodologia|Rafael|
+28/02|0.1|Abertura do Documento de Metodologia|Rafael|
+28/02|1.0|Descrição da metodologia Scrum|Rafael|
+
 
 
 ## 1 <a name="1">Introdução</a>
 
  <p align = "justify"> &emsp;&emsp; Essa documentação tem como finalidade fornecer uma descrição das metodologias adotadas na equipe para desenvolvimento do projeto. Sendo demonstrados inicialmente, um breve resumo sobre as metodologias usadas bem como as cerimônias/rituais realizadas pela equipe. </p>
+
+
+## 2 <a name="2">Metodologias utilizadas</a>
+
+ <p align = "justify"> &emsp;&emsp;    O time decidiu por utilizar uma abordagem híbrida de metodologias, com base no Scrum e XP. A utilização de cerimônias/rituais e artefatos de diferentes metodologias proporciona a equipe um bom desenvolvimento em paralelo com diferentes práticas baseadas na metodologias ágil, dispondo de uma importante característica de resposta as mudanças dentro do processo de acordo com a necessidade do time.</p>
+
+### 2.1 <a name="2.1">Scrum</a>
+<p align = "justify"> &emsp;&emsp;    Scrum é um framework utilizado para gestão dinâmica de projetos, surgiu em meados dos anos 90 e é amplamente utilizado no desenvolvimento de projetos que utilizam metodologias ágeis.  É um processo iterativo e incremental e possui 3 pilares centrais: <b>Transparência</b> dos processos, requisitos de entrega e status. <b>Inspeção</b> constante de tudo que está sendo feito. <b>Adaptação</b> tanto do processo, quanto do produto às mudanças.
+</p>
+<p align = "justify"> &emsp;&emsp;     O Scrum possui algumas práticas fundamentais que são utilizadas no projeto. Sendo essas práticas divididas em <b>Papéis</b>, <b>Artefatos</b> , <b>Cerimônias</b> e <b>Ferramentas</b> que serão explicados posteriormente. Dos papéis foram utilizados o Scrum Master, Product Owner e o Team de Desenvolvimento, sendo todos participantes do time de desenvolvimento e outros dois votados para incremento dos papéis restantes. No caso dos artefatos estão sendo utilizados o Product Backlog, Sprint Backlog,  Sprints e Sprint Review. Também estão sendo feitas todas as cerimônias de sprint planning onde é planejado o que será feito na próxima sprint, daily scrum que são as reuniões diárias realizadas no discord, sprint review que revisa o que aconteceu na sprint passada e retrospectiva que aponta o feedback do processo da sprint.
+</p>
+
+#### 2.1.1 <a name="2.1.1">Papéis do Scrum:</a>
+
+* <b>ScrumMaster:</b> 
+	É uma espécie de guardião do Scrum, coordena as rotinas e as atividades do grupo mantendo vivos os princípios e práticas do SCRUM no dia-a-dia. É como um mentor, um facilitador para o trabalho que remove os impedimentos e refina os itens da próxima Sprint junto ao Product Owner.
+
+* <b>Product Owner:</b>
+	Guardião do Cliente, faz a ponte entre cliente-projeto e possui os poderes de liderança sobre o produto, realiza um escopo/base suficiente (decidindo quais recursos serão construídos, qual a ordem de prioridade de produção no PRODUCT BACKLOG.) para haver um bom trabalho durante as sprints.
+
+* <b>Dev Team:</b> 
+Equipe desenvolvedora do projeto. É o team que define como as coisas serão feitas e quais e quantas tarefas são possíveis de entregar. O team se auto organiza para atingir as metas estabelecidas pelo Product Owner.
+
+#### 2.1.2 <a name="2.1.2">Cerimônias e artefatos:</a>
+
+* <b>Rotina:</b> 
+</br>SPRINT
+</br>Planning -> Desenvolvimento -> Review -> Retrospective
+</br>DAILY
+* <b>Planning:</b>
+Reunião realizada antes do início de uma Sprint, onde é construído o Sprint Backlog. 
+* <b>Desenvolvimento:</b> 
+Desenvolver o que foi planejado no planning, sujeitando as mudanças ;
+* <b>Review:</b> 
+Reunião que acontece após o término de cada Sprint para validar e adaptar o produto que está sendo construído. É nesse momento em que o Product Owner sugere mudanças e alterações que serão inseridas no product backlog por ordem de prioridade.
+* <b>Retrospective:</b> 
+Reunião final, em que todos podem e devem expor seu feedback do processo, verificando necessidades de adaptação a partir do que aconteceu de positivo e de negativo.
+* <b>Daily:</b> 
+Reuniões rápidas e constantes que atualizam a equipe sobre o que foi feito, o que tem que fazer e os problemas atuais, necessária transparência sobre.
+
+#### 2.1.3 <a name="2.1.3">Ferramentas:</a>
+
+* <b>Kanban board:</b> 
+Quadro onde é possível visualizar o fluxo de trabalho que está sendo feito. Sendo realizado através de um software (ZenHub) que representam as histórias e funcionalidades do product backlog. São listados os itens que precisam ser executados, que estão sendo executados e que estão prontos. Também são listados os impedimentos e outras informações.
+
+<!---### 2.2 <a name="2.2">XP</a>
+<p align = "justify"> 
+FOCO: feedback constante, abordagem incremental e comunicação<br><br>
+
+O XP tem como base quatro valores: comunicação, simplicidade, feedback e coragem.<br/>
+
+
+Comunicação: A má comunicação é motivo de insucesso em quase todo tipo de projeto, inclusive nos projetos de software. <br>
+Simplicidade: Manter a simplicidade é difícil e é um dos princípios do XP advindos do JIT. <br>
+Feedback: Muito se fala em feedback na atualidade e aqui ele não é só necessário, como um dos princípios que fazem com que o XP tenha sucesso.<br>
+Coragem: Este é o último valor do XP, mas não menos importante, pois é necessário ter coragem de jogar um código fora e iniciar do zero, coragem para mudanças.<br><br>
+
+PAREAMENTO : Prática de "codar" a dois, de maneira que tenha 4 olhos olhando para o mesmo código evitando erros ou bugs.<br><br> </p> -->
