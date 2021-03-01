@@ -25,7 +25,7 @@ Data|Versão|Descrição|Autor
 |:-|:-|
 |**MDS**| Métodos de Desenvolvimento de Software|
 |**EPS**| Engenharia de Produto de Software|
-|**PWA**| Programming Web Aplication|
+|**PWA**| Progressive Web Aplication|
 
 ### 1.4 <a name="1_4">Visão Geral</a>
 <p align="justify"> &emsp;&emsp; Este documento é dividido, atualmente, em 4 tópicos, descrevendo de maneira concisa o projeto. Esses tópicos são divididos em:
