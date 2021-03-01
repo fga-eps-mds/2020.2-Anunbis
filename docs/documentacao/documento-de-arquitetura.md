@@ -28,11 +28,13 @@ Data|Versão|Descrição|Autor
 |**PWA**| Programming Web Aplication|
 
 ### 1.4 <a name="1_4">Visão Geral</a>
-<p align="justify"> &emsp;&emsp; Este documento é dividido, atualmente, em 2 tópicos, descrevendo de maneira concisa o projeto. Esses tópicos são divididos em:
+<p align="justify"> &emsp;&emsp; Este documento é dividido, atualmente, em 4 tópicos, descrevendo de maneira concisa o projeto. Esses tópicos são divididos em:
 </p>
 
 * Introdução: Fornece uma visão geral do documento inteiro;
+* Representação arquitetural: Descreve as tecnologias que serão utilizadas no projeto, bem como o porquê da escolha dessas tecnologias.
 * Metas e restrições da arquitetura: Descreve os requisitos e objetivos do software que possui algum impacto sobre a arquitetura.
+* Referências: Emprega as fontes utilizadas nas pesquisas para relacionar as publicações que foram consultadas e citadas.
 
 ## 2 <a name="2">Representação arquitetural</a>
 
