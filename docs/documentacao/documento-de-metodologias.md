@@ -4,6 +4,7 @@ Data|Versão|Descrição|Autor
 -|-|-|-
 28/02|0.1|Abertura do Documento de Metodologia|Rafael|
 28/02|0.2|Descrição da metodologia Scrum|Rafael|
+28/02|0.3|Descrição da metodologia XP|Roberto|
 
 
 
