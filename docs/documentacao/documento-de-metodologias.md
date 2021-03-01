@@ -55,16 +55,8 @@ Reuniões rápidas e constantes que atualizam a equipe sobre o que foi feito, o 
 * <b>Kanban board:</b> 
 Quadro onde é possível visualizar o fluxo de trabalho que está sendo feito. Sendo realizado através de um software (ZenHub) que representam as histórias e funcionalidades do product backlog. São listados os itens que precisam ser executados, que estão sendo executados e que estão prontos. Também são listados os impedimentos e outras informações.
 
-<!---### 2.2 <a name="2.2">XP</a>
-<p align = "justify"> 
-FOCO: feedback constante, abordagem incremental e comunicação<br><br>
+### 2.2 <a name="2.2">Extreme Programming - XP</a>
+<p align = "justify"> &emsp;&emsp; Extreme Programming (XP) é uma metodologia ágil para pequenas e médias equipes que desenvolvem software baseado em requisitos vagos e que se modificam rapidamente. É um método que tem foco em feedback constante, abordagem incremental e comunicação.</p>
+<p align = "justify"> &emsp;&emsp; O XP tem quatro <b>valores</b> muito importantes que ajudam o desenvolvimento ágil de um projeto e a <b>integração</b> da equipe, visto que esse dois fatores são muito importantes atualmente, pois a constante globalização exige entregas cada vez mais rápidas e, com isso, as equipes são constantemente mais exigidas. </p>
+<p align = "justify"> &emsp;&emsp; Além disso, o XP também possui funções bem definidas para seus membros. Entretando, nós já iremos usar os papéis do scrum. Por fim, a prática do Extreme Programming traz consigo várias técnicas das quais algumas serão usadas nesse projeto, como por exemplo, o pareamento.</p>
 
-O XP tem como base quatro valores: comunicação, simplicidade, feedback e coragem.<br/>
-
-
-Comunicação: A má comunicação é motivo de insucesso em quase todo tipo de projeto, inclusive nos projetos de software. <br>
-Simplicidade: Manter a simplicidade é difícil e é um dos princípios do XP advindos do JIT. <br>
-Feedback: Muito se fala em feedback na atualidade e aqui ele não é só necessário, como um dos princípios que fazem com que o XP tenha sucesso.<br>
-Coragem: Este é o último valor do XP, mas não menos importante, pois é necessário ter coragem de jogar um código fora e iniciar do zero, coragem para mudanças.<br><br>
-
-PAREAMENTO : Prática de "codar" a dois, de maneira que tenha 4 olhos olhando para o mesmo código evitando erros ou bugs.<br><br> </p> -->
