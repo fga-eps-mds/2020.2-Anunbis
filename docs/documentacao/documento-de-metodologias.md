@@ -3,7 +3,7 @@
 Data|Versão|Descrição|Autor
 -|-|-|-
 28/02|0.1|Abertura do Documento de Metodologia|Rafael|
-28/02|1.0|Descrição da metodologia Scrum|Rafael|
+28/02|0.2|Descrição da metodologia Scrum|Rafael|
 
 
 
@@ -60,3 +60,18 @@ Quadro onde é possível visualizar o fluxo de trabalho que está sendo feito. S
 <p align = "justify"> &emsp;&emsp; O XP tem quatro <b>valores</b> muito importantes que ajudam o desenvolvimento ágil de um projeto e a <b>integração</b> da equipe, visto que esse dois fatores são muito importantes atualmente, pois a constante globalização exige entregas cada vez mais rápidas e, com isso, as equipes são constantemente mais exigidas. </p>
 <p align = "justify"> &emsp;&emsp; Além disso, o XP também possui funções bem definidas para seus membros. Entretando, nós já iremos usar os papéis do scrum. Por fim, a prática do Extreme Programming traz consigo várias técnicas das quais algumas serão usadas nesse projeto, como por exemplo, o pareamento.</p>
 
+#### 2.2.1 <a name="2.2.1">Valores do XP</a>
+* <b>Comunicação:</b> A má comunicação é motivo de insucesso em quse todo tipo de projeto, inclusive nos projetos de software. 
+ <br/>
+
+* <b>Simplicidade:</b> Manter a simplicidade é difícil, entretando, possibilita que tudo esteja no controle. É um dos princípios do XP advindos do JIT.
+<br>
+
+* <b>Feedback:</b> Fator altamente importante nos dias atuais, pois permite que os erros e dificuldades sejam descobertos e tratados.
+<br>
+
+* <b>Coragem:</b> Este é o último valor do XP, mas não menos importante, pois é necessário ter coragem para testar novas ideias, substituir antigas, mudar o código, corrigir erros.
+ <br>
+
+#### 2.2.2 <a name="2.2.2">Pŕaticas do XP</a>
+* <b>Pareamento:</b> Prática de programar a dois, de uma maneira que tenha 4 olhos olhando para o mesmo código evitando erros ou bugs.
