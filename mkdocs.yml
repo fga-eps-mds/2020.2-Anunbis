@@ -36,3 +36,4 @@ nav:
             - Termo de Abertura: documentacao/termo-de-abertura.md
     - Produto: 
         - Backlog do Produto: produto/backlog.md
+        - Protótipos: produto/prototipos.md
