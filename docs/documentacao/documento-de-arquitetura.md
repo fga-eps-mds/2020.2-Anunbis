@@ -7,6 +7,7 @@ Data|Versão|Descrição|Autor
 28/02|0.3|Adição do tópico Flask|Rodrigo e Thiago|
 28/02|0.4|Adição do tópico MySQL|Rodrigo e Thiago|
 28/02|0.5|Adição do tópico Modelo MVC|Rodrigo e Thiago|
+02/03|0.6|Adição do tópico React|Victor|
 
 
 ## 1 <a name="1">Introdução</a>
@@ -39,6 +40,13 @@ Data|Versão|Descrição|Autor
 ## 2 <a name="2">Representação arquitetural</a>
 
 ### 2.1 <a name="3_1">React</a>
+
+<p align = "justify"> &emsp;&emsp; Para representarmos a camada view no MVC, decidimos usar a biblioteca <a href="https://pt-br.reactjs.org/docs/getting-started.html">ReactJS</a> como front-end do projeto, realizando a parte onde se tem a interação do usuário com a página.</p>
+
+<p align = "justify"> &emsp;&emsp; Essa bibliteca JavaScript torna a criação de interfaces de usuário uma tarefa fácil, renderizando de forma eficiente apenas os componentes necessários, caso os dados mudem.</p>
+
+<p align = "justify"> &emsp;&emsp; Os <a href="https://pt-br.reactjs.org/docs/react-component.html">componentes</a> são a base do ReactJS, são como elementos HTML personalizados, reutilizáveis, permitem dividir a interface do usuário em partes independentes e pensar em cada parte isoladamente. O React também agiliza como os dados são armazenados e tratados, usando o <a href="https://pt-br.reactjs.org/docs/state-and-lifecycle.html">estado</a> e os <a href="https://pt-br.reactjs.org/docs/render-props.html">props</a>.</p>
+
 ### 2.2 <a name="3_2">Flask</a>
 
 <!-- <a href= "" ></a>   ## pra colocar link -->  
