@@ -4,6 +4,7 @@ Data|Versão|Descrição|Autor
 -|-|-|-
 01/03|0.1|Criação da Estrutura do Documento|Eduardo e Victor|
 02/03|0.2|Adição da Introdução|Eduardo e Victor|
+02/03|0.2|Adição do Protótipo de Baixa Fidelidade e Fluxo de Usuário|Eduardo e Victor|
 
 
 ## 1 <a name="1">Introdução</a>
@@ -18,6 +19,7 @@ Data|Versão|Descrição|Autor
 
 ## 2.1 <a name="2.1">Fluxo de Usuário</a>
 
+<div style="display:block;text-align:center"><a style="text-align:center"><img src="/images/fluxoDeUsuario.png" alt="Fluxo de Usuário na Aplicação"></a></div>
 
 ## 3 <a name="3">Telas</a>
 
