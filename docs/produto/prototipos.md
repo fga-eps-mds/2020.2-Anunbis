@@ -12,7 +12,9 @@ Data|Versão|Descrição|Autor
 
 ## 2 <a name="2">Protótipos de Baixa Qualidade</a>
 
- <p align = "justify"> &emsp;&emsp;   </p>
+ <p align = "justify"> &emsp;&emsp; O protótipo de baixa fidelidade tem como objetivo reunir ideias e torna-las visíveis para que haja um melhor entendimento do projeto, de como será organizado visualmente, e facilitar o debate sobre melhorias.</p>
+
+ - [Versão 1](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/39#issuecomment-787580528)
 
 ## 2.1 <a name="2.1">Fluxo de Usuário</a>
 
