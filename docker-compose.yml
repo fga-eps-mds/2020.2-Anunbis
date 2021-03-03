@@ -1,5 +1,13 @@
 version: "3.7"
 services:
+  flask:
+      build:
+        ./
+      depends_on:
+        - mysql
+      ports:
+        - "5000:5000"
+
   mysql:
     image: mysql:8.0
     environment:
