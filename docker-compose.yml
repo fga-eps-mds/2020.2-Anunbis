@@ -1,0 +1,7 @@
+version: "3.7"
+services:
+  db:
+    build:
+      ./
+    container_name: mysql-container
+    command: --default-authentication-plugin=mysql_native_password
