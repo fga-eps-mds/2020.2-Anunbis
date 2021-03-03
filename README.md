@@ -13,7 +13,7 @@ Também é necessário ter o [Git](https://git-scm.com) instalado para clonar o 
 
 Clonar o repositório:
 
-`git clone https://github.com/fga-eps-mds/2019.2-Acacia.git`
+`git clone https://github.com/fga-eps-mds/2020.2-Anunbis.git`
 
 Execução do conteiner:
 
