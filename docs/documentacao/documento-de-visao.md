@@ -86,3 +86,18 @@ ___
 * Visualizar os feedbacks dos outros alunos em relação às suas metodologias;
 * Visualizar a sua pontuação na aplicação.
 
+## 6 <a name="6">Restrições</a>
+
+### 6.1 <a name="6.1">Restrições de Implementação</a>
+
+<p align="justify">&emsp;&emsp;O sistema será implementado usando ReactJS, flask e python, e será desenvolvido de forma remota devido à pandemia.</p>
+
+### 6.2 <a name="6.2">Restrições Externas</a>
+<p align="justify">&emsp;&emsp;O grupo não tem muita experiência com as tecnologias utilizadas.</p>
+
+### 6.3 <a name="6.3">Restrições de Design</a>
+<p align="justify"> &emsp;&emsp;Toda experiência com a aplicação deve ser limpa e natural. O usuário não deve ter dificuldades de entender o que ele pode fazer, e como encontrar determinada funcionalidade. Além disso, a aplicação será destinada aos usuários web.</p>
+
+### 6.4 <a name="6.4">Restriçõs de Uso</a>
+<p align="justify"> &emsp;&emsp;É necessário que os usuários (a comunidade acadêmica) tenha acesso à um computador ou smartphone com acesso à internet para usar todos os recursos da aplicação.</p>
+
