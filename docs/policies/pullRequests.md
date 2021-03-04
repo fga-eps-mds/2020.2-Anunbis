@@ -9,7 +9,10 @@
 <p align = "justify"> &emsp;&emsp; Os nomes dos PR devem conter um resumo geral do conteúdo do pull. Ao ler o título, a ideia do foi feito deve ser clara. </p>
 
 * Os nomes dos PR's devem seguir o seguinte padrão: 
-<p align = "justify"> &emsp;&emsp; &emsp;&emsp;<i>#NN Titulo do PR</i></p>
+
+```
+#NN Titulo do PR
+```
 
 <p align = "justify">&emsp;&emsp;Onde:</p>
 
@@ -17,7 +20,9 @@
 
 <p align = "justify">&emsp;&emsp;Exemplo:</p>
 
-<p align = "justify"> &emsp;&emsp; &emsp;&emsp;<i>##75 Criação do Login</i></p>
+```
+#75 Criação do Login
+```
 
 
 ## 3 <a name="3">Corpo do Pull Request</a>
@@ -31,7 +36,9 @@
 
 * O seguinte padrão deve ser seguido:
 
-<p align = "justify"> &emsp;&emsp; &emsp;&emsp;<i>#NN Nome da Issue</i></p>
+```
+#NN Nome da Issue
+```
 
 <p align = "justify">&emsp;&emsp;Onde:</p>
 
@@ -39,7 +46,9 @@
 
 <p align = "justify">&emsp;&emsp;Exemplo:</p>
 
-<p align = "justify"> &emsp;&emsp; &emsp;&emsp;<i>#55 Criar Backlog</i></p>
+```
+#55 Criar Backlog
+```
 
 ### 3.3 <a name="3.3">Como isso foi testado?</a>
 <p align = "justify"> &emsp;&emsp; Espaço reservado para explicar como as modificaçẽos feitas no PR foram executadas.</p>

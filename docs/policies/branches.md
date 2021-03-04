@@ -29,7 +29,9 @@
 * Deve ser mesclado de volta a <b>develop</b> após a funcionalidade ser desenvolvida;
 * Toda nova funcionalidade tem sua própria branch, seguindo o seguite padrão de nome:
 
-<p align = "justify"> &emsp;&emsp; &emsp;&emsp;<i>feature/issueID-Nome_da_Funcionalidade</i></p>
+```
+feature/issueID-Nome_da_Funcionalidade
+```
 
 <p align = "justify">&emsp;&emsp;Onde:</p>
 
@@ -38,7 +40,9 @@
 
 <p align = "justify">&emsp;&emsp;Exemplo:</p>
 
-<p align = "justify"> &emsp;&emsp; &emsp;&emsp;<i>feature/#55-Criar_Feed_de_Notícias</i></p>
+```
+feature/#55-Criar_Feed_de_Notícias
+```
 
 
 ### 2.4 <a name="2.4">Release</a>
@@ -51,7 +55,9 @@
 * A cada nova <b>release</b>, o número do extremo esquerdo deve ser incrementado em 1;
 * O nome dessa branch deve seguir o padrão:
 
-<p align = "justify"> &emsp;&emsp; &emsp;&emsp;<i>release/vNúmero.versão</i></p>
+```
+release/vNúmero.versão
+```
 
 <p align = "justify">&emsp;&emsp;Onde:</p>
 
@@ -59,7 +65,9 @@
 
 <p align = "justify">&emsp;&emsp;Exemplo:</p>
 
-<p align = "justify"> &emsp;&emsp; &emsp;&emsp;<i>release/v2.5</i></p>
+```
+release/v2.5
+```
 
 ### 2.5 <a name="2.5">Bugfix</a>
 <p align = "justify"> &emsp;&emsp; Branch destinada a resolver problemas como bugs e erros presentes na <b>release</b>.Diretrizes:</p>
@@ -68,7 +76,9 @@
 * Deve ser mesclada a release depois de finalizada;
 * Seu nome segue o seguinte padrão:
 
-<p align = "justify"> &emsp;&emsp; &emsp;&emsp;<i>bugfix/issueID-Nome_do_bugfix</i></p>
+```
+bugfix/issueID-Nome_do_bugfix
+```
 
 <p align = "justify">&emsp;&emsp;Onde:</p>
 
@@ -77,7 +87,9 @@
 
 <p align = "justify">&emsp;&emsp;Exemplo:</p>
 
-<p align = "justify"> &emsp;&emsp; &emsp;&emsp;<i>bugfix/#89-Resolver_Feed_de_Noticias</i></p>
+```
+bugfix/#89-Resolver_Feed_de_Noticias
+```
 
 ### 2.6 <a name="2.6">Hotfix</a>
 <p align = "justify"> &emsp;&emsp; Destinada a resolver problemas urgentes na <b>master</b>. Diretrizes:</p>
@@ -87,7 +99,9 @@
 * A cada novo <b>hotfix</b>, a versão do produto deve ser modificado, incrementando uma unidade ao número extremo direito.
 * O nome segue o seguinte padrão:
 
-<p align = "justify"> &emsp;&emsp; &emsp;&emsp;<i>hotfix/vNúmero.Versão</i></p>
+```
+hotfix/vNúmero.Versão
+```
 
 <p align = "justify">&emsp;&emsp;Onde:</p>
 
@@ -95,7 +109,9 @@
 
 <p align = "justify">&emsp;&emsp;Exemplo:</p>
 
-<p align = "justify"> &emsp;&emsp; &emsp;&emsp;<i>hotfix/v2.6</i></p>
+```
+hotfix/v2.6
+```
 
 
 ## Referências
