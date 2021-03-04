@@ -3,9 +3,10 @@
 Data|Versão|Descrição|Autor
 -|-|-|-
 17/02|0.1|Abertura do Documento de Visão| Equipe|
+04/03|0.2|Adição dos itens 5, 6 e 7| Roberto|
 
 
-## 1. <a name="1">Introdução</a>
+## 1 <a name="1">Introdução</a>
 
 ### 1.1 <a name ="1_1">Propósito</a>
 
@@ -21,13 +22,6 @@ Data|Versão|Descrição|Autor
 * UnB - Universidade de Brasília
 * MDS - Métodos de Desenvolvimento de Software
 
-<!--- ## 1.5 <a name="1_5">  Referências:</a>
-
-<p align="left">IBM Knowledge Center - Documento de Visão: A estrutura de tópicos do documento de visão. Disponível em: https://www.ibm.com/support/knowledgecenter/pt-br/SSWMEQ_3.0.1/com.ibm.rational.rrm.help.doc/topics/r_vision_doc.htm. Acesso em: 31 ago. 2019;</p>
-
-<p align="left">DJORKAEFF, Alexandre; BEZERRA, Davi; DE LYRA, Guilherme; BRANDÃO, Guilherme; REIS, João. Reabilitação Motora: Documento de Visão. Disponível em: https://github.com/jlucassr/2018.1-Reabilitacao-Motora/blob/mds_docs/docs/wiki/Documento-de-Visão.md. Acesso em: 1 set. 2019.</p> --->
-
-
 ### 1.4 <a name="1_4">Visão geral</a>
 <p align="justify"> &emsp;&emsp; Este documento é dividido em 5 tópicos descrevendo os detalhes das características do software proposto.
 Sendo dividido em:</p>
@@ -40,7 +34,7 @@ Sendo dividido em:</p>
 
 ___
 
-## 2. <a name="2">Posicionamento</a>
+## 2 <a name="2">Posicionamento</a>
 <p align="justify">&emsp;&emsp; A maior parte dos estudantes entram na universidade com um grande anseio por conhecimento, porém com o tempo esse desejo acaba sendo anulado por professores que não possuem uma boa didática ou não se dedicam a ajudar o estudante.</p>
 
 ### 2.1 <a name="2_1">Oportunidade de Negócio</a>
@@ -61,21 +55,34 @@ ___
 <p align="justify">&emsp;&emsp;A aplicação, quando desenvolvida, se posicionará no mercado como uma aplicação web que pode ser usada facilmente em navegadores mobile proporcionando uma experiência muito parecida a de um app nativo. Isso proporciona que os alunos troquem experiências de suas disciplinas realizadas de forma eficiente e rápida, possibilitando que os alunos encontrem metodologias de ensino compatíveis com si mesmo.</p>
 
 
-## 3. <a name="3">Descrição dos Envolvidos</a>
+## 3 <a name="3">Descrição dos Envolvidos</a>
 
 |**Nome**|**Descrição**|
 |:-|:-|
 | Estudantes da UnB| Estudantes procurando um bom professor ou metodologia. |
 |Professores da UnB| Professores com desejo de melhorar a própria avaliação. |
 
-## 4. <a name="4">Visão Geral</a>
+## 4 <a name="4">Visão Geral</a>
 <p align="justify"> &emsp;&emsp; A aplicação tem como objetivo criar um ambiente específico para que haja uma troca de informações entre os alunos da UnB a respeito dos professores e suas metodologias de ensino, tornando viável que qualquer aluno possa escrever suas próprias avaliações de maneira anônima e ler as avaliações feitas por outros alunos.
 </p>
 
-## 5. <a name="5">Recursos</a>
-O sistema dispõem das seguintes funcionalidades:<br />
+## 5 <a name="5">Recursos do Produto</a>
 
-* Possibilitar a troca de informações sobre os docentes entre os discentes da UnB.
-* Pontuar os docentes de acordo com as avaliações realizadas pelos discentes.
-* Classificar os docentes com base em sua pontuação.
- 
+### 5.1 <a name="5.1">Recursos dos Discentes</a>
+
+<p align="justify"> &emsp;&emsp; Os alunos poderão se cadastrar na aplicação. Quando cadastrados e logados, poderão ter acesso aos seguintes recursos:</p>
+
+* Visualizar/Fazer pontuação dos professores;
+* Visualizar/Fazer comentários contendo feedbacks dos professores;
+* Visualizar quantidade de alunos que concordam e discordam desses comentários;
+* Concordar ou discordar de um comentário de outro discente;
+* Pesquisar os melhores professores, por pontuação, para suas disciplinas;
+* Visualizar quantidade de avaliações realizadas por eles mesmos.
+
+### 5.2 <a name="5.2">Recursos dos Docentes</a>
+
+<p align="justify"> &emsp;&emsp; Os professores poderão também se cadastrar na aplicação. Quando cadastrados e logados, terão acesso às seguintes funcionalidades:</p>
+
+* Visualizar os feedbacks dos outros alunos em relação às suas metodologias;
+* Visualizar a sua pontuação na aplicação.
+
