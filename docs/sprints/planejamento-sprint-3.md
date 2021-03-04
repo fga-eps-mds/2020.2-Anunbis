@@ -41,4 +41,3 @@
 ## 4. Sprint Backlog
 
 A Milestone da _Sprint_ 3 encontra-se neste [link](https://github.com/fga-eps-mds/2020.2-Anunbis/milestone/4)
-

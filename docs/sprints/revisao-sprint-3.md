@@ -31,9 +31,14 @@ Nessa sprint foi decidido estudar as tecnologias que foram previamente combinada
 ------------
 
 ## 4. Quadro de Conhecimento
+<p align="justify">&emsp;&emsp; Em breve!</p>
 <!--
-![](https://i.ibb.co/VScZ3r4/conh3.png)
+Em ![](https://i.ibb.co/VScZ3r4/conh3.png)
+<p align="justify">&emsp;&emsp; Em breve!</p>
 -->
+
+
+
 
 <!-- ## 1. Relato da _Sprint_
 

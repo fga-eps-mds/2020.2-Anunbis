@@ -38,26 +38,3 @@
 ## 4. Sprint Backlog
 
 A Milestone da _Sprint_ 1 encontra-se neste [link](https://github.com/fga-eps-mds/2020.2-Anunbis/milestone/2)
-
-<!--
-## 1. Objetivo da _Sprint 1_
-
-<p align="justify">Esta <i>Sprint</i> tem como objetivo:</p>
-
-- Estudo das Tecnologias Básicas
-- Criar arquivo de Contributing
-- Criação da Wiki
-
-## 2. Tamanho da _Sprint_
-
-| Data de Início | 09/02/2021 |
-|:--|:--:|
-| **Data de Término** | **15/02/2021** |
-| **Duração** | **7 dias** |
-
-
-## 3. Sprint Backlog
-
-A Milestone da _Sprint_ 1 encontra-se neste [link](https://github.com/fga-eps-mds/2020.2-Anunbis/milestone/2)
-
--->
