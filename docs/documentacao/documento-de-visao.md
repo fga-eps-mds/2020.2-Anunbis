@@ -101,3 +101,13 @@ ___
 ### 6.4 <a name="6.4">Restriçõs de Uso</a>
 <p align="justify"> &emsp;&emsp;É necessário que os usuários (a comunidade acadêmica) tenha acesso à um computador ou smartphone com acesso à internet para usar todos os recursos da aplicação.</p>
 
+## 7 <a name="7">Requisitos do Produto</a>
+
+### 7.1 <a name="7.1">Lista de categorias dos requisitos do produto:</a>
+
+|**Prioridade**|**Descrição**|
+|:-|:-|
+| Alta| Requisito indispensável para o funcionamento do sistema|
+| Média| Requisito importante, mas a sua não implementação não compromete o funcionamento da aplicação |
+| Baixa| Requisito não usado com muita frequência e não é tão necessário para a satisfação do usuário com o projeto |
+
