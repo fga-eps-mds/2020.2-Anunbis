@@ -37,3 +37,11 @@ nav:
     - Produto: 
         - Backlog do Produto: produto/backlog.md
         - Protótipos: produto/prototipos.md
+    - Contribuição:
+        - Como Contribuir?: como_contribuir.md
+        - Código de Conduta: CODE_OF_CONDUCT.md
+        - Políticas:
+            - Commits: policies/commits.md
+            - Branches: policies/branches.md
+            - Issues: policies/issues.md
+            - Pull Requests: policies/pullRequests.md 
