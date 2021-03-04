@@ -22,7 +22,29 @@
 * Deve ser sincronizada com todas as outras branchs;
 * Deve ser derivada da master.
 
-### 2.3 <a name="2.3">Feature</a>
+### 2.3 <a name="2.3">Document</a>
+<p align = "justify"> &emsp;&emsp; Destinada à criação e manutenção dos documentos do projeto, ou seja, toda alteração na gitpage, local principal dos documentos, passa por essa branch. Diretrizes:</p>
+
+* Deve ser derivada da <b>develop</b>;
+* Deve ser mesclada a <b>develop</b> aṕos documento ser concluído;
+* Seu nome segue o padrão:
+
+```
+document/issueID-Nome_da_Funcionalidade
+```
+
+<p align = "justify">&emsp;&emsp;Onde:</p>
+
+* <b>"document"</b> é padrão;
+* <b>"issueID"</b> é o número da issue ao qual o documento se refere;
+
+<p align = "justify">&emsp;&emsp;Exemplo:</p>
+
+```
+document/#88-Atualizar_Roadmap
+```
+
+### 2.4 <a name="2.4">Feature</a>
 <p align = "justify"> &emsp;&emsp; Destinada à criação de uma novas funcionalidades ao projeto. Diretrizes:</p>
 
 * Deve ser derivada da <b>develop</b>
@@ -45,7 +67,7 @@ feature/#55-Criar_Feed_de_Notícias
 ```
 
 
-### 2.4 <a name="2.4">Release</a>
+### 2.5 <a name="2.5">Release</a>
 <p align = "justify"> &emsp;&emsp; Branch que contém um conjunto de funcionalidades que podem ser implementadas na <b>,master</b>. Diretrizes:</p>
 
 * Deve ser derivada da <b>develop</b>;
@@ -69,7 +91,7 @@ release/vNúmero.versão
 release/v2.5
 ```
 
-### 2.5 <a name="2.5">Bugfix</a>
+### 2.6 <a name="2.6">Bugfix</a>
 <p align = "justify"> &emsp;&emsp; Branch destinada a resolver problemas como bugs e erros presentes na <b>release</b>.Diretrizes:</p>
 
 * Deve ser derivada da <b>release</b>;
@@ -91,7 +113,7 @@ bugfix/issueID-Nome_do_bugfix
 bugfix/#89-Resolver_Feed_de_Noticias
 ```
 
-### 2.6 <a name="2.6">Hotfix</a>
+### 2.7 <a name="2.7">Hotfix</a>
 <p align = "justify"> &emsp;&emsp; Destinada a resolver problemas urgentes na <b>master</b>. Diretrizes:</p>
 
 * Deve ser derivada da <b>master</b>;
