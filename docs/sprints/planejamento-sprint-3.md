@@ -42,7 +42,3 @@
 
 A Milestone da _Sprint_ 3 encontra-se neste [link](https://github.com/fga-eps-mds/2020.2-Anunbis/milestone/4)
 
-
-## 5. Débitos Acumulados
-- Por ainda não ter um nome definido o grupo ficou impossibilitado de atualizar os arquivos de comunidade.
-
