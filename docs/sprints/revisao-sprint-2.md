@@ -1,3 +1,33 @@
+
+## 1. Relato da _Sprint_ 
+<p align="justify">&emsp;&emsp; 
+A Sprint 2 teve como objetivo geral criar a documentação do projeto. Foi a primeira semana em que o grupo tinha um tema definido então começamos a trabalhar em cima disso, definindo uma visão geral sobre a aplicação, quais tecnologias seriam utilizadas na produção, quais funcionalidades nós gostariamos de implementar e quais as necessidades do usuário nós gostaríamos resolver.
+</p>
+
+## 2. Fechamento da _Sprint_ 
+<p align="justify">&emsp;&emsp; Pela equipe estar em processo de adaptação a metodologia scrum, nossas reuniões diárias estão tendo uma duração muito alta então esperamos com o tempo diminuir esse tempo.</p>
+
+<p align="justify">&emsp;&emsp; As expectativas para a próxima sprint são começar a configurar o ambiente de desenvolvimento para começarmos a programar o mais cedo possível a fim de conseguirmos implementar a maior quantidade de funcionalidades no tempo limite.</p>
+
+## 3 Backlog da Sprint
+
+| ID | Issue | Pontuação | Responsável|
+|:--:| ------- | :----: | :----: |
+| #18 | [Definir o escopo do projeto](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/18) |5|Toda Equipe|
+| #19 | [Definir tecnologias](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/19)|8| Toda Equipe|
+| #20 | [Definir as funções de cada um do time](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/20) |5| Toda Equipe |
+| #24 | [Criar Backlog do Produto](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/24) | 5| Toda Equipe|
+| #25 | [Abertura do documento de Arquitetura](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/25) | 2| Raphael e Roberto|
+| #28 | [Abertura do documento de visão](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/28) |3| Raphael|
+| #29 | [Criação de documento do Roadmap](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/29) | 2| Toda equipe|
+
+
+<!-- ## 3. Visão do _Scrum Master_ 
+
+<p align="justify">&emsp;&emsp; irá ser adicionado! </p>
+-->
+
+<!--
 # 1. Relato da _Sprint_ 2
 
 <p align="justify">&emsp;&emsp; A Sprint 2 teve como objetivo geral criar a documentação do projeto. Foi a primeira semana em que o grupo tinha um tema definido então começamos a trabalhar em cima disso, definindo uma visão geral sobre a aplicação, quais tecnologias seriam utilizadas na produção, quais funcionalidades nós gostariamos de implementar e quais as necessidades do usuário nós gostaríamos resolver.</p>
@@ -75,3 +105,4 @@ De acordo com a pesquisa realizada pelo [Thiago](https://github.com/thiagohdaqw)
 <p align="justify">&emsp;&emsp; As expectativas para a próxima sprint são começar a configurar o ambiente de desenvolvimento para começarmos a programar o mais cedo possível a fim de conseguirmos implementar a maior quantidade de funcionalidades no tempo limite.</p>
 
 ---
+-->
