@@ -111,3 +111,18 @@ ___
 | Média| Requisito importante, mas a sua não implementação não compromete o funcionamento da aplicação |
 | Baixa| Requisito não usado com muita frequência e não é tão necessário para a satisfação do usuário com o projeto |
 
+### 7.2 <a name="7.2">Lista de Requisitos:</a>
+
+|**Identificador**|**Requisito**|**Prioridade**|
+|:-|:-|:-|
+| RF01| Permitir que o usuário crie uma conta, edite, faça login e a delete| Alta|
+| RF02| Permitir que o usuário discente crie comentários e delete eles| Alta|
+| RF03| Permitir que o aluno concorde ou discorde do comentário de outro aluno| Alta|
+| RF04| Permitir que o aluno pontue um professor | Alta|
+| RF05| Exibir pontuação média e rank dos professores para todos os usuários | Alta|
+| RF06| Permitir que os discentes façam comentários anônimos | Média|
+| RF07| Exibir quantidade de avaliações que o usuário discente já realizou| Média|
+| RF08| A aplicação deve ter a experiência de uso simples e fluída, de linguagem fácil intuitiva| Alta|
+| RF09| Permitir o usuário a denunciar um comentário| Média|
+| RF10| Permitir que o aluno pesquise professores e disciplinas| Alta|
+| RF11| Exibir ao aluno quantidade de pessoas que concordam e discordam dos seus comentários, no total| Baixa|  
