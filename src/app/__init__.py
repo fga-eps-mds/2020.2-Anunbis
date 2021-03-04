@@ -9,8 +9,3 @@ app.config.from_object(config)
 db = SQLAlchemy(app)
 ma = Marshmallow(app)
 api = Api(app)
-
-
-
-db.create_all()
-db.session.commit()
