@@ -126,3 +126,11 @@ ___
 | RF09| Permitir o usuário a denunciar um comentário| Média|
 | RF10| Permitir que o aluno pesquise professores e disciplinas| Alta|
 | RF11| Exibir ao aluno quantidade de pessoas que concordam e discordam dos seus comentários, no total| Baixa|  
+
+## Referências
+
+CARVALHO, Durval; et al. Documento de Visão - Acacia. Disponível em: <https://fga-eps-mds.github.io/2019.2-Acacia/#/vision_documents>. Acesso em: 04 mar 2021.
+
+FÉLIX, Bruno; et al. Documento de Visão - Vamos Cuidar. Disponível em: <https://fga-eps-mds.github.io/2020.1-VC_Usuario/#/docs/Documento_de_Visao>. Acesso em: 04 mar 2021.
+
+LUCAS, Jõao; et al. Documento de Visão - ArBC. Disponível em: <https://jlucassr.github.io/ArBC-Pages/mds/Documento_de_visao/>. Acesso em: 04 mar 2021.
