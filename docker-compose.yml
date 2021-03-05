@@ -11,7 +11,7 @@ services:
   adminer:
       image: adminer
       ports:
-        - 8080:8080
+        - 8888:8080
 
   mysql:
     image: mysql:8.0
