@@ -84,6 +84,14 @@ Data|Versão|Descrição|Autor
 ### 4.1 <a name="4_1">Diagrama dos Casos de Uso</a>
 <div style="display:block;text-align:center"><img src="/images/casosDeUso.png" alt="Diagrama dos casos de Uso"></div>
 
+## 4.2 <a name="4_2">Atores dos Casos de Uso</a>
+
+|Ator|Descrição|
+|:-|:-|
+|**Discente**| O discente poderá avaliar professores pontuando-os, fazendo comentários e apoiando/discordando de outros feedbacks. Poderá também visualizar o rank de professores e acompanhar os comentários de outros alunos por meio da pesquisa por matéria/docente. |
+|**Docente**| O docente poderá visualizar as avaliações que os estudantes fizeram a ele. Isso ocorrerá por meio da visualização de comentários e da sua pontuação média.|
+
+
 
 ## 5 <a name="5">Referências</a>
 
