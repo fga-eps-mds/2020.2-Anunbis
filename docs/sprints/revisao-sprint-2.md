@@ -9,7 +9,7 @@ A Sprint 2 teve como objetivo geral criar a documentação do projeto. Foi a pri
 
 <p align="justify">&emsp;&emsp; As expectativas para a próxima sprint são começar a configurar o ambiente de desenvolvimento para começarmos a programar o mais cedo possível a fim de conseguirmos implementar a maior quantidade de funcionalidades no tempo limite.</p>
 
-## 3 Backlog da Sprint
+## 3. Backlog da _Sprint_
 
 | ID | Issue | Pontuação | Responsável|
 |:--:| ------- | :----: | :----: |
@@ -21,18 +21,16 @@ A Sprint 2 teve como objetivo geral criar a documentação do projeto. Foi a pri
 | #28 | [Abertura do documento de visão](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/28) |3| Raphael|
 | #29 | [Criação de documento do Roadmap](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/29) | 2| Toda equipe|
 
+## 4. Visão do _Scrum Master_
 
-<!-- ## 3. Visão do _Scrum Master_ 
+<p align="justify">&emsp;&emsp; Até o momento da planning da sprint 2 não tinhamos recebido feedback sobre o tema do nosso grupo, sem o tema não teríamos muito o que fazer, iríamos nos atrasar no projeto. Por esse motivo decidimos de forma independente começar a trabalhar no tema que havíamos proposto que era a avaliação dos professores. Assim essa sprint foi em prol de desenvolver todo o nosso projeto focados no tema que havíamos escolhido. Além de que foi nessa sprint que eu fui elegido de forma unânime como o Chefe ou melhor dizendo Scrum master. </p>
 
-<p align="justify">&emsp;&emsp; irá ser adicionado! </p>
--->
+
+## 5. Definição de Funções
+
+<img src="/images/definicaoFuncao.png" width="500">
 
 <!--
-# 1. Relato da _Sprint_ 2
-
-<p align="justify">&emsp;&emsp; A Sprint 2 teve como objetivo geral criar a documentação do projeto. Foi a primeira semana em que o grupo tinha um tema definido então começamos a trabalhar em cima disso, definindo uma visão geral sobre a aplicação, quais tecnologias seriam utilizadas na produção, quais funcionalidades nós gostariamos de implementar e quais as necessidades do usuário nós gostaríamos resolver.</p>
-
----
 # 2. Reuniões da _Sprint_ 2
 
 ## 2.1. Reunião 1
@@ -97,12 +95,4 @@ De acordo com a pesquisa realizada pelo [Thiago](https://github.com/thiagohdaqw)
 - A tecnologia para o back-end será: Python com Flask
 - A tecnologia para o banco de dados será: MySQL
 
----
-
-# 3. Fechamento da _Sprint_ 2
-<p align="justify">&emsp;&emsp; Pela equipe estar em processo de adaptação a metodologia scrum, nossas reuniões diárias estão tendo uma duração muito alta então esperamos com o tempo diminuir esse tempo.</p>
-
-<p align="justify">&emsp;&emsp; As expectativas para a próxima sprint são começar a configurar o ambiente de desenvolvimento para começarmos a programar o mais cedo possível a fim de conseguirmos implementar a maior quantidade de funcionalidades no tempo limite.</p>
-
----
 -->
