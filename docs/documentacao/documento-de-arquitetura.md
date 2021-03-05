@@ -84,14 +84,14 @@ Data|Versão|Descrição|Autor
 ### 4.1 <a name="4_1">Diagrama dos Casos de Uso</a>
 <div style="display:block;text-align:center"><img src="/images/casosDeUso.png" alt="Diagrama dos casos de Uso"></div>
 
-## 4.2 <a name="4_2">Atores dos Casos de Uso</a>
+### 4.2 <a name="4_2">Atores dos Casos de Uso</a>
 
 |Ator|Descrição|
 |:-|:-|
 |**Discente**| O discente poderá avaliar professores pontuando-os, fazendo comentários e apoiando/discordando de outros feedbacks. Poderá também visualizar o rank de professores e acompanhar os comentários de outros alunos por meio da pesquisa por matéria/docente. |
 |**Docente**| O docente poderá visualizar as avaliações que os estudantes fizeram a ele. Isso ocorrerá por meio da visualização de comentários e da sua pontuação média.|
 
-## 4.3 <a name="4_3">Descrição dos Casos de Uso</a>
+### 4.3 <a name="4_3">Descrição dos Casos de Uso</a>
 |Caso de Uso|Descrição|
 |:-|:-|
 |US01 - Pontuar Professor| Dar uma nota ao professor avaliado. |
@@ -105,7 +105,12 @@ Data|Versão|Descrição|Autor
 |US09 - Visualizar Média de Pontuação| O docente pode ver sua pontuação média no sistema.|
 |US10 - Visualizar Avaliações dos Alunos|O docente pode ver as avaliações gerais dos alunos.|
 
-## 5 <a name="5">Referências</a>
+## 5 <a name="5">Visão Lógica</a>
+<p align = "justify">&emsp;&emsp;A comunicação do usuário com a aplicação será feito pela camada view do MVC. Os eventos do front-end serão interpretados pela biblioteca do <a href="https://pt-br.reactjs.org/docs/getting-started.html">ReactJS</a>, essa mesma biblioteca se comunicará com o back-end, que será executada com flask e mysql.</p>
+
+<p align = "justify">&emsp;&emsp;No banco de dados, serão armazenados os dados dos usuários, dos professores e das disciplinas. Ao procurar por um professor, uma requisição será feita no back-end, e caso algum professor correspondente seja encontrado, será devolvido ao usuário o docente, sua pontuação e seus feedbacks. Essa troca de informação também será igual para os professores usuários.</p>
+
+## 6 <a name="6">Referências</a>
 
 Wilian, João. Flask: o que é e como codar com esse micro framework Python. **GeekHunter**, 2020. Disponivel em: <a href="https://blog.geekhunter.com.br/flask-framework-python/">Flask: o que é e como codar com esse micro framework Python</a>
 
