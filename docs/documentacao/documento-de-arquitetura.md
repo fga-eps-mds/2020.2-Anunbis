@@ -9,7 +9,7 @@ Data|Versão|Descrição|Autor
 28/02|0.5|Adição do tópico Modelo MVC|Rodrigo e Thiago|
 02/03|0.6|Adição do tópico React|Victor|
 05/03|0.7|Adição do tópico Visão dos Casos de Uso|Roberto|
-
+05/04|0.8|Adição do tópico Visão Lógica|Roberto|
 
 ## 1 <a name="1">Introdução</a>
 
@@ -51,6 +51,12 @@ Data|Versão|Descrição|Autor
 ### 2.2 <a name="3_2">Flask</a>
 
 <!-- <a href= "" ></a>   ## pra colocar link -->  
+
+<p align = "justify"> &emsp;&emsp; Para este projeto, decidimos escolher a micro framework web Flask, implementada em Python para ficar responsável pelo back-end do projeto. Por ser um micro framework, o <a href="https://flask.palletsprojects.com/en/1.1.x/">Flask</a> possui apenas o mínimo possível para a API funcionar.</p>
+
+<p align = "justify"> &emsp;&emsp; Assim, se for necessário, é possível instalar pacotes extras para todo desenvolvimento da aplicação. Isso permite que um projeto implementado com o Flask só tenha o que realmente precisa, ao invés de termos inúmeras ferramentas e módulos sem nenhuma utilização no projeto. </p>
+
+<p align = "justify"> &emsp;&emsp; Dentre estes pacotes extras há: o <a href="https://flask-sqlalchemy.palletsprojects.com/en/2.x/">SQLAlchemy</a>, para cuidar da comunicação com o banco de dados; <a href="https://flask-marshmallow.readthedocs.io/en/latest/">Mashmallow</a>, para cuidar da serialização; e o <a href="https://flask-migrate.readthedocs.io/en/latest/" >Migrate</a>, que cuida do versionamento do banco de dados pelo Python.</p>
 
 ### 2.3 <a name="3_2">MySQL</a>
 
@@ -113,7 +119,6 @@ Data|Versão|Descrição|Autor
 ## 6 <a name="6">Referências</a>
 
 Wilian, João. Flask: o que é e como codar com esse micro framework Python. **GeekHunter**, 2020. Disponivel em: <a href="https://blog.geekhunter.com.br/flask-framework-python/">Flask: o que é e como codar com esse micro framework Python</a>
-
 
 COzer, Carolina. O que é SQL e para que ele serve?. **Tecmundo**, 2019. Disponível em : <a href= "https://www.tecmundo.com.br/software/146482-sql-que-ele-serve.htm">  O que é SQL e para que ele serve?</a> 
 
