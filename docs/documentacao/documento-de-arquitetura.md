@@ -91,7 +91,19 @@ Data|Versão|Descrição|Autor
 |**Discente**| O discente poderá avaliar professores pontuando-os, fazendo comentários e apoiando/discordando de outros feedbacks. Poderá também visualizar o rank de professores e acompanhar os comentários de outros alunos por meio da pesquisa por matéria/docente. |
 |**Docente**| O docente poderá visualizar as avaliações que os estudantes fizeram a ele. Isso ocorrerá por meio da visualização de comentários e da sua pontuação média.|
 
-
+## 4.3 <a name="4_3">Descrição dos Casos de Uso</a>
+|Caso de Uso|Descrição|
+|:-|:-|
+|US01 - Pontuar Professor| Dar uma nota ao professor avaliado. |
+|US02 - Fazer Comentário| Dar um feedback de determinado docente.|
+|US03 - Avaliar outros Comentários| Concordar ou Discordar dos feedbacks de um professor.|
+|US04 - Avaliar Professor| Fazer um feedback geral de um docente.|
+|US05 - Visualizar Rank de Docentes| Ver quais os docentes melhores pontuados por disciplina.|
+|US06 - Visualizar Comentários de Outros Alunos| Ver feedbacks dos outros discentes para aquele professor.|
+|US07 - Pesquisar Disciplina ou Professor| Procurar a disciplina/professor da UnB que o aluno deseja.|
+|US08 - Visualizar Comentários| Professor visualizar os comentários dos alunos.|
+|US09 - Visualizar Média de Pontuação| O docente pode ver sua pontuação média no sistema.|
+|US10 - Visualizar Avaliações dos Alunos|O docente pode ver as avaliações gerais dos alunos.|
 
 ## 5 <a name="5">Referências</a>
 
