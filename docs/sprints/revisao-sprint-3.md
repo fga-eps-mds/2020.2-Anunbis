@@ -10,7 +10,7 @@ Nessa sprint foi decidido estudar as tecnologias que foram previamente combinada
 <p align="justify">&emsp;&emsp; Foi finalizado o protótipo de baixa fidelidade, com isso obtivemos uma melhor visão das funcionalidades requeridas pelo projeto e o fluxo dos usuários, focando em uma boa navegabilidade.
 </p>
 
-### 2.1 Backlog da Sprint
+## 3. Backlog da Sprint
 
 | ID | Issue | Pontuação | Responsável|
 |:--:| ------- | :----: | :----: |
@@ -24,28 +24,19 @@ Nessa sprint foi decidido estudar as tecnologias que foram previamente combinada
 | #44 | [Atualizar nome do projeto na documentação](https://github.com/fga-eps-mds/2019.2-arbc/issues/44)|1| Rodrigo e Thiago|
 
 
-## 3. Visão do _Scrum Master_
+## 4. Visão do _Scrum Master_
 
 <p align="justify">&emsp;&emsp; Essa sprint foi um pouco mais abstrata que as outras, no nosso planning só tinha basicamente issues relacionadas a estudo, então acabou que ficou um planejamento ruim porque não entregamos muita coisa no começo da sprint, porém conseguimos corrigir algumas partes da documentação, começamos a implementar o docker pra back-end e os estudos foram produtivos, cntinuo gostando muito do desempenho e da motivação do pessoal, espero que se estenda até o final do projeto ! </p>
 
 ------------
 
-## 4. Quadro de Conhecimento
-<p align="justify">&emsp;&emsp; Em breve!</p>
+## 5. Quadro de Conhecimento
+
+<img src="/images/quadroConhecimento2.png" width="1000">
+<img src="/images/legendaQuadroConhecimento.png" width="250">
+
+
 <!--
-Em ![](https://i.ibb.co/VScZ3r4/conh3.png)
-<p align="justify">&emsp;&emsp; Em breve!</p>
--->
-
-
-
-
-<!-- ## 1. Relato da _Sprint_
-
-<p align="justify">&emsp;&emsp; A Sprint 3 foi animada,, o que trouxe algun</p>
-
-
-------------
 # 2. Reuniões da _Sprint_ 3
 
 ## 2.1. Reunião 1
