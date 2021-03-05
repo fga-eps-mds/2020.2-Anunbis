@@ -1,6 +1,15 @@
 # Política de commits
 
+## Histórico de Versões
+
+Data|Versão|Descrição|Autor
+-|-|-|-
+03/03|0.1|Abertura do documento com template inicial|Rafael e Roberto|
+05/03|0.2|Alteração da politica de commits| Rafael|
+
 ---
+
+Regras para efetuar um commit no repositório:
 
 * Commits devem ser redigidos em português no gerúndio.
 * Devem ser simples e concisos, possuindo títulos curtos de no máximo 72 caracteres.
