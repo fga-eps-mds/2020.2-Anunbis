@@ -2,6 +2,13 @@
 
 * Documento cujo objetivo é de instruir os membros do projeto de como padronizar a criação de uma _issue_ e suas respectivas marcações.
 
+## Histórico de Versões
+
+Data|Versão|Descrição|Autor
+-|-|-|-
+03/03|0.1|Abertura do documento com template inicial|Rafael e Roberto|
+03/03|0.2|Adição do tutorial de como abrir uma issue| Rafael e Roberto|
+
 ---
 
 ## 1. Nome da Issue
