@@ -19,6 +19,10 @@ Execução do conteiner:
 
 `docker-compose up`
 
+Acesso  a aplicação:
+
+`localhost:5000`
+
 ## Equipe
 
 |**Foto**|**Nome**|**Email**|**Papel**|
