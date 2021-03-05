@@ -1,11 +1,21 @@
 from flask import Flask
 from flask_restful import Api
-from flask_sqlalchemy import SQLAlchemy
-from flask_marshmallow import Marshmallow
 from . import config
+from .model import configure as configure_model
+from .view import configure as configure_view
+from .controller import configure as configure_controller
 
-app = Flask(__name__)
-app.config.from_object(config)
-db = SQLAlchemy(app)
-ma = Marshmallow(app)
-api = Api(app)
+def create_app():
+    app = Flask(__name__)
+    app.config.from_object(config)
+    api = Api(app)
+    
+    configure_model(app)
+    configure_view(app)
+    configure_controller(app)
+
+    @app.route('/')
+    def hello_world():
+        return 'Hello World!'
+
+    return app
