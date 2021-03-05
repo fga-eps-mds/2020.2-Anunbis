@@ -20,7 +20,7 @@ Data|Versão|Descrição|Autor
 
 ## 2.1 <a name="2.1">Fluxo de Usuário</a>
 
-<div style="display:block;text-align:center"><a style="text-align:center"><img src="/images/fluxoDeUsuario.png" alt="Fluxo de Usuário na Aplicação"></a></div>
+![Fluxo de Usuário](/images/fluxoDeUsuario.jpg)
 
 ## 3 <a name="3">Telas</a>
 
