@@ -22,7 +22,7 @@ Data|Versão|Descrição|Autor
 
 ## 2.1 <a name="2.1">Fluxo de Usuário</a>
 
-![Fluxo de Usuário](/images/fluxoDeUsuario.jpg)
+![Fluxo de Usuário](/2020.2-Anunbis/images/fluxoDeUsuario.jpg)
 
 ## 3 <a name="3">Telas</a>
 
