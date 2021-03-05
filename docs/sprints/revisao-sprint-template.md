@@ -9,7 +9,7 @@
 <p align="justify">&emsp;&emsp; 
 </p>
 
-### 2.1 Backlog da Sprint
+## 3. Backlog da Sprint
 
 | ID | Issue | Pontuação | Responsável|
 |:--:| ------- | :----: | :----: |
@@ -23,7 +23,7 @@
 | #44 | [Atualizar nome do projeto na documentação](https://github.com/fga-eps-mds/2019.2-arbc/issues/44)|1| Rodrigo e Thiago|
 
 
-## 3. Visão do _Scrum Master_
+## 4. Visão do _Scrum Master_
 
 <p align="justify">&emsp;&emsp; </p>
 
