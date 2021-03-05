@@ -15,11 +15,12 @@ services:
 
   mysql:
     image: mysql:8.0
+    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: db_anunbis
     volumes:
-      - ./mysql:/var/lib/mysql_anunbis
+      - ./src/database:/docker-entrypoint-initdb.d
     expose: 
       - "3306"
     command: --default-authentication-plugin=mysql_native_password
