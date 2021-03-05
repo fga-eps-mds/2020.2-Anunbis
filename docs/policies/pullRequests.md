@@ -1,5 +1,12 @@
 # Politica de Criação de Pull Requests
 
+## Histórico de Versões
+
+Data|Versão|Descrição|Autor
+-|-|-|-
+03/03|0.1|Abertura do documento com template inicial|Rafael e Roberto|
+03/03|0.2|Adição dos tópicos 2 e 3| Rafael e Roberto|
+
 ---
 
 ## 1. <a name="1">Introdução</a>
