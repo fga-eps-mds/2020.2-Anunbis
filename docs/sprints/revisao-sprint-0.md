@@ -10,7 +10,7 @@
 <p align="justify">&emsp;&emsp; Decidimos que todos continuariamos pensando em possíveis temas.
 </p>
 
-### 2.1 Backlog da Sprint
+## 3. Backlog da Sprint
 
 | ID | Issue | Pontuação | Responsável|
 |:--:| ------- | :----: | :----: |
@@ -18,18 +18,11 @@
 | #5 | [Criar um canal no Discord](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/5) |8| Rafael |
 
 
-## 3. Visão do _Scrum Master_
+## 4. Visão do _Scrum Master_
 
-<p align="justify">&emsp;&emsp; Em breve!</p>
+<p align="justify">&emsp;&emsp; Essa era a sprint inicial, então ainda não tinhamos muita noção de como funcionaria a nossa dinâmica como equipe ou como esse projeto se desenvolveria. Portanto, essa se tornou a nossa meta, entender como nós iriamos trabalhar nessa disciplina criando canais de comunicação e nos entendendo melhor.</p>
 
-## 4. Quadro de Conhecimento
+## 5. Quadro de Conhecimento
 
-<p align="justify">&emsp;&emsp; Em breve!</p>
-
-<!--
 <img src="/images/quadroConhecimento1.png" width="1000">
-
- ![Screenshot](./images/quadroConhecimento1.png )   
-
-={:height="150px" width="20px"}
--->
+<img src="/images/legendaQuadroConhecimento.png" width="250">
