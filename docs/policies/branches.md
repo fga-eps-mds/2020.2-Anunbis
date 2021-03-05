@@ -1,5 +1,12 @@
 # Politica de Criação de Branchs
 
+## Histórico de Versões
+
+Data|Versão|Descrição|Autor
+-|-|-|-
+03/03|0.1|Abertura do documento com template inicial|Rafael e Roberto|
+03/03|0.2|Adição dos tópicos 1,2 e dos subtópicos de 2|Rafael e Roberto|
+
 ---
 
 ## 1. <a name="1">Introdução</a>
