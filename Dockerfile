@@ -35,6 +35,8 @@ COPY . .
 
 # Setup flask
 ENV FLASK_APP=./src/app.py
+ENV FLASK_ENV=Development
+ENV FLASK_DEBUG=True
 
 # Run the application
 ENTRYPOINT ["flask", "run", "--host=0.0.0.0"]
