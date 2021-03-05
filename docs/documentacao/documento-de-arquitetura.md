@@ -82,7 +82,7 @@ Data|Versão|Descrição|Autor
 
 ## 4 <a name"4">Visão dos Casos de Uso</a>
 ### 4.1 <a name="4_1">Diagrama dos Casos de Uso</a>
-<div style="display:block;text-align:center"><img src="/images/casosDeUso.png" alt="Diagrama dos casos de Uso"></div>
+<div style="display:block;text-align:center"><img src="/2020.2-Anunbis/images/casosDeUso.png" alt="Diagrama dos casos de Uso"></div>
 
 ### 4.2 <a name="4_2">Atores dos Casos de Uso</a>
 
