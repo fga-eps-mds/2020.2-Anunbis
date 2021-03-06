@@ -1,4 +1,0 @@
-def configure(app):
-    pass
-
-
