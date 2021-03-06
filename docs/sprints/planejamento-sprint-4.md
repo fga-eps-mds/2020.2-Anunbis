@@ -1,9 +1,9 @@
 
 ## 1. Visão Geral
 
-| Data de Início | 09/02/2021 |
+| Data de Início | 02/03/2021 |
 |:--|:--:|
-| **Data de Término** | **15/02/2021** |
+| **Data de Término** | **08/03/2021** |
 | **Duração** | **7 dias** |
 
 ## 2. Papéis
@@ -16,7 +16,7 @@
         <td align="center"><a href="https://github.com/RcleydsonR">
         <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/74625814?s=460&u=c3b77eaa289d931e139e184d494e0151956372a8&v=4"width="100px;" alt=""/>
         <br /><sub><b>Rafael Cleydson</b><br><b>Scrum Master/ Dev</b></sub></a><br /><a href="https://github.com/Bruno-Felix"></a></td>
-         <!-- Roberto  -->
+    <!-- Roberto  -->
         <td align="center"><a href="https://github.com/mangabeiras"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/54643519?s=400&u=e818422fc51e3e58e20e2bfc28bcdcd96a3acf62&v=4" width="100px;" alt=""/><br /><sub><b>Roberto Gabriel</b><br><b>Desenvolvedor</sub></a><br /><a href="https://github.com/emysdias"></a></td>
      <!-- Rodrigo     -->
         <td align="center"><a href=https://github.com/Balbinoo><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/54644626?s=400&u=8d36fb668cd69ccd23d5827ae9e1b86a937eefa1&v=4" width="100px;" alt=""/><br /><sub><b>Rodrigo Balbino</b><br><b>Product Owner/ Dev</b></sub></a><br /><a href="https://github.com/DenysRogeres"></a></td>
@@ -27,14 +27,20 @@
         </tr>
     </table>
     
-## 3. Objetivo da _Sprint 1_
+## 3. Objetivo da _Sprint 4_
 
 <p align="justify">Esta <i>Sprint</i> tem como objetivo:</p>
 
-- Estudo das Tecnologias Básicas
-- Criar arquivo de Contributing
-- Criação da Wiki
+- Definir como contribuir no GitHub Page
+- Definir política de repositórios: Commits e branches
+- Criar Protótipo de baixa Fidelidade
+- Criar Protótipo de alta Fidelidade
+- Estudar o Planning Poker
+- Configurar Docker para o Back-end
+- Configurar página inicial
+- Definir a logo do projeto
+- Atualizar documento de Visão(Requisitos e Restrições)
 
 ## 4. Sprint Backlog
 
-A Milestone da _Sprint_ 1 encontra-se neste [link](https://github.com/fga-eps-mds/2020.2-Anunbis/milestone/2)
+A Milestone da _Sprint_ 4 encontra-se neste [link](https://github.com/fga-eps-mds/2020.2-Anunbis/milestone/5)

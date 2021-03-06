@@ -38,3 +38,14 @@
 | Issue  |Definir o [escopo do projeto](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/18)
 | Issue  |Definir [Tecnologias](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/19)
 | Issue  |Criação de documento do [Roadmap](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/29)
+
+### Sprint 3
+| ID | Issue |
+|:--:| ------- | 
+| Issue  |Criar [Backlog do Produto](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/24)
+| Issue  |Abertura do [Documento de Visão](https://fga-eps-mds.github.io/2020.2-Anunbis/documentacao/documento-de-visao/)
+| Issue  |Abertura do [Documento de Arquitetura na wiki](https://fga-eps-mds.github.io/2020.2-Anunbis/documentacao/documento-de-arquitetura/)
+| Issue  |Definir as [funções](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/20) de cada um do time
+| Issue  |Definir o [escopo do projeto](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/18)
+| Issue  |Definir [Tecnologias](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/19)
+| Issue  |Criação de documento do [Roadmap](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/29)
