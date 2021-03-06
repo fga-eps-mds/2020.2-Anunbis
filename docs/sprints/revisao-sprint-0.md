@@ -24,5 +24,5 @@
 
 ## 5. Quadro de Conhecimento
 
-<img src="/images/quadroConhecimento1.png" width="1000">
-<img src="/images/legendaQuadroConhecimento.png" width="250">
+<img src="/2020.2-Anunbis/images/quadroConhecimento1.png" width="1000">
+<img src="/2020.2-Anunbis/images/legendaQuadroConhecimento.png" width="250">
