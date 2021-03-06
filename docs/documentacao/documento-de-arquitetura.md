@@ -9,7 +9,8 @@ Data|Versão|Descrição|Autor
 28/02|0.5|Adição do tópico Modelo MVC|Rodrigo e Thiago|
 02/03|0.6|Adição do tópico React|Victor|
 05/03|0.7|Adição do tópico Visão dos Casos de Uso|Roberto|
-05/04|0.8|Adição do tópico Visão Lógica|Roberto|
+05/03|0.8|Adição do tópico Visão Lógica|Roberto|
+06/03|0.9|Adição do diagrama arquitetural| Thiago|
 
 ## 1 <a name="1">Introdução</a>
 
