@@ -28,7 +28,7 @@ A Sprint 2 teve como objetivo geral criar a documentação do projeto. Foi a pri
 
 ## 5. Definição de Funções
 
-<img src="/images/definicaoFuncao.png" width="500">
+<img src="/2020.2-Anunbis/images/definicaoFuncao.png" width="500">
 
 <!--
 # 2. Reuniões da _Sprint_ 2
