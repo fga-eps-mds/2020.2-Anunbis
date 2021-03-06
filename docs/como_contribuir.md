@@ -4,16 +4,16 @@
 
 Deseja Contribuir para nosso projeto ? Certifique-se de que está seguindo as políticas do nosso projeto:
 
-* Esteja atento ao [Código de conduta](https://github.com/fga-eps-mds/2020.2-Anunbis/CODE_OF_CONDUCT) do projeto.
-* Os [commits](https://github.com/fga-eps-mds/2020.2-Anunbis/policies/commits/) seguem a política de commits.
-* As [branches](https://github.com/fga-eps-mds/2020.2-Anunbis/policies/branches/) seguem a política de branches.
+* Esteja atento ao [Código de conduta](/2020.2-Anunbis/CODE_OF_CONDUCT) do projeto.
+* Os [commits](/2020.2-Anunbis/policies/commits) seguem a política de commits.
+* As [branches](/2020.2-Anunbis/policies/branches) seguem a política de branches.
 * Os critérios de aceitação foram cumpridos.
 * Foram realizados testes (sendo o caso) que cobrem as funcionalidades a serem entregues.
 
 ## Processo de Criação de Issues
 
 1. Verifique se não existe issue que já atenda o que você pretender colocar.
-2. Existe uma [política de issues](https://github.com/fga-eps-mds/2020.2-Anunbis/policies/issues/) que deve ser seguida.
+2. Existe uma [política de issues](/2020.2-Anunbis/policies/issues) que deve ser seguida.
 3. Ao criar a issue, espere a resposta de uns dos responsáveis pelo repositório para sua aprovação.
 
 ## Processo de Criação de Pull Requests
