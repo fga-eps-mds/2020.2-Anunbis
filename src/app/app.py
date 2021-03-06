@@ -1,17 +1,15 @@
 from flask import Flask
-from flask_restful import Api
-from . import config
+from src.app.ext import configuration
 
 
-def create_app():
+
+def minimal_app(**config):
     app = Flask(__name__)
-    app.config.from_object(config)
-    api = Api(app)
-    
+    configuration.init_app(app, **config)
+    return app
 
 
-    @app.route('/')
-    def hello_world():
-        return 'Hello World!'
-
+def create_app(**config):
+    app = minimal_app(**config)
+    configuration.load_extensions(app)
     return app
