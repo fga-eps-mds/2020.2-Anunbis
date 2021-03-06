@@ -1,15 +1,17 @@
 from flask import Flask
-from src.app.ext import configuration
+from app.ext import database
+from app.blueprints import restapi, schemas
+from . import config
 
-
-
-def minimal_app(**config):
+def minimal_app():
     app = Flask(__name__)
-    configuration.init_app(app, **config)
+    app.config.from_object(config)
     return app
 
 
-def create_app(**config):
-    app = minimal_app(**config)
-    configuration.load_extensions(app)
+def create_app():
+    app = minimal_app()
+    database.init_app(app)
+    schemas.init_app(app)
+    restapi.init_app(app)
     return app
