@@ -63,7 +63,7 @@ Sendo:
 * Prioridade de 21 a 25: Muito Alta
 
 ## 4 <a name="4">Identificação dos Riscos</a>
-<p align="justify"> &emsp;&emsp; Para a identificação de riscos, adotou-se a comparação análoga - utilizando experiências anteriores e similares para facilitar a concepção e identificação de riscos comum a esse tipo de projeto.</p>
+<p align="justify"> &emsp;&emsp; Para a identificação de riscos, adotou-se a comparação análoga - utilizando experiências anteriores e similares para facilitar a concepção e identificação de riscos comuns a esse tipo de projeto.</p>
 
 ### 4.1 <a name="4.1">Tabela de Riscos levantados</a>
 
@@ -80,6 +80,7 @@ Sendo:
 |**R09**|Alguns dos membros contrair Covid-19 ou outra doença|Seguir as recomendações do Ministério da Saúde|Distribuir as tarefas do enfermo para outras pessoas do time|Externo|3|4|22|
 |**R10**|Alteração das tecnologias|Definição concisa do escopo do projeto|Planejar corretamente a sprint e se manter atualizado quanto às novas funcionalidades|Técnico|4|5|18|
 |**R11**|Falta de cliente real|	Utilização de ferramentas que ajudem a levantar requisitos|	Utilização de dados levantados por usuários que sejam o público alvo do projeto|Externo|5|2|8|
+|**R12**|Atraso nas entregas das sprints|Planejamento viável e conciso|Redistribuição das tarefas que precisam ser entregues|Gerência|3|3|12|
 
 ## 5 <a name="5">Referências</a>
 
