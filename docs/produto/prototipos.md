@@ -20,31 +20,33 @@ Data|Versão|Descrição|Autor
  - [Versão 1](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/39#issuecomment-787580528)
  - [Versão 2](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/39#issuecomment-790673259)
 
-## 2.1 <a name="2.1">Fluxo de Usuário</a>
+## 2 <a name="2">Protótipo de Alta Fidelidade</a>
+
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FNqHjyO26dyCtuC8vnqjSwr%2FPrototipo-Alta-Fidelidade%3Fnode-id%3D60%253A201" allowfullscreen></iframe>
+
+## 3 <a name="3">Fluxo de Usuário</a>
 
 ![Fluxo de Usuário](/2020.2-Anunbis/images/fluxoDeUsuario.jpg)
 
-## 3 <a name="3">Telas</a>
+## 4 <a name="4">Telas</a>
 
-### 3.1 <a name="3.1">Cadastro</a>
+### 4.1 <a name="4.1">Cadastro</a>
 
  <p align = "justify"> &emsp;&emsp; Onde o usuário irá criar uma conta para utilizar a aplicação. Será necessário fornecer informações institucionais e uma senha para autenticação.</p>
 
-### 3.2 <a name="3.2">Login</a>
+### 4.2 <a name="4.2">Login</a>
 
  <p align = "justify"> &emsp;&emsp; Onde o usuário irá forncecer E-mail e Senha cadastrados para realizar o acesso a aplicação com a conta criada.</p>
 
-### 3.3 <a name="3.3">Página Inicial</a>
+### 4.3 <a name="4.3">Página Inicial</a>
 
  <p align = "justify"> &emsp;&emsp; Terá um feed com as avaliações escritas pelo usuário, quantidade de pessoas que concordam ou não concordam com a avaliação e um menu para acessar outras ferramentas.</p>
 
-### 3.4 <a name="3.4">Resultado da Pesquisa</a>
+### 4.4 <a name="4.4">Resultado da Pesquisa</a>
 
  <p align = "justify"> &emsp;&emsp; Caso o usuário informe o nome ou código da disciplina serão apresentados todos os professores que à ministram, um botão para escolher a ordem de apresentação, as avaliações feitas pelos usuários e um botão para o usuário escrever sua avaliação.  </p>
  <p align = "justify"> &emsp;&emsp; Caso o usuário informe o nome do professor serão apresentadas todas as disciplinas que o professor ministra, um botão para escolher a ordem de apresentação, as avaliações feitas pelos usuários e um botão para o usuário escrever sua avaliação.  </p>
 
-### 3.5 <a name="3.5">Perfil</a>
+### 4.5 <a name="4.5">Perfil</a>
 
  <p align = "justify"> &emsp;&emsp; Onde o usuário poderá alterar a senha da conta, ver informações sobre a conta ou excluir a conta.  </p>>
-
-
