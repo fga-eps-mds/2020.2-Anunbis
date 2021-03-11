@@ -39,6 +39,7 @@ nav:
             - Roadmap: documentacao/roadmap.md
             - Termo de Abertura: documentacao/termo-de-abertura.md
     - Produto: 
+        - Canvas: documentacao/canvas.md
         - Backlog do Produto: produto/backlog.md
         - Protótipos: produto/prototipos.md
     - Contribuição:
