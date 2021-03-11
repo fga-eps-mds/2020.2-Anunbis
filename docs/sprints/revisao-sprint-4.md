@@ -1,20 +1,16 @@
 
 ## 1. Relato da _Sprint_
 
-<p align="justify">&emsp;&emsp; Em breve!
-
+<p align="justify">&emsp;&emsp; 
+Nessa sprint focamos bastante em atualizar as documentações restantes, no nosso protótipo de alta fidelidade e também na configuração do Docker para o Back-end. Aproveitamos que essa seria uma sprint maior com duração de 9 dias para poder colocar tudo em ordem para começar a codar e pensar na R1, foi extremamente corrida essa sprint e todos participaram bastante, seria um sonho de consumo manter esse ritmo, mas creio que será mais dificil quando o fluxo de trabalho nas outras disciplinas for maior.
 </p>
 
 
 ## 2. Fechamento da _Sprint_
-<p align="justify">&emsp;&emsp; Em breve!
+<p align="justify">&emsp;&emsp; Conseguimos realizar o protótipo de alta fidelidade, a configuração do docker para o back-end e atualizamos bastante as documentações, então estamos preparados para colocar a mão no código.
 </p>
 
 ## 3. Backlog da Sprint
-
-<p align="justify">&emsp;&emsp; Em breve!
-</p>
-
 <!-- 
 | ID | Issue | Pontuação | Responsável|
 |:--:| ------- | :----: | :----: |
@@ -35,3 +31,4 @@
 
 ------------
 
+## 5. Quadro de Conhecimento

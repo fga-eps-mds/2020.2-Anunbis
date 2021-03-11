@@ -21,8 +21,8 @@
 | #6 | [Criar templates de Issues e Pull Requests](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/6) |3| Eduardo e Rafael |
 | #9 | [EStudar Metodologias Ágeis](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/9) |5|Toda Equipe|
 | #13 | [Criar arquivo de contribuição](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/13)|3| Rodrigo e Thiago|
-| #14 | [Criação da Wiki do projeto](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/14) | 3| Eduardo, Raphael e Roberto |
-| #16 | [Colocar a WIki online usando GitHub Pages](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/16) | 2| Eduardo, Raphael e Roberto|
+| #14 | [Criação da Wiki do projeto](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/14) | 3| Eduardo, Rafael e Roberto |
+| #16 | [Colocar a WIki online usando GitHub Pages](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/16) | 2| Eduardo, Rafael e Roberto|
 
 ## 4. Visão do _Scrum Master_
 

@@ -17,8 +17,8 @@ A Sprint 2 teve como objetivo geral criar a documentação do projeto. Foi a pri
 | #19 | [Definir tecnologias](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/19)|8| Toda Equipe|
 | #20 | [Definir as funções de cada um do time](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/20) |5| Toda Equipe |
 | #24 | [Criar Backlog do Produto](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/24) | 5| Toda Equipe|
-| #25 | [Abertura do documento de Arquitetura](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/25) | 2| Raphael e Roberto|
-| #28 | [Abertura do documento de visão](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/28) |3| Raphael|
+| #25 | [Abertura do documento de Arquitetura](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/25) | 2| Rafael e Roberto|
+| #28 | [Abertura do documento de visão](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/28) |3| Rafael|
 | #29 | [Criação de documento do Roadmap](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/29) | 2| Toda equipe|
 
 ## 4. Visão do _Scrum Master_
