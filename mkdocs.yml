@@ -4,18 +4,17 @@ repo_name: '2020.2-Anunbis'
 repo_url: 'https://github.com/fga-eps-mds/2020.2-Anunbis'
 
 theme:
-
     name: 'material'
     icon:
         repo: fontawesome/brands/github
     logo: 'images/logo.png'
     favicon: 'images/logo.png'
     palette:
-        primary: 'yellow'
-        accent: 'deep purple'
+        scheme: 'default'
+        primary: 'amber'
+        accent: 'grey'
     features:
         navigation.tabs
-        header.autohide
 plugins:
     - search
 
@@ -56,3 +55,4 @@ nav:
             - Branches: policies/branches.md
             - Issues: policies/issues.md
             - Pull Requests: policies/pullRequests.md 
+
