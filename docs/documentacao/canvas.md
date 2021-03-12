@@ -2,9 +2,8 @@
 
 Data|Versão|Descrição|Autor
 -|-|-|-
-10/03|0.1|Abertura do Documento de Arquitetura|Rodrigo e Victor|
-10/03|0.2|Adicionando Introdução|Rodrigo e Victor|
-10/03|0.3|Adicionando Modelo de Negócios|Rodrigo e Victor|
+10/03|0.1|Abertura do Documento Canvas|Rodrigo e Victor|
+10/03|0.2|Adicionando Modelo de Negócios|Rodrigo e Victor|
 
 ## 1. <a name="1">Introdução</a>
 
