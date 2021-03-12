@@ -6,3 +6,4 @@ SERVER = "mysql"
 DB = "db_anunbis"
 SQLALCHEMY_DATABASE_URI = f'mysql+mysqlconnector://{USERNAME}:{PASSWORD}@{SERVER}/{DB}'
 SQLALCHEMY_TRACK_MODIFICATIONS = True
+SECRET_KEY = 'api-mds-2020-2-anunbis'
