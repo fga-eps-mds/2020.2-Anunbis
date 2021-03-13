@@ -28,7 +28,7 @@
      <!-- Rodrigo     -->
         <td align="center"><a href=https://github.com/Balbinoo><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/54644626?s=400&u=8d36fb668cd69ccd23d5827ae9e1b86a937eefa1&v=4" width="100px;" alt=""/><br /><sub><b>Rodrigo Balbino</b><br><b>Product Owner/ Dev</b></sub></a><br /></td>
     <!-- Thiago  -->
-        <td align="center"><a href=https://github.com/thiagohdaqw><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/54081877?s=400&u=c1add0666adbf836efe972df83a854185477c2cc&v=4" width="100px;" alt=""/><br /><sub><b>Thiago Paiva</b><br></td>
+        <td align="center"><a href=https://github.com/thiagohdaqw><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/54081877?s=400&u=c1add0666adbf836efe972df83a854185477c2cc&v=4" width="100px;" alt=""/><br /><sub><b>Thiago Paiva</b><br><b>Desenvolvedor</sub></a><br/></td>
      <!-- Victor -->
         <td align="center"><a href=https://github.com/victorhugo21><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/54643372?s=400&u=662c17b015a365ca35b5b4ea519c0fd64fd00184&v=4" width="100px;" alt=""/><br /><sub><b>Victor Hugo</b><br><b>Desenvolvedor</sub></a><br/></td>
         </tr>
