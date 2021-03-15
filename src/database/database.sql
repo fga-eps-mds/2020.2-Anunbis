@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS STUDENT (
 );
 
 CREATE TABLE IF NOT EXISTS POST (
-  id_post int UNSIGNED NOT NULL,
+  id_post int UNSIGNED NOT NULL AUTO_INCREMENT,
   reg_student int UNSIGNED DEFAULT NULL,
   reg_professor int UNSIGNED NOT NULL,
   content varchar(480) NOT NULL,
@@ -58,6 +58,7 @@ CREATE TABLE IF NOT EXISTS POST (
   PRIMARY KEY (id_post),
   FOREIGN KEY (reg_student) REFERENCES STUDENT (reg_student),
   FOREIGN KEY (reg_professor) REFERENCES PROFESSOR (reg_professor)
+  FOREIGN KEY (discipline_code) REFERENCES DISCIPLINE (discipline_code)
 )ENGINE InnoDB AUTO_INCREMENT = 0;
 
 CREATE TABLE IF NOT EXISTS DISAGREE_STUDENT_POST (
@@ -76,11 +77,12 @@ CREATE TABLE IF NOT EXISTS AGREE_STUDENT_POST (
 );
 
 CREATE TABLE IF NOT EXISTS REPORT(
-  id_report int AUTO_INCREMENT,
+  id_report int UNSIGNED AUTO_INCREMENT,
   id_post int UNSIGNED NOT NULL,
   content varchar(120) NOT NULL DEFAULT '',
   report_type enum('L', 'I', 'G', 'O') NOT NULL,
-  reg_student int NOT NULL,
+  reg_student int UNSIGNED NOT NULL,
   PRIMARY KEY (id_report),
   FOREIGN KEY (id_post) REFERENCES POST (id_post)
+  FOREIGN KEY (reg_student) REFERENCES STUDENT (reg_student)
 )ENGINE InnoDB AUTO_INCREMENT = 0;
