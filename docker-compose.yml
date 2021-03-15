@@ -3,6 +3,8 @@ services:
   flask:
       build:
         ./
+      volumes: 
+        - .:/home/appuser
       depends_on:
         - mysql
       ports:

@@ -1,5 +1,5 @@
 from flask import Flask
-from app.ext import database
+from app.ext import database, auth, cors
 from app.blueprints import restapi, schemas
 from . import config
 
@@ -14,4 +14,6 @@ def create_app():
     database.init_app(app)
     schemas.init_app(app)
     restapi.init_app(app)
+    auth.init_app(app)
+    cors.init_app(app)
     return app
