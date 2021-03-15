@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS PROFESSOR (
   reg_professor int UNSIGNED UNIQUE NOT NULL,
   `name` varchar(255) NOT NULL,
   email varchar(255) NOT NULL UNIQUE DEFAULT '',
-  `password` varchar(64) NOT NULL DEFAULT '',
+  `password` varchar(255) NOT NULL DEFAULT '',
   rating float,
   PRIMARY KEY (reg_professor)
 );
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS STUDENT (
   reg_student int UNSIGNED NOT NULL UNIQUE,
   `name` varchar(255) NOT NULL,
   email varchar(100) NOT NULL UNIQUE,
-  `password` varchar(64) NOT NULL,
+  `password` varchar(255) NOT NULL,
   id_course int UNSIGNED NOT NULL,
   PRIMARY KEY (reg_student),
   FOREIGN KEY (id_course) REFERENCES COURSE (id_course)
