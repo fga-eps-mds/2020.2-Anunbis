@@ -3,8 +3,8 @@
 
 | Data de Início | 02/03/2021 |
 |:--|:--:|
-| **Data de Término** | **08/03/2021** |
-| **Duração** | **7 dias** |
+| **Data de Término** | **10/03/2021** |
+| **Duração** | **9 dias** |
 
 ## 2. Papéis
 
@@ -35,11 +35,14 @@
 - Definir política de repositórios: Commits e branches
 - Criar Protótipo de baixa Fidelidade
 - Criar Protótipo de alta Fidelidade
+- Criar identidade visual
 - Estudar o Planning Poker
 - Configurar Docker para o Back-end
 - Configurar página inicial
 - Definir a logo do projeto
 - Atualizar documento de Visão(Requisitos e Restrições)
+- Criar o documento Canvas
+- Modelar os dados do BD
 
 ## 4. Sprint Backlog
 
