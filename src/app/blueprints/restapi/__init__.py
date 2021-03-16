@@ -7,9 +7,10 @@ api = Api(bp)
 
 
 def init_app(app):
-    from . import home_resources, course_resource
+    from . import home_resources, course_resources, student_resources
     api.add_resource(home_resources.HomeResource, "/")
-    api.add_resource(course_resource.CourseList, "/course")
+    api.add_resource(course_resources.CourseList, "/course")
+    api.add_resource(student_resources.StudentList, "/student")
     app.register_blueprint(bp)
 
     @app.route("/")
