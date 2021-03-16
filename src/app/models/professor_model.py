@@ -1,7 +1,6 @@
 from ..ext.database import db
 from passlib.hash import pbkdf2_sha256
 
-
 class Professor(db.Model):
     __tablename__ = "PROFESSOR"
 
@@ -10,7 +9,7 @@ class Professor(db.Model):
     email = db.Column(db.String(255), nullable=False, unique=True, default='')
     password = db.Column(db.String(255), nullable=False, default='')
     rating = db.Column(db.Float)
-    disciplines = db.relationship('DISCIPLINE', secondary='PROFESSOR_DISCIPLINE', lazy='dynamic', back_populates='professors')
+    disciplines = db.relationship('Discipline', secondary='PROFESSOR_DISCIPLINE', lazy='dynamic')
 
     def generate_password(self):
         self.password = pbkdf2_sha256.hash(self.password)

@@ -10,8 +10,8 @@ class Student(db.Model):
     email = db.Column(db.String(100), nullable=False, unique=True)
     password = db.Column(db.String(255), nullable=False)
     id_course = db.Column(db.Integer, db.ForeignKey("COURSE.id_course"), nullable=False)
-    post_agrees = db.relationship('POST', secondary='AGREE_STUDENT_POST', lazy='dynamic', back_populates='agrees')
-    post_disagrees = db.relationship('STUDENT', secondary='DISAGREE_STUDENT_POST', lazy='dynamic', back_populates='disagrees')
+    post_agrees = db.relationship('Post', secondary='AGREE_STUDENT_POST', lazy='dynamic')
+    post_disagrees = db.relationship('Student', secondary='DISAGREE_STUDENT_POST', lazy='dynamic')
 
     def generate_password(self):
         self.password = pbkdf2_sha256.hash(self.password)

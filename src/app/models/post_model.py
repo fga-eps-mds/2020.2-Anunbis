@@ -23,5 +23,5 @@ class Post(db.Model):
     post_date = db.Column(db.Date, nullable=False)
     rating = db.Column(db.Float, nullable=False)
     discipline_code = db.Column(db.Integer, db.ForeignKey('DISCIPLINE.discipline_code'), nullable=False)
-    agrees = db.relationship('STUDENT', secondary=AGREE_STUDENT_POST, lazy='dynamic', back_populates='post_agrees')
-    disagrees = db.relationship('STUDENT', secondary=DISAGREE_STUDENT_POST, lazy='dynamic', back_populates='post_disagrees')
+    agrees = db.relationship('Student', secondary=AGREE_STUDENT_POST, lazy='dynamic')
+    disagrees = db.relationship('Student', secondary=DISAGREE_STUDENT_POST, lazy='dynamic')
