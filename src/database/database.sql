@@ -54,11 +54,11 @@ CREATE TABLE IF NOT EXISTS POST (
   content varchar(480) NOT NULL,
   post_date date NOT NULL,
   rating float NOT NULL,
-  discipline_code int UNSIGNED NOT NULL,
+  discipline_code varchar(80) NOT NULL DEFAULT '',
   PRIMARY KEY (id_post),
+  FOREIGN KEY (discipline_code) REFERENCES DISCIPLINE (discipline_code),
   FOREIGN KEY (reg_student) REFERENCES STUDENT (reg_student),
   FOREIGN KEY (reg_professor) REFERENCES PROFESSOR (reg_professor)
-  FOREIGN KEY (discipline_code) REFERENCES DISCIPLINE (discipline_code)
 )ENGINE InnoDB AUTO_INCREMENT = 0;
 
 CREATE TABLE IF NOT EXISTS DISAGREE_STUDENT_POST (
@@ -83,6 +83,6 @@ CREATE TABLE IF NOT EXISTS REPORT(
   report_type enum('L', 'I', 'G', 'O') NOT NULL,
   reg_student int UNSIGNED NOT NULL,
   PRIMARY KEY (id_report),
-  FOREIGN KEY (id_post) REFERENCES POST (id_post)
+  FOREIGN KEY (id_post) REFERENCES POST (id_post),
   FOREIGN KEY (reg_student) REFERENCES STUDENT (reg_student)
 )ENGINE InnoDB AUTO_INCREMENT = 0;
