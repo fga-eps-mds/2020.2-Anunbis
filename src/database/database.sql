@@ -32,9 +32,10 @@ CREATE TABLE IF NOT EXISTS COURSE (
 
 CREATE TABLE IF NOT EXISTS COURSE_DISCIPLINE (
   id_course int UNSIGNED NOT NULL,
-  discipline_code varchar(80) NOT NULL,
+  discipline_code varchar(80) NOT NULL DEFAULT '',
   PRIMARY KEY (id_course, discipline_code),
-  FOREIGN KEY (id_course)  REFERENCES COURSE  (id_course)
+  FOREIGN KEY (id_course)  REFERENCES COURSE (id_course),
+  FOREIGN KEY (discipline_code)  REFERENCES DISCIPLINE (discipline_code)
 );
 
 CREATE TABLE IF NOT EXISTS STUDENT (
