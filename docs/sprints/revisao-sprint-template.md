@@ -1,7 +1,7 @@
+
 ## 1. Relato da _Sprint_
 
 <p align="justify">&emsp;&emsp; 
-
 </p>
 
 
@@ -10,46 +10,42 @@
 </p>
 
 ## 3. Backlog da Sprint
-
+<!-- Exemplo -->
 | ID | Issue | Pontuação | Responsável|
 |:--:| ------- | :----: | :----: |
-| #34 | [Criação do Termo de Abertura](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/34) | 2| Roberto|
-| #38 | [Definir nome do projeto](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/38) |5|Toda Equipe|
-| #39 | [Criar o protótipo de baixa fidelidade](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/39)|8| Toda Equipe|
-| #40 | [Estudo sobre ReactJS](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/40) | 3| Eduardo Victor |
-| #36 | [Estudo básico em Flask](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/36) |3| Rodrigo Thiago |
-| #42 | [Revisar documento de arquitetura e adicionar representação arquitetural](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/42) | 2| Rodrigo e Thiago|
-| #43 | [Criar documento de metodologias](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/43) |3| Rafael Roberto |
-| #44 | [Atualizar nome do projeto na documentação](https://github.com/fga-eps-mds/2019.2-arbc/issues/44)|1| Rodrigo e Thiago|
+| #18 | [Definir o escopo do projeto](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/18) |5|Toda Equipe|
+| #19 | [Definir tecnologias](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/19)|8| Toda Equipe|
+| #20 | [Definir as funções de cada um do time](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/20) |5| Toda Equipe |
+| #24 | [Criar Backlog do Produto](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/24) | 5| Toda Equipe|
+| #25 | [Abertura do documento de Arquitetura](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/25) | 2| Rafael e Roberto|
+| #28 | [Abertura do documento de visão](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/28) |3| Rafael|
+| #29 | [Criação de documento do Roadmap](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/29) | 2| Toda equipe|
 
+## 5. Burndown Chart
+<!-- Imagem do Burndown Chart retirada do ZenHub-->
 
-## 4. Visão do _Scrum Master_
+## 6. Retrospectiva da Sprint
+### **Pontos Positivos:**
+* ...
 
-<p align="justify">&emsp;&emsp; </p>
+### **Pontos Negativos:**
+* ...
+
+### **Pontos de melhoria:**
+* ...
+
+## 7. Presença daily
+<!-- Imagem das presenças nas dailys -->
+
+## 8. Visão do _Scrum Master_
+
+<p align="justify">&emsp;&emsp;
+<!-- Descrição do Scrum Master -->
+</p>
+
+<!-- A cada 2 semanas postar o quadro de conhecimento da equipe>
+## Quadro de Conhecimento
+Imagem com a atualização do Quadro de conhecimento
+-->
 
 ------------
-
-## 4. Quadro de Conhecimento
-<!-- ## 1. Relato da _Sprint_
-
-<p align="justify">&emsp;&emsp; Visão geral sobre a sprint.</p>
-
-
-------------
-## 2. Reuniões da _Sprint_ 
-##### Data:
-- DD/MM/2021
-##### Participantes:
-- 
-##### Duração:
-- 
-##### _Temas Debatidos:_
--  
-##### Conclusão: 
-<p align="justify">&emsp;&emsp; </p>
-
-------------
-## 3. Fechamento da _Sprint_
-<p align="justify">&emsp;&emsp; O que foi observado ao final da sprint e o que foi decidido para a sprint seguinte.</p>
-
------------- -->
