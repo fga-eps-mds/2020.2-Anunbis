@@ -2,16 +2,17 @@ from ..dao import student_dao
 from ...ext.database import db
 from sqlalchemy.exc import IntegrityError
 from . import course_services
+from ..entity.student import Student
 
 
 def register_student(student):
-    if course_services.get_course_id(student['id_course']) is None:
+    if course_services.get_course_id(student.id_course) is None:
         return {"message": "Course not found!"}, 404
 
     try:
-        student_bd = student_dao.Student(reg_student=student['reg_student'], name=student['name'],
-                                         id_course=student['id_course'],
-                                         email=student['email'], password=student['password'])
+        student_bd = student_dao.Student(reg_student=student.reg_student, name=student.name,
+                                         id_course=student.id_course,
+                                         email=student.email, password=student.password)
         student_bd.generate_password()
         db.session.add(student_bd)
         db.session.commit()

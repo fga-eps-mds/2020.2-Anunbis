@@ -1,6 +1,5 @@
 from ..dao import course_dao
 
-
 def get_course():
     courses = course_dao.Course.query.all()
     return courses
