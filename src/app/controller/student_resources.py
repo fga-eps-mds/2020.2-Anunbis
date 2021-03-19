@@ -1,7 +1,7 @@
 from flask_restful import Resource
 from flask import request, make_response, jsonify
-from ..schemas.student_schema import StudentSchema
-from ..services import student_services
+from ..view.student_schema import StudentSchema
+from ..model.services import student_services
 
 
 class StudentList(Resource):

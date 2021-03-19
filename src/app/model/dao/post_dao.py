@@ -1,4 +1,4 @@
-from ..ext.database import db
+from ...ext.database import db
 
 DISAGREE_STUDENT_POST = db.Table('DISAGREE_STUDENT_POST',
                                  db.Column('id_post', db.Integer, db.ForeignKey('POST.id_post'),
