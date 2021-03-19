@@ -139,7 +139,7 @@ href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do m
 
 #### 6.1.2 <a name="6_1_2">Atributos</a>
 
-* Um **ESTUDANTE**, para que possa ser cadastrado, tem uma **matrícula**, **nome**, **email** e uma **senha**.
+* Um **Estudante**, para que possa ser cadastrado, tem uma **matrícula**, **nome**, **email** e uma **senha**.
 * Um **Professor**, para ser cadastrado, tem uma **matrícula**, **nome**, **email** e uma **senha** e, para a avaliação, tem uma **nota**.
 * Um **Curso** tem um **nome**.
 * Uma **Disciplina** tem um **nome** e um **codigo**.
@@ -147,6 +147,25 @@ href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do m
 * Uma **Denuncia** tem uma **identificação**, **conteúdo** e um tipo, que pode ser uma denuncia grave, incoerente, ofensiva e outras.
 
 #### 6.1.3 <a name="6_1_3">Relacionamentos</a>
+
+* Um **estudante** pertence a um **curso**, já um **curso** pode ter varios **estudantes**. **Cardinalidade: N:1**
+
+* Uma **estudante** pode fazer várias **avaliações**, mas uma **avaliação** só pode ter um **autor**, que é um **estudante**. **Cardinalidade: 1:N**
+
+* Um **estudante** pode **concordar** ou **discordar** de várias **avaliações**, e uma **avaliação** pode ter varios **alunos** que **concordam** ou **discordam**. **Cardinalidade: N:N**
+
+* Um **estudante** pode **denunciar** várias **avaliações**. **Cardinalidade: 1:N**
+
+* Um **professor** pode ministrar várias **disciplinas** e uma **disciplina** tem vários **professores**. **Cardinalidade: N:N** 
+
+* Um **curso** pode ter várias **disciplinas** e uma **disciplina** pode pertencer a mais de um **curso**. **Cardinalidade: N:N**
+
+* Uma **avaliação** pode sofrer várias **denuncias**. **Cardinalidade: 1:N**
+
+* Uma **avaliação** se refere a um **professor**, e um **professor** pode ter várias **avaliações**. **Cardinalidade: N:1**
+
+* Uma **avaliação** se refere a uma **disciplina**. **Cardinalidade: 1:1**
+
 #### 6.1.4 <a name="6_1_4">Diagrama Entidade Relacionamento</a>
 
 <div style="display:block;text-align:center"><img src="/images/diagramaEntidadeRelacionamento.png" alt="Diagrama Entidade Relacionamento"/></div>
