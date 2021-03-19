@@ -10,7 +10,8 @@ Data|Versão|Descrição|Autor
 02/03|0.6|Adição do tópico React|Victor|
 05/03|0.7|Adição do tópico Visão dos Casos de Uso|Roberto|
 05/03|0.8|Adição do tópico Visão Lógica|Roberto|
-06/03|0.9|Adição do diagrama arquitetural| Thiago|
+06/03|0.9|Adição do diagrama arquitetural|Thiago|
+19/03|1.0|Adição do tópico Visão da Implementação|Thiago|
 
 ## 1 <a name="1">Introdução</a>
 
@@ -123,7 +124,10 @@ href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do m
 
 <p align = "justify">&emsp;&emsp;No banco de dados, serão armazenados os dados dos usuários, dos professores e das disciplinas. Ao procurar por um professor, uma requisição será feita no back-end, e caso algum professor correspondente seja encontrado, será devolvido ao usuário o docente, sua pontuação e seus feedbacks. Essa troca de informação também será igual para os professores usuários.</p>
 
-## 6 <a name="6">Referências</a>
+## 6 <a name="6">Visão da Implementação</a>
+
+
+## 7 <a name="7">Referências</a>
 
 Wilian, João. Flask: o que é e como codar com esse micro framework Python. **GeekHunter**, 2020. Disponivel em: <a href="https://blog.geekhunter.com.br/flask-framework-python/">Flask: o que é e como codar com esse micro framework Python</a>
 
