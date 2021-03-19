@@ -31,7 +31,7 @@ Data|Versão|Descrição|Autor
 |**EPS**| Engenharia de Produto de Software|
 
 ### 1.4 <a name="1_4">Visão Geral</a>
-<p align="justify"> &emsp;&emsp; Este documento é dividido, atualmente, em 6 tópicos, descrevendo de maneira concisa o projeto. Esses tópicos são divididos em:
+<p align="justify"> &emsp;&emsp; Este documento é dividido, atualmente, em 7 tópicos, descrevendo de maneira concisa o projeto. Esses tópicos são divididos em:
 </p>
 
 * Introdução: Fornece uma visão geral do documento inteiro;
@@ -39,6 +39,7 @@ Data|Versão|Descrição|Autor
 * Metas e restrições da arquitetura: Descreve os requisitos e objetivos do software que possui algum impacto sobre a arquitetura.
 * Visão dos Casos de Uso: Descreve as funcionalidades que o usuario poderá efetuar.
 * Visão Lógica: Descreve as interações entre as camadas e as tecnologias.
+* Visão da Implementação: Descreve as implementações das camadas e tecnologias.
 * Referências: Emprega as fontes utilizadas nas pesquisas para relacionar as publicações que foram consultadas e citadas.
 
 ## 2 <a name="2">Representação arquitetural</a>
@@ -126,6 +127,15 @@ href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do m
 
 ## 6 <a name="6">Visão da Implementação</a>
 
+### 6.1 <a name="6_1">Modelagem dos dados</a>
+#### 6.1.1 <a name="6_1_1">Entidades</a>
+#### 6.1.2 <a name="6_1_2">Atributos</a>
+#### 6.1.3 <a name="6_1_3">Relacionamentos</a>
+#### 6.1.4 <a name="6_1_4">Diagrama Entidade Relacionamento</a>
+<div style="display:block;text-align:center"><img src="/images/diagramaEntidadeRelacionamento.png" alt="Diagrama Entidade Relacionamento"/></div>
+
+#### 6.1.4 <a name="6_1_4">Diagrama do Banco de Dados</a>
+<div style="display:block;text-align:center"><img src="/images/diagramaLogicoDados.png" alt="Diagrama Logico dos Dados"/></div>
 
 ## 7 <a name="7">Referências</a>
 
