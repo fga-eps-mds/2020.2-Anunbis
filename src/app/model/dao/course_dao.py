@@ -1,5 +1,5 @@
-from ..ext.database import db
-from .discipline_model import Discipline
+from ...ext.database import db
+from .discipline_dao import Discipline
 
 COURSE_DISCIPLINE = db.Table('COURSE_DISCIPLINE',
                             db.Column('discipline_code', db.String(80), db.ForeignKey(Discipline.discipline_code),

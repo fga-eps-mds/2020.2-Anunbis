@@ -1,4 +1,4 @@
-from ..ext.database import db
+from ...ext.database import db
 from passlib.hash import pbkdf2_sha256
 
 

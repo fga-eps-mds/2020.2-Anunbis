@@ -1,4 +1,4 @@
-from ..ext.database import db
+from ...ext.database import db
 
 PROFESSOR_DISCIPLINE = db.Table('PROFESSOR_DISCIPLINE',
                                 db.Column('discipline_code', db.String(80), db.ForeignKey('DISCIPLINE.discipline_code'),
