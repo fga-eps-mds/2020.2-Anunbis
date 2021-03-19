@@ -54,5 +54,7 @@ Data|Versão|Descrição|Autor
 |EP02|FT07|US19|Eu, como aluno da UnB, desejo avaliar o comentário de terceiros|3|
 |EP02|FT09|US20|Eu, como aluno da UnB, desejo denunciar  um comentário ofensivo |5|
 |EP02|FT09|US21|Eu, como professor da UnB, desejo denunciar  um comentário ofensivo |5|
-|EP01|FT10|US22|Eu, como aluno da UnB, desejo excluir minha conta|3|
-|EP01|FT10|US23|Eu, como professor da UnB, desejo excluir minha conta|3|
+|EP01|FT10|US22|Eu, como aluno da UnB, desejo alterar minha senha|3|
+|EP01|FT10|US23|Eu, como professor da UnB, desejo alterar minha senha|3|
+|EP01|FT10|US24|Eu, como aluno da UnB, desejo excluir minha conta|3|
+|EP01|FT10|US25|Eu, como professor da UnB, desejo excluir minha conta|3|
