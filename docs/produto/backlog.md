@@ -3,7 +3,7 @@
 Data|Versão|Descrição|Autor
 -|-|-|-
 19/02|0.1|Abertura do Documento do Backlog do Produto| Equipe|
-
+19/03|0.2|Atualizando as funcionalidades do Backlog do Produto| Rodrigo|
 
 ## 1. <a name="1">Épicos</a>
 
@@ -17,15 +17,16 @@ Data|Versão|Descrição|Autor
 
 |    Épicos   |    ID   | Descrição | 
 |:---:|:---:|:---:|
-|EP01|FT01|Cadastro e login de usuário|
-|EP03|FT02|Encontrar professor por nome|
-|EP03|FT03|Encontrar professor por disciplina|
-|EP03|FT04|Encontrar disciplina por nome|
-|EP03|FT05|Encontrar disciplina por código|
-|EP02|FT06|Avaliar professor anonimamente|
-|EP03|FT07|Ver avaliações de outros usuários|
-|EP03|FT08|Concordar ou discordar de avaliações|
-|EP03|FT09|Visualizar ranking de professor por disciplina|
+|EP01|FT01|Cadastro de usuário|
+|EP01|FT02|Login de usuário|
+|EP03|FT03|Encontrar professor em pesquisa|
+|EP02|FT04|Avaliação dos professores|
+|EP03|FT05|Ver avaliações de outros usuários|
+|EP03|FT06|Ver avaliações feitas ou recebidas|
+|EP02|FT07|Concordar ou discordar de avaliações|
+|EP03|FT08|Visualizar ranking de professores|
+|EP02|FT09|Denúnciar um comentário|
+|EP01|FT10|Editar própria conta|
 
 ## 3. <a name="3">Histórias de Usuários</a>
 
