@@ -1,7 +1,7 @@
 
 
 class Post:
-    def __init__(self, id_post, reg_student, reg_professor, discipline_code, content, post_date, rating):
+    def __init__(self, id_post, reg_student, reg_professor, discipline_code, content, post_date, rating, is_anonymous):
         self.id_post = id_post
         self.reg_student = reg_student
         self.reg_professor = reg_professor
@@ -9,6 +9,7 @@ class Post:
         self.content = content
         self.post_date = post_date
         self.rating = rating
+        self.is_anonymous = is_anonymous
         self.agrees = None
         self.disagrees = None
 
@@ -67,6 +68,14 @@ class Post:
     @rating.setter
     def rating(self, value):
         self.rating = value
+
+    @property
+    def is_anonymous(self):
+        return self.is_anonymous
+
+    @is_anonymous.setter
+    def is_anonymous(self, value):
+        self.is_anonymous = value
 
     @property
     def agrees(self):
