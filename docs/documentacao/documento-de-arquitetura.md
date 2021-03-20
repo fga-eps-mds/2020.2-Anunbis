@@ -12,6 +12,7 @@ Data|Versão|Descrição|Autor
 05/03|0.8|Adição do tópico Visão Lógica|Roberto|
 06/03|0.9|Adição do diagrama arquitetural|Thiago|
 19/03|1.0|Adição do tópico Visão da Implementação|Thiago|
+20/03|1.1|Atualizando tópico das metas|Rodrigo|
 
 ## 1 <a name="1">Introdução</a>
 
@@ -88,7 +89,7 @@ href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do m
 
 ### 3.1 <a name="3_1">Metas</a>
 
-<p align = "justify">&emsp;&emsp; O projeto deve ter acesso às funções básicas de plataformas web e mobile, para dessa maneira, possibilitar que os usuários compartilhem, entre si, suas experiências com os professores e disciplinas.</p>
+<p align = "justify">&emsp;&emsp; O projeto deve ter acesso às funções básicas de plataformas web, para dessa maneira, possibilitar que os usuários compartilhem, entre si, suas experiências com os professores e disciplinas. O objetivo é ajudar os estudantes a escolherem suas disciplinas, e os professores receberem feedback para melhorarem suas metodologias.</p>
 
 ### 3.2 <a name="3_2">Restrições</a>
 
