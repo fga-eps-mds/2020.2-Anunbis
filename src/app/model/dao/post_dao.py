@@ -22,6 +22,7 @@ class Post(db.Model):
     content = db.Column(db.String(480), nullable=False)
     post_date = db.Column(db.Date, nullable=False)
     rating = db.Column(db.Float, nullable=False)
+    is_anonymous = db.Column(db.Boolean, nullable=False)
     discipline_code = db.Column(db.Integer, db.ForeignKey('DISCIPLINE.discipline_code'), nullable=False)
     agrees = db.relationship('Student', secondary=AGREE_STUDENT_POST, lazy='dynamic')
     disagrees = db.relationship('Student', secondary=DISAGREE_STUDENT_POST, lazy='dynamic')
