@@ -56,6 +56,7 @@ CREATE TABLE IF NOT EXISTS POST (
   post_date date NOT NULL,
   rating float NOT NULL,
   discipline_code varchar(80) NOT NULL DEFAULT '',
+  is_anonymous TINYINT(1) NOT NULL,
   PRIMARY KEY (id_post),
   FOREIGN KEY (discipline_code) REFERENCES DISCIPLINE (discipline_code),
   FOREIGN KEY (reg_student) REFERENCES STUDENT (reg_student),
