@@ -1,13 +1,13 @@
 
 
 class Post:
-    def __init__(self, id_post, reg_student, reg_professor, discipline_code, content, post_date, rating, is_anonymous):
-        self.id_post = id_post
+    def __init__(self, reg_student, reg_professor, discipline_code, content, rating, is_anonymous):
+        self.id_post = None
         self.reg_student = reg_student
         self.reg_professor = reg_professor
         self.discipline_code = discipline_code
         self.content = content
-        self.post_date = post_date
+        self.post_date = None
         self.rating = rating
         self.is_anonymous = is_anonymous
         self.agrees = None

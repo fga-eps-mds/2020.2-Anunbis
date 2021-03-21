@@ -1,4 +1,5 @@
 from ...ext.database import db
+from datetime import date
 
 DISAGREE_STUDENT_POST = db.Table('DISAGREE_STUDENT_POST',
                                  db.Column('id_post', db.Integer, db.ForeignKey('POST.id_post'),
@@ -26,3 +27,6 @@ class Post(db.Model):
     discipline_code = db.Column(db.Integer, db.ForeignKey('DISCIPLINE.discipline_code'), nullable=False)
     agrees = db.relationship('Student', secondary=AGREE_STUDENT_POST, lazy='dynamic')
     disagrees = db.relationship('Student', secondary=DISAGREE_STUDENT_POST, lazy='dynamic')
+
+    def gen_date(self):
+        self.post_date = date.today().isoformat()
