@@ -2,13 +2,14 @@
 USE db_anunbis;
 
 CREATE TABLE IF NOT EXISTS PROFESSOR (
-  reg_professor int UNSIGNED UNIQUE NOT NULL,
+  id_professor int UNSIGNED AUTO_INCREMENT,
+  reg_professor int UNSIGNED UNIQUE,
   `name` varchar(255) NOT NULL,
-  email varchar(255) NOT NULL UNIQUE DEFAULT '',
-  `password` varchar(255) NOT NULL DEFAULT '',
+  email varchar(255) UNIQUE,
+  `password` varchar(255),
   rating float,
-  PRIMARY KEY (reg_professor)
-);
+  PRIMARY KEY (id_professor)
+)ENGINE InnoDB AUTO_INCREMENT = 0;
 
 CREATE TABLE IF NOT EXISTS DISCIPLINE (
   discipline_code varchar(80) NOT NULL DEFAULT '',
@@ -18,10 +19,10 @@ CREATE TABLE IF NOT EXISTS DISCIPLINE (
 
 CREATE TABLE IF NOT EXISTS PROFESSOR_DISCIPLINE (
   discipline_code varchar(80) NOT NULL,
-  reg_professor int UNSIGNED NOT NULL,
-  PRIMARY KEY (discipline_code, reg_professor),
+  id_professor int UNSIGNED NOT NULL,
+  PRIMARY KEY (discipline_code, id_professor),
   FOREIGN KEY (discipline_code)  REFERENCES DISCIPLINE  (discipline_code),
-  FOREIGN KEY (reg_professor)  REFERENCES PROFESSOR  (reg_professor)
+  FOREIGN KEY (id_professor)  REFERENCES PROFESSOR  (id_professor)
 );
       
 CREATE TABLE IF NOT EXISTS COURSE (
@@ -51,7 +52,7 @@ CREATE TABLE IF NOT EXISTS STUDENT (
 CREATE TABLE IF NOT EXISTS POST (
   id_post int UNSIGNED AUTO_INCREMENT,
   reg_student int UNSIGNED DEFAULT NULL,
-  reg_professor int UNSIGNED NOT NULL,
+  id_professor int UNSIGNED NOT NULL,
   content varchar(480) NOT NULL,
   post_date date NOT NULL,
   rating float NOT NULL,
@@ -60,7 +61,7 @@ CREATE TABLE IF NOT EXISTS POST (
   PRIMARY KEY (id_post),
   FOREIGN KEY (discipline_code) REFERENCES DISCIPLINE (discipline_code),
   FOREIGN KEY (reg_student) REFERENCES STUDENT (reg_student),
-  FOREIGN KEY (reg_professor) REFERENCES PROFESSOR (reg_professor)
+  FOREIGN KEY (id_professor) REFERENCES PROFESSOR (id_professor)
 )ENGINE InnoDB AUTO_INCREMENT = 0;
 
 CREATE TABLE IF NOT EXISTS DISAGREE_STUDENT_POST (

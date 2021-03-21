@@ -19,7 +19,7 @@ class Post(db.Model):
 
     id_post = db.Column(db.Integer, nullable=False, primary_key=True, autoincrement=True)
     reg_student = db.Column(db.Integer, db.ForeignKey('STUDENT.reg_student'), nullable=False)
-    reg_professor = db.Column(db.Integer, db.ForeignKey('PROFESSOR.reg_professor'), nullable=False)
+    id_professor = db.Column(db.Integer, db.ForeignKey('PROFESSOR.id_professor'), nullable=False)
     content = db.Column(db.String(480), nullable=False)
     post_date = db.Column(db.Date, nullable=False)
     rating = db.Column(db.Float, nullable=False)

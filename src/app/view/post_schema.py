@@ -8,7 +8,7 @@ class PostSchema(ma.SQLAlchemyAutoSchema):
         model = post_dao.Post
 
     reg_student = fields.Integer(required=True, validate=validate.Range(min=0))
-    reg_professor = fields.Integer(required=True, validate=validate.Range(min=0))
+    id_professor = fields.Integer(required=True, validate=validate.Range(min=0))
     discipline_code = fields.Integer(required=True, validate=validate.Range(min_inclusive=0))
     content = fields.String(required=True, validate=validate.Length(min=0, max=480))
     rating = fields.Float(required=True, validate=validate.Range(min_inclusive=0, max_inclusive=10))
