@@ -31,6 +31,7 @@
 ## 3. <a name="3">Burndown Chart</a>
 <!-- Imagem do Burndown Chart retirada do ZenHub-->
 
+<!-- A partir da Sprint 6>
 ## 4. <a name="4">Velocity Tracking</a>
 <!-- Imagem do Burndown Chart retirada do ZenHub-->
 
