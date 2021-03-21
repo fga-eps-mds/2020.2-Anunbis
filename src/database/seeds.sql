@@ -14,3 +14,19 @@ INSERT INTO DISCIPLINE (discipline_code, name) VALUES ('FGA03', 'Estrutura de Da
 INSERT INTO COURSE_DISCIPLINE (id_course, discipline_code) VALUES(1, 'FGA01');
 INSERT INTO COURSE_DISCIPLINE (id_course, discipline_code) VALUES(1, 'FGA02');
 INSERT INTO COURSE_DISCIPLINE (id_course, discipline_code) VALUES(1, 'FGA03');
+
+INSERT INTO PROFESSOR (id_professor, name) VALUES (1, 'Professor a');
+INSERT INTO PROFESSOR (id_professor, name) VALUES (2, 'Professor b');
+INSERT INTO PROFESSOR (id_professor, name) VALUES (3, 'Professor c');
+
+INSERT INTO PROFESSOR_DISCIPLINE (discipline_code, id_professor) VALUES ('FGA01', 1);
+INSERT INTO PROFESSOR_DISCIPLINE (discipline_code, id_professor) VALUES ('FGA01', 2);
+INSERT INTO PROFESSOR_DISCIPLINE (discipline_code, id_professor) VALUES ('FGA01', 3);
+INSERT INTO PROFESSOR_DISCIPLINE (discipline_code, id_professor) VALUES ('FGA02', 3);
+INSERT INTO PROFESSOR_DISCIPLINE (discipline_code, id_professor) VALUES ('FGA02', 2);
+INSERT INTO PROFESSOR_DISCIPLINE (discipline_code, id_professor) VALUES ('FGA03', 1);
+
+
+
+
+
