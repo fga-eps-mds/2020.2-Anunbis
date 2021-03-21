@@ -9,7 +9,7 @@ def register_post(post):
     if validate is not True:
         return message, status_code
 
-    post_db = post_dao.Post(reg_student=post.reg_student, reg_professor=post.reg_professor,
+    post_db = post_dao.Post(reg_student=post.reg_student, id_professor=post.id_professor,
                             discipline_code=post.discipline_code, content=post.content, rating=post.rating,
                             is_anonymous=post.is_anonymous)
     post_db.gen_date()
@@ -19,7 +19,7 @@ def register_post(post):
 
 
 def __validate_post_relationship(post):
-    if professor_services.get_professor_reg(post.reg_professor) is None:
+    if professor_services.get_professor_id(post.id_professor) is None:
         return False, {'message': "Professor not found!"}, 404
     if student_services.get_student_reg(post.reg_student) is None:
         return False, {'message': "Student not found!"}, 404

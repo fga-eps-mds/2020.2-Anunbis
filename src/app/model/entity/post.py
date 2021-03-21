@@ -1,10 +1,10 @@
 
 
 class Post:
-    def __init__(self, reg_student, reg_professor, discipline_code, content, rating, is_anonymous):
+    def __init__(self, reg_student, id_professor, discipline_code, content, rating, is_anonymous):
         self.id_post = None
         self.reg_student = reg_student
-        self.reg_professor = reg_professor
+        self.id_professor = id_professor
         self.discipline_code = discipline_code
         self.content = content
         self.post_date = None
@@ -27,15 +27,15 @@ class Post:
 
     @reg_student.setter
     def reg_student(self, value):
-        self.reg_professor = value
+        self.id_professor = value
 
     @property
-    def reg_professor(self):
-        return self.reg_professor
+    def id_professor(self):
+        return self.id_professor
 
-    @reg_professor.setter
-    def reg_professor(self, value):
-        self.reg_professor = value
+    @id_professor.setter
+    def id_professor(self, value):
+        self.id_professor = value
 
     @property
     def discipline_code(self):
