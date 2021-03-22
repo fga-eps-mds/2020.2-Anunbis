@@ -2,94 +2,94 @@
 
 class Post:
     def __init__(self, reg_student, id_professor, discipline_code, content, rating, is_anonymous):
-        self.id_post = None
-        self.reg_student = reg_student
-        self.id_professor = id_professor
-        self.discipline_code = discipline_code
-        self.content = content
-        self.post_date = None
-        self.rating = rating
-        self.is_anonymous = is_anonymous
-        self.agrees = None
-        self.disagrees = None
+        self.__id_post = None
+        self.__reg_student = reg_student
+        self.__id_professor = id_professor
+        self.__discipline_code = discipline_code
+        self.__content = content
+        self.__post_date = None
+        self.__rating = rating
+        self.__is_anonymous = is_anonymous
+        self.__agrees = None
+        self.__disagrees = None
 
     @property
     def id_post(self):
-        return self.id_post
+        return self.__id_post
 
     @id_post.setter
     def id_post(self, value):
-        self.id_post = value
+        self.__id_post = value
 
     @property
     def reg_student(self):
-        return self.reg_student
+        return self.__reg_student
 
     @reg_student.setter
     def reg_student(self, value):
-        self.id_professor = value
+        self.__id_professor = value
 
     @property
     def id_professor(self):
-        return self.id_professor
+        return self.__id_professor
 
     @id_professor.setter
     def id_professor(self, value):
-        self.id_professor = value
+        self.__id_professor = value
 
     @property
     def discipline_code(self):
-        return self.discipline_code
+        return self.__discipline_code
 
     @discipline_code.setter
     def discipline_code(self, value):
-        self.discipline_code = value
+        self.__discipline_code = value
 
     @property
     def content(self):
-        return self.content
+        return self.__content
 
     @content.setter
     def content(self, value):
-        self.content = value
+        self.__content = value
 
     @property
     def post_date(self):
-        return self.post_date
+        return self.__post_date
 
     @post_date.setter
     def post_date(self, value):
-        self.post_date = value
+        self.__post_date = value
 
     @property
     def rating(self):
-        return self.rating
+        return self.__rating
 
     @rating.setter
     def rating(self, value):
-        self.rating = value
+        self.__rating = value
 
     @property
     def is_anonymous(self):
-        return self.is_anonymous
+        return self.__is_anonymous
 
     @is_anonymous.setter
     def is_anonymous(self, value):
-        self.is_anonymous = value
+        self.__is_anonymous = value
 
     @property
     def agrees(self):
-        return self.agrees
+        return self.__agrees
 
     @agrees.setter
     def agrees(self, value):
-        self.agrees = value
+        self.__agrees = value
 
     @property
     def disagrees(self):
-        return self.disagrees
+        return self.__disagrees
 
     @disagrees.setter
     def disagrees(self, value):
-        self.disagrees = value
+        self.__disagrees = value
 

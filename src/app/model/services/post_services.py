@@ -26,5 +26,5 @@ def __validate_post_relationship(post):
     if discipline_services.get_discipline_code(post.discipline_code) is None:
         return False, {'message': "Discipline not found!"}, 404
 
-    return True
+    return True, {'message': "Ok!"}, 200
 

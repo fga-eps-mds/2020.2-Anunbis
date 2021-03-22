@@ -10,7 +10,7 @@ class StudentSchema(ma.SQLAlchemySchema):
     reg_student = fields.Integer(required=True, validate=validate.Range(min=0))            
     name = fields.String(required=True, validate=validate.Length(min=2,max=254))
     id_course = fields.Integer(required=True, validate=validate.Range(min=0))    
-    password = fields.String(required=True, validate = validate.Length(min=8,max=100))
+    password = fields.String(required=True, validate = validate.Length(min=8, max=100))
     email = fields.Email(required=True)
 
     @validates("email")
