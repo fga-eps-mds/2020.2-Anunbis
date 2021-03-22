@@ -23,18 +23,17 @@
 <!-- Exemplo -->
 | ID | Issue | Pontuação | Responsável|
 |:--:| ------- | :----: | :----: |
-| #18 | [Definir o escopo do projeto](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/18) |5|Toda Equipe|
-| #19 | [Definir tecnologias](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/19)|8| Toda Equipe|
-| #20 | [Definir as funções de cada um do time](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/20) |5| Toda Equipe |
-| #24 | [Criar Backlog do Produto](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/24) | 5| Toda Equipe|
-| #25 | [Abertura do documento de Arquitetura](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/25) | 2| Rafael e Roberto|
-| #28 | [Abertura do documento de visão](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/28) |3| Rafael|
-| #29 | [Criação de documento do Roadmap](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/29) | 2| Toda equipe|
+| #3 | [Estudando tecnologias HTML, CSS e GIT](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/3) | 5| Toda Equipe|
+| #6 |  [Criar templates de Issues e Pull Requests](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/6) |3| Eduardo e Rafael |
+| #9 | [EStudar Metodologias Ágeis](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/9) |5|Toda Equipe|
+| #13 | [Criar arquivo de contribuição](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/13)|3| Rodrigo e Thiago|
+| #14 | [Criação da Wiki do projeto](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/14) | 3| Eduardo, Rafael e Roberto |
+| #16 | [Colocar a Wiki online usando GitHub Pages](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/16) | 2| Eduardo, Rafael e Roberto|
 
 ### 2.3 <a name="2.3">Pontuação Final</a>
 |Pontuação Total|Pontuação Concluída|Pontuação Não Agregada
 |:-:|:-:|:-:|
-|XX|XX|XX
+|21|21|00
 
 ## 3. <a name="6">Presença daily</a>
 ![image](https://user-images.githubusercontent.com/54644626/111931399-e4e87100-8a99-11eb-95dc-b65bfd54427c.png)

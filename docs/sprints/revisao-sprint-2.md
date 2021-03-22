@@ -2,9 +2,9 @@
 
 ##  1. <a name="1">Visão Geral</a>
 
-| Data de Início | 18/02/2021 |
+| Data de Início | 16/02/2021 |
 |:--|:--:|
-| **Data de Término** | **23/02/2021** |
+| **Data de Término** | **22/02/2021** |
 | **Duração** | **7 dias** |
 
 ## 2. <a name="2">Fechamento da _Sprint_</a>
@@ -15,6 +15,7 @@ A Sprint 2 teve como objetivo geral criar a documentação do projeto. Foi a pri
 <p align="justify">&emsp;&emsp; Pela equipe estar em processo de adaptação com a metodologia scrum, nossas reuniões diárias estão tendo uma duração muito alta então esperamos com o tempo diminuir esse tempo.</p>
 
 <p align="justify">&emsp;&emsp; As expectativas para a próxima sprint são começar a configurar o ambiente de desenvolvimento para começarmos a programar o mais cedo possível a fim de conseguirmos implementar a maior quantidade de funcionalidades no tempo limite.</p>
+
 
 
 ### 2.2 <a name="2.2">Backlog da Sprint</a>
@@ -32,16 +33,28 @@ A Sprint 2 teve como objetivo geral criar a documentação do projeto. Foi a pri
 ### 2.3 <a name="2.3">Pontuação Final</a>
 |Pontuação Total|Pontuação Concluída|Pontuação Não Agregada
 |:-:|:-:|:-:|
-|25|25|00   
+|30|30|00
 
-## 3. <a name="6">Presença daily</a>
+
+## 5. <a name="5">Retrospectiva da Sprint</a>
+### **Pontos Positivos:**
+* Os integrantes estavam todos animados para começar a trabalhar com o tema.
+
+### **Pontos Negativos:**
+* Reuniões muito longas
+
+### **Pontos de melhoria:**
+* Melhorar as reuniões
+
+## 6. <a name="6">Presença daily</a>
 ![image](https://user-images.githubusercontent.com/54644626/111932409-18c49600-8a9c-11eb-9490-306875082312.png)
 
-
-## 4. <a name="7">Visão do _Scrum Master_</a>
+## 7. <a name="7">Visão do _Scrum Master_</a>
 
 <p align="justify">&emsp;&emsp; Até o momento da planning da sprint 2 não tinhamos recebido feedback sobre o tema do nosso grupo, sem o tema não teríamos muito o que fazer, iríamos nos atrasar no projeto. Por esse motivo decidimos de forma independente começar a trabalhar no tema que havíamos proposto que era a avaliação dos professores. Assim essa sprint foi em prol de desenvolver todo o nosso projeto focados no tema que havíamos escolhido. Além de que foi nessa sprint que eu fui elegido de forma unânime como o Chefe ou melhor dizendo Scrum master. </p>
 
 ## 5. Definição de Funções
 
 <img src="/2020.2-Anunbis/images/definicaoFuncao.png" width="500">
+
+
