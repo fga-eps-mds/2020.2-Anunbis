@@ -27,7 +27,6 @@ Data|Versão|Descrição|Autor
 |Abreviação|Significado
 |:-|:-|
 |**MDS**| Métodos de Desenvolvimento de Software|
-|**EPS**| Engenharia de Produto de Software|
 
 ### 1.4 <a name="1_4">Visão Geral</a>
 <p align="justify"> &emsp;&emsp; Este documento é dividido, atualmente, em 6 tópicos, descrevendo de maneira concisa o projeto. Esses tópicos são divididos em:
