@@ -10,8 +10,9 @@ class Professor(db.Model):
     name = db.Column(db.String(255), nullable=False)
     email = db.Column(db.String(255), nullable=False, unique=True, default='')
     password = db.Column(db.String(255), nullable=False, default='')
-    rating = db.Column(db.Float)
     disciplines = db.relationship('Discipline', secondary='PROFESSOR_DISCIPLINE', lazy='dynamic')
+
+    posts = db.relationship('Post', back_populates="professor")
 
     def generate_password(self):
         self.password = pbkdf2_sha256.hash(self.password)
@@ -19,4 +20,12 @@ class Professor(db.Model):
     def verify_password(self, password):
         return pbkdf2_sha256.verify(password, self.password)
 
+    @property
+    def rating(self):
+        if len(self.posts) is 0:
+            return
 
+        soma = 0
+        for post in self.posts:
+            soma += post.rating
+        return soma / len(self.posts)
