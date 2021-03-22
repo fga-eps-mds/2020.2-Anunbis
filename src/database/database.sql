@@ -7,7 +7,6 @@ CREATE TABLE IF NOT EXISTS PROFESSOR (
   `name` varchar(255) NOT NULL,
   email varchar(255) UNIQUE,
   `password` varchar(255),
-  rating float,
   PRIMARY KEY (id_professor)
 )ENGINE InnoDB AUTO_INCREMENT = 0;
 
