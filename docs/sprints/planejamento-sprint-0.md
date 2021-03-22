@@ -1,9 +1,9 @@
 
 ## 1. Visão Geral
 
-| Data de Início | 02/02/2021 |
+| Data de Início | 04/02/2021 |
 |:--|:--:|
-| **Data de Término** | **08/02/2021** |
+| **Data de Término** | **09/02/2021** |
 | **Duração** | **7 dias** |
 
 ## 2. Papéis
