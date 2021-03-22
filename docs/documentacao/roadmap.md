@@ -79,6 +79,6 @@
 | [#85](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/85) | Configurar o React e o Docker no repositório do front-end
 | [#86](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/86) | Configurar a autentificação no back-end
 | [#87](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/87) | Criar repositório para front-end e adicionar arquivos de comunidade
-| [#88](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/88) | Documentar a sprint 5
+| [#88](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/88) | Documentar o planning da sprint 5
 
 
