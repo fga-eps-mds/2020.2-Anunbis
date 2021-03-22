@@ -1,5 +1,13 @@
-<h1><div align="center"><b style="font-family: Arial;"><span style="color:#1D2935">AN</span><span style="color:#FFD700">UNB</span><span style="color:#1D2935">IS</span></b></div></h1>
-<div align="center"><img src="/2020.2-Anunbis/images/logo.png" height="75px" width="350px"></img></div>
+<h1>
+    <div align="center">
+        <b style="font-family: Arial;">
+            <span style="color:#1D2935">AN</span><span style="color:#FFD54F">UNB</span><span style="color:#1D2935">IS</span>
+        </b>
+    </div>
+</h1>
+<div align="center">
+    <img src="https://github.com/fga-eps-mds/2020.2-Anunbis/blob/develop/docs/images/logo.png" height="500px" width="350px"></img>
+    </div>
 
 ## Visão Geral
 
@@ -9,7 +17,7 @@
 
 O back-end é baseado em [Flask](https://flask.palletsprojects.com/en/1.1.x/).
 
-O front-end é baseado em [React-Js](https://reactjs.org/). [Para acessar o repositório clique [aqui](https://github.com/fga-eps-mds/2020.2-Anunbis-Frontend)]
+O front-end é baseado em [React-Js](https://reactjs.org/). (Para acessar o repositório clique [aqui](https://github.com/fga-eps-mds/2020.2-Anunbis-Frontend))
 
 ## Guia de instalação
 Para o pleno funcionamento de todas as funções é necessária a instalação de ambos back-end e front-end.
