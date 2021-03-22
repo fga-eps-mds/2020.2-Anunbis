@@ -1,12 +1,12 @@
 
-## 1. Visão Geral
+## 1. <a name="1">Visão Geral</a>
 
-| Data de Início | 23/02/2021 |
+| Data de Início | 24/02/2021 |
 |:--|:--:|
-| **Data de Término** | **01/03/2021** |
+| **Data de Término** | **03/03/2021** |
 | **Duração** | **7 dias** |
 
-## 2. Papéis
+## 2. <a name="2">Papéis</a>
 
 <table>
     <tr>
@@ -27,16 +27,16 @@
         </tr>
     </table>
     
-## 3. Objetivo da _Sprint 3_
+## 3. <a name="3">Objetivo da _Sprint 3_</a>
 
 <p align="justify">Esta <i>Sprint</i> tem como objetivo:</p>
 
 - Definir um nome para o projeto
-- Configurar o ambiente de desenvolvimento
+- Configurar o docker para o back-end.
 - Estudar o básico tecnologias que serão utilizadas
 - Criar protótipo de baixa fidelidade
 - Atualizar documentação
 
-## 4. Sprint Backlog
+## 4. <a name="4">Sprint Backlog</a>
 
 A Milestone da _Sprint_ 3 encontra-se neste [link](https://github.com/fga-eps-mds/2020.2-Anunbis/milestone/4)

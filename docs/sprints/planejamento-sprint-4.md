@@ -1,12 +1,12 @@
 
-## 1. Visão Geral
+## 1. <a name="1">Visão Geral</a>
 
-| Data de Início | 02/03/2021 |
+| Data de Início | 03/03/2021 |
 |:--|:--:|
-| **Data de Término** | **10/03/2021** |
-| **Duração** | **9 dias** |
+| **Data de Término** | **11/03/2021** |
+| **Duração** | **8 dias** |
 
-## 2. Papéis
+## 2. <a name="2">Papéis</a>
 
 <table>
     <tr>
@@ -27,7 +27,7 @@
         </tr>
     </table>
     
-## 3. Objetivo da _Sprint 4_
+## 3. <a name="3">Objetivo da _Sprint 4_</a>
 
 <p align="justify">Esta <i>Sprint</i> tem como objetivo:</p>
 
@@ -37,13 +37,18 @@
 - Criar Protótipo de alta Fidelidade
 - Criar identidade visual
 - Estudar o Planning Poker
-- Configurar Docker para o Back-end
 - Configurar página inicial
 - Definir a logo do projeto
-- Atualizar documento de Visão(Requisitos e Restrições)
+- Atualizar documento de Visão (Requisitos e Restrições)
 - Criar o documento Canvas
 - Modelar os dados do BD
 
-## 4. Sprint Backlog
+## 4. <a name="4">Sprint Backlog</a>
 
 A Milestone da _Sprint_ 4 encontra-se neste [link](https://github.com/fga-eps-mds/2020.2-Anunbis/milestone/5)
+
+## 5. <a name="5">Débitos Acumulados</a>
+
+| Issue | Descrição |
+|:--|:--:|
+| [**#37**]((https://github.com/fga-eps-mds/2020.2-Anunbis/issues/37)) | Estudar e configurar o docker para o back-end |
