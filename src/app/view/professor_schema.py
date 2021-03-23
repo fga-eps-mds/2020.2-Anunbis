@@ -1,7 +1,7 @@
 from . import ma, post_schema
+from marshmallow import fields, Schema, validates, validate, ValidationError
+from re import match
 from ..model.dao import professor_dao
-from marshmallow import fields
-
 
 class ProfessorSchema(ma.SQLAlchemyAutoSchema):
     class Meta:
@@ -9,3 +9,17 @@ class ProfessorSchema(ma.SQLAlchemyAutoSchema):
         additional = ['rating']
 
     posts = fields.List(fields.Nested(post_schema.PostSchema))
+
+    reg_professor = fields.Integer(required=True, validate=validate.Range(min=0))
+    name = fields.String(required=True, validate=validate.Length(min=2,max=254))
+    password = fields.String(required=True, validate= validate.Length(min=8, max=100))
+    email = fields.Email(required=True)
+
+    @validates("email")
+    def validate_email(self, value):
+        if len(value)>100:
+            raise ValidationError("The email must be lower than 100")
+        elif not match("[0-9]+@unb.br",value.lower()):
+            raise ValidationError("The email must be matricula@unb.br")
+
+
