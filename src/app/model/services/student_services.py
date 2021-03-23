@@ -32,7 +32,7 @@ def __validate_student_relationship(student):
     if course_services.get_course_id(student.id_course) is None:
         return False, {"message": "Course not found!"}, 404
 
-    return True
+    return True, {"message": "Ok!"}, 200
 
 
 def get_student_reg(reg_student):
