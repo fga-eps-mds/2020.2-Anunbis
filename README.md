@@ -7,8 +7,24 @@
 </h1>
 <div align="center">
     <img src="https://github.com/fga-eps-mds/2020.2-Anunbis/blob/develop/docs/images/logo.png" height="500px" width="350px"></img>
-    </div>
+</div>
 
+
+<p align="center">
+    
+[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/fga-eps-mds/2020.2-Anunbis.svg)](http://isitmaintained.com/project/fga-eps-mds/2020.2-Anunbis "Average time to resolve an issue")
+[![Percentage of issues still open](http://isitmaintained.com/badge/open/fga-eps-mds/2020.2-Anunbis.svg)](http://isitmaintained.com/project/fga-eps-mds/2020.2-Anunbis "Percentage of issues still open")
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+</p>
+
+<p align="center">
+    <a href="https://github.com/fga-eps-mds/2020.2-Anunbis-Frontend"><strong>Repositório do Front-End</strong></a>
+</p>
+<p align="center">
+    <a href="https://fga-eps-mds.github.io/2020.2-Anunbis/"><strong>Wiki do Projeto</strong></a>
+</p>
+    
+    
 ## Visão Geral
 
 <p align="justify"> &emsp;&emsp; Um dos motivos que define o sucesso acadêmico de um estudante da Universidade de Brasília são seus professores, pois, dependendo deles, o aluno terá uma experiência diferente em relação à disciplina. </p>
@@ -17,7 +33,7 @@
 
 O back-end é baseado em [Flask](https://flask.palletsprojects.com/en/1.1.x/).
 
-O front-end é baseado em [React-Js](https://reactjs.org/). (Para acessar o repositório clique [aqui](https://github.com/fga-eps-mds/2020.2-Anunbis-Frontend))
+O front-end é baseado em [React-Js](https://reactjs.org/). 
 
 ## Guia de instalação
 Para o pleno funcionamento de todas as funções é necessária a instalação de ambos back-end e front-end.
