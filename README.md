@@ -30,6 +30,12 @@
     <a href="https://fga-eps-mds.github.io/2020.2-Anunbis/como_contribuir/"><strong>Como Contribuir</strong></a>
 </p>
     
+## Principais Funcionalidades
+
+* Encontra Professor(a)
+* Avaliar Professor(a)
+* Ver Avaliações Feitas por Alunos
+* Concordar ou Discordar de Avaliações
     
 ## Visão Geral
 
