@@ -13,6 +13,7 @@ Data|Versão|Descrição|Autor
 06/03|0.9|Adição do diagrama arquitetural|Thiago|
 19/03|1.0|Adição do tópico Visão da Implementação|Thiago|
 20/03|1.1|Atualizando tópico das metas|Rodrigo|
+22/03|1.2|Atualizando Modelagem de dados|Thiago|
 
 ## 1 <a name="1">Introdução</a>
 
@@ -141,11 +142,11 @@ href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do m
 #### 6.1.2 <a name="6_1_2">Atributos</a>
 
 * Um **Estudante**, para que possa ser cadastrado, tem uma **matrícula**, **nome**, **email** e uma **senha**.
-* Um **Professor**, para ser cadastrado, tem uma **matrícula**, **nome**, **email** e uma **senha** e, para a avaliação, tem uma **nota**.
+* Um **Professor** tem uma **matrícula**, **identificação**, **nome**, **email** e uma **senha**.
 * Um **Curso** tem um **nome**.
 * Uma **Disciplina** tem um **nome** e um **codigo**.
-* Uma **Avaliação**, para ser cadastrada, tem uma **identificação**, **conteúdo**, **data de postagem** e uma **nota** sobre o professor.
-* Uma **Denuncia** tem uma **identificação**, **conteúdo** e um tipo, que pode ser uma denuncia grave, incoerente, ofensiva e outras.
+* Uma **Avaliação**, para ser cadastrada, tem uma **identificação**, **conteúdo**, **data de postagem**, se é **anônima** ou não e uma **nota** sobre o professor.
+* Uma **Denuncia** tem uma **identificação**, **conteúdo** e um **tipo**, que pode ser uma denuncia grave, incoerente, ofensiva e outras.
 
 #### 6.1.3 <a name="6_1_3">Relacionamentos</a>
 
