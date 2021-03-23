@@ -1,6 +1,6 @@
 
 
-class professor:
+class Professor:
     def __init__(self, reg_professor, name, email, password):
         self.__reg_professor = reg_professor
         self.__name = name
