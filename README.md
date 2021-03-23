@@ -26,6 +26,9 @@
 <p align="center">
     <a href="https://fga-eps-mds.github.io/2020.2-Anunbis/"><strong>Wiki do Projeto</strong></a>
 </p>
+<p align="center">
+    <a href="https://fga-eps-mds.github.io/2020.2-Anunbis/como_contribuir/"><strong>Como Contribuir</strong></a>
+</p>
     
     
 ## Visão Geral
@@ -53,7 +56,7 @@ Clonar o repositório:
 
 Execução do conteiner:
 
-`docker-compose up --build`
+`docker-compose up`
 
 Acesso  a aplicação:
 
@@ -67,7 +70,7 @@ Clonar o repositório:
 
 Execução do conteiner:
 
-`docker-compose up --build`
+`docker-compose up`
 
 Acesso a aplicação:
 
