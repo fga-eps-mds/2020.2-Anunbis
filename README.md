@@ -1,3 +1,8 @@
+
+<div align="center">
+    <img src="https://github.com/fga-eps-mds/2020.2-Anunbis/blob/develop/docs/images/logo.png" height="500px" width="350px"></img>
+</div>
+
 <h1>
     <div align="center">
         <b style="font-family: Arial;">
@@ -5,16 +10,14 @@
         </b>
     </div>
 </h1>
-<div align="center">
-    <img src="https://github.com/fga-eps-mds/2020.2-Anunbis/blob/develop/docs/images/logo.png" height="500px" width="350px"></img>
-</div>
-
 
 <p align="center">
-    
-[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/fga-eps-mds/2020.2-Anunbis.svg)](http://isitmaintained.com/project/fga-eps-mds/2020.2-Anunbis "Average time to resolve an issue")
-[![Percentage of issues still open](http://isitmaintained.com/badge/open/fga-eps-mds/2020.2-Anunbis.svg)](http://isitmaintained.com/project/fga-eps-mds/2020.2-Anunbis "Percentage of issues still open")
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+    <a href="http://isitmaintained.com/project/fga-eps-mds/2020.2-Anunbis">
+    <img alt="Average time to resolve an issue" src="http://isitmaintained.com/badge/resolution/fga-eps-mds/2020.2-Anunbis.svg">
+    <a href="http://isitmaintained.com/project/fga-eps-mds/2020.2-Anunbis">
+    <img alt="Percentage of issues still open" src="http://isitmaintained.com/badge/open/fga-eps-mds/2020.2-Anunbis.svg">
+    <a href="https://www.gnu.org/licenses/gpl-3.0">
+    <img alt="License: GPL v3" src="https://img.shields.io/badge/License-GPLv3-blue.svg">
 </p>
 
 <p align="center">
