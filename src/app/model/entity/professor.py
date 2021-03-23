@@ -6,8 +6,6 @@ class Professor:
         self.__name = name
         self.__email = email
         self.__password = password
-        self.__post_agrees = None
-        self.__post_disagrees = None
 
     @property
     def reg_professor(self):
@@ -41,18 +39,3 @@ class Professor:
     def password(self, password):
         self.__password = password
 
-    @property
-    def post_agrees(self):
-        return self.__post_agrees
-
-    @post_agrees.setter
-    def post_agrees(self, post_agrees):
-        self.__post_agrees = post_agrees
-
-    @property
-    def post_disagrees(self):
-        return self.__post_disagrees
-
-    @post_disagrees.setter
-    def post_disagrees(self, post_disagrees):
-        self.__post_disagrees = post_disagrees
