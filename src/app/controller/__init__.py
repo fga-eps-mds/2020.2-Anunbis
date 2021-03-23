@@ -17,6 +17,7 @@ def init_app(app):
     api.add_resource(student_resources.StudentList, "/student")
     api.add_resource(post_resources.PostList, "/post")
     api.add_resource(professor_resources.ProfessorDetail, "/professor/<string:name>")
+    api.add_resource(professor_resources.ProfessorList, "/professor")
 
     app.register_blueprint(bp)
 
