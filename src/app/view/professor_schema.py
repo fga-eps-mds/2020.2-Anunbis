@@ -10,6 +10,7 @@ class ProfessorSchema(ma.SQLAlchemyAutoSchema):
 
     posts = fields.List(fields.Nested(post_schema.PostSchema))
 
+    id_professor = fields.Integer()
     reg_professor = fields.Integer(required=True, validate=validate.Range(min=0))
     name = fields.String(required=True, validate=validate.Length(min=2,max=254))
     password = fields.String(required=True, validate= validate.Length(min=8, max=100))
@@ -19,5 +20,5 @@ class ProfessorSchema(ma.SQLAlchemyAutoSchema):
     def validate_email(self, value):
         if len(value)>100:
             raise ValidationError("The email must be lower than 100")
-        elif not match("[0-9]+@unb.br",value.lower()):
-            raise ValidationError("The email must be matricula@unb.br")
+        elif not match("[a-z . 0-9]+@unb.br",value.lower()):
+            raise ValidationError("The email must be name(matricula)@unb.br")
