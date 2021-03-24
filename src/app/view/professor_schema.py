@@ -21,5 +21,3 @@ class ProfessorSchema(ma.SQLAlchemyAutoSchema):
             raise ValidationError("The email must be lower than 100")
         elif not match("[0-9]+@unb.br",value.lower()):
             raise ValidationError("The email must be matricula@unb.br")
-
-

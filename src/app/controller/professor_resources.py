@@ -27,5 +27,3 @@ class ProfessorList(Resource):
                                     email=email, password=password)
             message, status = professor_services.register_professor(professor)
             return make_response(jsonify(message), status)
-
-

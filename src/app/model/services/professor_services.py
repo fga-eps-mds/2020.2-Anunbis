@@ -26,5 +26,9 @@ def register_professor(professor):
 
 def get_professor_reg(reg_professor):
     professor = professor_dao.Professor.query.filter_by(reg_professor=reg_professor).first()
+
+
+def get_professor_id(id_professor):
+    professor = professor_dao.Professor.query.filter_by(id_professor=id_professor).first()
     return professor
 

@@ -1,7 +1,6 @@
 from ...ext.database import db
 from passlib.hash import pbkdf2_sha256
 
-
 class Professor(db.Model):
     __tablename__ = "PROFESSOR"
 
