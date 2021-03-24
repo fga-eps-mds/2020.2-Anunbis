@@ -8,4 +8,4 @@ class ProfessorSchema(ma.SQLAlchemyAutoSchema):
         model = professor_dao.Professor
         additional = ['rating']
 
-    posts = fields.List(fields.Nested(post_schema.PostSchema))
+    posts = fields.List(fields.Nested(post_schema.PostSchema(exclude=['discipline_code', 'reg_student'])))
