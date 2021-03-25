@@ -1,4 +1,5 @@
 from ..dao import professor_dao
+
 from ...ext.database import db
 from sqlalchemy.exc import IntegrityError
 from . import course_services
@@ -54,6 +55,7 @@ def get_professor_reg(reg_professor):
     return professor
 
 
+
 def get_professor_id(id_professor):
     professor = professor_dao.Professor.query.filter_by(id_professor=id_professor).first()
     return professor
@@ -61,3 +63,4 @@ def get_professor_id(id_professor):
 
 def __is_professor_made_by_admin(professor_bd):
     return professor_bd.email is None
+

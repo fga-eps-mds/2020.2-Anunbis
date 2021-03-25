@@ -29,8 +29,13 @@ class Post(db.Model):
 
     agrees = db.relationship('Student', secondary=AGREE_STUDENT_POST, lazy='dynamic')
     disagrees = db.relationship('Student', secondary=DISAGREE_STUDENT_POST, lazy='dynamic')
+
+    
     professor = db.relationship(professor_dao.Professor, back_populates="posts")
 
     def gen_date(self):
         self.post_date = date.today().isoformat()
 
+
+    def gen_date(self):
+        self.post_date = date.today().isoformat()

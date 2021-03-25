@@ -24,6 +24,12 @@ def register_student(student):
     return {"message": "Invalid request"}, 400
 
 
+
+def get_student_email(email):
+    student = student_dao.Student.query.filter_by(email=email).first()
+    return student
+
+
 def __validate_student_relationship(student):
     if course_services.get_course_id(student.id_course) is None:
         return False, {"message": "Course not found!"}, 404
