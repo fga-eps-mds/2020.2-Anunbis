@@ -21,3 +21,8 @@ def register_student(student):
         return {"message": "Student already registered"}, 409
 
     return {"message": "Invalid request"}, 400
+
+
+def get_student_email(email):
+    student = student_dao.Student.query.filter_by(email=email).first()
+    return student
