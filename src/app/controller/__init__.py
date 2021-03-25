@@ -15,7 +15,6 @@ def init_app(app):
     api.add_resource(home_resources.HomeResource, "/")
     api.add_resource(course_resources.CourseList, "/course")
     api.add_resource(student_resources.StudentList, "/student")
-
     api.add_resource(login_resources.LoginList, "/login")
 
     app.register_blueprint(bp)
