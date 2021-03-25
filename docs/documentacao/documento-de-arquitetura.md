@@ -147,7 +147,7 @@ href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do m
 * Curso
 * Disciplina
 * Avaliação
-* Denuncia
+* Denúncia
 
 #### 6.1.2 <a name="6_1_2">Atributos</a>
 
@@ -156,7 +156,7 @@ href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do m
 * Um **Curso** tem um **nome**.
 * Uma **Disciplina** tem um **nome** e um **codigo**.
 * Uma **Avaliação**, para ser cadastrada, tem uma **identificação**, **conteúdo**, **data de postagem**, se é **anônima** ou não e uma **nota** sobre o professor.
-* Uma **Denuncia** tem uma **identificação**, **conteúdo** e um **tipo**, que pode ser uma denuncia grave, incoerente, ofensiva e outras.
+* Uma **Denúncia** tem uma **identificação**, **conteúdo** e um **tipo**, que pode ser uma denuncia grave, incoerente, ofensiva e outras.
 
 #### 6.1.3 <a name="6_1_3">Relacionamentos</a>
 
