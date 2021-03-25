@@ -1,4 +1,5 @@
 from ...ext.database import db
+from .professor_dao import Professor
 
 PROFESSOR_DISCIPLINE = db.Table('PROFESSOR_DISCIPLINE',
                                 db.Column('discipline_code', db.String(80), db.ForeignKey('DISCIPLINE.discipline_code'),
@@ -12,5 +13,5 @@ class Discipline(db.Model):
 
     discipline_code = db.Column(db.String(80), nullable=False, default='', primary_key=True)
     name = db.Column(db.String(255), nullable=False, default='')
-    professors = db.relationship('Professor', secondary=PROFESSOR_DISCIPLINE, lazy='dynamic')
+    professors = db.relationship(Professor, secondary=PROFESSOR_DISCIPLINE, lazy='dynamic')
     courses = db.relationship('Course', secondary='COURSE_DISCIPLINE', lazy='dynamic')

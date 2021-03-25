@@ -36,5 +36,5 @@ def __validate_student_relationship(student):
 
 
 def get_student_reg(reg_student):
-    student = student_dao.Student.query.filter_by(reg_student=reg_student)
+    student = student_dao.Student.query.filter_by(reg_student=reg_student).first()
     return student

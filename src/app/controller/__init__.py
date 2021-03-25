@@ -11,11 +11,11 @@ def init_app(app):
     auth.init_app(app)
     cors.init_app(app)
 
-    from . import home_resources, course_resources, student_resources, login_resources
+    from . import home_resources, course_resources, student_resources, login_resources,  post_resources
     api.add_resource(home_resources.HomeResource, "/")
     api.add_resource(course_resources.CourseList, "/course")
     api.add_resource(student_resources.StudentList, "/student")
-
+    api.add_resource(post_resources.PostList, "/post")
     api.add_resource(login_resources.LoginList, "/login")
 
     app.register_blueprint(bp)
