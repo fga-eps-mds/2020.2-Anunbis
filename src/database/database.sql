@@ -3,7 +3,7 @@ USE db_anunbis;
 
 CREATE TABLE IF NOT EXISTS PROFESSOR (
   id_professor int UNSIGNED AUTO_INCREMENT,
-  reg_professor int UNSIGNED UNIQUE,
+  reg_professor bigint UNSIGNED UNIQUE,
   `name` varchar(255) NOT NULL,
   email varchar(255) UNIQUE,
   `password` varchar(255),
