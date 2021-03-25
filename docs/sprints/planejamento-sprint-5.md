@@ -1,12 +1,12 @@
 
-## 1. Visão Geral
+## 1. <a name="1">Visão Geral</a>
 
 | Data de Início | 11/03/2021 |
 |:--|:--:|
-| **Data de Término** | **17/03/2021** |
+| **Data de Término** | **18/03/2021** |
 | **Duração** | **7 dias** |
 
-## 2. Papéis
+## 2. <a name="2">Papéis</a>
 
 <table>
     <tr>
@@ -27,7 +27,7 @@
         </tr>
     </table>
     
-## 3. Objetivo da _Sprint 5_
+## 3. <a name="3">Objetivo da _Sprint 5_</a>
 
 <p align="justify">Esta <i>Sprint</i> tem como objetivo:</p>
 
@@ -36,8 +36,7 @@
 - Customização do ghpages de acordo com identidade visual
 - Configurar e aprender sobre autenticação back-end
 - Implementar US01 - Cadastro de aluno
-- Implementar US02 - Cadastro de professor
 
-## 4. Sprint Backlog
+## 4. <a name="4">Sprint Backlog</a>
 
 A Milestone da _Sprint_ 5 encontra-se neste [link](https://github.com/fga-eps-mds/2020.2-Anunbis/milestone/6)

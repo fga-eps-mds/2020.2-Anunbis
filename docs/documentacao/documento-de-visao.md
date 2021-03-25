@@ -45,10 +45,10 @@ ___
 
 |**Questão**|**Informações do Produto**|
 |:-|:-|
-|**O Problema é**|Falta de conhecimento prévio dos professores e das disciplinas.|
+|**O Problema é**|Falta de conhecimento prévio sobre os professores e as disciplinas.|
 |**Que afeta**|A comunidade acadêmica. |
 |**Cujo impacto é**|O aluno não encontrar uma metodologia de ensino compatível com si mesmo.|
-|**Uma boa solução seria**|Uma aplicação que compartilha as experiências dos alunos com as disciplinas e professores entre si.|
+|**Uma boa solução seria**|Uma aplicação que permita os alunos compartilharem entre si as experiências com as disciplinas e professores.|
 
 ### 2.3 <a name="2_3">Descrição da Posição do Produto</a>
 
@@ -74,6 +74,7 @@ ___
 
 * Visualizar/Fazer pontuação dos professores;
 * Visualizar/Fazer comentários contendo feedbacks dos professores;
+* Denunciar avaliações feitas por outros alunos;
 * Visualizar quantidade de alunos que concordam e discordam desses comentários;
 * Concordar ou discordar de um comentário de outro discente;
 * Pesquisar os melhores professores, por pontuação, para suas disciplinas;
@@ -85,6 +86,7 @@ ___
 
 * Visualizar os feedbacks dos outros alunos em relação às suas metodologias;
 * Visualizar a sua pontuação na aplicação.
+* Denunciar avaliações feitas por alunos;
 
 ## 6 <a name="6">Restrições</a>
 

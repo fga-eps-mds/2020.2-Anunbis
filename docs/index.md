@@ -8,7 +8,7 @@
 ## Visão Geral
 <p align="justify"> &emsp;&emsp; Um dos motivos que define o sucesso acadêmico de um estudante da Universidade de Brasília são seus professores, pois, dependendo deles, o aluno terá uma experiência diferente em relação à disciplina. Alguns professores cobram mais e outros cobram menos, de fato o aprendizado de um estudante não depende apenas dele mesmo e sim de um conjunto de fatores incluindo o seu professor.</p>
 
-<p align = "justify"> &emsp;&emsp; Pensando em melhorar a experiência dos alunos com seus professores, o Anunbis permite que estudantes da UnB avaliem os professores aos quais já estudaram, disponibilizando esse feedback aos outros discentes e também aos docentes. Dessa forma, tanto os professores quanto os alunos podem tomar as melhores decisões. </p>
+<p align = "justify"> &emsp;&emsp; Pensando em melhorar a experiência dos alunos com seus professores, o Anunbis permite que estudantes da UnB avaliem os professores com que já estudaram, disponibilizando esse feedback aos outros discentes e também aos docentes. Dessa forma, tanto os professores quanto os alunos podem tomar as melhores decisões. </p>
 
 ## Links
 * [Repositório front-end](https://github.com/fga-eps-mds/2020.2-Anunbis-Frontend)
