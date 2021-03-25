@@ -36,9 +36,10 @@ def __modify_professor(professor_bd, professor):
         db.session.commit()
         return {"message": "Professor registered sucessfully"}, 201
     except IntegrityError:
-        return {"message": "Student already registered"}, 409
+        return {"message": "Professor already registered"}, 409
 
     return {"message": "Invalid request"}, 400
+
 
 def __build_professor(professor):
         professor_bd = professor_dao.Professor(name=professor.name, reg_professor=professor.reg_professor,

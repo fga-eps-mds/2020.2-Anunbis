@@ -1,4 +1,4 @@
-from . import ma, post_schema
+from . import ma, post_schema, discipline_schema
 from marshmallow import fields, Schema, validates, validate, ValidationError
 from re import match
 from ..model.dao import professor_dao
