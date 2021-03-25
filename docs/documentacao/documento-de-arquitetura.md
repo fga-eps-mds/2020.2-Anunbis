@@ -10,7 +10,11 @@ Data|Versão|Descrição|Autor
 02/03|0.6|Adição do tópico React|Victor|
 05/03|0.7|Adição do tópico Visão dos Casos de Uso|Roberto|
 05/03|0.8|Adição do tópico Visão Lógica|Roberto|
-06/03|0.9|Adição do diagrama arquitetural| Thiago|
+06/03|0.9|Adição do diagrama arquitetural|Thiago|
+19/03|1.0|Adição do tópico Visão da Implementação|Thiago|
+20/03|1.1|Atualizando tópico das metas|Rodrigo|
+22/03|1.2|Atualizando Modelagem de dados|Thiago|
+24/03|1.3|Adição dos diagramas de pacotes|Rafael e Roberto|
 
 ## 1 <a name="1">Introdução</a>
 
@@ -29,7 +33,7 @@ Data|Versão|Descrição|Autor
 |**MDS**| Métodos de Desenvolvimento de Software|
 
 ### 1.4 <a name="1_4">Visão Geral</a>
-<p align="justify"> &emsp;&emsp; Este documento é dividido, atualmente, em 6 tópicos, descrevendo de maneira concisa o projeto. Esses tópicos são divididos em:
+<p align="justify"> &emsp;&emsp; Este documento é dividido, atualmente, em 7 tópicos, descrevendo de maneira concisa o projeto. Esses tópicos são divididos em:
 </p>
 
 * Introdução: Fornece uma visão geral do documento inteiro;
@@ -37,6 +41,7 @@ Data|Versão|Descrição|Autor
 * Metas e restrições da arquitetura: Descreve os requisitos e objetivos do software que possui algum impacto sobre a arquitetura.
 * Visão dos Casos de Uso: Descreve as funcionalidades que o usuario poderá efetuar.
 * Visão Lógica: Descreve as interações entre as camadas e as tecnologias.
+* Visão da Implementação: Descreve as implementações das camadas e tecnologias.
 * Referências: Emprega as fontes utilizadas nas pesquisas para relacionar as publicações que foram consultadas e citadas.
 
 ## 2 <a name="2">Representação arquitetural</a>
@@ -70,22 +75,22 @@ href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do m
 
 <!-- <p align = "justify">&emsp;&emsp;Sendo assim, o SQLAlchemy é capaz de mediar todas as tarefas necessárias, como por exemplo, criar tabelas, relacionamentos, realizar  consultas, adicionar e remover informações, para o pleno funcionamento desse projeto.</p> -->
 
-<!-- ### 2.4 <a name="3_4">Modelo MVC</a>
+### 2.4 <a name="3_4">Modelo MVC</a>
 <p align="justify">&emsp;&emsp;É um modelo para a organização do software do projeto, sendo ele um padrão de arquitetura de software que contribui para melhorar a performance do programa, tornando-o mais produtivo. Essa arquitetura é baseada na separação do código entre Modelo, controle e visão. Sendo assim, esse modelo é utilizado no back-end da aplicação. </p>
 
 <p align="justify">&emsp;&emsp; O pacote ‘modelo’ é responsável por gerenciar os dados, determinando suas funções, lógicas e o padrão de organização que será apresentado ao banco de dados. </p>
 <p align="justify">&emsp;&emsp;O pacote ‘controle’ é responsável por ser o intermediador das requisições realizadas pelo pacote ‘visão’ e o ‘modelo’, processando os dados e repassando para seus respectivos destinos.</p>
-<p align="justify">&emsp;&emsp;O pacote ‘Visão’ apresenta as informações ao usuário, sendo o local por onde o usuário irá interagir. Nessa camada é onde botões, mensagens e interações com o usuário são elaboradas, onde são capturadas e disponibilizadas informações para o usuário.</p>
+<p align="justify">&emsp;&emsp;O pacote ‘Visão’ apresenta as informações ao usuário, sendo o local por onde o usuário irá interagir. Nessa camada é onde interações com o usuário são elaboradas, são capturadas, validadas e disponibilizadas. Tudo isso por meio do JSON.</p>
 
-<p align="justify">&emsp;&emsp;Essa arquitetura gera inúmeros benefícios ao projeto, a camada de controle por exemplo, serve como um filtro de segurança, pois impede que informações incorretas cheguem até a camada modelo. Contribui com a organização, pois possui fácil leitura e eventuais erros são mais fáceis de serem localizados. Além de que, essa arquitetura de camadas permite que vários programadores trabalhem ao mesmo tempo em diferentes camadas, contribuindo para o desenvolvimento do projeto.</p>
+<p align="justify">&emsp;&emsp;Essa arquitetura gera inúmeros benefícios ao projeto, a camada de controle, por exemplo, serve como um filtro de segurança, pois impede que informações incorretas cheguem até a camada modelo. Contribui com a organização, pois possui fácil leitura e eventuais erros são mais fáceis de serem localizados. Além disso, essa arquitetura de camadas permite que vários programadores trabalhem ao mesmo tempo em diferentes camadas, contribuindo para o desenvolvimento do projeto.</p>
 
 <div style="display:block;text-align:center"><a style="text-align:center" href="https://edisciplinas.usp.br/pluginfile.php/4632609/mod_resource/content/1/5%20Arquitetura%20MVC.pdf"><img src="/2020.2-Anunbis/images/arquiteturaMVCBackEnd.png" alt="representação da arquitetura MVC no back-end"></a></div>
--->
+
 ## 3 <a name="3">Metas e Restrições de Arquitetura</a>
 
 ### 3.1 <a name="3_1">Metas</a>
 
-<p align = "justify">&emsp;&emsp; O projeto deve ter acesso às funções básicas de plataformas web e mobile, para dessa maneira, possibilitar que os usuários compartilhem, entre si, suas experiências com os professores e disciplinas.</p>
+<p align = "justify">&emsp;&emsp; O projeto deve ter acesso às funções básicas de plataformas web, para dessa maneira, possibilitar que os usuários compartilhem, entre si, suas experiências com os professores e disciplinas. O objetivo é ajudar os estudantes a escolherem suas disciplinas, e os professores receberem feedback para melhorarem suas metodologias.</p>
 
 ### 3.2 <a name="3_2">Restrições</a>
 
@@ -122,7 +127,65 @@ href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do m
 
 <p align = "justify">&emsp;&emsp;No banco de dados, serão armazenados os dados dos usuários, dos professores e das disciplinas. Ao procurar por um professor, uma requisição será feita no back-end, e caso algum professor correspondente seja encontrado, será devolvido ao usuário o docente, sua pontuação e seus feedbacks. Essa troca de informação também será igual para os professores usuários.</p>
 
-## 6 <a name="6">Referências</a>
+### 5.1 <a name="5_1">Diagrama de Pacotes</a>
+
+#### 5.1.1 <a name="5_1_1">Front-End</a>
+<div style="display:block;text-align:center"><img src="/2020.2-Anunbis/images/Diagrama_Pacotes_FrontEnd.png" alt="Diagrama de pacotes Front-End"/></div>
+
+#### 5.1.2 <a name="5_1_1">Back-End</a>
+<div style="display:block;text-align:center"><img src="/2020.2-Anunbis/images/Diagrama_Pacotes_BackEnd.png" alt="Diagrama de pacotes Back-End"/></div>
+
+
+## 6 <a name="6">Visão da Implementação</a>
+
+### 6.1 <a name="6_1">Modelagem dos dados</a>
+#### 6.1.1 <a name="6_1_1">Entidades</a>
+
+* Estudante
+* Professor
+* Curso
+* Disciplina
+* Avaliação
+* Denúncia
+
+#### 6.1.2 <a name="6_1_2">Atributos</a>
+
+* Um **Estudante**, para que possa ser cadastrado, tem uma **matrícula**, **nome**, **email** e uma **senha**.
+* Um **Professor** tem uma **matrícula**, **identificação**, **nome**, **email** e uma **senha**.
+* Um **Curso** tem um **nome**.
+* Uma **Disciplina** tem um **nome** e um **codigo**.
+* Uma **Avaliação**, para ser cadastrada, tem uma **identificação**, **conteúdo**, **data de postagem**, se é **anônima** ou não e uma **nota** sobre o professor.
+* Uma **Denúncia** tem uma **identificação**, **conteúdo** e um **tipo**, que pode ser uma denuncia grave, incoerente, ofensiva e outras.
+
+#### 6.1.3 <a name="6_1_3">Relacionamentos</a>
+
+* Um **estudante** pertence a um **curso**, já um **curso** pode ter varios **estudantes**. **Cardinalidade: N:1**
+
+* Uma **estudante** pode fazer várias **avaliações**, mas uma **avaliação** só pode ter um **autor**, que é um **estudante**. **Cardinalidade: 1:N**
+
+* Um **estudante** pode **concordar** ou **discordar** de várias **avaliações**, e uma **avaliação** pode ter varios **alunos** que **concordam** ou **discordam**. **Cardinalidade: N:N**
+
+* Um **estudante** pode **denunciar** várias **avaliações**. **Cardinalidade: 1:N**
+
+* Um **professor** pode ministrar várias **disciplinas** e uma **disciplina** tem vários **professores**. **Cardinalidade: N:N** 
+
+* Um **curso** pode ter várias **disciplinas** e uma **disciplina** pode pertencer a mais de um **curso**. **Cardinalidade: N:N**
+
+* Uma **avaliação** pode sofrer várias **denuncias**. **Cardinalidade: 1:N**
+
+* Uma **avaliação** se refere a um **professor**, e um **professor** pode ter várias **avaliações**. **Cardinalidade: N:1**
+
+* Uma **avaliação** se refere a uma **disciplina**. **Cardinalidade: 1:1**
+
+#### 6.1.4 <a name="6_1_4">Diagrama Entidade Relacionamento</a>
+
+<div style="display:block;text-align:center"><img src="/2020.2-Anunbis/images/diagramaEntidadeRelacionamento.png" alt="Diagrama Entidade Relacionamento"/></div>
+
+#### 6.1.4 <a name="6_1_4">Diagrama do Banco de Dados</a>
+
+<div style="display:block;text-align:center"><img src="/2020.2-Anunbis/images/diagramaLogicoDados.png" alt="Diagrama Logico dos Dados"/></div>
+
+## 7 <a name="7">Referências</a>
 
 Wilian, João. Flask: o que é e como codar com esse micro framework Python. **GeekHunter**, 2020. Disponivel em: <a href="https://blog.geekhunter.com.br/flask-framework-python/">Flask: o que é e como codar com esse micro framework Python</a>
 
