@@ -14,6 +14,7 @@ Data|Versão|Descrição|Autor
 19/03|1.0|Adição do tópico Visão da Implementação|Thiago|
 20/03|1.1|Atualizando tópico das metas|Rodrigo|
 22/03|1.2|Atualizando Modelagem de dados|Thiago|
+24/03|1.3|Adição dos diagramas de pacotes|Rafael e Roberto|
 
 ## 1 <a name="1">Introdução</a>
 
@@ -127,6 +128,15 @@ href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do m
 
 <p align = "justify">&emsp;&emsp;No banco de dados, serão armazenados os dados dos usuários, dos professores e das disciplinas. Ao procurar por um professor, uma requisição será feita no back-end, e caso algum professor correspondente seja encontrado, será devolvido ao usuário o docente, sua pontuação e seus feedbacks. Essa troca de informação também será igual para os professores usuários.</p>
 
+### 5.1 <a name="5_1">Diagrama de Pacotes</a>
+
+#### 5.1.1 <a name="5_1_1">Front-End</a>
+<div style="display:block;text-align:center"><img src="/2020.2-Anunbis/images/Diagrama_Pacotes_FrontEnd.png" alt="Diagrama de pacotes Front-End"/></div>
+
+#### 5.1.2 <a name="5_1_1">Back-End</a>
+<div style="display:block;text-align:center"><img src="/2020.2-Anunbis/images/Diagrama_Pacotes_BackEnd.png" alt="Diagrama de pacotes Back-End"/></div>
+
+
 ## 6 <a name="6">Visão da Implementação</a>
 
 ### 6.1 <a name="6_1">Modelagem dos dados</a>
@@ -170,11 +180,11 @@ href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do m
 
 #### 6.1.4 <a name="6_1_4">Diagrama Entidade Relacionamento</a>
 
-<div style="display:block;text-align:center"><img src="/images/diagramaEntidadeRelacionamento.png" alt="Diagrama Entidade Relacionamento"/></div>
+<div style="display:block;text-align:center"><img src="/2020.2-Anunbis/images/diagramaEntidadeRelacionamento.png" alt="Diagrama Entidade Relacionamento"/></div>
 
 #### 6.1.4 <a name="6_1_4">Diagrama do Banco de Dados</a>
 
-<div style="display:block;text-align:center"><img src="/images/diagramaLogicoDados.png" alt="Diagrama Logico dos Dados"/></div>
+<div style="display:block;text-align:center"><img src="/2020.2-Anunbis/images/diagramaLogicoDados.png" alt="Diagrama Logico dos Dados"/></div>
 
 ## 7 <a name="7">Referências</a>
 
