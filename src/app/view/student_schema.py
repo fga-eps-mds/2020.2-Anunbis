@@ -1,4 +1,4 @@
-from . import ma
+from . import ma, course_schema
 from marshmallow import fields, Schema, validates, validate, ValidationError
 from re import match
 from ..model.dao import student_dao
@@ -12,6 +12,8 @@ class StudentSchema(ma.SQLAlchemySchema):
     id_course = fields.Integer(required=True, validate=validate.Range(min=0))    
     password = fields.String(required=True, validate = validate.Length(min=8, max=100))
     email = fields.Email(required=True)
+
+    course = fields.Nested(course_schema.CourseSchema)
 
     @validates("email")
     def validate_email(self, value):

@@ -11,6 +11,7 @@ class Professor(db.Model):
     name = db.Column(db.String(255), nullable=False)
     email = db.Column(db.String(255), nullable=True, unique=True)
     password = db.Column(db.String(255), nullable=True) 
+
     disciplines = db.relationship('Discipline', secondary='PROFESSOR_DISCIPLINE', lazy='dynamic')
 
     posts = db.relationship('Post', back_populates="professor")
@@ -26,7 +27,7 @@ class Professor(db.Model):
         if len(self.posts) is 0:
             return
 
-        soma = 0
+        sum = 0
         for post in self.posts:
-            soma += post.rating
-        return soma / len(self.posts)
+            sum += post.rating
+        return sum / len(self.posts)
