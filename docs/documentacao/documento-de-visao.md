@@ -4,9 +4,10 @@ Data|Versão|Descrição|Autor
 -|-|-|-
 17/02|0.1|Abertura do Documento de Visão| Equipe|
 04/03|0.2|Adição dos itens 5, 6 e 7| Roberto|
+26/03|0.2|Atualizando contéudo da página| Rodrigo|
 
 
-## 1 <a name="1">Introdução</a>
+## 1. <a name="1">Introdução</a>
 
 ### 1.1 <a name ="1_1">Propósito</a>
 
@@ -14,7 +15,7 @@ Data|Versão|Descrição|Autor
 
 ### 1.2 <a name="1_2">Escopo</a>
 
-<p align="justify"> &emsp;&emsp; Um dos motivos que define o sucesso acadêmico de um estudante da Universidade de Brasília são seus professores, pois, dependendo deles, o aluno terá uma experiência diferente em relação à disciplina. Alguns professores cobram mais e outros cobram menos, de fato o aprendizado de um estudante não depende apenas dele mesmo e sim de um conjunto de fatores incluindo o seu professor. Sendo a finalidade desse projeto, disponibilizar uma forma confiável de escolher seus próprios professores.</p>
+<p align="justify"> &emsp;&emsp; Um dos fatores que definem o sucesso acadêmico de um estudante da Universidade de Brasília são seus professores, pois, dependendo deles, o aluno terá uma experiência diferente em relação à disciplina. Alguns professores cobram mais e outros menos, de fato o aprendizado de um estudante não depende apenas dele mesmo e sim de um conjunto de aspectos incluindo o seu professor. Sendo a finalidade desse projeto, disponibilizar uma forma confiável dos estudantes escolherem seus próprios professores.</p>
 
 ### 1.3 <a name=1_3>Definições, acrônimos e abreviações</a>
 
@@ -26,20 +27,20 @@ Data|Versão|Descrição|Autor
 <p align="justify"> &emsp;&emsp; Este documento é dividido em 5 tópicos descrevendo os detalhes das características do software proposto.
 Sendo dividido em:</p>
 
-* **Introdução:** no qual é introduzido os detalhes gerais sobre a visão do projeto;
-* **Posicionamento:** descrevendo o problema e a oportunidade de negócio;
-* **Descrição dos envolvidos:** esta seção descreve o perfil das partes interessadas no projeto;
-* **Visão Geral:** Esta seção fornece uma visualização de alto nível das capacidades do produto, interfaces para outros aplicativos e configurações dos sistemas;
-* **Recursos:** breve descrição dos recursos do produto;
-
+* **Introdução:** é apresentado os detalhes gerais sobre a visão do projeto;
+* **Posicionamento:** é descrito o problema, o produto e a oportunidade de negócio;
+* **Descrição dos envolvidos:**  são detalhados os envolvidos no projeto;
+* **Visão Geral:** fornece uma visualização das capacidades do produto, interfaces e configurações dos sistemas;
+* **Recursos:** são descritos os recursos do produto;
+* **Restrições:** são apresentadas as restrições do projeto;
 ___
 
-## 2 <a name="2">Posicionamento</a>
-<p align="justify">&emsp;&emsp; A maior parte dos estudantes entram na universidade com um grande anseio por conhecimento, porém com o tempo esse desejo acaba sendo anulado por professores que não possuem uma boa didática ou não se dedicam a ajudar o estudante.</p>
+## 2. <a name="2">Posicionamento</a>
+<p align="justify">&emsp;&emsp; A maior parte dos estudantes entram na universidade com um grande anseio por conhecimento, porém com o tempo, esse desejo acaba sendo anulado por professores que não possuem uma boa didática ou não se dedicam a ajudar o estudante.</p>
 
 ### 2.1 <a name="2_1">Oportunidade de Negócio</a>
 
-<p align="justify">&emsp;&emsp; O projeto dá ao aluno a opção de escolher o professor e como efeito a metodologia de ensino de cada matéria, baseado na análise de quem já tenha tido alguma experiência com esse docente. A aplicação visa disponibilizar de maneira rápida, fácil, respeitável e democrática, um feedback àqueles que se dedicam a ensinar.</p>
+<p align="justify">&emsp;&emsp; O projeto dá ao aluno a opção de escolher com mais segurança o professor com o qual deseja aprender naquele semestre, baseando-se na análise de quem já tinha tido alguma experiência com esse docente. Além de que, a aplicação visa disponibilizar de maneira rápida, fácil, respeitável e democrática, um feedback àqueles que se dedicam a ensinar.</p>
 
 ### 2.2 <a name="2_2">Descrição do problema</a>
 
@@ -55,18 +56,18 @@ ___
 <p align="justify">&emsp;&emsp;A aplicação, quando desenvolvida, se posicionará no mercado como uma aplicação web que pode ser usada facilmente em navegadores mobile proporcionando uma experiência muito parecida a de um app nativo. Isso proporciona que os alunos troquem experiências de suas disciplinas realizadas de forma eficiente e rápida, possibilitando que os alunos encontrem metodologias de ensino compatíveis com si mesmo.</p>
 
 
-## 3 <a name="3">Descrição dos Envolvidos</a>
+## 3. <a name="3">Descrição dos Envolvidos</a>
 
 |**Nome**|**Descrição**|
 |:-|:-|
 | Estudantes da UnB| Estudantes procurando um bom professor ou metodologia. |
 |Professores da UnB| Professores com desejo de melhorar a própria avaliação. |
 
-## 4 <a name="4">Visão Geral</a>
+## 4. <a name="4">Visão Geral</a>
 <p align="justify"> &emsp;&emsp; A aplicação tem como objetivo criar um ambiente específico para que haja uma troca de informações entre os alunos da UnB a respeito dos professores e suas metodologias de ensino, tornando viável que qualquer aluno possa escrever suas próprias avaliações de maneira anônima e ler as avaliações feitas por outros alunos.
 </p>
 
-## 5 <a name="5">Recursos do Produto</a>
+## 5. <a name="5">Recursos do Produto</a>
 
 ### 5.1 <a name="5.1">Recursos dos Discentes</a>
 
@@ -88,7 +89,7 @@ ___
 * Visualizar a sua pontuação na aplicação.
 * Denunciar avaliações feitas por alunos;
 
-## 6 <a name="6">Restrições</a>
+## 6. <a name="6">Restrições</a>
 
 ### 6.1 <a name="6.1">Restrições de Implementação</a>
 
@@ -103,7 +104,7 @@ ___
 ### 6.4 <a name="6.4">Restriçõs de Uso</a>
 <p align="justify"> &emsp;&emsp;É necessário que os usuários (a comunidade acadêmica) tenha acesso à um computador ou smartphone com acesso à internet para usar todos os recursos da aplicação.</p>
 
-## 7 <a name="7">Requisitos do Produto</a>
+## 7. <a name="7">Requisitos do Produto</a>
 
 ### 7.1 <a name="7.1">Lista de categorias dos requisitos do produto:</a>
 
@@ -129,7 +130,7 @@ ___
 | RF10| Permitir que o aluno pesquise professores e disciplinas| Alta|
 | RF11| Exibir ao aluno quantidade de pessoas que concordam e discordam dos seus comentários, no total| Baixa|  
 
-## Referências
+## 8. Referências
 
 CARVALHO, Durval; et al. Documento de Visão - Acacia. Disponível em: <https://fga-eps-mds.github.io/2019.2-Acacia/#/vision_documents>. Acesso em: 04 mar 2021.
 
