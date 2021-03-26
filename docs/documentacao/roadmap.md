@@ -18,7 +18,7 @@
  ID | Issue | Pontuação | Responsável|
 |:--:| ------- | :----: | :----: |
 | [#3](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/3) | Estudando tecnologias HTML, CSS e GIT
-| [#6](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/6)  |  Criar templates de Issues e Pull Requests
+| [#6](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/6) | Criar templates de Issues e Pull Requests
 | [#9](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/9) | Estudar Metodologias Ágeis
 | [#13](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/13) | Criar arquivo de contribuição
 | [#14](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/14) | Criação da Wiki do projeto
@@ -42,16 +42,16 @@
 
 | ID | Issue |
 |:--:| ------- |
-| [#34](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/34)  | Criação do Termo de Abertura
-| [#36](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/36)  | Estudo básico em Flask
+| [#34](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/34) | Criação do Termo de Abertura
+| [#36](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/36) | Estudo básico em Flask
 | [#38](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/38) | Definir nome do projeto
 | [#39](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/39) | Criar o protótipo de baixa fidelidade
 | [#40](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/40) | Estudo sobre ReactJS
 | [#42](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/42) | Revisar documento de arquitetura e adicionar representação arquitetural
-| [#43](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/43)  | Criar documento de metodologias
-| [#44](https://github.com/fga-eps-mds/2019.2-arbc/issues/44) | Atualizar nome do projeto na documentação
+| [#43](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/43) | Criar documento de metodologias
+| [#44](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/44) | Atualizar nome do projeto na documentação
 
-## Sprint 4
+### Sprint 4
 | ID | Issue |
 |:--:| ------- |
 | [#37](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/37) | Estudar e configurar o docker para o back-end
@@ -70,7 +70,7 @@
 | [#74](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/74) | Modelagem dos dados
 | [#76](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/76) | Criação do documento Canvas
 
-## Sprint 5
+### Sprint 5
 | ID | Issue |
 |:--:| ------- |
 | [#82](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/82) | Documentar Sprint 4
@@ -81,4 +81,17 @@
 | [#87](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/87) | Criar repositório para front-end e adicionar arquivos de comunidade
 | [#88](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/88) | Documentar o planning da sprint 5
 
+### Sprint 6
+| ID | Issue | Pontuação | Responsável|
+|:--:| ------- | :----: | :----: |
+| [#91](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/91) | [US02] - Realizar Cadastro de Professor na Plataforma | 5 | Rafael e Roberto
+| [#93](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/93) | Arquitetura MVC no backend | 2 | Thiago
+| [#94](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/94) | Documentar a Sprint 5 | 2 | Rafael
+| [#96](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/96) | Revisar arquivos README | 2 | Eduardo
+| [#97](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/97) | Revisar documento de arquitetura | 3 | Todos
+| [#98](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/98) | Revisar backlog do produto | 3 | Rodrigo e Victor
+| [#100](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/100) | Revisar roadmap e aba das sprints | 3 | Rodrigo
+| [#101](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/101) | [US13] e [US14] - Estudante pode avaliar professor | 13 | Eduardo, Victor e Thiago
+| [#102](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/102) | [US08] - Buscar Um Professor Por Maior Nota Geral | 5 | Eduardo, Victor e Thiago
+| [#104](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/104) | [US03] - Realizar login de aluno | 5 | Roberto, Rafael, Thiago e Rodrigo
 
