@@ -56,7 +56,7 @@ Data|Versão|Descrição|Autor
 
 Sendo:
 
-* Prioridades de 1 a 5: Muito Baixa
+* Prioridade de 1 a 5: Muito Baixa
 * Prioridade de 6 a 10: Baixa
 * Prioridade de 11 a 15: Média
 * Prioridade de 16 a 20: Alta

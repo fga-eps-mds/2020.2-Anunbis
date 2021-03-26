@@ -15,12 +15,12 @@ Data|Versão|Descrição|Autor
 
 ## 2 <a name="2">Metodologias utilizadas</a>
 
- <p align = "justify"> &emsp;&emsp;    O time decidiu por utilizar uma abordagem híbrida de metodologias, com base no Scrum e XP. A utilização de cerimônias/rituais e artefatos de diferentes metodologias proporciona a equipe um bom desenvolvimento em paralelo com diferentes práticas baseadas na metodologias ágil, dispondo de uma importante característica de resposta as mudanças dentro do processo de acordo com a necessidade do time.</p>
+ <p align = "justify"> &emsp;&emsp; O time decidiu por utilizar uma abordagem híbrida de metodologias, com base no Scrum e XP. A utilização de cerimônias/rituais e artefatos de diferentes metodologias proporciona a equipe um bom desenvolvimento em paralelo com diferentes práticas baseadas nas metodologias ágeis, dispondo de uma importante característica de resposta as mudanças dentro do processo de acordo com a necessidade do time.</p>
 
 ### 2.1 <a name="2.1">Scrum</a>
-<p align = "justify"> &emsp;&emsp;    Scrum é um framework utilizado para gestão dinâmica de projetos, surgiu em meados dos anos 90 e é amplamente utilizado no desenvolvimento de projetos que utilizam metodologias ágeis.  É um processo iterativo e incremental e possui 3 pilares centrais: <b>Transparência</b> dos processos, requisitos de entrega e status. <b>Inspeção</b> constante de tudo que está sendo feito. <b>Adaptação</b> tanto do processo, quanto do produto às mudanças.
+<p align = "justify"> &emsp;&emsp; Scrum é um framework utilizado para gestão dinâmica de projetos, surgiu em meados dos anos 90 e é amplamente utilizado no desenvolvimento de projetos que utilizam metodologias ágeis.  É um processo iterativo e incremental e possui 3 pilares centrais: <b>Transparência</b> dos processos, requisitos de entrega e status. <b>Inspeção</b> constante de tudo que está sendo feito. <b>Adaptação</b> tanto do processo, quanto do produto às mudanças.
 </p>
-<p align = "justify"> &emsp;&emsp;     O Scrum possui algumas práticas fundamentais que são utilizadas no projeto. Sendo essas práticas divididas em <b>Papéis</b>, <b>Artefatos</b> , <b>Cerimônias</b> e <b>Ferramentas</b> que serão explicados posteriormente. Dos papéis foram utilizados o Scrum Master, Product Owner e o Team de Desenvolvimento, sendo todos participantes do time de desenvolvimento e outros dois votados para incremento dos papéis restantes. No caso dos artefatos estão sendo utilizados o Product Backlog, Sprint Backlog,  Sprints e Sprint Review. Também estão sendo feitas todas as cerimônias de sprint planning onde é planejado o que será feito na próxima sprint, daily scrum que são as reuniões diárias realizadas no discord, sprint review que revisa o que aconteceu na sprint passada e retrospectiva que aponta o feedback do processo da sprint.
+<p align = "justify"> &emsp;&emsp; O Scrum possui algumas práticas fundamentais que são utilizadas no projeto. Sendo essas práticas divididas em <b>Papéis</b>, <b>Artefatos</b> , <b>Cerimônias</b> e <b>Ferramentas</b> que serão explicados posteriormente. Dos papéis foram utilizados o Scrum Master, Product Owner e o Team de Desenvolvimento, sendo todos participantes do time de desenvolvimento e outros dois votados para incremento dos papéis restantes. No caso dos artefatos estão sendo utilizados o Product Backlog, Sprint Backlog,  Sprints e Sprint Review. Também estão sendo feitas todas as cerimônias de sprint planning onde é planejado o que será feito na próxima sprint, daily scrum que são as reuniões diárias realizadas no discord, sprint review que revisa o que aconteceu na sprint passada e retrospectiva que aponta o feedback do processo da sprint.
 </p>
 
 #### 2.1.1 <a name="2.1.1">Papéis do Scrum:</a>
@@ -29,7 +29,7 @@ Data|Versão|Descrição|Autor
 	É uma espécie de guardião do Scrum, coordena as rotinas e as atividades do grupo mantendo vivos os princípios e práticas do SCRUM no dia-a-dia. É como um mentor, um facilitador para o trabalho que remove os impedimentos e refina os itens da próxima Sprint junto ao Product Owner.
 
 * <b>Product Owner:</b>
-	Guardião do Cliente, faz a ponte entre cliente-projeto e possui os poderes de liderança sobre o produto, realiza um escopo/base suficiente (decidindo quais recursos serão construídos, qual a ordem de prioridade de produção no PRODUCT BACKLOG.) para haver um bom trabalho durante as sprints.
+	Guardião do Cliente, faz a ponte entre cliente-projeto e possui os poderes de liderança sobre o produto, realiza um escopo/base suficiente (decidindo quais recursos serão construídos, qual a ordem de prioridade de produção no PRODUCT BACKLOG) para haver um bom trabalho durante as sprints.
 
 * <b>Dev Team:</b> 
 Equipe desenvolvedora do projeto. É o team que define como as coisas serão feitas e quais e quantas tarefas são possíveis de entregar. O team se auto organiza para atingir as metas estabelecidas pelo Product Owner.
@@ -58,14 +58,14 @@ Quadro onde é possível visualizar o fluxo de trabalho que está sendo feito. S
 
 ### 2.2 <a name="2.2">Extreme Programming - XP</a>
 <p align = "justify"> &emsp;&emsp; Extreme Programming (XP) é uma metodologia ágil para pequenas e médias equipes que desenvolvem software baseado em requisitos vagos e que se modificam rapidamente. É um método que tem foco em feedback constante, abordagem incremental e comunicação.</p>
-<p align = "justify"> &emsp;&emsp; O XP tem quatro <b>valores</b> muito importantes que ajudam o desenvolvimento ágil de um projeto e a <b>integração</b> da equipe, visto que esse dois fatores são muito importantes atualmente, pois a constante globalização exige entregas cada vez mais rápidas e, com isso, as equipes são constantemente mais exigidas. </p>
-<p align = "justify"> &emsp;&emsp; Além disso, o XP também possui funções bem definidas para seus membros. Entretando, nós já iremos usar os papéis do scrum. Por fim, a prática do Extreme Programming traz consigo várias técnicas das quais algumas serão usadas nesse projeto, como por exemplo, o pareamento.</p>
+<p align = "justify"> &emsp;&emsp; O XP tem quatro <b>valores</b> muito importantes que ajudam o desenvolvimento ágil de um projeto e a <b>integração</b> da equipe, visto que esses dois fatores são muito importantes atualmente, pois a constante globalização exige entregas cada vez mais rápidas e, com isso, as equipes são constantemente mais exigidas. </p>
+<p align = "justify"> &emsp;&emsp; Além disso, o XP também possui funções bem definidas para seus membros. Entretanto, nós já iremos usar os papéis do scrum. Por fim, a prática do Extreme Programming traz consigo várias técnicas das quais algumas serão usadas nesse projeto, como por exemplo, o pareamento.</p>
 
 #### 2.2.1 <a name="2.2.1">Valores do XP</a>
-* <b>Comunicação:</b> A má comunicação é motivo de insucesso em quse todo tipo de projeto, inclusive nos projetos de software. 
+* <b>Comunicação:</b> A má comunicação é motivo de insucesso em quase todo tipo de projeto, inclusive nos projetos de software. 
  <br/>
 
-* <b>Simplicidade:</b> Manter a simplicidade é difícil, entretando, possibilita que tudo esteja no controle. É um dos princípios do XP advindos do JIT.
+* <b>Simplicidade:</b> Manter a simplicidade é difícil, entretanto, possibilita que tudo esteja no controle. É um dos princípios do XP advindos do JIT.
 <br>
 
 * <b>Feedback:</b> Fator altamente importante nos dias atuais, pois permite que os erros e dificuldades sejam descobertos e tratados.
