@@ -37,28 +37,34 @@ A tão aguardada R1 está chegando e essa sprint foi uma explosão de aproveitam
 
 
 ## 4. <a name="4">Velocity Tracking</a>
-<!-- Imagem do Burndown Chart retirada do ZenHub-->
+![image](https://user-images.githubusercontent.com/74625814/112657198-f1215500-8e30-11eb-9ed2-957bb5916eb0.png)
 
 ## 5. <a name="5">Retrospectiva da Sprint</a>
 ### **Pontos Positivos:**
-* ...
+* Alta produtividade.
+* Trabalho em equipe.
+* Alto aprendizado.
 
 ### **Pontos Negativos:**
-* ...
+* Entrega em cima da hora resultando em vários conflitos de código.
+* Custo muito alto de energia do grupo.
+* Comunicação falha em algumas partes front + back.
 
 ### **Pontos de melhoria:**
-* ...
+* Terminar com maior antecedência algumas issues para evitar conflitos.
+* Melhor distribuição dos pareamentos.
 
 ## 6. <a name="6">Presença daily</a>
-<!-- Imagem das presenças nas dailys -->
+![image](https://user-images.githubusercontent.com/74625814/112660205-f3d17980-8e33-11eb-909f-772566454ad5.png)
 
 ## 7. <a name="7">Visão do _Scrum Master_</a>
 
 <p align="justify">&emsp;&emsp;
-<!-- Descrição do Scrum Master -->
+Todos estão pegando o ritmo da disciplina, essa sprint foi focada em realizar algumas funcionalidades e preparar o terreno para apresentação da R1, agora é todo foco em corrigir os aspectos finais para entregar uma boa apresentação. Sigo firme e confiante na equipe, todos estão bem empenhados !
 </p>
 
-<!-- A cada 2 semanas postar o quadro de conhecimento da equipe>
-## Quadro de Conhecimento
-Imagem com a atualização do Quadro de conhecimento
--->
+## 8. <a name="8">Quadro de Conhecimento</a>
+```
+Infelizmente não temos quadro de conhecimento nesta sprint...
+Nos vemos na próxima !
+```
