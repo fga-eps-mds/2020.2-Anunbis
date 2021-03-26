@@ -38,11 +38,11 @@
 
 A Milestone da _Sprint_ "NUMERO" encontra-se neste [link](https://github.com/fga-eps-mds/2020.2-Anunbis/milestone/...)
 
-<!-- Caso necessário
-## 5. Débitos Acumulados
+
+## 5. <a name="5">Débitos Acumulados</a>
 
 | Issue | Descrição |
 |:--|:--:|
 | **#XX** | ... |
 
--->
+

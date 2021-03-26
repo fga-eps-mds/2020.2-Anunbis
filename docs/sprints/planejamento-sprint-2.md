@@ -43,3 +43,9 @@
 ## 4. <a name="4">Sprint Backlog</a>
 
 A Milestone da _Sprint_ 2 encontra-se neste [link](https://github.com/fga-eps-mds/2020.2-Anunbis/milestone/3)
+
+## 5. <a name="5">Débitos Acumulados</a>
+
+```
+Não houveram débitos acumulados.
+```
