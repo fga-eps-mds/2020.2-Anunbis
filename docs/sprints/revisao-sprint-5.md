@@ -9,7 +9,7 @@
 ## 2. <a name="2">Fechamento da _Sprint_</a>
 ### 2.1 <a name="2.1">Relato da _Sprint_</a>
 <p align="justify">&emsp;&emsp; 
-Essa sprint foi mais focada em toda ambientação do código tanto do front como do back, começamos a colocar em prática nossos estudos e documentação, a príncipio colocamos apenas uma User story para ser resolvida por não ter noção da dificuldade que seria de fazê-la já que todos somos iniciantes nas tecnologias escolhidas. Começamos a usar melhor os workflows do ZenHub devido ao aconselhamento da professora.
+Essa sprint foi mais focada em toda ambientação do código tanto do front como do back, começamos a colocar em prática nossos estudos e documentação, a princípio colocamos apenas uma User story para ser resolvida, por não ter noção da dificuldade que seria de fazê-la, já que todos somos iniciantes nas tecnologias escolhidas. Começamos a usar melhor os workflows do ZenHub devido ao aconselhamento da professora.
 </p>
 
 ### 2.2 <a name="2.2">Backlog da Sprint</a>
@@ -56,7 +56,7 @@ Essa sprint foi mais focada em toda ambientação do código tanto do front como
 ## 6. <a name="6">Visão do _Scrum Master_</a>
 
 <p align="justify">&emsp;&emsp;
-Continuo cada vez mais encantado com o empenho do grupo, todos sempre prestativos e dispostos a dar os seus 200% para realizar o projeto, tivemos algumas conversas animadoras no decorrer da sprint e o fato de começarmos a codar foi muito importante para isso. Tivemos apenas alguns problemas quanto aos pareamentos pois não foi bem definido a função de cada um, e acabou que durante a sprint estávamos todos reunidos para concluir apenas uma issue. A R1 está próxima e estou esperançoso para podermos entregar uma parte já funcional do nosso produto, vamos que vamos ! 
+Continuo cada vez mais encantado com o empenho do grupo, todos sempre prestativos e dispostos a dar os seus 200% para realizar o projeto, tivemos algumas conversas animadoras no decorrer da sprint e o fato de começarmos a codar foi muito importante para isso. Tivemos apenas alguns problemas quanto aos pareamentos, pois não foi bem definido a função de cada um, e acabou que durante a sprint estávamos todos reunidos para concluir apenas uma issue. A R1 está próxima e estou esperançoso para podermos entregar uma parte já funcional do nosso produto, vamos que vamos! 
 </p>
 
 ## 7. <a name="7">Quadro de Conhecimento</a>

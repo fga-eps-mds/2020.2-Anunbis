@@ -10,7 +10,7 @@
 ### 2.1 <a name="2.1">Relato da _Sprint_</a>
 
 <p align="justify">&emsp;&emsp; 
-Nessa sprint foi decidido estudar as tecnologias que foram previamente combinadas, decidimos nos dividir em duplas para podermos estudar um conjunto maior de tecnlogias e assim abranger todo o conhecimento requerido pelo projeto. Dessa forma, por meio dos pareamos, nós fomos capazes de aprender o básico sobre Flask, React.js e Docker, nas quais são as tecnologias que utilizaremos no projeto. Além de claro continuar atualizando nossas documentações.
+Nessa sprint foi decidido estudar as tecnologias que foram previamente combinadas, decidimos nos dividir em duplas para podermos estudar um conjunto maior de tecnologias e assim abranger todo o conhecimento requerido pelo projeto. Dessa forma, por meio dos pareamentos, fomos capazes de aprender o básico sobre Flask, React.js e Docker, nas quais são as tecnologias que utilizaremos no projeto. Além de claro, continuar atualizando nossas documentações.
 </p>
 <p align="justify">&emsp;&emsp; Finalizamos o protótipo de baixa fidelidade, com isso obtivemos uma melhor visão das funcionalidades requeridas pelo projeto e o fluxo dos usuários, focando em uma boa navegabilidade.
 </p>
@@ -19,15 +19,15 @@ Nessa sprint foi decidido estudar as tecnologias que foram previamente combinada
 
 | ID | Issue | Pontuação | Responsável|
 |:--:| ------- | :----: | :----: |
-| #34 | [Criação do Termo de Abertura](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/34)|2|Roberto|
-| #36 | [Estudo básico em Flask](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/36)|3|Rodrigo e Thiago |
-| #37 | [Estudar e configurar o docker para o back-end](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/37) |8| Rafael, Thiago e Roberto |
-| #38 | [Definir nome do projeto](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/38) |5|Toda Equipe|
-| #39 | [Criar o protótipo de baixa fidelidade](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/39)|5| Toda Equipe|
-| #40 | [Estudo sobre ReactJS](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/40) | 3| Eduardo Victor |
-| #42 | [Revisar documento de arquitetura e adicionar representação arquitetural](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/42) | 2| Rodrigo e Thiago|
-| #43 | [Criar documento de metodologias](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/43) |3| Rafael Roberto |
-| #44 | [Atualizar nome do projeto na documentação](https://github.com/fga-eps-mds/2019.2-arbc/issues/44)|1| Rodrigo e Thiago|
+| [#34](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/34) | Criação do Termo de Abertura |2|Roberto|
+| [#36](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/36) | Estudo básico em Flask |3|Rodrigo e Thiago |
+| [#37](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/37) | Estudar e configurar o docker para o back-end |8| Rafael, Thiago e Roberto |
+| [#38](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/38) | Definir nome do projeto |5|Toda Equipe|
+| [#39](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/39) | Criar o protótipo de baixa fidelidade |5| Toda Equipe|
+| [#40](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/40) | Estudo sobre ReactJS | 3| Eduardo Victor |
+| [#42](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/42) | Revisar documento de arquitetura e adicionar representação arquitetural | 2| Rodrigo e Thiago|
+| [#43](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/43) | Criar documento de metodologias |3| Rafael Roberto |
+| [#44](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/44) | Atualizar nome do projeto na documentação |1| Rodrigo e Thiago|
 
 ### 2.3 <a name="2.3">Pontuação Final</a>
 |Pontuação Total|Pontuação Concluída|Pontuação Não Agregada
@@ -40,11 +40,11 @@ Nessa sprint foi decidido estudar as tecnologias que foram previamente combinada
 ## 4. <a name="4">Retrospectiva da Sprint</a>
 ### **Pontos Positivos:**
 * Estudo das tecnologias adotadas no projeto.
-* Adaptação as mudanças da sprint.
+* Adaptação às mudanças da sprint.
 * Pareamentos de qualidade.
 
 ### **Pontos Negativos:**
-* Má planejamento.
+* Mau planejamento.
 * Mau uso do workflow do ZenHub.
 
 
@@ -57,7 +57,7 @@ Nessa sprint foi decidido estudar as tecnologias que foram previamente combinada
 
 ## 6. <a name="6">Visão do _Scrum Master_</a>
 
-<p align="justify">&emsp;&emsp; Essa sprint foi um pouco mais abstrata que as outras, no nosso planning só tinha basicamente issues relacionadas a estudo, então acabou que ficou um planejamento ruim porque não entregamos muita coisa no começo da sprint, porém conseguimos corrigir algumas partes da documentação, começamos a implementar o docker pra back-end e os estudos foram produtivos, continuo gostando muito do desempenho e da motivação do pessoal, espero que se estenda até o final do projeto ! </p>
+<p align="justify">&emsp;&emsp; Essa sprint foi um pouco mais abstrata que as outras, no nosso planning só tinha basicamente issues relacionadas a estudo, então acabou que ficou um planejamento ruim porque não entregamos muita coisa no começo da sprint, porém, conseguimos corrigir algumas partes da documentação, começamos a implementar o docker para back-end e os estudos foram produtivos, continuo gostando muito do desempenho e da motivação do pessoal, espero que se estenda até o final do projeto! </p>
 
 ------------
 
