@@ -11,7 +11,7 @@ Data|Versão|Descrição|Autor
 
 ## 2 <a name="2">Objetivos do Projeto</a>
 
-<p align="justify"> &emsp;&emsp; O projeto tem o objetivo de facilicitar a integração da comunidade acadêmica, de forma a garantir que os discentes escolham os professores que melhor se adaptam à eles. Dessa maneira, a aplicação também visa disponibilizar de maneira rápida, fácil, respeitável e democrática, um feedback aos docentes.</p>
+<p align="justify"> &emsp;&emsp; O projeto tem o objetivo de facilitar a integração da comunidade acadêmica, de forma a garantir que os discentes escolham os professores que melhor se adaptam a eles. Dessa maneira, a aplicação também visa disponibilizar de maneira rápida, fácil, respeitável e democrática, um feedback aos docentes.</p>
 
 
 ## 3 <a name="3">Lista das Partes Interessadas</a>
