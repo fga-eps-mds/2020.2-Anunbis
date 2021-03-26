@@ -3,7 +3,7 @@
 
 | Data de Início | 04/02/2021 |
 |:--|:--:|
-| **Data de Término** | **09/02/2021** |
+| **Data de Término** | **10/02/2021** |
 | **Duração** | **7 dias** |
 
 ## 2. <a name="2">Papéis</a>
