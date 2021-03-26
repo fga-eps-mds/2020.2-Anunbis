@@ -20,7 +20,7 @@ Data|Versão|Descrição|Autor
 
 ### 1.1 <a name="1_1">Finalidade</a>
 
- <p align = "justify"> &emsp;&emsp; Essa documentação tem como finalidade fornecer uma visão geral da arquitetura do projeto Anunbis, demonstrando inicialmente, suas metas e objetivos. Para assim exclarecer as decisões de desenvolvimento que foram tomadas ao longo do projeto. </p>
+ <p align = "justify"> &emsp;&emsp; Essa documentação tem como finalidade fornecer uma visão geral da arquitetura do projeto Anunbis, demonstrando inicialmente, suas metas e objetivos. Para assim esclarecer as decisões de desenvolvimento que foram tomadas ao longo do projeto. </p>
 
 ### 1.2 <a name="1_2">Escopo</a>
 
@@ -36,13 +36,13 @@ Data|Versão|Descrição|Autor
 <p align="justify"> &emsp;&emsp; Este documento é dividido, atualmente, em 7 tópicos, descrevendo de maneira concisa o projeto. Esses tópicos são divididos em:
 </p>
 
-* Introdução: Fornece uma visão geral do documento inteiro;
-* Representação arquitetural: Descreve as tecnologias que serão utilizadas no projeto, bem como o porquê da escolha dessas tecnologias.
-* Metas e restrições da arquitetura: Descreve os requisitos e objetivos do software que possui algum impacto sobre a arquitetura.
-* Visão dos Casos de Uso: Descreve as funcionalidades que o usuario poderá efetuar.
-* Visão Lógica: Descreve as interações entre as camadas e as tecnologias.
-* Visão da Implementação: Descreve as implementações das camadas e tecnologias.
-* Referências: Emprega as fontes utilizadas nas pesquisas para relacionar as publicações que foram consultadas e citadas.
+* **Introdução**: Fornece uma visão geral do documento inteiro;
+* **Representação arquitetural**: Descreve as tecnologias que serão utilizadas no projeto, bem como o porquê da escolha dessas tecnologias.
+* **Metas e restrições da arquitetura**: Descreve os requisitos e objetivos do software que possui algum impacto sobre a arquitetura.
+* **Visão dos Casos de Uso**: Descreve as funcionalidades que o usuario poderá efetuar.
+* **Visão Lógica**: Descreve as interações entre as camadas e as tecnologias.
+* **Visão da Implementação**: Descreve as implementações das camadas e tecnologias.
+* **Referências**: Emprega as fontes utilizadas nas pesquisas para relacionar as publicações que foram consultadas e citadas.
 
 ## 2 <a name="2">Representação arquitetural</a>
 
@@ -50,7 +50,7 @@ Data|Versão|Descrição|Autor
 
 <div style="display:block;text-align:center"><a style="text-align:center" href="https://edisciplinas.usp.br/pluginfile.php/4632609/mod_resource/content/1/5%20Arquitetura%20MVC.pdf"><img src="/2020.2-Anunbis/images/diagramaArquitetura.png" alt="representação da arquitetura no projeto"></a></div>
 
-<p align = "justify"> &emsp;&emsp;Ele se baseia em requisições e respostas Http para se relacionar. O usuario, com seu navegador, entra no site gerado pelo React e, a partir dai, pode realizar varias ações, como cadastrar, postar e comentar. O react lida com essas ações e, se precisar, se conecta com o Flask. O Flask, por sua vez, cuida da lógica de negócio, manuseamento de dados e faz a conexão com o Mysql para a persistência desses dados.</p>
+<p align = "justify"> &emsp;&emsp;Ele se baseia em requisições e respostas Http para se relacionar. O usuário, com seu navegador, entra no site gerado pelo React e, a partir dai, pode realizar varias ações, como cadastrar, postar e comentar. O react lida com essas ações e, se precisar, se conecta com o Flask. O Flask, por sua vez, cuida da lógica de negócio, manuseamento de dados e faz a conexão com o Mysql para a persistência desses dados.</p>
 
 ### 2.1 <a name="3_1">React</a>
 
@@ -70,7 +70,7 @@ Data|Versão|Descrição|Autor
 ### 2.3 <a name="3_2">MySQL</a>
 
 <p align = "justify"> &emsp;&emsp;Para a persistência dos dados, o banco utilizado é o MySQL, pois utiliza a linguagem SQL e é <a 
-href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do mercado</a>. Além disso, pelo fato de ser relacional, será bastante util em fazer as relações entre as entidades.</p>
+href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do mercado</a>. Além disso, pelo fato de ser relacional, será bastante útil em fazer as relações entre as entidades.</p>
 <!-- No entanto, não há a necessidade de utilizar a linguagem SQL diretamente, pois o SQLAlchemy juntamente com o micro framework Flask realizam esse trabalho. -->
 
 <!-- <p align = "justify">&emsp;&emsp;Sendo assim, o SQLAlchemy é capaz de mediar todas as tarefas necessárias, como por exemplo, criar tabelas, relacionamentos, realizar  consultas, adicionar e remover informações, para o pleno funcionamento desse projeto.</p> -->
@@ -94,7 +94,7 @@ href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do m
 
 ### 3.2 <a name="3_2">Restrições</a>
 
-<p align = "justify">&emsp;&emsp;A aplicação será executada em um navegador, que foi gerada por meio da framework React.js, que é implementada com o Javascript, CSS e HTML. Sobre a comunicação front-end e back-end, ela ocorre por meio de uma API RestFul implementada por um microframework de python chamado Flask.
+<p align = "justify">&emsp;&emsp;A aplicação será executada em um navegador, que foi gerada por meio da biblioteca React.js, que é implementada com o Javascript, CSS e HTML. Sobre a comunicação front-end e back-end, ela ocorre por meio de uma API RestFul implementada por um microframework de python chamado Flask.
 </p>
 
 ## 4 <a name="4">Visão dos Casos de Uso</a>
@@ -150,20 +150,20 @@ href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do m
 
 #### 6.1.2 <a name="6_1_2">Atributos</a>
 
-* Um **Estudante**, para que possa ser cadastrado, tem uma **matrícula**, **nome**, **email** e uma **senha**.
+* Um **Estudante**, para que possa ser cadastrado, tem uma **matrícula**, **nome** , **curso**, **email** e uma **senha**.
 * Um **Professor** tem uma **matrícula**, **identificação**, **nome**, **email** e uma **senha**.
 * Um **Curso** tem um **nome**.
-* Uma **Disciplina** tem um **nome** e um **codigo**.
+* Uma **Disciplina** tem um **nome** e um **código**.
 * Uma **Avaliação**, para ser cadastrada, tem uma **identificação**, **conteúdo**, **data de postagem**, se é **anônima** ou não e uma **nota** sobre o professor.
-* Uma **Denúncia** tem uma **identificação**, **conteúdo** e um **tipo**, que pode ser uma denuncia grave, incoerente, ofensiva e outras.
+* Uma **Denúncia** tem uma **identificação**, **conteúdo** e um **tipo**, que pode ser uma denúncia grave, incoerente, ofensiva e outras.
 
 #### 6.1.3 <a name="6_1_3">Relacionamentos</a>
 
-* Um **estudante** pertence a um **curso**, já um **curso** pode ter varios **estudantes**. **Cardinalidade: N:1**
+* Um **estudante** pertence a um **curso**, já um **curso** pode ter vários **estudantes**. **Cardinalidade: N:1**
 
 * Uma **estudante** pode fazer várias **avaliações**, mas uma **avaliação** só pode ter um **autor**, que é um **estudante**. **Cardinalidade: 1:N**
 
-* Um **estudante** pode **concordar** ou **discordar** de várias **avaliações**, e uma **avaliação** pode ter varios **alunos** que **concordam** ou **discordam**. **Cardinalidade: N:N**
+* Um **estudante** pode **concordar** ou **discordar** de várias **avaliações**, e uma **avaliação** pode ter vários **alunos** que **concordam** ou **discordam**. **Cardinalidade: N:N**
 
 * Um **estudante** pode **denunciar** várias **avaliações**. **Cardinalidade: 1:N**
 
