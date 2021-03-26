@@ -33,10 +33,11 @@ Sendo dividido em:</p>
 * **Visão Geral:** fornece uma visualização das capacidades do produto, interfaces e configurações dos sistemas;
 * **Recursos:** são descritos os recursos do produto;
 * **Restrições:** são apresentadas as restrições do projeto;
+* **Requisitos:** são apresentadas as funcionalidades do projeto e suas prioridades;
 ___
 
 ## 2. <a name="2">Posicionamento</a>
-<p align="justify">&emsp;&emsp; A maior parte dos estudantes entram na universidade com um grande anseio por conhecimento, porém com o tempo, esse desejo acaba sendo anulado por professores que não possuem uma boa didática ou não se dedicam a ajudar o estudante.</p>
+<p align="justify">&emsp;&emsp; A maior parte dos estudantes entram na universidade com um grande anseio por conhecimento, porém com o tempo, esse desejo acaba sendo anulado por professores que não possuem uma boa didática, ou não se dedicam a ajudar o estudante, ou apenas docentes que possuem uma metodologia que não compatível à alguns dos alunos.</p>
 
 ### 2.1 <a name="2_1">Oportunidade de Negócio</a>
 
