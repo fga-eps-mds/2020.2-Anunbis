@@ -74,27 +74,26 @@ ___
 
 <p align="justify"> &emsp;&emsp; Os alunos poderão se cadastrar na aplicação. Quando cadastrados e logados, poderão ter acesso aos seguintes recursos:</p>
 
-* Visualizar/Fazer pontuação dos professores;
-* Visualizar/Fazer comentários contendo feedbacks dos professores;
-* Denunciar avaliações feitas por outros alunos;
-* Visualizar quantidade de alunos que concordam e discordam desses comentários;
-* Concordar ou discordar de um comentário de outro discente;
-* Pesquisar os melhores professores, por pontuação, para suas disciplinas;
-* Visualizar quantidade de avaliações realizadas por eles mesmos.
+* Fazer avaliação dos professores;
+* Visualizar avaliações feitas sobre outros professores;
+* Concordar ou discordar do comentário de outros discentes;
+* Visualizar a quantidade de alunos que concordam e discordam desses comentários;
+* Pesquisar os professores por ranking;
+* Denunciar avaliações ofensivas de outros alunos;
 
 ### 5.2 <a name="5.2">Recursos dos Docentes</a>
 
 <p align="justify"> &emsp;&emsp; Os professores poderão também se cadastrar na aplicação. Quando cadastrados e logados, terão acesso às seguintes funcionalidades:</p>
 
-* Visualizar os feedbacks dos outros alunos em relação às suas metodologias;
-* Visualizar a sua pontuação na aplicação.
-* Denunciar avaliações feitas por alunos;
+* Visualizar o feedback dos estudantes;
+* Visualizar a sua pontuação na aplicação;
+* Denunciar avaliações ofensivas feitas por alunos;
 
 ## 6. <a name="6">Restrições</a>
 
 ### 6.1 <a name="6.1">Restrições de Implementação</a>
 
-<p align="justify">&emsp;&emsp;O sistema será implementado usando ReactJS, flask e python, e será desenvolvido de forma remota devido à pandemia.</p>
+<p align="justify">&emsp;&emsp;O sistema será implementado usando ReactJS, Flask e Python, e será desenvolvido de forma remota devido à pandemia.</p>
 
 ### 6.2 <a name="6.2">Restrições Externas</a>
 <p align="justify">&emsp;&emsp;O grupo não tem muita experiência com as tecnologias utilizadas.</p>
@@ -103,7 +102,7 @@ ___
 <p align="justify"> &emsp;&emsp;Toda experiência com a aplicação deve ser limpa e natural. O usuário não deve ter dificuldades de entender o que ele pode fazer, e como encontrar determinada funcionalidade. Além disso, a aplicação será destinada aos usuários web.</p>
 
 ### 6.4 <a name="6.4">Restriçõs de Uso</a>
-<p align="justify"> &emsp;&emsp;É necessário que os usuários (a comunidade acadêmica) tenha acesso à um computador ou smartphone com acesso à internet para usar todos os recursos da aplicação.</p>
+<p align="justify"> &emsp;&emsp;É necessário que os usuários (a comunidade acadêmica) tenham acesso à um computador ou smartphone com acesso à internet para usar todos os recursos da aplicação.</p>
 
 ## 7. <a name="7">Requisitos do Produto</a>
 
@@ -120,16 +119,16 @@ ___
 |**Identificador**|**Requisito**|**Prioridade**|
 |:-|:-|:-|
 | RF01| Permitir que o usuário crie uma conta, edite, faça login e a delete| Alta|
-| RF02| Permitir que o usuário discente crie comentários e delete eles| Alta|
-| RF03| Permitir que o aluno concorde ou discorde do comentário de outro aluno| Alta|
-| RF04| Permitir que o aluno pontue um professor | Alta|
+| RF02| Permitir que o usuário pesquise professores| Alta|
+| RF03| Permitir que o usuário discente crie uma avalição e a delete| Alta|
+| RF04| Permitir que o aluno concorde ou discorde do comentário de outro aluno| Alta|
 | RF05| Exibir pontuação média e rank dos professores para todos os usuários | Alta|
-| RF06| Permitir que os discentes façam comentários anônimos | Média|
+| RF06| Permitir que os discentes façam avaliações anônimas | Média|
 | RF07| Exibir quantidade de avaliações que o usuário discente já realizou| Média|
 | RF08| A aplicação deve ter a experiência de uso simples e fluída, de linguagem fácil intuitiva| Alta|
 | RF09| Permitir o usuário a denunciar um comentário| Média|
-| RF10| Permitir que o aluno pesquise professores e disciplinas| Alta|
-| RF11| Exibir ao aluno quantidade de pessoas que concordam e discordam dos seus comentários, no total| Baixa|  
+| RF10| Permitir que o docente veja as avaliações sobre si mesmo| Média|  
+| RF11| Exibir ao aluno a quantidade de pessoas que concordam e discordam dos seus comentários| Baixa|  
 
 ## 8. Referências
 
