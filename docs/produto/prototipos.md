@@ -11,34 +11,34 @@ Data|Versão|Descrição|Autor
 
 
 
-## 1 <a name="1">Introdução</a>
+## 1. <a name="1">Introdução</a>
 
  <p align = "justify"> &emsp;&emsp; Este documento tem como objetivo registrar e disponibilizar o histórico de versões dos protótipos de baixa fidelidade bem como do protótipo de alta fidelidade e também o fluxo de usuário.</p>
 
-## 2 <a name="2">Protótipos de Baixa Fidelidade</a>
+## 2. <a name="2">Protótipos de Baixa Fidelidade</a>
 
- <p align = "justify"> &emsp;&emsp; O protótipo de baixa fidelidade tem como objetivo reunir ideias e torna-las visíveis para que haja um melhor entendimento do projeto, de como será organizado visualmente, e facilitar o debate sobre melhorias.</p>
+ <p align = "justify"> &emsp;&emsp; O protótipo de baixa fidelidade tem como objetivo reunir ideias e torná-las visíveis para que haja um melhor entendimento do projeto, de como será organizado visualmente, e facilitar o debate sobre melhorias.</p>
 
  - [Versão 1](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/39#issuecomment-787580528)
  - [Versão 2](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/39#issuecomment-790673259)
 
-## 2 <a name="2">Protótipo de Alta Fidelidade</a>
+## 2. <a name="2">Protótipo de Alta Fidelidade</a>
 
 <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FNqHjyO26dyCtuC8vnqjSwr%2FPrototipo-Alta-Fidelidade%3Fnode-id%3D60%253A201" allowfullscreen></iframe>
 
-## 3 <a name="3">Fluxo de Usuário</a>
+## 3. <a name="3">Fluxo de Usuário</a>
 
 ![Fluxo de Usuário](/2020.2-Anunbis/images/fluxoDeUsuario.jpg)
 
-## 4 <a name="4">Telas</a>
+## 4. <a name="4">Telas</a>
 
 ### 4.1 <a name="4.1">Cadastro</a>
 
- <p align = "justify"> &emsp;&emsp; Onde o usuário irá criar uma conta para utilizar a aplicação. Será necessário fornecer nome, informações institucionais e uma senha para autenticação.</p>
+ <p align = "justify"> &emsp;&emsp; Onde o usuário irá criar uma conta para utilizar a aplicação. Será necessário fornecer o nome, informações institucionais e uma senha para autenticação.</p>
 
 ### 4.2 <a name="4.2">Login</a>
 
- <p align = "justify"> &emsp;&emsp; Onde o usuário irá fornecer e-mail e senha cadastrados para realizar o acesso a aplicação com a conta criada.</p>
+ <p align = "justify"> &emsp;&emsp; Onde o usuário irá fornecer o e-mail e senha cadastrados para realizar o acesso a aplicação com a conta criada.</p>
 
 ### 4.3 <a name="4.3">Página Inicial</a>
 
@@ -51,7 +51,7 @@ Data|Versão|Descrição|Autor
 
 ### 4.5 <a name="4.5">Criar Avaliação</a>
 
- <p align = "justify"> &emsp;&emsp; Tela onde o usuário irá escrever suas avaliações. Nome do professor e nome da disciplina serão preenchidos automaticamente, usuário deverá preencher a nota dada ao professor, escolher se a postagem será pública ou anônima e deverá escrever os comentários.  </p>>
+ <p align = "justify"> &emsp;&emsp; Tela onde o usuário irá escrever suas avaliações. Nome do professor e o nome da disciplina serão preenchidos automaticamente, o usuário deverá preencher a nota dada ao professor, escolher se a postagem será pública ou anônima e deverá escrever os comentários.  </p>>
 
 ### 4.6 <a name="4.6">Configurar</a>
 
