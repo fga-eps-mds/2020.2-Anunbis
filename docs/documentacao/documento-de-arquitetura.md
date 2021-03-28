@@ -16,7 +16,7 @@ Data|Versão|Descrição|Autor
 22/03|1.2|Atualizando Modelagem de dados|Thiago|
 24/03|1.3|Adição dos diagramas de pacotes|Rafael e Roberto|
 
-## 1 <a name="1">Introdução</a>
+## 1. <a name="1">Introdução</a>
 
 ### 1.1 <a name="1_1">Finalidade</a>
 
@@ -44,7 +44,7 @@ Data|Versão|Descrição|Autor
 * **Visão da Implementação**: Descreve as implementações das camadas e tecnologias.
 * **Referências**: Emprega as fontes utilizadas nas pesquisas para relacionar as publicações que foram consultadas e citadas.
 
-## 2 <a name="2">Representação arquitetural</a>
+## 2. <a name="2">Representação arquitetural</a>
 
 <p align = "justify"> &emsp;&emsp;Este projeto utiliza diversas tecnologias que se relacionam para fazer uma aplicação web. A figura abaixo mostra um diagrama com a representação arquitetural do programa.</p>
 
@@ -86,7 +86,7 @@ href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do m
 
 <div style="display:block;text-align:center"><a style="text-align:center" href="https://edisciplinas.usp.br/pluginfile.php/4632609/mod_resource/content/1/5%20Arquitetura%20MVC.pdf"><img src="/2020.2-Anunbis/images/arquiteturaMVCBackEnd.png" alt="representação da arquitetura MVC no back-end"></a></div>
 
-## 3 <a name="3">Metas e Restrições de Arquitetura</a>
+## 3. <a name="3">Metas e Restrições de Arquitetura</a>
 
 ### 3.1 <a name="3_1">Metas</a>
 
@@ -97,7 +97,7 @@ href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do m
 <p align = "justify">&emsp;&emsp;A aplicação será executada em um navegador, que foi gerada por meio da biblioteca React.js, que é implementada com o Javascript, CSS e HTML. Sobre a comunicação front-end e back-end, ela ocorre por meio de uma API RestFul implementada por um microframework de python chamado Flask.
 </p>
 
-## 4 <a name="4">Visão dos Casos de Uso</a>
+## 4. <a name="4">Visão dos Casos de Uso</a>
 ### 4.1 <a name="4_1">Diagrama dos Casos de Uso</a>
 <div style="display:block;text-align:center"><img src="/2020.2-Anunbis/images/casosDeUso.png" alt="Diagrama dos casos de Uso"></div>
 
@@ -122,7 +122,7 @@ href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do m
 |US09 - Visualizar Média de Pontuação| O docente pode ver sua pontuação média no sistema.|
 |US10 - Visualizar Avaliações dos Alunos|O docente pode ver as avaliações gerais dos alunos.|
 
-## 5 <a name="5">Visão Lógica</a>
+## 5. <a name="5">Visão Lógica</a>
 <p align = "justify">&emsp;&emsp;A comunicação do usuário com a aplicação será feito pela camada view do MVC. Os eventos do front-end serão interpretados pela biblioteca do <a href="https://pt-br.reactjs.org/docs/getting-started.html">ReactJS</a>, essa mesma biblioteca se comunicará com o back-end, que será executada com Flask e Mysql.</p>
 
 <p align = "justify">&emsp;&emsp;No banco de dados, serão armazenados os dados dos usuários, dos professores e das disciplinas. Ao procurar por um professor, uma requisição será feita no back-end, e caso algum professor correspondente seja encontrado, será devolvido ao usuário o docente, sua pontuação e seus feedbacks. Essa troca de informação também será igual para os professores usuários.</p>
@@ -136,7 +136,7 @@ href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do m
 <div style="display:block;text-align:center"><img src="/2020.2-Anunbis/images/Diagrama_Pacotes_BackEnd.png" alt="Diagrama de pacotes Back-End"/></div>
 
 
-## 6 <a name="6">Visão da Implementação</a>
+## 6. <a name="6">Visão da Implementação</a>
 
 ### 6.1 <a name="6_1">Modelagem dos dados</a>
 #### 6.1.1 <a name="6_1_1">Entidades</a>
@@ -185,7 +185,7 @@ href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do m
 
 <div style="display:block;text-align:center"><img src="/2020.2-Anunbis/images/diagramaLogicoDados.png" alt="Diagrama Logico dos Dados"/></div>
 
-## 7 <a name="7">Referências</a>
+## 7. <a name="7">Referências</a>
 
 Wilian, João. Flask: o que é e como codar com esse micro framework Python. **GeekHunter**, 2020. Disponivel em: <a href="https://blog.geekhunter.com.br/flask-framework-python/">Flask: o que é e como codar com esse micro framework Python</a>
 
