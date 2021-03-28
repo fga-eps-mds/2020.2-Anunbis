@@ -32,11 +32,11 @@ Data|Versão|Descrição|Autor
 ```
 
 
-## 3 <a name="3">Corpo do Pull Request</a>
+## 3. <a name="3">Corpo do Pull Request</a>
 <p align = "justify"> &emsp;&emsp; O corpo do PR deve ser bem detalhado, de forma que tudo que foi executado seja bem entendido por quem está lendo. Deve possuir os seguintes itens: </p>
 
 ### 3.1 <a name="3.1">Descrição</a>
-<p align = "justify"> &emsp;&emsp; Destinada a um resumo sucindo do que foi executado, demonstrando o que foi trabalhado</p>
+<p align = "justify"> &emsp;&emsp; Destinada a um resumo sucinto do que foi executado, demonstrando o que foi trabalhado</p>
 
 ### 3.2 <a name="3.2">Resolve Issues</a>
 <p align = "justify"> &emsp;&emsp; Aqui deve ser explicitado qual(ais) issue(s) aquele PR resolve.</p>
@@ -66,5 +66,5 @@ Data|Versão|Descrição|Autor
 ### 3.5 <a name="3.5">Tarefas Gerais Realizadas</a>
 <p align = "justify"> &emsp;&emsp; Campo onde ocorre uma descrição um pouco mais detalhada das tarefas executadas no PR.</p>
 
-## Referências
+## 4. <a nome="4">Referências</a>
 GABRIEL, Enzo; et al. Política de Branches - Vamos Cuidar. Disponível em: <https://fga-eps-mds.github.io/2020.1-VC_Usuario/#/docs/policies/pull_request>. Acesso em: 03 mar 2021.
