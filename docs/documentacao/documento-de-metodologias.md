@@ -5,17 +5,18 @@ Data|Versão|Descrição|Autor
 28/02|0.1|Abertura do Documento de Metodologia|Rafael|
 28/02|0.2|Descrição da metodologia Scrum|Rafael|
 28/02|0.3|Descrição da metodologia XP|Roberto|
+26/03|0.3|Descrição do Planning Poker|Rodrigo|
 
 
 
-## 1 <a name="1">Introdução</a>
+## 1. <a name="1">Introdução</a>
 
  <p align = "justify"> &emsp;&emsp; Essa documentação tem como finalidade fornecer uma descrição das metodologias adotadas na equipe para desenvolvimento do projeto. Sendo demonstrados inicialmente, um breve resumo sobre as metodologias usadas bem como as cerimônias/rituais realizadas pela equipe. </p>
 
 
-## 2 <a name="2">Metodologias utilizadas</a>
+## 2. <a name="2">Metodologias utilizadas</a>
 
- <p align = "justify"> &emsp;&emsp; O time decidiu por utilizar uma abordagem híbrida de metodologias, com base no Scrum e XP. A utilização de cerimônias/rituais e artefatos de diferentes metodologias proporciona a equipe um bom desenvolvimento em paralelo com diferentes práticas baseadas nas metodologias ágeis, dispondo de uma importante característica de resposta as mudanças dentro do processo de acordo com a necessidade do time.</p>
+ <p align = "justify"> &emsp;&emsp; O time decidiu por utilizar uma abordagem híbrida de metodologias, com base no Scrum ,XP e o Planning Poker. A utilização de cerimônias/rituais e artefatos de diferentes metodologias proporciona a equipe um bom desenvolvimento em paralelo com diferentes práticas baseadas nas metodologias ágeis, dispondo de uma importante característica de resposta as mudanças dentro do processo de acordo com a necessidade do time.</p>
 
 ### 2.1 <a name="2.1">Scrum</a>
 <p align = "justify"> &emsp;&emsp; Scrum é um framework utilizado para gestão dinâmica de projetos, surgiu em meados dos anos 90 e é amplamente utilizado no desenvolvimento de projetos que utilizam metodologias ágeis.  É um processo iterativo e incremental e possui 3 pilares centrais: <b>Transparência</b> dos processos, requisitos de entrega e status. <b>Inspeção</b> constante de tudo que está sendo feito. <b>Adaptação</b> tanto do processo, quanto do produto às mudanças.
@@ -76,3 +77,35 @@ Quadro onde é possível visualizar o fluxo de trabalho que está sendo feito. S
 
 #### 2.2.2 <a name="2.2.2">Pŕaticas do XP</a>
 * <b>Pareamento:</b> Prática de programar a dois, de uma maneira que tenha 4 olhos olhando para o mesmo código evitando erros ou bugs.
+
+### 2.3 <a name="2.3">Planning Poker</a>
+
+<p align = "justify"> &emsp;&emsp; 
+O planning poker é uma prática ágil gamificada para o grupo decidir o quão difícil é uma tarefa. Então, sempre que é necessário decidir tarefas para a sprint, é calculado o quanto de esforço deverá se colocado em cada tarefa, assim podemos medir melhor o nosso desempenho e o que somos capazes de fazer.
+</p>
+
+#### 2.3.1 <a name="2.3.1">Como funciona</a>
+<p align = "justify"> &emsp;&emsp; 
+	Primeiro é selecionada uma tarefa na qual está sendo planejado realizar, em seguida todos os integrantes do grupo devem escolher um número entre 1, 2, 3, 5, 8, 13, 21, 40, 100 ou ?.
+</p>
+
+<b>Classificação:</b><br>
+<b>1, 2, 3:</b> A tarefa é fácil; <br>
+<b>5:</b> A tarefa é de médio esforço; <br>
+<b>8, 13:</b> A tarefa é difícil; <br>
+<b>21, 40:</b> A tarefa é muito difícil; <br>
+<b>100, ?:</b> É muito difícil mesmo, nem sei como estimar; <br>
+
+<p align = "justify"> &emsp;&emsp; 
+Após a escolha, todos os integrantes apresentam as cartas ao mesmo tempo.
+Se os participantes tiverem escolhido valores diferentes, aqueles que escolheram os valores mais extremos deverão apresentar suas opiniões em relação a tarefa. Após debatido o assunto todos devem escolher novamente uma carta.
+</p>
+
+<p align = "justify"> &emsp;&emsp; 
+Esse processo se segue até os números escolhidos tenham chegado a um valor em comum, se por acaso tiverem chegado a valores parecidos, porém não iguais, então o mais alto é escolhido.
+</p>
+
+<p align = "justify"> &emsp;&emsp; 
+Se por acaso os valores continuam muito distantes, então a tarefa deve ser deixada em pausa e todos os integrantes devem procurar entender melhor sobre o assunto, e assim chegar a um consenso em uma próxima reunião.
+</p>
+
