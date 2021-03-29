@@ -13,8 +13,6 @@ Data|Versão|Descrição|Autor
 <p align = "justify"> &emsp;&emsp; Esse documento tem por objetivo padronizar a criação de branchs no repósitorio do Anunbis. Dessa forma, se torna indispensável a presença da issue, funcionalidade aos quais a branch se refere. </p>
 
 ## 2. <a name="2">Branchs Principais</a>
-<p align = "justify"> &emsp;&emsp;  </p>
-
 ### 2.1 <a name="2.1">Master</a>
 <p align = "justify"> &emsp;&emsp; Essa é a branch que contém o código mais estável do Anunbis. Tudo que o usuário consome da versão atual está aqui. As diretrizes dela são:</p>
 
@@ -75,7 +73,7 @@ feature/#55-Criar_Feed_de_Notícias
 
 
 ### 2.5 <a name="2.5">Release</a>
-<p align = "justify"> &emsp;&emsp; Branch que contém um conjunto de funcionalidades que podem ser implementadas na <b>,master</b>. Diretrizes:</p>
+<p align = "justify"> &emsp;&emsp; Branch que contém um conjunto de funcionalidades que podem ser implementadas na <b>master</b>. Diretrizes:</p>
 
 * Deve ser derivada da <b>develop</b>;
 * Após ser concluída deve ser mesclada na <b>master</b>;
@@ -99,7 +97,7 @@ release/v2.5
 ```
 
 ### 2.6 <a name="2.6">Bugfix</a>
-<p align = "justify"> &emsp;&emsp; Branch destinada a resolver problemas como bugs e erros presentes na <b>release</b>.Diretrizes:</p>
+<p align = "justify"> &emsp;&emsp; Branch destinada a resolver problemas como bugs e erros presentes na <b>release</b>. Diretrizes:</p>
 
 * Deve ser derivada da <b>release</b>;
 * Deve ser mesclada a release depois de finalizada;
@@ -141,7 +139,5 @@ hotfix/vNúmero.Versão
 ```
 hotfix/v2.6
 ```
-
-
-## Referências
+## 3. <a nome="3">Referências</a>
 GABRIEL, Enzo; et al. Política de Branches - Vamos Cuidar. Disponível em: <https://fga-eps-mds.github.io/2020.1-VC_Usuario/#/docs/policies/branches>. Acesso em: 03 mar 2021.

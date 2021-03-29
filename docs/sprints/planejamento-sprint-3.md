@@ -32,8 +32,8 @@
 <p align="justify">Esta <i>Sprint</i> tem como objetivo:</p>
 
 - Definir um nome para o projeto
-- Configurar o docker para o back-end.
-- Estudar o básico tecnologias que serão utilizadas
+- Configurar o docker para o back-end
+- Estudar o básico das tecnologias que serão utilizadas
 - Criar protótipo de baixa fidelidade
 - Atualizar documentação
 

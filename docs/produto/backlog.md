@@ -1,4 +1,5 @@
-# Histórico de Versões
+
+## Histórico de Versões
 
 Data|Versão|Descrição|Autor
 -|-|-|-

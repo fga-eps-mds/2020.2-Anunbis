@@ -51,4 +51,4 @@ A Milestone da _Sprint_ 4 encontra-se neste [link](https://github.com/fga-eps-md
 
 | Issue | Descrição |
 |:--|:--:|
-| [**#37**]((https://github.com/fga-eps-mds/2020.2-Anunbis/issues/37)) | Estudar e configurar o docker para o back-end |
+| [#37](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/37) | Estudar e configurar o docker para o back-end |
