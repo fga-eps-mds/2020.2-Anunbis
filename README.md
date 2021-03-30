@@ -87,7 +87,7 @@ Acesso a aplicação:
 
 [Slides](https://www.canva.com/design/DAEaGAyzAZw/Gg7EyfuyvqhOsFKevdloYQ/view?utm_content=DAEaGAyzAZw&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
 
-[Vídeo](https://www.youtube.com/watch?v=zEFaFDJyVVc)
+[Vídeo](https://www.youtube.com/watch?v=FL6XEwcVBhA)
 
 ## Equipe
 <table>
