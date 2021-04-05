@@ -56,6 +56,7 @@ nav:
         - Canvas: documentacao/canvas.md
         - Backlog do Produto: produto/backlog.md
         - Protótipos: produto/prototipos.md
+        - Identidade Visual: produto/identidade-visual.md
     - Contribuição:
         - Como Contribuir?: como_contribuir.md
         - Código de Conduta: CODE_OF_CONDUCT.md
