@@ -60,6 +60,6 @@ Essa sprint foi de muito aprendizado para nós, vimos que na realidade é um pou
 </p>
 
 ## 8. <a name="8">Quadro de Conhecimento</a>
-```
-Em breve
-```
+
+![image](https://user-images.githubusercontent.com/74625814/113589983-70204580-9608-11eb-824e-0ea115a0e865.png)
+![image](https://user-images.githubusercontent.com/74625814/113590739-61865e00-9609-11eb-91d8-bbb3dbc8489a.png)
