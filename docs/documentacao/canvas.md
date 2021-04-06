@@ -4,6 +4,7 @@ Data|Versão|Descrição|Autor
 -|-|-|-
 10/03|0.1|Abertura do Documento Canvas|Rodrigo e Victor|
 10/03|0.2|Adicionando Modelo de Negócios|Rodrigo e Victor|
+05/04|0.3|Atualizando modelo de negócios|Rodrigo|
 
 ## 1. <a name="1">Introdução</a>
 
@@ -14,7 +15,7 @@ Data|Versão|Descrição|Autor
 
 ## 2. <a name="2">Modelo de Negócios</a>
 
-<div style="display:block;text-align:center"><img src="/2020.2-Anunbis/images/modeloDeNegocios.png" alt="Modelo de Negócios"></div>
+<div style="display:block;text-align:center"><img src="/2020.2-Anunbis/images/modeloDeNegocios3.png" alt="Modelo de Negócios"></div>
 
 
 * <a href="https://miro.com/app/board/o9J_lQQOy9A=/">Link do Modelo de Negócios feito na plataforma Miro</a>
