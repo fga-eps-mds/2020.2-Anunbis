@@ -1,5 +1,1 @@
-
-<process type>: <command>
-
-web: gunicorn "run:create_app()"
-
+web: python run.py
