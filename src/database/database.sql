@@ -2,13 +2,13 @@
 USE db_anunbis;
 
 CREATE TABLE IF NOT EXISTS professor (
-  id_professor int UNSIGNED,
+  id_professor int UNSIGNED AUTO_INCREMENT,
   reg_professor bigint UNSIGNED UNIQUE,
   `name` varchar(255) NOT NULL,
   email varchar(255) UNIQUE,
   `password` varchar(255),
   PRIMARY KEY (id_professor)
-);
+)ENGINE InnoDB AUTO_INCREMENT = 0;
 
 CREATE TABLE IF NOT EXISTS discipline (
   discipline_code varchar(80) NOT NULL DEFAULT '',
@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS professor_discipline (
 );
       
 CREATE TABLE IF NOT EXISTS course (
-  id_course int UNSIGNED,
+  id_course int UNSIGNED AUTO_INCREMENT,
   `name` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (id_course)
 );
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS student (
 );
 
 CREATE TABLE IF NOT EXISTS post (
-  id_post int UNSIGNED,
+  id_post int UNSIGNED AUTO_INCREMENT,
   reg_student int UNSIGNED DEFAULT NULL,
   id_professor int UNSIGNED NOT NULL,
   content varchar(480) NOT NULL,
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS post (
   FOREIGN KEY (discipline_code) REFERENCES discipline (discipline_code),
   FOREIGN KEY (reg_student) REFERENCES student (reg_student),
   FOREIGN KEY (id_professor) REFERENCES professor (id_professor)
-);
+)ENGINE InnoDB AUTO_INCREMENT = 0;
 
 CREATE TABLE IF NOT EXISTS disagree_student_post (
   id_post int UNSIGNED NOT NULL,
@@ -79,7 +79,7 @@ CREATE TABLE IF NOT EXISTS agree_student_post (
 );
 
 CREATE TABLE IF NOT EXISTS report(
-  id_report int UNSIGNED,
+  id_report int UNSIGNED AUTO_INCREMENT,
   id_post int UNSIGNED NOT NULL,
   content varchar(120) NOT NULL DEFAULT '',
   report_type enum('L', 'I', 'G', 'O') NOT NULL,
@@ -87,4 +87,4 @@ CREATE TABLE IF NOT EXISTS report(
   PRIMARY KEY (id_report),
   FOREIGN KEY (id_post) REFERENCES post (id_post),
   FOREIGN KEY (reg_student) REFERENCES student (reg_student)
-);
+)ENGINE InnoDB AUTO_INCREMENT = 0;

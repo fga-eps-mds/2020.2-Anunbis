@@ -5,7 +5,7 @@ from passlib.hash import pbkdf2_sha256
 class Professor(db.Model):
     __tablename__ = "professor"
 
-    id_professor = db.Column(db.Integer, primary_key=True, )
+    id_professor = db.Column(db.Integer, primary_key=True, autoincrement=True)
     reg_professor = db.Column(db.Integer, nullable=True, unique=True)
 
     name = db.Column(db.String(255), nullable=False)
