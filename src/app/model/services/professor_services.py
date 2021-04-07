@@ -4,10 +4,11 @@ from ...ext.database import db
 from sqlalchemy.exc import IntegrityError
 from . import course_services
 from ..entity.professor import Professor
+from sqlalchemy import func
 
 
 def get_professor_name_contains(name):
-    professors = professor_dao.Professor.query.filter(professor_dao.Professor.name.contains(name)).all()
+    professors = professor_dao.Professor.query.filter(func.lower(professor_dao.Professor.name).contains(name.lower())).all()
     return professors
 
 
@@ -54,12 +55,6 @@ def __build_professor(professor):
 def get_professor_reg(reg_professor):
     professor = professor_dao.Professor.query.filter_by(reg_professor=reg_professor).first()
     return professor
-
-
-
-def get_professor_name_contains(name):
-    professors = professor_dao.Professor.query.filter(professor_dao.Professor.name.contains(name)).all()
-    return professors
 
 
 def get_professor_id(id_professor):
