@@ -3,7 +3,7 @@ from passlib.hash import pbkdf2_sha256
 
 
 class Professor(db.Model):
-    __tablename__ = "PROFESSOR"
+    __tablename__ = "professor"
 
     id_professor = db.Column(db.Integer, primary_key=True, autoincrement=True)
     reg_professor = db.Column(db.Integer, nullable=True, unique=True)
@@ -12,7 +12,7 @@ class Professor(db.Model):
     email = db.Column(db.String(255), nullable=True, unique=True)
     password = db.Column(db.String(255), nullable=True)
 
-    disciplines = db.relationship('Discipline', secondary='PROFESSOR_DISCIPLINE', lazy='dynamic')
+    disciplines = db.relationship('Discipline', secondary='professor_discipline', lazy='dynamic')
 
     posts = db.relationship('Post', back_populates="professor")
 
