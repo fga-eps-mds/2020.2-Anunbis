@@ -5,7 +5,7 @@ from ..services import login_services
 from marshmallow import ValidationError
 
 
-class LoginList(Resource):
+class LoginStudent(Resource):
     def post(self):
         try:
             ls = login_schema.LoginSchema()
@@ -15,7 +15,18 @@ class LoginList(Resource):
         except ValidationError as err:
             return make_response(jsonify(err.messages), 400)
 
+class LoginProfessor(Resource):
+    def post(self):
+        ls = login_schema.LoginProfessorSchema()
+        validate = ls.validate(request.json)
+        if validate:    
+            return make_response(jsonify(validate), 400)
+        else:
+            email = request.json['email']
+            password = request.json['password']
+            message, status_code = login_services.auth_professor(email, password)
+
 
 def configure(api):
     api.add_resource(LoginList, "/login")
-
+    api.add_resource(LoginProfessor, "/login/professor")
