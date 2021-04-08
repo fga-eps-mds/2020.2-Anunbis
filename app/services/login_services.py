@@ -3,7 +3,7 @@ from . import professor_services
 from flask_jwt_extended import create_access_token
 from datetime import timedelta
 from ..schemas.student_schema import StudentSchema
-from ...schemas.professor_schema import ProfessorSchema
+from ..schemas.professor_schema import ProfessorSchema
 
 def auth_student(user):
     student_db = student_services.get_student_email(user.get('email'))

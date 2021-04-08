@@ -28,5 +28,5 @@ class LoginProfessor(Resource):
 
 
 def configure(api):
-    api.add_resource(LoginList, "/login")
+    api.add_resource(LoginStudent, "/login")
     api.add_resource(LoginProfessor, "/login/professor")
