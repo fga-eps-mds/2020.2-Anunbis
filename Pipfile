@@ -21,6 +21,7 @@ psycopg2-binary = "==2.8.6"
 [dev-packages]
 coverage = "==5.5"
 tox = "*"
+ipdb = "*"
 
 [requires]
 python_version = "3.7"
