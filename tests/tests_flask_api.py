@@ -2,6 +2,7 @@ from unittest import TestCase
 from app.app import create_app
 from app.model.dao import course_dao, discipline_dao
 from flask import url_for
+from json import loads
 
 class TestFlaskBase(TestCase):
     def setUp(self):
@@ -19,6 +20,14 @@ class TestFlaskBase(TestCase):
     def tearDown(self):
         """ Start after all tests """
         self.app.db.drop_all()
+
+
+    def create_student_token(self):
+        login = self.client.post(url_for("restapi.login"), json=self.student)
+        return {
+            'Authorization':
+                'Bearer ' + loads(login.data.decode())['access_token']
+        }
 
 
     def __create_base_entities(self):
