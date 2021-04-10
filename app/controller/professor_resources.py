@@ -3,8 +3,10 @@ from flask import request, make_response, jsonify
 from ..view.professor_schema import ProfessorSchema
 from ..model.services import professor_services
 from ..model.entity.professor import Professor
+from flask_jwt_extended import jwt_required
 
 class ProfessorDetail(Resource):
+    @jwt_required()
     def get(self, name):
         professors = professor_services.get_professor_name_contains(name)
         ps = ProfessorSchema(many=True, exclude=['email', 'password', 'reg_professor'])
