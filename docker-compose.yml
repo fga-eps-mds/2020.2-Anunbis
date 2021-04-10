@@ -1,6 +1,8 @@
 version: "3.7"
 services:
   flask:
+      stdin_open: true
+      tty: true
       build:
         ./
       volumes: 
