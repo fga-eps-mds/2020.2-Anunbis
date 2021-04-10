@@ -17,8 +17,12 @@ flask-cors = "==3.0.10"
 passlib = "==1.7.4"
 python-dotenv = "==0.17.0"
 psycopg2-binary = "==2.8.6"
+ipdb = "==0.13.7"
+pexpect = "==4.8.0"
 
 [dev-packages]
+coverage = "==5.5"
+tox = "*"
 
 [requires]
-python_version = "3.7.10"
+python_version = "3.7"
