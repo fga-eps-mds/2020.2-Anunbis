@@ -1,9 +1,10 @@
-from tests_flask_api import TestFlaskBase
+from flask_base_tests_cases import TestFlaskBase
 from flask import url_for, jsonify
 
 
 class TestCourseList(TestFlaskBase):
     def test_api_must_return_courses(self):
+        self.create_base_course()
         expected = [self.course]
 
         response = self.client.get(url_for('restapi.courselist'))
