@@ -30,7 +30,6 @@ class TestFlaskBase(TestCase):
             "password": self.student['password']
         }
         login = self.client.post(url_for("restapi.loginlist"), json=json)
-        import ipdb; ipdb.set_trace()
         return {
             'Authorization':
                 'Bearer ' + loads(login.data.decode())['access_token']
