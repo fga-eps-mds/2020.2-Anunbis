@@ -1,6 +1,6 @@
 from ..ext.database import db
 from passlib.hash import pbkdf2_sha256
-
+from . import post_dao
 
 class Professor(db.Model):
     __tablename__ = "professor"
@@ -14,7 +14,7 @@ class Professor(db.Model):
 
     disciplines = db.relationship('Discipline', secondary='professor_discipline', lazy='dynamic')
 
-    posts = db.relationship('Post', back_populates="professor")
+    posts = db.relationship(post_dao.Post, back_populates="professor")
 
     @property
     def password(self):
