@@ -10,4 +10,7 @@ def get_course():
 
 def get_course_id(id):
     course_bd = course_dao.Course.query.filter_by(id_course=id).first()
-    return Course(course_bd=course_bd)
+    if course_bd:
+        return Course(course_bd=course_bd)
+    else:
+        return None

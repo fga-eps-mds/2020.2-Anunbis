@@ -51,4 +51,15 @@ class TestStudentList(TestFlaskBase):
         self.assertIsNotNone(response.json['id_course'])
         self.assertIsNotNone(response.json['reg_student'])
 
+    def test_must_validate_course_not_found(self):
+        student = {
+            "name": "Testing Student",
+            "reg_student": "190020000",
+            "id_course": 2,
+            "email": "190020000@aluno.unb.br",
+            "password": "123456789"
+        }
+        response = self.post(student)
+        self.assertEqual(response.status_code, 404)
+
 
