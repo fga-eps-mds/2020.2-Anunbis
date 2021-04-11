@@ -12,8 +12,10 @@ class TestFlaskBase(TestCase):
         self.app_context = self.app.test_request_context()
         self.app_context.push()
         self.client = self.app.test_client()
+        self.app.config['JWT_SECRET_KEY'] = "anunbis-test"
         self.app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///"  # This create a in-memory sqlite db
         self.app.db.create_all()
+        self.__create_atribute_entities()
 
     def tearDown(self):                                         # This method run after each test
         self.app.db.drop_all()
@@ -23,7 +25,12 @@ class TestFlaskBase(TestCase):
         if self.student is None:
             self.create_base_student()
 
-        login = self.client.post(url_for("restapi.login"), json=self.student)
+        json = {
+            "email": self.student['email'],
+            "password": self.student['password']
+        }
+        login = self.client.post(url_for("restapi.loginlist"), json=json)
+        import ipdb; ipdb.set_trace()
         return {
             'Authorization':
                 'Bearer ' + loads(login.data.decode())['access_token']
@@ -85,3 +92,9 @@ class TestFlaskBase(TestCase):
         }
 
         self.client.post(url_for("restapi.studentlist"), json=self.student)
+
+    def __create_atribute_entities(self):
+        self.course = None
+        self.discipline = None
+        self.student = None
+        self.professor = None
