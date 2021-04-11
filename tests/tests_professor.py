@@ -28,9 +28,6 @@ class TestProfessorList(TestFlaskBase):
         response = self.post(professor)
         self.assertEqual(response.status_code, status_code_expected)
 
-    # dado que o PROFESSOR JA FOI REGISTRADO
-    # quando eu for registrar novamente
-    # nao pode ser cadastrado
     def test_api_must_validate_professor_already_registered(self):
         self.create_base_professor()
         professor = self.professor
@@ -129,8 +126,7 @@ class TestProfessorList(TestFlaskBase):
         response = self.post(professor)
 
         self.assertEqual(response.status_code, 400)
-        self.assertEqual(response.json['email'][0],
-                         "The email must be name(matricula)@unb.br")
+        self.assertEqual(response.json['email'][0], "The email must be name(matricula)@unb.br")
 
     def test_api_must_validate_email_len(self):
         email = '1'*100 + "@unb.br"
@@ -142,5 +138,42 @@ class TestProfessorList(TestFlaskBase):
         self.assertIsNotNone(response.json['email'])
 
 
-        
+class TestProfessorDetail(TestFlaskBase):
+    def get(self, name, headers):
+        return self.client.get(url_for('restapi.professordetail', name=name), headers=headers)
     
+    def test_api_must_return_professors_by_name_substring(self):
+        headers = self.create_student_token()
+        self.create_base_professor()
+        name_substring = self.professor['name'][1].upper()
+        
+        response = self.get(name_substring, headers)
+
+        json_attributes = list(response.json[0].keys())
+        expected_json_attributes = ['disciplines', 'id_professor', 'name', 'posts', 'rating']
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(json_attributes, expected_json_attributes)
+        self.assertEqual(response.json[0]['name'], self.professor['name'])
+        self.assertEqual(response.json[0]['posts'], [])
+
+    def test_api_must_require_token(self):
+        self.create_base_professor()
+        name_substring = self.professor['name'][1].upper()
+        
+        response = self.get(name_substring, None)
+
+        self.assertEqual(response.status_code, 401)
+        self.assertEqual(response.json, {'msg': 'Missing Authorization Header'})
+
+    def test_api_must_not_return_private_attributes(self):
+        headers = self.create_student_token()
+        self.create_base_professor()
+        name_substring = self.professor['name'][1].upper()
+        
+        response = self.get(name_substring, headers)
+
+        json_attributes = list(response.json[0].keys())
+        self.assertEqual(response.status_code, 200)
+        self.assertNotIn('email', json_attributes)
+        self.assertNotIn('password', json_attributes)
+        self.assertNotIn('reg_student', json_attributes)
