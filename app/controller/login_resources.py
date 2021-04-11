@@ -2,7 +2,6 @@ from flask_restful import Resource
 from flask import request, make_response, jsonify
 from ..view import login_schema
 from ..model.services import login_services
-from ..model.entity.student import Student
 
 
 class LoginList(Resource):
@@ -17,3 +16,6 @@ class LoginList(Resource):
             message, status_code = login_services.auth_student(email, password)
             return make_response(jsonify(message), status_code)
 
+
+def configure(api):
+    api.add_resource(LoginList, "/login")
