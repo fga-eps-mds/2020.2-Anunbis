@@ -5,6 +5,12 @@ from datetime import timedelta
 from ..schemas.student_schema import StudentSchema
 from ..schemas.professor_schema import ProfessorSchema
 
+def auth_user(user):
+    if professor_services.is_professor(user):
+        return  auth_professor(user)
+    else:
+        return auth_student(user)
+
 def auth_student(user):
     student_db = student_services.get_student_email(user.get('email'))
     ss = StudentSchema(only=['reg_student', 'name', 'email', 'id_course'])
@@ -24,11 +30,11 @@ def auth_student(user):
             'message': 'Email or Password invalid'
         }, 401
 
-def auth_professor(email, password):
-    professor_db = professor_services.get_professor_email(email)
-    ps = ProfessorSchema(only=['reg_professor','name','email', 'id_professor'])
+def auth_professor(user):
+    professor_db = professor_services.get_professor_email(user.get('email'))
+    ps = ProfessorSchema(only=['reg_professor','name','email'])
 
-    if professor_db and professor_db.verify_password(password):
+    if professor_db and professor_db.verify_password(user.get('password')):
         access_token = create_access_token(
             identity = professor_db.reg_professor,
             expires_delta=timedelta(minutes=20)
