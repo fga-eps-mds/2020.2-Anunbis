@@ -4,7 +4,6 @@ from app.model.dao import course_dao, discipline_dao, professor_dao
 from flask import url_for
 from json import loads
 
-
 class TestFlaskBase(TestCase):
     def setUp(self):                                           # This method run before each test
         self.app = create_app()
@@ -68,13 +67,9 @@ class TestFlaskBase(TestCase):
         self.app.db.session.add(discipline_bd)
         self.app.db.session.commit()
 
-    def create_base_professor(self):            
-        self.professor = {
-            "name": "Carla Rocha",
-            "reg_professor": 19002037777,
-            "email": "19002037777@unb.br",
-            "password": "123456789"
-        }
+    def create_base_professor(self):
+        from tests_professor import valid_professor            
+        self.professor = valid_professor()
 
         self.client.post(url_for("restapi.professorlist"), json=self.professor)
         professor_bd = professor_dao.Professor.query.filter_by(reg_professor=self.professor['reg_professor']).first()

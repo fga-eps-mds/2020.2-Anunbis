@@ -7,22 +7,8 @@ class TestProfessorList(TestFlaskBase):
     def post(self, json):
         return self.client.post(url_for("restapi.professorlist"), json=json)
 
-    def valid_professor(self):
-        return {
-            "name": "Carla Rocha",
-            "reg_professor": "19002037777",
-            "email": "19002037777@unb.br",
-            "password": "123456789"
-        }
-        
-    def create_professor_made_by_admin(self, name):
-        professor_bd = professor_dao.Professor()
-        professor_bd.name = name
-        self.app.db.session.add(professor_bd)
-        self.app.db.session.commit()
-
     def test_api_must_register_a_valid_professor(self):
-        professor = self.valid_professor()
+        professor = valid_professor()
         status_code_expected = 201
 
         response = self.post(professor)
@@ -40,28 +26,28 @@ class TestProfessorList(TestFlaskBase):
         self.assertEqual(response.json, expected_json)
 
     def test_api_must_register_professor_made_by_admin(self):
-        professor = self.valid_professor()
-        self.create_professor_made_by_admin(name=professor['name'])
+        professor = valid_professor()
+        create_professor_made_by_admin(self, name=professor['name'])
         
         response = self.post(professor)
         self.assertEqual(response.status_code, 201)
         
     def test_api_must_validate_professor_made_by_admin_with_email_already_registered(self):
         self.create_base_professor()
-        professor = self.valid_professor()
+        professor = valid_professor()
         professor['name'] = "Testing asduhdsauhsda"
         professor['email'] = self.professor['email']
-        self.create_professor_made_by_admin(name=professor['name'])
+        create_professor_made_by_admin(self, name=professor['name'])
         
         response = self.post(professor)
         self.assertEqual(response.status_code, 409)
     
     def test_api_must_validate_professor_made_by_admin_with_reg_already_registered(self):
         self.create_base_professor()
-        professor = self.valid_professor()
+        professor = valid_professor()
         professor['name'] = "Testing asduhdsauhsda"
         professor['reg_professor'] = self.professor['reg_professor']
-        self.create_professor_made_by_admin(name=professor['name'])
+        create_professor_made_by_admin(self, name=professor['name'])
         
         response = self.post(professor)
         self.assertEqual(response.status_code, 409)
@@ -95,7 +81,7 @@ class TestProfessorList(TestFlaskBase):
         self.assertIsNotNone(response.json['password'])
 
     def test_api_must_validate_attributes_min_range(self):
-        professor = self.valid_professor()
+        professor = valid_professor()
         professor['reg_professor'] = -1
         professor['name'] = "a"
         professor['password'] = "123"
@@ -108,7 +94,7 @@ class TestProfessorList(TestFlaskBase):
         self.assertIsNotNone(response.json['password'])
 
     def test_api_must_validate_attributes_max_range(self):
-        professor = self.valid_professor()
+        professor = valid_professor()
         professor['name'] = "a"*256
         professor['password'] = "1"*101
 
@@ -120,7 +106,7 @@ class TestProfessorList(TestFlaskBase):
 
     def test_api_must_validate_email_format(self):
         email = "qualquer_coisa@email.com"
-        professor = self.valid_professor()
+        professor = valid_professor()
         professor['email'] = email
 
         response = self.post(professor)
@@ -130,7 +116,7 @@ class TestProfessorList(TestFlaskBase):
 
     def test_api_must_validate_email_len(self):
         email = '1'*100 + "@unb.br"
-        professor = self.valid_professor()
+        professor = valid_professor()
         professor['email'] = email
 
         response = self.post(professor)
@@ -177,3 +163,19 @@ class TestProfessorDetail(TestFlaskBase):
         self.assertNotIn('email', json_attributes)
         self.assertNotIn('password', json_attributes)
         self.assertNotIn('reg_student', json_attributes)
+
+
+def valid_professor():
+    return {
+        "name": "Carla Rocha",
+        "reg_professor": "19002037777",
+        "email": "19002037777@unb.br",
+        "password": "123456789"
+    }
+        
+def create_professor_made_by_admin(self, name):
+    professor_bd = professor_dao.Professor()
+    professor_bd.name = name
+    self.app.db.session.add(professor_bd)
+    self.app.db.session.commit()
+
