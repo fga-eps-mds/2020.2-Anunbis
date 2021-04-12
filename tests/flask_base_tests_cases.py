@@ -1,6 +1,6 @@
 from unittest import TestCase
 from app.app import create_app
-from app.model.dao import course_dao, discipline_dao
+from app.model.dao import course_dao, discipline_dao, professor_dao
 from flask import url_for
 from json import loads
 
@@ -68,7 +68,7 @@ class TestFlaskBase(TestCase):
         self.app.db.session.add(discipline_bd)
         self.app.db.session.commit()
 
-    def create_base_professor(self):
+    def create_base_professor(self):            
         self.professor = {
             "name": "Carla Rocha",
             "reg_professor": 19002037777,
@@ -77,6 +77,13 @@ class TestFlaskBase(TestCase):
         }
 
         self.client.post(url_for("restapi.professorlist"), json=self.professor)
+        professor_bd = professor_dao.Professor.query.filter_by(reg_professor=self.professor['reg_professor']).first()
+        self.professor['id_professor'] = professor_bd.id_professor
+        if self.discipline is None:
+            self.create_base_discipline()
+
+        professor_bd.disciplines.append(discipline_dao.Discipline.query.filter_by(discipline_code=self.discipline['discipline_code']).first())
+        self.app.db.session.commit()
 
     def create_base_student(self):
         if self.course is None:
