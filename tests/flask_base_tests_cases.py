@@ -84,13 +84,8 @@ class TestFlaskBase(TestCase):
         if self.course is None:
             self.create_base_course()
 
-        self.student = {
-            "name": "Primeiro Estudante",
-            "reg_student": 190099999,
-            "email": "190099999@aluno.unb.br",
-            "password": "123456789",
-            "id_course": 1
-        }
+        from tests_student import valid_student
+        self.student = valid_student()
 
         self.client.post(url_for("restapi.studentlist"), json=self.student)
 
