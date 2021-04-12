@@ -3,9 +3,11 @@ from flask import request, make_response, jsonify
 from ..view import post_schema
 from ..model.entity.post import Post
 from ..model.services import post_services
+from flask_jwt_extended import jwt_required
 
 
 class PostList(Resource):
+    @jwt_required()
     def post(self):
         validate = post_schema.PostSchema().validate(request.json)
         if validate:
