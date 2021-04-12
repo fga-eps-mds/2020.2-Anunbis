@@ -6,7 +6,7 @@ from ..schemas.student_schema import StudentSchema
 from ..schemas.professor_schema import ProfessorSchema
 
 def auth_user(user):
-    if professor_services.is_professor(user):
+    if professor_services.is_professor(user.get('email')):
         return  auth_professor(user)
     else:
         return auth_student(user)
