@@ -23,3 +23,7 @@ class PostList(Resource):
 
             message, status_code = post_services.register_post(post)
             return make_response(jsonify(message), status_code)
+
+
+def configure(api):
+    api.add_resource(PostList, "/post")

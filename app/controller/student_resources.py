@@ -24,3 +24,7 @@ class StudentList(Resource):
                               email=email, password=password)
             message, status = student_services.register_student(student)
             return make_response(jsonify(message), status)
+
+
+def configure(api):
+    api.add_resource(StudentList, "/student")
