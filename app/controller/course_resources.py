@@ -7,7 +7,7 @@ class CourseList(Resource):
     def get(self):
         courses = course_services.get_course()
         cs = CourseSchema(many=True)
-        return make_response(cs.jsonify(courses), 200)
+        return make_response(cs.jsonify(courses), 201)
 
 
 def configure(api):
