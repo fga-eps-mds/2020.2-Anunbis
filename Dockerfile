@@ -34,7 +34,7 @@ USER appuser
 COPY . .
 
 # Setup flask
-ENV FLASK_APP=./src/app/app.py
+ENV FLASK_APP=./app/app.py
 ENV FLASK_ENV=Development
 ENV FLASK_DEBUG=True
 
