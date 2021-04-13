@@ -1,7 +1,7 @@
 from flask_base_tests_cases import TestFlaskBase
 from flask import url_for
 from app.model.dao import professor_dao
-
+from datetime import date
 class TestProfessorList(TestFlaskBase):
 
     def post(self, json):
@@ -142,6 +142,54 @@ class TestProfessorDetail(TestFlaskBase):
         self.assertEqual(response.json[0]['name'], self.professor['name'])
         self.assertEqual(response.json[0]['posts'], [])
 
+    def test_api_must_retun_post_about_professor(self):
+        professor = valid_professor()
+        name_substring = professor['name'][2]
+        from tests_post import valid_post, register_post
+        post = valid_post(self)
+        register_post(self, post=post)
+
+        response = self.get(name_substring, self.create_student_token())
+    
+        del self.discipline['id_course']
+        post_expected = {'content': post['content'], 'discipline': self.discipline, 'id_post': 1, 'id_professor': 1, 'is_anonymous': post['is_anonymous'],
+            'post_date': date.today().isoformat(), 'rating': float(post['rating']), 'student': {'course': {'id_course': 1, 'name': self.course['name']}}}
+        post_response = response.json[0]['posts'][0]
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(post_response, post_expected)
+
+    def test_api_must_not_return_student_information_when_anonymous(self):
+        professor = valid_professor()
+        name_substring = professor['name'][2]
+        from tests_post import valid_post, register_post
+        post = valid_post(self)
+        post['is_anonymous'] = True
+        register_post(self, post=post)
+
+        response = self.get(name_substring, self.create_student_token())
+    
+        del self.discipline['id_course']
+        student_expected = {'course': {'id_course': 1, 'name': self.course['name']}}
+        student_response = response.json[0]['posts'][0]['student']
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(student_response, student_expected)
+
+    def test_api_must_return_student_information_when_not_anonymous(self):
+        professor = valid_professor()
+        name_substring = professor['name'][2]
+        from tests_post import valid_post, register_post
+        post = valid_post(self)
+        post['is_anonymous'] = False
+        register_post(self, post=post)
+
+        response = self.get(name_substring, self.create_student_token())
+
+        del self.discipline['id_course']
+        student_expected = {'course': {'id_course': 1, 'name': self.course['name']}, 'name': 'Testing Student'}
+        student_response = response.json[0]['posts'][0]['student']
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(student_response, student_expected)
+
     def test_api_must_require_token(self):
         self.create_base_professor()
         name_substring = self.professor['name'][1].upper()
@@ -155,14 +203,14 @@ class TestProfessorDetail(TestFlaskBase):
         headers = self.create_student_token()
         self.create_base_professor()
         name_substring = self.professor['name'][1].upper()
-        
+
         response = self.get(name_substring, headers)
 
         json_attributes = list(response.json[0].keys())
         self.assertEqual(response.status_code, 200)
         self.assertNotIn('email', json_attributes)
         self.assertNotIn('password', json_attributes)
-        self.assertNotIn('reg_student', json_attributes)
+        self.assertNotIn('reg_professor', json_attributes)
 
 
 def valid_professor():
