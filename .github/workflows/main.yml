@@ -41,9 +41,14 @@ jobs:
         if: steps.cache-pipenv.outputs.cache-hit != 'true'
         run: pipenv install --deploy --dev
         
-      - name: Test & publish code coverage
-        uses: paambaati/codeclimate-action@v2.7.5
+      - name: Run tests
+        run: pipenv run coverage run --source=app -m unittest discover -s tests/ -v
+        
+      - name: Install coveralls
+        run: pip install coveralls
+
+      - name: Sending stats to coveralls
         env:
-          CC_TEST_REPORTER_ID: 3603e3dee715466083115d0c6e3d85be61d55b5e15a926d0787c12bd95b2947a
-        with:
-          coverageCommand: coverage run --source=app -m unittest discover -s tests/ -v
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          coveralls --service=github
