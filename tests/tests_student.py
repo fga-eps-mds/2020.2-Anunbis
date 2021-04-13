@@ -89,8 +89,8 @@ def valid_student(self):
     self.create_base_course()
     return {
         "name": "Testing Student",
-        "reg_student": "190020000",
-        "id_course": "1",
+        "reg_student": 190020000,
+        "id_course": 1,
         "email": "190020000@aluno.unb.br",
         "password": "password"
     }

@@ -216,7 +216,7 @@ class TestProfessorDetail(TestFlaskBase):
 def valid_professor():
     return {
         "name": "Carla Rocha",
-        "reg_professor": "19002037777",
+        "reg_professor": 19002037777,
         "email": "19002037777@unb.br",
         "password": "123456789"
     }
