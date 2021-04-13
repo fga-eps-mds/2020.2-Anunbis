@@ -41,6 +41,7 @@ class TestFlaskBase(TestCase):
         self.create_base_student()
 
     def create_base_course(self):
+        if self.course: return
         self.course = {
             "id_course": 1,
             "name": "Engenharia de Software"
@@ -52,6 +53,7 @@ class TestFlaskBase(TestCase):
         self.app.db.session.commit()
 
     def create_base_discipline(self):
+        if self.discipline: return
         if self.course is None:
             self.create_base_course()
 
@@ -68,6 +70,7 @@ class TestFlaskBase(TestCase):
         self.app.db.session.commit()
 
     def create_base_professor(self):
+        if self.professor: return
         from tests_professor import valid_professor            
         self.professor = valid_professor()
 
@@ -81,11 +84,12 @@ class TestFlaskBase(TestCase):
         self.app.db.session.commit()
 
     def create_base_student(self):
+        if self.student: return
         if self.course is None:
             self.create_base_course()
 
         from tests_student import valid_student
-        self.student = valid_student()
+        self.student = valid_student(self)
 
         self.client.post(url_for("restapi.studentlist"), json=self.student)
 
