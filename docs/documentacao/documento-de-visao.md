@@ -6,17 +6,20 @@ Data|Versão|Descrição|Autor
 04/03|0.2|Adição dos itens 5, 6 e 7| Roberto|
 26/03|0.2|Atualizando contéudo da página| Rodrigo|
 13/04|0.3|Refatorando tópico 3| Equipe|
+13/04|0.4|Revisão dos tópicos 1,2| Equipe|
 
 
 ## 1. <a name="1">Introdução</a>
 
 ### 1.1 <a name ="1_1">Propósito</a>
 
-<p align="justify"> &emsp;&emsp; Este documento tem por objetivo estabelecer um posicionamento sobre a aplicação, suas características e seu desenvolvimento em questão. Também expondo as suas funcionalidades e definindo seus requisitos em termos de necessidade para usuários finais.</p>
+<p align="justify"> &emsp;&emsp; Este documento tem por objetivo estabelecer um posicionamento sobre a aplicação, suas características e seu desenvolvimento em questão. Também definindo seus requisitos em termos de necessidade para usuários finais.</p>
 
 ### 1.2 <a name="1_2">Escopo</a>
 
-<p align="justify"> &emsp;&emsp; Um dos fatores que definem o sucesso acadêmico de um estudante da Universidade de Brasília são seus professores, pois, dependendo deles, o aluno terá uma experiência diferente em relação à disciplina. Alguns professores cobram mais e outros menos, de fato o aprendizado de um estudante não depende apenas dele mesmo e sim de um conjunto de aspectos incluindo o seu professor. Sendo a finalidade desse projeto, disponibilizar uma forma confiável dos estudantes escolherem seus próprios professores.</p>
+<p align="justify"> &emsp;&emsp; Um dos fatores que definem o sucesso acadêmico de um estudante da Universidade de Brasília são seus professores, pois, dependendo deles, o aluno terá uma experiência diferente em relação à disciplina. Alguns professores cobram mais e outros menos, de fato o aprendizado de um estudante não depende apenas dele mesmo e sim de um conjunto de aspectos incluindo o seu professor. </p>
+
+<p align="justify"> &emsp;&emsp; Sendo o foco desse projeto, ajudar os alunos e os professores. Os alunos serão capazes de escolher professores com metodologias de ensino mais compatíveis com os próprios objetivos, e os professores receberão um fluxo de feedback contínuo em relação á sua forma de ensino. Assim ambos entrarão em um ciclo colaborativo que irá beneficiar todos na UnB. </p>
 
 ### 1.3 <a name=1_3>Definições, acrônimos e abreviações</a>
 
@@ -30,25 +33,29 @@ Tópico destinado as definições, acrônimos e abreviações dos termos usados 
 |**CPA**| Comissão própria de AutoAvaliação
 
 ## 2. <a name="2">Posicionamento</a>
-<p align="justify">&emsp;&emsp; A maior parte dos estudantes entram na universidade com um grande anseio por conhecimento, porém com o tempo, esse desejo acaba sendo anulado por professores que não possuem uma boa didática, ou não se dedicam a ajudar o estudante, ou apenas docentes que possuem uma metodologia que não compatível à alguns dos alunos.</p>
+<p align="justify">&emsp;&emsp; A maior parte dos estudantes entram na universidade com um grande anseio por conhecimento, porém com o tempo, esse desejo acaba sendo anulado por professores que não possuem uma boa didática, ou não se dedicam a ajudar o estudante, ou apenas docentes que possuem uma metodologia que não é compatível à alguns dos alunos.</p>
 
-### 2.1 <a name="2_1">Oportunidade de Negócio</a>
+<p align="justify">&emsp;&emsp; Além de que, por outro lado, muitos professores querem ajudar os estudantes o máximo possível, porém não possuem informações bem definidas de como evoluir suas metodologias, tendo que se apoiar a formas empíricas de tentativa e erro, para assim, tentar descobrir o que melhor funciona na disciplina que ministra. </p>
 
-<p align="justify">&emsp;&emsp; O projeto dá ao aluno a opção de escolher com mais segurança o professor com o qual deseja aprender naquele semestre, baseando-se na análise de quem já tinha tido alguma experiência com esse docente. Além de que, a aplicação visa disponibilizar de maneira rápida, fácil, respeitável e democrática, um feedback àqueles que se dedicam a ensinar.</p>
+<p align="justify">&emsp;&emsp; Neste sentido, este programa visa produzir um ambiente no qual ambas as partes possam se beneficiar. </p>
+
+
+### 2.1 <a name="2_1">Oportunidade de negócio</a>
+
+<p align="justify">&emsp;&emsp; O projeto dá ao aluno a opção de escolher com mais segurança o professor com o qual deseja aprender naquele semestre, baseando-se na análise de quem já teve alguma experiência com esse docente. Do mesmo modo que, o professor passa a receber todos os semestres um feedback em relação a sua forma de ensino, podendo assim melhorar os pontos que forem sendo apontados pelos seus antigos alunos.</p>
 
 ### 2.2 <a name="2_2">Descrição do problema</a>
 
-|**Questão**|**Informações do Produto**|
+|*Questão*|*Informações do Produto*|
 |:-|:-|
-|**O Problema é**|Falta de conhecimento prévio sobre os professores e as disciplinas.|
-|**Que afeta**|A comunidade acadêmica. |
-|**Cujo impacto é**|O aluno não encontrar uma metodologia de ensino compatível com si mesmo.|
-|**Uma boa solução seria**|Uma aplicação que permita os alunos compartilharem entre si as experiências com as disciplinas e professores.|
+|*O Problema é*|Aluno com falta de conhecimento prévio sobre os professores e as disciplinas/ Professor com dificuldade em evoluir a própria metodologia de ensino.|
+|*Que afeta*|A comunidade acadêmica. |
+|*Cujo impacto é*|O aluno não encontrar uma metodologia de ensino compatível com si mesmo/ O professor não conseguir melhorar sua forma de ensino.|
+|*Uma boa solução seria*|Uma aplicação que permita os alunos compartilharem entre si as experiências com as disciplinas e professores/ Uma aplicação que permite os professores receberem feedback sobre sua forma de ensino.|
 
 ### 2.3 <a name="2_3">Descrição da Posição do Produto</a>
 
-<p align="justify">&emsp;&emsp;A aplicação, quando desenvolvida, se posicionará no mercado como uma aplicação web que pode ser usada facilmente em navegadores mobile proporcionando uma experiência muito parecida a de um app nativo. Isso proporciona que os alunos troquem experiências de suas disciplinas realizadas de forma eficiente e rápida, possibilitando que os alunos encontrem metodologias de ensino compatíveis com si mesmo.</p>
-
+<p align="justify">&emsp;&emsp;A aplicação, quando desenvolvida, se posicionará como uma aplicação web que pode ser usada facilmente em navegadores mobile proporcionando uma experiência muito parecida a de um app nativo. Isso proporciona que os alunos troquem experiências de suas disciplinas realizadas de forma eficiente e rápida, possibilitando que os alunos encontrem metodologias de ensino compatíveis com si mesmo.</p>
 
 ## 3. <a name="3">Descrição dos Usuários e Envolvidos</a>
 
