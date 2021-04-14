@@ -19,3 +19,4 @@ class LoginList(Resource):
 
 def configure(api):
     api.add_resource(LoginList, "/login")
+

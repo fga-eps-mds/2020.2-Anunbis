@@ -1,9 +1,8 @@
 from unittest import TestCase
 from app.app import create_app
-from app.model.dao import course_dao, discipline_dao
+from app.model.dao import course_dao, discipline_dao, professor_dao
 from flask import url_for
 from json import loads
-
 
 class TestFlaskBase(TestCase):
     def setUp(self):                                           # This method run before each test
@@ -42,6 +41,7 @@ class TestFlaskBase(TestCase):
         self.create_base_student()
 
     def create_base_course(self):
+        if self.course: return
         self.course = {
             "id_course": 1,
             "name": "Engenharia de Software"
@@ -53,6 +53,7 @@ class TestFlaskBase(TestCase):
         self.app.db.session.commit()
 
     def create_base_discipline(self):
+        if self.discipline: return
         if self.course is None:
             self.create_base_course()
 
@@ -69,26 +70,26 @@ class TestFlaskBase(TestCase):
         self.app.db.session.commit()
 
     def create_base_professor(self):
-        self.professor = {
-            "name": "Carla Rocha",
-            "reg_professor": 19002037777,
-            "email": "19002037777@unb.br",
-            "password": "123456789"
-        }
+        if self.professor: return
+        from tests_professor import valid_professor            
+        self.professor = valid_professor()
 
         self.client.post(url_for("restapi.professorlist"), json=self.professor)
+        professor_bd = professor_dao.Professor.query.filter_by(reg_professor=self.professor['reg_professor']).first()
+        self.professor['id_professor'] = professor_bd.id_professor
+        if self.discipline is None:
+            self.create_base_discipline()
+
+        professor_bd.disciplines.append(discipline_dao.Discipline.query.filter_by(discipline_code=self.discipline['discipline_code']).first())
+        self.app.db.session.commit()
 
     def create_base_student(self):
+        if self.student: return
         if self.course is None:
             self.create_base_course()
 
-        self.student = {
-            "name": "Primeiro Estudante",
-            "reg_student": 190099999,
-            "email": "190099999@aluno.unb.br",
-            "password": "123456789",
-            "id_course": 1
-        }
+        from tests_student import valid_student
+        self.student = valid_student(self)
 
         self.client.post(url_for("restapi.studentlist"), json=self.student)
 

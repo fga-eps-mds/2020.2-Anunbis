@@ -12,7 +12,6 @@ def register_post(post):
     post_db = post_dao.Post(reg_student=post.reg_student, id_professor=post.id_professor,
                             discipline_code=post.discipline_code, content=post.content, rating=post.rating,
                             is_anonymous=post.is_anonymous)
-    post_db.gen_date()
     db.session.add(post_db)
     db.session.commit()
     return {'message': "Post successfully added"}, 201

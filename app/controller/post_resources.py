@@ -27,3 +27,4 @@ class PostList(Resource):
 
 def configure(api):
     api.add_resource(PostList, "/post")
+

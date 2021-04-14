@@ -1,10 +1,22 @@
+from .discipline import Discipline
 
 
 class Course:
-    def __init__(self, id_course, name, disciplines):
-        self.__id_course = id_course
-        self.__name = name
-        self.__disciplines = disciplines
+    def __init__(self, id_course=None, name=None, disciplines=None, course_bd=None):
+        if course_bd:
+            id_course, name = self.__create_from_db(course_bd)
+
+        self.id_course = id_course
+        self.name = name
+        self.disciplines = disciplines
+
+    def __create_from_db(self, course_bd):
+        id_couse = course_bd.id_course
+        name = course_bd.name
+        return id_couse, name
+
+    def set_disciplines_from_db(self, disciplines_bd):
+        self.disciplines = [Discipline(discipline_bd=discipline_bd) for discipline_bd in disciplines_bd]
 
     @property
     def id_course(self):
@@ -20,12 +32,15 @@ class Course:
 
     @name.setter
     def name(self, name):
-        self.name = name
+        self.__name = name
 
     @property
     def disciplines(self):
         return self.__disciplines
 
     @disciplines.setter
-    def disciplines(self, disciplines):
-        self.__disciplines = disciplines
+    def disciplines(self, value):
+        if value:
+            self.__disciplines = value
+        else:
+            self.__disciplines = []

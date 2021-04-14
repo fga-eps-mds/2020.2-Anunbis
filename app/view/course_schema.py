@@ -1,11 +1,11 @@
 from . import ma
 from marshmallow import fields
-from ..model.dao import course_dao
+from ..model.entity import course
 
 
-class CourseSchema(ma.SQLAlchemySchema):
+class CourseSchema(ma.Schema):
     class Meta:
-        model = course_dao.Course
+        model = course.Course
 
     id_course = fields.Integer(required=True)
     name = fields.String(required=True)
