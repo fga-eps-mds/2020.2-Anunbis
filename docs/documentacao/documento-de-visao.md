@@ -7,7 +7,8 @@ Data|Versão|Descrição|Autor
 26/03|0.2|Atualizando contéudo da página| Rodrigo|
 13/04|0.3|Refatorando Descrição dos usuários e envolvidos| Equipe|
 13/04|0.4|Revisão da Introdução e Posicionamento| Equipe|
-14/04|0.5|Revisão da Visão Geral| Rafael e Victor|
+14/04|0.5|Revisão da Visão Geral do Produto| Rafael e Victor|
+14/04|0.6|Revisando Recursos do produto| Rafael e Victor|
 
 
 ## 1. <a name="1">Introdução</a>
@@ -134,12 +135,13 @@ O produto tem a função de ser um elo dos docentes com os discentes da UnB, fac
 ### 5.1 <a name="5.1">Recursos dos Discentes</a>
 
 <p align="justify"> &emsp;&emsp; Os alunos poderão se cadastrar na aplicação. Quando cadastrados e logados, poderão ter acesso aos seguintes recursos:</p>
-
+ 
 * Fazer avaliação dos professores;
 * Visualizar avaliações feitas sobre outros professores;
 * Concordar ou discordar do comentário de outros discentes;
 * Visualizar a quantidade de alunos que concordam e discordam desses comentários;
 * Pesquisar os professores por ranking;
+* Visualizar relatórios de avaliações;
 * Denunciar avaliações ofensivas de outros alunos;
 
 ### 5.2 <a name="5.2">Recursos dos Docentes</a>
@@ -149,6 +151,12 @@ O produto tem a função de ser um elo dos docentes com os discentes da UnB, fac
 * Visualizar o feedback dos estudantes;
 * Visualizar a sua pontuação na aplicação;
 * Denunciar avaliações ofensivas feitas por alunos;
+* Visualizar relatórios de avaliações;
+### 5.3 <a name="5.3">Disponibilizar informações do projeto</a>
+<p align="justify"> &emsp;&emsp;
+Antes de ter acesso às páginas de cadastro e login, possíveis usuários ou contribuidores devem poder visualizar as informações gerais do projeto, suas ideias e objetivos, além dos meios de contato dos gerênciadores do projeto, como também o repositório do mesmo no github e toda a documentação da aplicação, pois por se tratar de um projeto de software Open Source esses dados são de extrema importância para a comunidade.
+</p>
+
 
 ## 6. <a name="6">Restrições</a>
 
