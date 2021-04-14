@@ -29,7 +29,7 @@ class StudentDetail(Resource):
     @jwt_required()
     def delete(self, reg_student):
         if int(get_jwt_identity()) != reg_student:
-            return make_response(jsonify({'message': "Missing Authorization Header"}), 401)
+            return make_response(jsonify({'message': "Authorization Header Invalid"}), 401)
 
         message, status_code = student_services.delete_student_by_reg(reg_student)
         return make_response(jsonify(message), status_code)
