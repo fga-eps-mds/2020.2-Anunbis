@@ -1,14 +1,14 @@
 
 
 class Student:
-    def __init__(self, reg_student, name, email, password, id_course):
-        self.__reg_student = reg_student
-        self.__name = name
-        self.__email = email
-        self.__password = password
-        self.__id_course = id_course
-        self.__post_agrees = None
-        self.__post_disagrees = None
+    def __init__(self, reg_student=None, name=None, email=None, password=None, id_course=None, post_agrees=None, post_disagrees=None):
+        self.reg_student = reg_student
+        self.name = name
+        self.email = email
+        self.password = password
+        self.id_course = id_course
+        self.post_agrees = post_agrees
+        self.post_disagrees = post_disagrees
 
     @property
     def reg_student(self):
@@ -24,7 +24,7 @@ class Student:
 
     @name.setter
     def name(self, name):
-        self.name = name
+        self.__name = name
 
     @property
     def email(self):
