@@ -5,8 +5,9 @@ Data|Versão|Descrição|Autor
 17/02|0.1|Abertura do Documento de Visão| Equipe|
 04/03|0.2|Adição dos itens 5, 6 e 7| Roberto|
 26/03|0.2|Atualizando contéudo da página| Rodrigo|
-13/04|0.3|Refatorando tópico 3| Equipe|
-13/04|0.4|Revisão dos tópicos 1,2| Equipe|
+13/04|0.3|Refatorando Descrição dos usuários e envolvidos| Equipe|
+13/04|0.4|Revisão da Introdução e Posicionamento| Equipe|
+14/04|0.5|Revisão da Visão Geral| Rafael e Victor|
 
 
 ## 1. <a name="1">Introdução</a>
@@ -97,7 +98,7 @@ Tópico destinado as definições, acrônimos e abreviações dos termos usados 
 #### 3.5.2 <a name="3.5.2">Professores da UnB</a>
 |**Representantes**|**tipo**|**Responsabilidade**|**Critério de sucesso**|**Envolvimento**|
 |:-:|:-:|:-:|:-:|:-:|
-| Interressados em receber feedbacks sobre seu trabalho e melhorá-lo | Professores da UnB | Visualizar avaliações e comentários sobre sua metodologia e tentar melhorá-la | Conseguir a cada semestre um maior número de aprovação por parte dos estudantes e consequentemente melhores avaliações | Médio 
+| Interessados em receber feedbacks sobre seu trabalho e melhorá-lo | Professores da UnB | Visualizar avaliações e comentários sobre sua metodologia e tentar melhorá-la | Conseguir a cada semestre um maior número de aprovação por parte dos estudantes e consequentemente melhores avaliações | Médio 
 
 
 ### 3.6 <a name="3.6">Alternativas e Concorrências</a>
@@ -107,10 +108,27 @@ Tópico destinado as definições, acrônimos e abreviações dos termos usados 
 #### 3.6.2 <a name="3.6.2">Avaliação Institucional</a>
 <p align="justify"> &emsp;&emsp; As avaliações instucionais é uma ferramenta da própria UnB conduzida pela CPA para fornecer o feedback aos professores ao final de determinado semestre, porém, os alunos não têm acesso a tais avaliações mesmo elas sendo bem elaboradas devido as diferentes perguntas que acabam forçando os discentes a fazerem uma boa avaliação visando uma maior crítica construtiva aos professores. Então a príncipio parece ser um ambiente fechado, buscamos refatorar esse ambiente para trazer fácil acesso aos alunos e professores interessados nas avaliações, de maneira a mitigar ao máximo os comentários ofensivos e que não agregam valor a avaliação. </p>
 
-## 4. <a name="4">Visão Geral</a>
-<p align="justify"> &emsp;&emsp; A aplicação tem como objetivo criar um ambiente específico para que haja uma troca de informações entre os alunos da UnB a respeito dos professores e suas metodologias de ensino, tornando viável que qualquer aluno possa escrever suas próprias avaliações de maneira anônima e ler as avaliações feitas por outros alunos.
+## 4. <a name="4">Visão Geral do Produto</a>
+### 4.1 <a name="4.1">Perspectivas</a>
+
+<p align="justify"> &emsp;&emsp; A aplicação tem como objetivo criar um ambiente específico para que haja uma troca de informações entre os alunos da UnB a respeito dos professores e suas metodologias de ensino, tornando viável que qualquer aluno possa escrever suas próprias avaliações de maneira anônima ou não, e ler as avaliações feitas por outros alunos. Além de possibilitar que os professores tenham acesso a esses comentários, o que ajuda o professor a planejar melhor sua disciplina, melhorando sua metodologia e constribuindo na melhora da qualidade de ensino na UnB.
 </p>
 
+### 4.2 <a name="4.2">Resumo das capacidades</a>
+|**Benefícios**|**Recurso de Suporte**|
+|:-:|:-:|
+| Facilidade em visualizar e cadastrar avaliações de professores/disciplinas.| A aplicação possui uma interface de fácil uso para visualizar essas avaliações, também conduz de maneira coerente e amigável o usuário para que ele realize boas avaliações.|  
+|Disponibilização de feedbacks construtivos para os professores|A aplicação se encarrega de  disponibilizar uma interface de uso prático onde os professores podem visualizar feedbacks sobre seu ensino, bem como relatórios gerenciais que buscam otimizar as interpretações desses feedbacks.|
+
+### 4.3 <a name="4.3">Funções do Produto</a>
+<p align="justify"> &emsp;&emsp; 
+O produto tem a função de ser um elo dos docentes com os discentes da UnB, facilitando uma resposta do aluno às técnicas e metodologia aplicada pelos seus professores, tornando mais fácil para esses profissionais uma adapção de sua maneira de ensino que melhor se adequa aos estudantes. Dentre as funcionalidades da aplicação estão, cadastro, login, avaliação, feed de postagens, gerenciamento de conta, entre outras.
+</p>
+
+### 4.4 <a name="4.4">Suposições e Dependências</a>
+* Os usuários deverão ter um computador, celular ou tablet com acesso à internet para conseguir ter acesso à aplicação.
+* A aplicação será usada por alunos e professores da UnB, para melhorar o ensino e aprendizagem do corpo docente/discente da universidade.
+* A aplicação facilitará a realização e visualização de feedbacks aos professores, feitos por alunos.
 ## 5. <a name="5">Recursos do Produto</a>
 
 ### 5.1 <a name="5.1">Recursos dos Discentes</a>
