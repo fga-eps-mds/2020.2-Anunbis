@@ -3,7 +3,7 @@ from flask import request, make_response, jsonify
 from ..view.student_schema import StudentSchema
 from ..model.services import student_services
 from ..model.entity.student import Student
-
+from flask_jwt_extended import jwt_required, get_jwt_identity
 
 class StudentList(Resource):
     def post(self):
@@ -25,6 +25,15 @@ class StudentList(Resource):
             message, status = student_services.register_student(student)
             return make_response(jsonify(message), status)
 
+class StudentDetail(Resource):
+    @jwt_required()
+    def delete(self, reg_student):
+        if int(get_jwt_identity()) != reg_student:
+            return make_response(jsonify({'message': "Authorization Header Invalid"}), 401)
+
+        message, status_code = student_services.delete_student_by_reg(reg_student)
+        return make_response(jsonify(message), status_code)
 
 def configure(api):
     api.add_resource(StudentList, "/student")
+    api.add_resource(StudentDetail, "/student/<int:reg_student>")

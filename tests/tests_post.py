@@ -93,6 +93,6 @@ def register_post(self, post=None, headers=None):
     if headers is None:
         headers = self.create_student_token()
     if post is None:
-        post = valid_post()
+        post = valid_post(self)
 
     return self.client.post(url_for('restapi.postlist'), json=post, headers=headers)
