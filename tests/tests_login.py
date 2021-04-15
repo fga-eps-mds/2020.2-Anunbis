@@ -1,7 +1,6 @@
 from flask_base_tests_cases import TestFlaskBase
 from flask import url_for
 
-
 class TestLogin(TestFlaskBase):
     
     def post(self, user):
@@ -12,6 +11,13 @@ class TestLogin(TestFlaskBase):
         return {
             'email': self.student['email'],
             'password': self.student['password']
+        }
+
+    def valid_professor(self):
+        self.create_base_professor()
+        return {
+            'email': self.professor['email'],
+            'password': self.professor['password']
         }
     
     def test_must_retun_token_from_a_valid_student(self):
@@ -99,4 +105,71 @@ class TestLogin(TestFlaskBase):
 
         response = self.post(user)
         self.assertEqual(response.status_code, 400)
-        self.assertEqual(response.json['email'][0], "The email must be matricula@aluno.unb.br")
+        self.assertIsNotNone(response.json['email'][0])
+
+    def test_api_must_validate_aluno_email_format(self):
+        user = self.valid_student_user()
+        user['email'] = "123456789@aluno.gmail.com"
+
+        response = self.post(user)
+        self.assertEqual(response.status_code, 400)
+        self.assertIsNotNone(response.json['email'][0])
+
+    def test_login_valid_professor(self):
+        professor = self.valid_professor()
+        expected_status_code = 200
+
+        response = self.post(professor)    
+        self.assertIsNotNone(response.json['access_token'])
+        self.assertEqual(response.status_code, expected_status_code)
+        self.assertIsNotNone(response.json)
+        self.assertTrue(len(response.json['access_token']) > 0)
+    
+    def test_login_not_registered(self):
+        professor = self.valid_professor()
+
+        professor_diferente = {
+            "email": '19002038888@unb.br',
+            "password": '987654321'
+        }
+        expected_status_code = 401
+        expected_json = {'message': 'Password or Email invalid'}
+
+        response = self.post(professor_diferente)
+        self.assertEqual(response.status_code, expected_status_code)
+        self.assertEqual(response.json, expected_json)
+
+    def test_login_not_fulfilled(self):
+        professor = {
+        }
+        expected_status_code = 400
+        expected_json = {'email': ['Missing data for required field.'], 'password': ['Missing data for required field.']}
+        
+        response = self.post(professor)
+        self.assertEqual(response.status_code, expected_status_code)
+        self.assertEqual(response.json, expected_json)
+
+    def test_max_email_and_password_login(self):
+        professor = {
+            "email": '0123456789'*101 + "@unb.br",
+            "password": '0123456789'*101 
+        }
+        expected_status_code = 400
+        expected_json = {'email': ['The email must be lower than 100'], 'password': ['Length must be between 8 and 100.']}
+
+        response= self.post(professor)
+        self.assertEqual(response.status_code, expected_status_code)
+        self.assertEqual(response.json, expected_json)
+
+    def test_invalid_format_email_and_min_password(self):
+        professor = {
+            "email": '0123456dasd789@unb.br',
+            "password": '123'
+        }
+        expected_status_code = 400
+        expected_json =  {'email': ['The email must be matricula@unb.br'], 'password': ['Length must be between 8 and 100.']}
+
+        response = self.post(professor)
+        self.assertEqual(response.status_code, expected_status_code)
+        self.assertEqual(response.json, expected_json)
+            

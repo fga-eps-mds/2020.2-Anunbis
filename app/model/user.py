@@ -6,4 +6,4 @@ class User:
         self.password = password
 
     def is_professor(self):
-        return not "aluno" in email.lower()
+        return not "aluno" in self.email.lower()
