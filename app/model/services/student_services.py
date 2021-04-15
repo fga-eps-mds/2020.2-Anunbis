@@ -47,3 +47,12 @@ def delete_student_by_reg(reg_student):
     else:
         return {'message': "Student not found!"}, 404
 
+def modify_student(student):
+    student_bd = student_dao.Student.get(reg_student=student.reg_student)
+    if student_bd:
+        student_bd.modify_student(student)
+        return {'message': 'Student successfully changed!' }, 200
+    else:
+        return {'message', 'Student not found!'}, 404
+
+    
