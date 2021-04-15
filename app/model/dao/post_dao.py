@@ -38,6 +38,10 @@ class Post(db.Model):
     disagrees = db.relationship('Student', secondary="agree_student_post")
     
     @staticmethod
+    def get(**kwargs):
+        return Post.query.filter_by(**kwargs).first()
+    
+    @staticmethod
     def delete(post_db):
         Post.delete_feedbacks(post_db)
         Post.delete_reports(post_db)

@@ -1,7 +1,19 @@
 from flask_base_tests_cases import TestFlaskBase
 from flask import url_for
+from app.model.dao import student_dao, post_dao
+from tests_post import register_post
 
 
+def valid_student(self):
+    self.create_base_course()
+    return {
+        "name": "Testing Student",
+        "reg_student": 190020000,
+        "id_course": 1,
+        "email": "190020000@aluno.unb.br",
+        "password": "password"
+    }
+  
 class TestStudentPostList(TestFlaskBase):
 
     def post(self, json):
@@ -127,13 +139,49 @@ class TestStudentPutList(TestFlaskBase):
         self.assertEqual(response.status_code, 401)
         self.assertEqual(response.json["msg"], 'Missing Authorization Header')
 
+class TestStudentDetail(TestFlaskBase):
+    def delete(self, reg_student, headers):
+        return self.client.delete(url_for('restapi.studentdetail', reg_student=reg_student), headers=headers)
 
-def valid_student(self):
-    self.create_base_course()
-    return {
-        "name": "Testing Student",
-        "reg_student": 190020000,
-        "id_course": 1,
-        "email": "190020000@aluno.unb.br",
-        "password": "password"
-    }
+    def test_must_delete_student(self):
+        self.create_base_student()
+        reg_student = self.student['reg_student']
+        headers = self.create_student_token()
+
+        response = self.delete(reg_student, headers)
+
+        self.assertEqual(response.status_code, 204)
+        self.assertIsNone(student_dao.Student.get(reg_student=reg_student))
+
+    def test_must_validate_reg_with_token(self):
+        self.create_base_student()
+        headers = self.create_student_token()
+        reg_student = self.student['reg_student'] + 1
+
+        response = self.delete(reg_student, headers)
+
+        self.assertEqual(response.status_code, 401)
+        self.assertEqual(response.json['message'], "Authorization Header Invalid")
+
+    def test_must_validate_delete_on_deleted_student(self):
+        self.create_base_student()
+        headers = self.create_student_token()
+        reg_student = self.student['reg_student']
+
+        response = self.delete(reg_student, headers)
+        response = self.delete(reg_student, headers)
+
+        self.assertEqual(response.status_code, 404)
+        self.assertEqual(response.json['message'], "Student not found!")
+
+    def test_must_delete_student_posts(self):
+        self.create_base_student()
+        reg_student = self.student['reg_student']
+        response_post = register_post(self)
+
+        response = self.delete(reg_student, self.create_student_token())
+
+        self.assertEqual(response_post.status_code, 201)
+        self.assertEqual(response.status_code, 204)
+        self.assertIsNone(post_dao.Post.get(reg_student=reg_student))
+
