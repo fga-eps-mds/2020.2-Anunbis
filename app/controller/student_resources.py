@@ -25,6 +25,20 @@ class StudentList(Resource):
             message, status = student_services.register_student(student)
             return make_response(jsonify(message), status)
 
+    @jwt_required()
+    def put(self):   
+        ss = StudentSchema(only=['password'])
+        validate = ss.validate(request.json)
+        reg_student = int(get_jwt_identity())
+
+        if validate:
+            return make_response(jsonify(validate), 400)
+        else:
+            student = Student(reg_student=reg_student,
+                password=request.json['password'])
+            message, status = student_services.modify_student(student)
+            return make_response(jsonify(message), status)
+
 class StudentDetail(Resource):
     @jwt_required()
     def delete(self, reg_student):
@@ -33,6 +47,8 @@ class StudentDetail(Resource):
 
         message, status_code = student_services.delete_student_by_reg(reg_student)
         return make_response(jsonify(message), status_code)
+
+
 
 def configure(api):
     api.add_resource(StudentList, "/student")
