@@ -59,10 +59,3 @@ def __build_professor(professor):
 
 def __is_professor_made_by_admin(professor_bd):
     return professor_bd.email is None
-
-
-def is_professor(email):
-    if ("aluno" in value):
-        return False
-    else:
-        return True

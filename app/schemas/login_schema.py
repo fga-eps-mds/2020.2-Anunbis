@@ -1,14 +1,12 @@
 from . import ma
 from marshmallow import fields, validate, validates, ValidationError
-from ..model.student import Student
-from ..model.professor import Student
+from ..model.user import User
 from re import match
 
 
-class LoginSchema(ma.SQLAlchemySchema):
+class LoginSchema(ma.Schema):
     class Meta:
-        model = student_dao.Student
-        fields = ['email', 'password']
+        model = User
 
     email = fields.Email(required=True)
     password = fields.String(required=True, validate=validate.Length(min=8, max=100))

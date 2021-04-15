@@ -3,13 +3,14 @@ from flask import request, make_response, jsonify
 from ..schemas import login_schema
 from ..services import login_services
 from marshmallow import ValidationError
-from ..model.professor import Professor
+from ..model.user import User
 
 class LoginList(Resource):
     def post(self):
         try:
             ls = login_schema.LoginSchema()
             user = ls.load(request.json)
+            user = User(email=user.get('email'), password=user.get('password'))
             user, status_code = login_services.auth_user(user)
             return make_response(jsonify(user), status_code)
         except ValidationError as err:
@@ -17,3 +18,4 @@ class LoginList(Resource):
 
 def configure(api):
     api.add_resource(LoginList, "/login")
+
