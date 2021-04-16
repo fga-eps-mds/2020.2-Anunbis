@@ -59,11 +59,11 @@ Data|Versão|Descrição|Autor
 <p align = "justify"> &emsp;&emsp; Os <a href="https://pt-br.reactjs.org/docs/react-component.html">componentes</a> são a base do ReactJS, são como elementos HTML personalizados, reutilizáveis, permitem dividir a interface do usuário em partes independentes e pensar em cada parte isoladamente. O React também agiliza como os dados são armazenados e tratados, usando o <a href="https://pt-br.reactjs.org/docs/state-and-lifecycle.html">estado</a> e os <a href="https://pt-br.reactjs.org/docs/render-props.html">props</a>.</p>
 
 #### 2.1.1 <a name="2_1_1">Organização das Pastas</a>
-* Assets: Onde estão os arquivos de imagem utilizados no produto
+* Assets: Possui a pasta de imagens e a pasta de constantes com arquivos de estilização globais ou recorrentes.
 
 * Components: Onde estão pastas de componentes React. Cada pasta contém o arquivo index que define a lógica do componente, o arquivo styles com os styled components (estilização do componente), e pode conter o arquivo validations caso precise fazer validações de entrada.
 
-* Services: Contém os arquivos de comunicação com a API.
+* Services: Contém os arquivos de comunicação com a API e autenticação.
 
 * Views: Contém as páginas da aplicação.
 
