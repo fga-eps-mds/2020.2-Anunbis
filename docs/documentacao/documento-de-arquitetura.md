@@ -67,6 +67,8 @@ Data|Versão|Descrição|Autor
 
 * Views: Contém as páginas da aplicação.
 
+* Routes: Contém os arquivos de rotas do produto.
+
 ### 2.2 <a name="2_2">Flask</a>
 
 <!-- <a href= "" ></a>   ## pra colocar link -->  
