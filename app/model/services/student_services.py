@@ -52,7 +52,5 @@ def modify_student(student):
     if student_bd:
         student_bd.modify_student(student)
         return {'message': 'Student successfully changed!' }, 200
-    else:
-        return {'message', 'Student not found!'}, 404
 
     
