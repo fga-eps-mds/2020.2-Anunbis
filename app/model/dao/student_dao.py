@@ -21,6 +21,11 @@ class Student(db.Model):
 
     def verify_password(self, password):
         return pbkdf2_sha256.verify(password, self.password)
+    
+    def modify_student(self, student):
+        self.password = student.password
+        self.generate_password()
+        db.session.commit()
 
     @staticmethod
     def get(**kwargs):
@@ -47,5 +52,6 @@ class Student(db.Model):
         for disagree in DisagreeStudentPost.query.filter_by(reg_student=student_bd.reg_student).all():
             db.session.delete(disagree)
         db.session.commit()
+
 
 

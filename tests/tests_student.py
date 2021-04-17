@@ -3,6 +3,7 @@ from flask import url_for
 from app.model.dao import student_dao, post_dao
 from tests_post import register_post
 
+
 def valid_student(self):
     self.create_base_course()
     return {
@@ -12,7 +13,8 @@ def valid_student(self):
         "email": "190020000@aluno.unb.br",
         "password": "password"
     }
-class TestStudentList(TestFlaskBase):
+  
+class TestStudentPostList(TestFlaskBase):
 
     def post(self, json):
         return self.client.post(url_for("restapi.studentlist"), json=json)
@@ -94,6 +96,48 @@ class TestStudentList(TestFlaskBase):
         self.assertEqual(response.status_code, 400)
         self.assertIsNotNone(response.json['reg_student'])
         self.assertIsNotNone(response.json['id_course'])
+
+class TestStudentPutList(TestFlaskBase):
+    def put(self, password, headers):
+        return self.client.put(url_for('restapi.studentlist'),
+        json=password, headers=headers)
+
+    def test_api_must_modify_password(self):
+        # dado, quando, então
+        self.create_base_student()
+        password = {"password": self.student["password"] + "123"}
+        headers = self.create_student_token()
+        
+        response = self.put(password, headers)
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json["message"], 'Student successfully changed!')
+    
+    def test_must_validate_password_length(self):
+        self.create_base_student()
+        password = {"password": "123"}
+        headers = self.create_student_token()
+
+        response = self.put(password, headers)
+        self.assertEqual(response.status_code, 400)
+        self.assertEqual(response.json["password"][0], 'Length must be between 8 and 100.')
+
+    def test_must_validate_null_password(self):
+        self.create_base_student()
+        password = {}
+        headers = self.create_student_token()
+
+        response = self.put(password, headers)
+        self.assertEqual(response.status_code, 400)
+        self.assertIsNotNone(response.json["password"])
+
+    def test_api_validate_token(self):
+        self.create_base_student()
+        password = {"password": "123456789"}
+        headers = None
+
+        response = self.put(password, headers)
+        self.assertEqual(response.status_code, 401)
+        self.assertEqual(response.json["msg"], 'Missing Authorization Header')
 
 class TestStudentDetail(TestFlaskBase):
     def delete(self, reg_student, headers):
