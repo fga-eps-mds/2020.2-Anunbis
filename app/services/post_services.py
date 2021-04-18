@@ -1,6 +1,7 @@
 from . import professor_services, student_services, discipline_services
 from ..model.post import Post
 from ..ext.database import db
+from ..model.student import Student
 
 
 def register_post(post):
@@ -25,3 +26,54 @@ def __validate_post_relationship(post):
         return False, {'message': "Discipline not found!"}, 404
 
     return True, {'message': "Ok!"}, 200
+
+def agree_student_post(reg_student, id_post):
+    post_db = post_dao.Post.get(id_post=id_post)
+    if post_db:        
+        student_db = Student.get(reg_student=reg_student)
+        if student_db in post_db.disagrees:
+            post_db.disagrees.remove(student_db)    
+        if student_db in post_db.agrees:
+            return unagree_post(post_db,student_db)
+        else:
+            return agree_post(post_db,student_db)
+    else: 
+        return {'message': 'post not found'}, 404
+
+def unagree_post(post_db,student_db):
+    post_db.agrees.remove(student_db)
+    db.session.commit()
+    return post_db, 200 
+
+
+def agree_post(post_db,student_db):
+    post_db.agrees.append(student_db)
+    db.session.commit()
+    return post_db, 200 
+
+
+def disagree_student_post(reg_student,id_post):
+    
+    post_db = post_dao.Post.get(id_post=id_post)
+    if post_db:        
+        student_db = Student.get(reg_student=reg_student)
+        if student_db in post_db.agrees:
+            post_db.agrees.remove(student_db)                        
+        if student_db in post_db.disagrees:
+            return undisagree_post(post_db,student_db)
+        else:
+            return disagree_post(post_db,student_db)
+    else: 
+        return {'message': 'post not found'}, 404
+
+
+def undisagree_post(post_db,student_db):
+    post_db.disagrees.remove(student_db)
+    db.session.commit()
+    return post_db, 200 
+
+
+def disagree_post(post_db,student_db):
+    post_db.disagrees.append(student_db)
+    db.session.commit()
+    return post_db, 200 
