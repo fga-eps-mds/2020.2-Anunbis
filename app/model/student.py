@@ -55,5 +55,8 @@ class Student(db.Model):
         db.session.commit()
 
     def __eq__(self, other):
-	    return self.reg_student == other.reg_student
-
+        if isinstance(other, Student):
+	        return self.reg_student == other.reg_student
+        elif isinstance(other, int):
+            return other == self.reg_student
+        return False
