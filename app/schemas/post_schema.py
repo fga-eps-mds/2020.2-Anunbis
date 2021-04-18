@@ -3,10 +3,11 @@ from marshmallow import fields, validate
 from ..model import post
 
 
-class PostSchema(ma.SQLAlchemyAutoSchema):
+class PostSchema(ma.SQLAlchemySchema):
     class Meta:
         model = post.Post
 
+    id_post = fields.Integer(required=True, validate=validate.Range(min=0))
     reg_student = fields.Integer(required=True, validate=validate.Range(min=0))
     id_professor = fields.Integer(required=True, validate=validate.Range(min=0))
     discipline_code = fields.String(required=True, validate=validate.Length(max=80))
