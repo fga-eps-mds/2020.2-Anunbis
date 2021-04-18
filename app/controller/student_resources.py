@@ -1,43 +1,33 @@
 from flask_restful import Resource
 from flask import request, make_response, jsonify
-from ..view.student_schema import StudentSchema
-from ..model.services import student_services
-from ..model.entity.student import Student
+from ..schemas.student_schema import StudentSchema
+from ..services import student_services
 from flask_jwt_extended import jwt_required, get_jwt_identity
+from marshmallow import ValidationError
+
 
 class StudentList(Resource):
     def post(self):
-        ss = StudentSchema()
-        validate = ss.validate(request.json)
-
-        if validate:
-            return make_response(jsonify(validate), 400)
-        else:
-            reg_student = request.json['reg_student']
-            name = request.json['name']
-            id_course = request.json['id_course']
-            email = request.json['email']
-            password = request.json['password']
-
-            student = Student(reg_student=reg_student, name=name,
-                              id_course=id_course,
-                              email=email, password=password)
+        try:
+            ss = StudentSchema()
+            student = ss.load(request.json)
             message, status = student_services.register_student(student)
             return make_response(jsonify(message), status)
+        except ValidationError as err:
+            return make_response(jsonify(err.messages), 400)
 
     @jwt_required()
     def put(self):   
-        ss = StudentSchema(only=['password'])
-        validate = ss.validate(request.json)
-        reg_student = int(get_jwt_identity())
-
-        if validate:
-            return make_response(jsonify(validate), 400)
-        else:
-            student = Student(reg_student=reg_student,
-                password=request.json['password'])
+        try:
+            ss = StudentSchema(only=['password'])
+            reg_student = int(get_jwt_identity())
+            student = ss.load(request.json)
+            student['reg_student'] = reg_student
             message, status = student_services.modify_student(student)
             return make_response(jsonify(message), status)
+        except ValidationError as err:
+            return make_response(jsonify(err.messages), 400)
+
 
 class StudentDetail(Resource):
     @jwt_required()
@@ -47,7 +37,6 @@ class StudentDetail(Resource):
 
         message, status_code = student_services.delete_student_by_reg(reg_student)
         return make_response(jsonify(message), status_code)
-
 
 
 def configure(api):

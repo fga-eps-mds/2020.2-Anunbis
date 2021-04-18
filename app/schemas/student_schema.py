@@ -1,16 +1,17 @@
 from . import ma, course_schema
 from marshmallow import fields, Schema, validates, validate, ValidationError
 from re import match
-from ..model.dao import student_dao
+from ..model.student import Student
+
 
 class StudentSchema(ma.SQLAlchemySchema):
     class Meta:
-        model = student_dao.Student
+        model = Student
 
     reg_student = fields.Integer(required=True, validate=validate.Range(min=0))            
     name = fields.String(required=True, validate=validate.Length(min=2,max=254))
     id_course = fields.Integer(required=True, validate=validate.Range(min=0))    
-    password = fields.String(required=True, validate = validate.Length(min=8, max=100))
+    password = fields.String(required=True, validate=validate.Length(min=8, max=100), load_only=True)
     email = fields.Email(required=True)
 
     course = fields.Nested(course_schema.CourseSchema)

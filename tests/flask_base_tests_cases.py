@@ -1,6 +1,6 @@
 from unittest import TestCase
 from app.app import create_app
-from app.model.dao import course_dao, discipline_dao, professor_dao
+from app.model import course, discipline, professor
 from flask import url_for
 from json import loads
 
@@ -46,7 +46,7 @@ class TestFlaskBase(TestCase):
             "id_course": 1,
             "name": "Engenharia de Software"
         }
-        course_bd = course_dao.Course()
+        course_bd = course.Course()
         course_bd.id_course = self.course['id_course']
         course_bd.name = self.course['name']
         self.app.db.session.add(course_bd)
@@ -62,10 +62,10 @@ class TestFlaskBase(TestCase):
             "name": "Metodos Desenvolvimento de Software",
             "id_course": 1
         }
-        discipline_bd = discipline_dao.Discipline()
+        discipline_bd = discipline.Discipline()
         discipline_bd.discipline_code = self.discipline['discipline_code']
         discipline_bd.name = self.discipline['name']
-        discipline_bd.courses.append(course_dao.Course.query.filter_by(id_course=self.discipline['id_course']).first())
+        discipline_bd.courses.append(course.Course.query.filter_by(id_course=self.discipline['id_course']).first())
         self.app.db.session.add(discipline_bd)
         self.app.db.session.commit()
 
@@ -75,12 +75,12 @@ class TestFlaskBase(TestCase):
         self.professor = valid_professor()
 
         self.client.post(url_for("restapi.professorlist"), json=self.professor)
-        professor_bd = professor_dao.Professor.query.filter_by(reg_professor=self.professor['reg_professor']).first()
+        professor_bd = professor.Professor.query.filter_by(reg_professor=self.professor['reg_professor']).first()
         self.professor['id_professor'] = professor_bd.id_professor
         if self.discipline is None:
             self.create_base_discipline()
 
-        professor_bd.disciplines.append(discipline_dao.Discipline.query.filter_by(discipline_code=self.discipline['discipline_code']).first())
+        professor_bd.disciplines.append(discipline.Discipline.query.filter_by(discipline_code=self.discipline['discipline_code']).first())
         self.app.db.session.commit()
 
     def create_base_student(self):

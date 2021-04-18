@@ -1,4 +1,4 @@
-from ...ext.database import db
+from ..ext.database import db
 from passlib.hash import pbkdf2_sha256
 
 
@@ -10,17 +10,22 @@ class Professor(db.Model):
 
     name = db.Column(db.String(255), nullable=False)
     email = db.Column(db.String(255), nullable=True, unique=True)
-    password = db.Column(db.String(255), nullable=True)
+    __password_hash = db.Column('password', db.String(255), nullable=True)
 
     disciplines = db.relationship('Discipline', secondary='professor_discipline', lazy='dynamic')
 
     posts = db.relationship('Post', back_populates="professor")
 
-    def generate_password(self):
-        self.password = pbkdf2_sha256.hash(self.password)
+    @property
+    def password(self):
+        raise AttributeError('password: write-only field')
+
+    @password.setter
+    def password(self, password):
+        self.__password_hash = pbkdf2_sha256.hash(password)
 
     def verify_password(self, password):
-        return pbkdf2_sha256.verify(password, self.password)
+        return pbkdf2_sha256.verify(password, self.__password_hash)
 
     @property
     def rating(self):

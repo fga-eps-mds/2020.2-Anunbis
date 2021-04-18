@@ -1,14 +1,14 @@
 from . import student_services
 from flask_jwt_extended import create_access_token
 from datetime import timedelta
-from ...view.student_schema import StudentSchema
+from ..schemas.student_schema import StudentSchema
 
 
-def auth_student(email, password):
-    student_db = student_services.get_student_email(email)
+def auth_student(user):
+    student_db = student_services.get_student_email(user.get('email'))
     ss = StudentSchema(only=['reg_student', 'name', 'email', 'id_course'])
 
-    if student_db and student_db.verify_password(password):
+    if student_db and student_db.verify_password(user.get('password')):
         access_token = create_access_token(
             identity=student_db.reg_student,
             expires_delta=timedelta(minutes=20)
