@@ -1,5 +1,5 @@
 from flask_base_tests_cases import TestFlaskBase
-from flask import url_for
+from flask import url_for, jsonify
 
 
 def valid_post(self):
@@ -115,15 +115,14 @@ class TestPostList(TestFlaskBase):
         self.assertEqual(response.status_code, 404)
         self.assertEqual(response.json['message'], "Discipline not found!")
 
-
 class TestPostAgree(TestFlaskBase):
-    def test_api_must_register_student_agree(self):
+    def test_api_must_agree_post(self):
         post = valid_post(self)
         register_post(self, post=post)
 
         response = register_post_agree(self)
         self.assertEqual(response.status_code, 200)
-        # verificar se o numero de curtida = 1
+        self.assertEqual(response.json['feedbacks'], {'agrees': 1, 'disagrees': 0, 'is_agreed': True, 'is_disagreed': False})
 
     def test_api_must_unagree_post(self):
         post = valid_post(self)
@@ -132,16 +131,41 @@ class TestPostAgree(TestFlaskBase):
         register_post_agree(self)
         response = register_post_agree(self)
         self.assertEqual(response.status_code, 200)
-        # verificar se o numero de curtida == 0
+        self.assertEqual(response.json['feedbacks'], {'agrees': 0, 'disagrees': 0, 'is_agreed': False, 'is_disagreed': False})
+
+    def test_api_must_agree_after_disagree(self):
+        post = valid_post(self)
+        register_post(self, post=post)
+        register_post_disagree(self)
+        response = register_post_agree(self)
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json['feedbacks'], {'agrees': 1, 'disagrees': 0, 'is_agreed': True, 'is_disagreed': False})
+
+    def test_api_must_validate_post_not_found_agree(self):
+        register_post(self, 2)
+        response = register_post_agree(self)
+        self.assertEqual(response.status_code, 404)
+
+    def test_api_must_not_validate_post_agree(self):
+        post = {}
+        register_post(self,post=post)
+        response = register_post_agree(self,post)
+        self.assertEqual(response.status_code, 400)
+    
+    def test_api_must_validate_token_agree(self):
+        post = valid_post(self)
+        register_post(self, post=post)
+        response = register_post_agree(self, headers={})
+        self.assertEqual(response.status_code, 401)
 
 class TestPostDisagree(TestFlaskBase):
 
-    def test_api_must_register_student_disagree(self):
+    def test_api_must_disagee_post(self):
         post = valid_post(self)
         register_post(self, post=post)
         response = register_post_disagree(self)
         self.assertEqual(response.status_code, 200)
-        # verificar se o numero de agree = 1
+        self.assertEqual(response.json['feedbacks'], {'agrees': 0, 'disagrees': 1, 'is_agreed': False, 'is_disagreed': True})
 
 
     def test_api_must_undisagree_post(self):
@@ -150,4 +174,30 @@ class TestPostDisagree(TestFlaskBase):
         register_post_disagree(self)
         response = register_post_disagree(self)
         self.assertEqual(response.status_code, 200)
-        # verificar se o numero de disagree = 1
+        self.assertEqual(response.json['feedbacks'], {'agrees': 0, 'disagrees': 0, 'is_agreed': False, 'is_disagreed': False})
+
+
+    def test_api_must_disagree_after_agree(self):
+        post = valid_post(self)
+        register_post(self, post=post)
+        register_post_agree(self)
+        response = register_post_disagree(self)
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json['feedbacks'], {'agrees': 0, 'disagrees': 1, 'is_agreed': False, 'is_disagreed': True})
+
+    def test_api_must_validate_post_not_found_disagree(self):
+        register_post(self, 2)
+        response = register_post_disagree(self)
+        self.assertEqual(response.status_code, 404)
+
+    def test_api_must_not_validate_post_disagree(self):
+        post = {}
+        register_post(self,post=post)
+        response = register_post_disagree(self,post)
+        self.assertEqual(response.status_code, 400)         
+
+    def test_api_must_validate_token_disagree(self):
+        post = valid_post(self)
+        register_post(self, post=post)
+        response = register_post_disagree(self, headers={})
+        self.assertEqual(response.status_code, 401)
