@@ -2,7 +2,6 @@ from . import ma, discipline_schema, student_schema
 from marshmallow import fields, validate
 from ..model import post
 
-
 class PostSchema(ma.SQLAlchemySchema):
     class Meta:
         model = post.Post
@@ -18,6 +17,23 @@ class PostSchema(ma.SQLAlchemySchema):
 
     discipline = fields.Nested(discipline_schema.DisciplineSchema)
     student = fields.Method("gen_student")
+    feedbacks = fields.Method("gen_feedbacks")
+
+    def gen_feedbacks(self, obj):
+        is_agreed = False
+        is_disagreed = False
+        
+        if self.context.get('reg_student'):
+            reg_student = int(self.context['reg_student'])
+            is_agreed = reg_student in obj.agrees
+            is_disagreed = reg_student in obj.disagrees
+
+        return {
+            "agrees": len(obj.agrees),
+            "disagrees": len(obj.disagrees),
+            "is_agreed": is_agreed,
+            "is_disagreed": is_disagreed
+        }
 
     def gen_student(self, obj):
         if obj.is_anonymous:
