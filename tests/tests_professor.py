@@ -2,6 +2,8 @@ from flask_base_tests_cases import TestFlaskBase
 from flask import url_for
 from app.model import professor
 from datetime import date
+
+
 class TestProfessorList(TestFlaskBase):
 
     def post(self, json):
@@ -153,7 +155,8 @@ class TestProfessorDetail(TestFlaskBase):
     
         del self.discipline['id_course']
         post_expected = {'content': post['content'], 'discipline': self.discipline, 'id_post': 1, 'id_professor': 1, 'is_anonymous': post['is_anonymous'],
-            'post_date': date.today().isoformat(), 'rating': float(post['rating']), 'student': {'course': {'id_course': 1, 'name': self.course['name']}}}
+            'post_date': date.today().isoformat(), 'rating': float(post['rating']), 'student': {'course': {'id_course': 1, 'name': self.course['name']}},
+            'feedbacks': {"agrees": 0, "disagrees": 0, "is_agreed": False, "is_disagreed": False}}
         post_response = response.json[0]['posts'][0]
         self.assertEqual(response.status_code, 200)
         self.assertEqual(post_response, post_expected)
