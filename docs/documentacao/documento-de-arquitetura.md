@@ -15,6 +15,8 @@ Data|Versão|Descrição|Autor
 20/03|1.1|Atualizando tópico das metas|Rodrigo|
 22/03|1.2|Atualizando Modelagem de dados|Thiago|
 24/03|1.3|Adição dos diagramas de pacotes|Rafael e Roberto|
+16/04|1.4|Adição do detalhamento das pastas do Front-End|Rafael, Roberto, Eduardo e Victor|
+16/04|1.5|Adição do detalhamento das pastas do Back-End|Thiago|
 
 ## 1. <a name="1">Introdução</a>
 
@@ -48,7 +50,7 @@ Data|Versão|Descrição|Autor
 
 <p align = "justify"> &emsp;&emsp;Este projeto utiliza diversas tecnologias que se relacionam para fazer uma aplicação web. A figura abaixo mostra um diagrama com a representação arquitetural do programa.</p>
 
-<div style="display:block;text-align:center"><a style="text-align:center" href="https://edisciplinas.usp.br/pluginfile.php/4632609/mod_resource/content/1/5%20Arquitetura%20MVC.pdf"><img src="/2020.2-Anunbis/images/diagramaArquitetura.png" alt="representação da arquitetura no projeto"></a></div>
+<div style="display:block;text-align:center"><img src="/2020.2-Anunbis/images/diagramaArquitetura.png" alt="representação da arquitetura no projeto"></div>
 
 <p align = "justify"> &emsp;&emsp;Ele se baseia em requisições e respostas Http para se relacionar. O usuário, com seu navegador, entra no site gerado pelo React e, a partir dai, pode realizar varias ações, como cadastrar, postar e comentar. O react lida com essas ações e, se precisar, se conecta com o Flask. O Flask, por sua vez, cuida da lógica de negócio, manuseamento de dados e faz a conexão com o Mysql para a persistência desses dados.</p>
 
@@ -57,17 +59,6 @@ Data|Versão|Descrição|Autor
 <p align = "justify"> &emsp;&emsp; Para representarmos a camada de contato com o usuário, decidimos usar a biblioteca <a href="https://pt-br.reactjs.org/docs/getting-started.html">ReactJS</a> como front-end do projeto, realizando a parte onde se tem a interação do usuário com a página. Essa biblioteca JavaScript torna a criação de interfaces de usuário uma tarefa fácil, renderizando de forma eficiente apenas os componentes necessários, caso os dados mudem.</p>
 
 <p align = "justify"> &emsp;&emsp; Os <a href="https://pt-br.reactjs.org/docs/react-component.html">componentes</a> são a base do ReactJS, são como elementos HTML personalizados, reutilizáveis, permitem dividir a interface do usuário em partes independentes e pensar em cada parte isoladamente. O React também agiliza como os dados são armazenados e tratados, usando o <a href="https://pt-br.reactjs.org/docs/state-and-lifecycle.html">estado</a> e os <a href="https://pt-br.reactjs.org/docs/render-props.html">props</a>.</p>
-
-#### 2.1.1 <a name="2_1_1">Organização das Pastas</a>
-* Assets: Possui a pasta de imagens e a pasta de constantes com arquivos de estilização globais ou recorrentes.
-
-* Components: Onde estão pastas de componentes React. Cada pasta contém o arquivo index que define a lógica do componente, o arquivo styles com os styled components (estilização do componente), e pode conter o arquivo validations caso precise fazer validações de entrada.
-
-* Services: Contém os arquivos de comunicação com a API e autenticação.
-
-* Views: Contém as páginas da aplicação.
-
-* Routes: Contém os arquivos de rotas do produto.
 
 ### 2.2 <a name="2_2">Flask</a>
 
@@ -85,7 +76,7 @@ href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do m
 <!-- No entanto, não há a necessidade de utilizar a linguagem SQL diretamente, pois o SQLAlchemy juntamente com o micro framework Flask realizam esse trabalho. -->
 
 <!-- <p align = "justify">&emsp;&emsp;Sendo assim, o SQLAlchemy é capaz de mediar todas as tarefas necessárias, como por exemplo, criar tabelas, relacionamentos, realizar  consultas, adicionar e remover informações, para o pleno funcionamento desse projeto.</p> -->
-
+<!--
 ### 2.4 <a name="2_4">Modelo MVC</a>
 <p align="justify">&emsp;&emsp;É um modelo para a organização do software do projeto, sendo ele um padrão de arquitetura de software que contribui para melhorar a performance do programa, tornando-o mais produtivo. Essa arquitetura é baseada na separação do código entre Modelo, controle e visão. Sendo assim, esse modelo é utilizado no back-end da aplicação. </p>
 
@@ -96,6 +87,7 @@ href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do m
 <p align="justify">&emsp;&emsp;Essa arquitetura gera inúmeros benefícios ao projeto, a camada de controle, por exemplo, serve como um filtro de segurança, pois impede que informações incorretas cheguem até a camada modelo. Contribui com a organização, pois possui fácil leitura e eventuais erros são mais fáceis de serem localizados. Além disso, essa arquitetura de camadas permite que vários programadores trabalhem ao mesmo tempo em diferentes camadas, contribuindo para o desenvolvimento do projeto.</p>
 
 <div style="display:block;text-align:center"><a style="text-align:center" href="https://edisciplinas.usp.br/pluginfile.php/4632609/mod_resource/content/1/5%20Arquitetura%20MVC.pdf"><img src="/2020.2-Anunbis/images/arquiteturaMVCBackEnd.png" alt="representação da arquitetura MVC no back-end"></a></div>
+-->
 
 ## 3. <a name="3">Metas e Restrições de Arquitetura</a>
 
@@ -143,10 +135,26 @@ href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do m
 #### 5.1.1 <a name="5_1_1">Front-End</a>
 <div style="display:block;text-align:center"><img src="/2020.2-Anunbis/images/Diagrama_Pacotes_FrontEnd.png" alt="Diagrama de pacotes Front-End"/></div>
 
+#### 5.1.1.1 <a name="5.1.1.1">Organização das Pastas</a>
+* Assets: Possui a pasta de imagens e a pasta de constantes com arquivos de estilização globais ou recorrentes.
+
+* Components: Onde estão pastas de componentes React. Cada pasta contém o arquivo index que define a lógica do componente, o arquivo styles com os styled components (estilização do componente), e pode conter o arquivo validations caso precise fazer validações de entrada.
+
+* Services: Contém os arquivos de comunicação com a API e autenticação.
+
+* Views: Contém as páginas da aplicação.
+
+* Routes: Contém os arquivos de rotas do produto.
 #### 5.1.2 <a name="5_1_1">Back-End</a>
 <div style="display:block;text-align:center"><img src="/2020.2-Anunbis/images/Diagrama_Pacotes_BackEnd.png" alt="Diagrama de pacotes Back-End"/></div>
 
-
+#### 5.1.2.1 <a name="5.1.2.1">Organização das Pastas</a>
+* database: Contem os scrips SQL do banco de dados.
+* controller: Contém as rotas da api.
+* schemas: Contém os arquivos que cuidam da lógica de serialização, deserelização e validação dos JSON que vão entrar e sair.
+* model: Contém os arquivos que representam as entidades do banco de dados.
+* services: Contém os arquivos que cuidam da lógica de negócio e é a ponte que conecta o controller com o model.
+* ext: Contém os arquivos de bibliotecas externas da aplicação. Por exemplo, o conector com o banco de dados e autenticação.
 ## 6. <a name="6">Visão da Implementação</a>
 
 ### 6.1 <a name="6_1">Modelagem dos dados</a>
