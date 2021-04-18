@@ -53,3 +53,7 @@ class Student(db.Model):
         for disagree in DisagreeStudentPost.query.filter_by(reg_student=student_bd.reg_student).all():
             db.session.delete(disagree)
         db.session.commit()
+
+    def __eq__(self, other):
+	    return self.reg_student == other.reg_student
+
