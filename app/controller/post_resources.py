@@ -21,7 +21,7 @@ class PostAgreesList(Resource):
     @jwt_required()
     def post(self):
         reg_student = get_jwt_identity()
-        ps = PostSchema()
+        ps = post_schema.PostSchema()
         validate = ps.validate(request.json)
         
         if validate:
@@ -37,7 +37,7 @@ class PostDisagreesList(Resource):
     @jwt_required()
     def post(self):
         reg_student = get_jwt_identity()
-        ps = PostSchema()
+        ps = post_schema.PostSchema()
         validate = ps.validate(request.json)
         
         if validate:

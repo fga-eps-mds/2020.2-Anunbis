@@ -28,7 +28,7 @@ def __validate_post_relationship(post):
     return True, {'message': "Ok!"}, 200
 
 def agree_student_post(reg_student, id_post):
-    post_db = post_dao.Post.get(id_post=id_post)
+    post_db = Post.get(id_post=id_post)
     if post_db:        
         student_db = Student.get(reg_student=reg_student)
         if student_db in post_db.disagrees:
@@ -54,7 +54,7 @@ def agree_post(post_db,student_db):
 
 def disagree_student_post(reg_student,id_post):
     
-    post_db = post_dao.Post.get(id_post=id_post)
+    post_db = Post.get(id_post=id_post)
     if post_db:        
         student_db = Student.get(reg_student=reg_student)
         if student_db in post_db.agrees:

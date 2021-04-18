@@ -139,7 +139,7 @@ class TestPostDisagree(TestFlaskBase):
     def test_api_must_register_student_disagree(self):
         post = valid_post(self)
         register_post(self, post=post)
-        response = register_postDisagree(self)
+        response = register_post_disagree(self)
         self.assertEqual(response.status_code, 200)
         # verificar se o numero de agree = 1
 
@@ -148,6 +148,6 @@ class TestPostDisagree(TestFlaskBase):
         post = valid_post(self)
         register_post(self, post=post)
         register_post_disagree(self)
-        response = register_postDisagree(self)
+        response = register_post_disagree(self)
         self.assertEqual(response.status_code, 200)
         # verificar se o numero de disagree = 1
