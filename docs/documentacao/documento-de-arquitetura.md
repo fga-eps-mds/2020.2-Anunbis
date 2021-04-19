@@ -17,6 +17,7 @@ Data|Versão|Descrição|Autor
 24/03|1.3|Adição dos diagramas de pacotes|Rafael e Roberto|
 16/04|1.4|Adição do detalhamento das pastas do Front-End|Rafael, Roberto, Eduardo e Victor|
 16/04|1.5|Adição do detalhamento das pastas do Back-End|Thiago|
+18/04|1.6|Revisão da visão lógica | Rafael e Thiago|
 
 ## 1. <a name="1">Introdução</a>
 
@@ -93,11 +94,11 @@ href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do m
 
 ### 3.1 <a name="3_1">Metas</a>
 
-<p align = "justify">&emsp;&emsp; O projeto deve ter acesso às funções básicas de plataformas web, para dessa maneira, possibilitar que os usuários compartilhem, entre si, suas experiências com os professores e disciplinas. O objetivo é ajudar os estudantes a escolherem suas disciplinas, e os professores receberem feedback para melhorarem suas metodologias.</p>
+<p align = "justify">&emsp;&emsp; O projeto deve ter acesso às funções básicas de plataformas web para  possibilitar que os usuários compartilhem, entre si, suas experiências com os professores e disciplinas. O objetivo é ajudar os estudantes a escolherem suas disciplinas, e os professores receberem feedback para melhorarem suas metodologias.</p>
 
 ### 3.2 <a name="3_2">Restrições</a>
 
-<p align = "justify">&emsp;&emsp;A aplicação será executada em um navegador, que foi gerada por meio da biblioteca React.js, que é implementada com o Javascript, CSS e HTML. Sobre a comunicação front-end e back-end, ela ocorre por meio de uma API RestFul implementada por um microframework de python chamado Flask.
+<p align = "justify">&emsp;&emsp;A aplicação será gerada por meio da biblioteca React.js, que é implementada com o Javascript, CSS e HTML e executada em um navegador. Sobre a comunicação front-end e back-end, ela ocorre por meio de uma API RestFul implementada por um microframework de python chamado Flask.
 </p>
 
 ## 4. <a name="4">Visão dos Casos de Uso</a>
@@ -126,9 +127,19 @@ href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do m
 |US10 - Visualizar Avaliações dos Alunos|O docente pode ver as avaliações gerais dos alunos.|
 
 ## 5. <a name="5">Visão Lógica</a>
-<p align = "justify">&emsp;&emsp;A comunicação do usuário com a aplicação será feito pela camada view do MVC. Os eventos do front-end serão interpretados pela biblioteca do <a href="https://pt-br.reactjs.org/docs/getting-started.html">ReactJS</a>, essa mesma biblioteca se comunicará com o back-end, que será executada com Flask e Mysql.</p>
+<p align = "justify">&emsp;&emsp;As interações entre usuário e plataforma, tanto mobile quanto desktop, serão feitas pelo front-end, sendo o React responsável por interpretar esses eventos passados e tratá-los de maneira adequada.</p>
 
-<p align = "justify">&emsp;&emsp;No banco de dados, serão armazenados os dados dos usuários, dos professores e das disciplinas. Ao procurar por um professor, uma requisição será feita no back-end, e caso algum professor correspondente seja encontrado, será devolvido ao usuário o docente, sua pontuação e seus feedbacks. Essa troca de informação também será igual para os professores usuários.</p>
+<p align = "justify">&emsp;&emsp;Existem 2 possibilidades de eventos a serem tratados: os que podem ser tratados apenas no lado do client (client side), que não necessitam de comunicação externa; e os que necessitam dessa comunicação via API com o back-end. Assim, o React é responsável por organizar as informações necessárias para apresentação ao usuário e em realizar as trocas de dados com o back-end.</p>
+
+<p align = "justify">&emsp;&emsp;Para se comunicar com o back-end, será necessária enviar uma requisição para o servidor do Back-End, fazendo uso do protocolo de comunicação HTTP e respeitando as regras de interface RESTful.</p>
+
+<p align = "justify">&emsp;&emsp;O tratamento das interações do Front-End com o Back-End será por meio da API, criada pelo Flask, e suas rotas se encontram no pacote controller. Esse pacote é responsavel por tratar tanto as requisições como as respostas.</p>
+
+<p align = "justify">&emsp;&emsp;Assim que se recebe uma requisição, deve-se validar os dados e <a href="https://qastack.com.br/programming/3316762/what-is-deserialize-and-serialize-in-json#:~:text=JSON%20%C3%A9%20um%20formato%20que,converter%20cadeia%20%2D%3E%20objeto%20)">desserializar</a>, caso seja necessário, por meio dos Schemas do Marshmallow. Cada entidade tem seu Schema que irá cuidar da sua serialização/desserialização e da validação dos dados recebidos por meio da requisição.</p>
+
+<p align = "justify">&emsp;&emsp;Após as validações dos dados, inicia a lógica de negócio que, geralmente, se encontra no pacote services, e que encaminha, se precisar, para as entidades do model, que utilizam o SqlAlchemy para representar as tabelas do banco de dados.</p>
+
+<p align="justify">&emsp;&emsp;Tendo feito seus serviços, os dados voltam para o controller, que chama o Schema para cuidar da sua serialização, para serem mandados de volta para quem requisitou.</p>
 
 ### 5.1 <a name="5_1">Diagrama de Pacotes</a>
 
