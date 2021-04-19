@@ -15,6 +15,9 @@ Data|Versão|Descrição|Autor
 20/03|1.1|Atualizando tópico das metas|Rodrigo|
 22/03|1.2|Atualizando Modelagem de dados|Thiago|
 24/03|1.3|Adição dos diagramas de pacotes|Rafael e Roberto|
+16/04|1.4|Adição do detalhamento das pastas do Front-End|Rafael, Roberto, Eduardo e Victor|
+16/04|1.5|Adição do detalhamento das pastas do Back-End|Thiago|
+18/04|1.6|Revisão da visão lógica | Rafael e Thiago|
 
 ## 1. <a name="1">Introdução</a>
 
@@ -48,17 +51,17 @@ Data|Versão|Descrição|Autor
 
 <p align = "justify"> &emsp;&emsp;Este projeto utiliza diversas tecnologias que se relacionam para fazer uma aplicação web. A figura abaixo mostra um diagrama com a representação arquitetural do programa.</p>
 
-<div style="display:block;text-align:center"><a style="text-align:center" href="https://edisciplinas.usp.br/pluginfile.php/4632609/mod_resource/content/1/5%20Arquitetura%20MVC.pdf"><img src="/2020.2-Anunbis/images/diagramaArquitetura.png" alt="representação da arquitetura no projeto"></a></div>
+<div style="display:block;text-align:center"><img src="/2020.2-Anunbis/images/diagramaArquitetura.png" alt="representação da arquitetura no projeto"></div>
 
 <p align = "justify"> &emsp;&emsp;Ele se baseia em requisições e respostas Http para se relacionar. O usuário, com seu navegador, entra no site gerado pelo React e, a partir dai, pode realizar varias ações, como cadastrar, postar e comentar. O react lida com essas ações e, se precisar, se conecta com o Flask. O Flask, por sua vez, cuida da lógica de negócio, manuseamento de dados e faz a conexão com o Mysql para a persistência desses dados.</p>
 
-### 2.1 <a name="3_1">React</a>
+### 2.1 <a name="2_1">React</a>
 
 <p align = "justify"> &emsp;&emsp; Para representarmos a camada de contato com o usuário, decidimos usar a biblioteca <a href="https://pt-br.reactjs.org/docs/getting-started.html">ReactJS</a> como front-end do projeto, realizando a parte onde se tem a interação do usuário com a página. Essa biblioteca JavaScript torna a criação de interfaces de usuário uma tarefa fácil, renderizando de forma eficiente apenas os componentes necessários, caso os dados mudem.</p>
 
 <p align = "justify"> &emsp;&emsp; Os <a href="https://pt-br.reactjs.org/docs/react-component.html">componentes</a> são a base do ReactJS, são como elementos HTML personalizados, reutilizáveis, permitem dividir a interface do usuário em partes independentes e pensar em cada parte isoladamente. O React também agiliza como os dados são armazenados e tratados, usando o <a href="https://pt-br.reactjs.org/docs/state-and-lifecycle.html">estado</a> e os <a href="https://pt-br.reactjs.org/docs/render-props.html">props</a>.</p>
 
-### 2.2 <a name="3_2">Flask</a>
+### 2.2 <a name="2_2">Flask</a>
 
 <!-- <a href= "" ></a>   ## pra colocar link -->  
 
@@ -67,15 +70,15 @@ Data|Versão|Descrição|Autor
 <p align = "justify"> &emsp;&emsp; Assim, se for necessário, é possível instalar pacotes extras para todo desenvolvimento da aplicação. Isso permite que um projeto implementado com o Flask só tenha o que realmente precisa, ao invés de termos inúmeras ferramentas e módulos sem nenhuma utilização no projeto. Dentre estes pacotes extras há: o <a href="https://flask-sqlalchemy.palletsprojects.com/en/2.x/">SQLAlchemy</a>, para cuidar da comunicação com o banco de dados; <a href="https://flask-marshmallow.readthedocs.io/en/latest/">Mashmallow</a>, para cuidar da serialização.</p>
  <!-- e o <a href="https://flask-migrate.readthedocs.io/en/latest/" >Migrate</a>, que cuida do versionamento do banco de dados pelo Python. -->
 
-### 2.3 <a name="3_2">MySQL</a>
+### 2.3 <a name="2_3">MySQL</a>
 
 <p align = "justify"> &emsp;&emsp;Para a persistência dos dados, o banco utilizado é o MySQL, pois utiliza a linguagem SQL e é <a 
 href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do mercado</a>. Além disso, pelo fato de ser relacional, será bastante útil em fazer as relações entre as entidades.</p>
 <!-- No entanto, não há a necessidade de utilizar a linguagem SQL diretamente, pois o SQLAlchemy juntamente com o micro framework Flask realizam esse trabalho. -->
 
 <!-- <p align = "justify">&emsp;&emsp;Sendo assim, o SQLAlchemy é capaz de mediar todas as tarefas necessárias, como por exemplo, criar tabelas, relacionamentos, realizar  consultas, adicionar e remover informações, para o pleno funcionamento desse projeto.</p> -->
-
-### 2.4 <a name="3_4">Modelo MVC</a>
+<!--
+### 2.4 <a name="2_4">Modelo MVC</a>
 <p align="justify">&emsp;&emsp;É um modelo para a organização do software do projeto, sendo ele um padrão de arquitetura de software que contribui para melhorar a performance do programa, tornando-o mais produtivo. Essa arquitetura é baseada na separação do código entre Modelo, controle e visão. Sendo assim, esse modelo é utilizado no back-end da aplicação. </p>
 
 <p align="justify">&emsp;&emsp; O pacote ‘modelo’ é responsável por gerenciar os dados, determinando suas funções, lógicas e o padrão de organização que será apresentado ao banco de dados. </p>
@@ -85,16 +88,17 @@ href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do m
 <p align="justify">&emsp;&emsp;Essa arquitetura gera inúmeros benefícios ao projeto, a camada de controle, por exemplo, serve como um filtro de segurança, pois impede que informações incorretas cheguem até a camada modelo. Contribui com a organização, pois possui fácil leitura e eventuais erros são mais fáceis de serem localizados. Além disso, essa arquitetura de camadas permite que vários programadores trabalhem ao mesmo tempo em diferentes camadas, contribuindo para o desenvolvimento do projeto.</p>
 
 <div style="display:block;text-align:center"><a style="text-align:center" href="https://edisciplinas.usp.br/pluginfile.php/4632609/mod_resource/content/1/5%20Arquitetura%20MVC.pdf"><img src="/2020.2-Anunbis/images/arquiteturaMVCBackEnd.png" alt="representação da arquitetura MVC no back-end"></a></div>
+-->
 
 ## 3. <a name="3">Metas e Restrições de Arquitetura</a>
 
 ### 3.1 <a name="3_1">Metas</a>
 
-<p align = "justify">&emsp;&emsp; O projeto deve ter acesso às funções básicas de plataformas web, para dessa maneira, possibilitar que os usuários compartilhem, entre si, suas experiências com os professores e disciplinas. O objetivo é ajudar os estudantes a escolherem suas disciplinas, e os professores receberem feedback para melhorarem suas metodologias.</p>
+<p align = "justify">&emsp;&emsp; O projeto deve ter acesso às funções básicas de plataformas web para  possibilitar que os usuários compartilhem, entre si, suas experiências com os professores e disciplinas. O objetivo é ajudar os estudantes a escolherem suas disciplinas, e os professores receberem feedback para melhorarem suas metodologias.</p>
 
 ### 3.2 <a name="3_2">Restrições</a>
 
-<p align = "justify">&emsp;&emsp;A aplicação será executada em um navegador, que foi gerada por meio da biblioteca React.js, que é implementada com o Javascript, CSS e HTML. Sobre a comunicação front-end e back-end, ela ocorre por meio de uma API RestFul implementada por um microframework de python chamado Flask.
+<p align = "justify">&emsp;&emsp;A aplicação será gerada por meio da biblioteca React.js, que é implementada com o Javascript, CSS e HTML e executada em um navegador. Sobre a comunicação front-end e back-end, ela ocorre por meio de uma API RestFul implementada por um microframework de python chamado Flask.
 </p>
 
 ## 4. <a name="4">Visão dos Casos de Uso</a>
@@ -123,19 +127,45 @@ href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do m
 |US10 - Visualizar Avaliações dos Alunos|O docente pode ver as avaliações gerais dos alunos.|
 
 ## 5. <a name="5">Visão Lógica</a>
-<p align = "justify">&emsp;&emsp;A comunicação do usuário com a aplicação será feito pela camada view do MVC. Os eventos do front-end serão interpretados pela biblioteca do <a href="https://pt-br.reactjs.org/docs/getting-started.html">ReactJS</a>, essa mesma biblioteca se comunicará com o back-end, que será executada com Flask e Mysql.</p>
+<p align = "justify">&emsp;&emsp;As interações entre usuário e plataforma, tanto mobile quanto desktop, serão feitas pelo front-end, sendo o React responsável por interpretar esses eventos passados e tratá-los de maneira adequada.</p>
 
-<p align = "justify">&emsp;&emsp;No banco de dados, serão armazenados os dados dos usuários, dos professores e das disciplinas. Ao procurar por um professor, uma requisição será feita no back-end, e caso algum professor correspondente seja encontrado, será devolvido ao usuário o docente, sua pontuação e seus feedbacks. Essa troca de informação também será igual para os professores usuários.</p>
+<p align = "justify">&emsp;&emsp;Existem 2 possibilidades de eventos a serem tratados: os que podem ser tratados apenas no lado do client (client side), que não necessitam de comunicação externa; e os que necessitam dessa comunicação via API com o back-end. Assim, o React é responsável por organizar as informações necessárias para apresentação ao usuário e em realizar as trocas de dados com o back-end.</p>
+
+<p align = "justify">&emsp;&emsp;Para se comunicar com o back-end, será necessária enviar uma requisição para o servidor do Back-End, fazendo uso do protocolo de comunicação HTTP e respeitando as regras de interface RESTful.</p>
+
+<p align = "justify">&emsp;&emsp;O tratamento das interações do Front-End com o Back-End será por meio da API, criada pelo Flask, e suas rotas se encontram no pacote controller. Esse pacote é responsavel por tratar tanto as requisições como as respostas.</p>
+
+<p align = "justify">&emsp;&emsp;Assim que se recebe uma requisição, deve-se validar os dados e <a href="https://qastack.com.br/programming/3316762/what-is-deserialize-and-serialize-in-json#:~:text=JSON%20%C3%A9%20um%20formato%20que,converter%20cadeia%20%2D%3E%20objeto%20)">desserializar</a>, caso seja necessário, por meio dos Schemas do Marshmallow. Cada entidade tem seu Schema que irá cuidar da sua serialização/desserialização e da validação dos dados recebidos por meio da requisição.</p>
+
+<p align = "justify">&emsp;&emsp;Após as validações dos dados, inicia a lógica de negócio que, geralmente, se encontra no pacote services, e que encaminha, se precisar, para as entidades do model, que utilizam o SqlAlchemy para representar as tabelas do banco de dados.</p>
+
+<p align="justify">&emsp;&emsp;Tendo feito seus serviços, os dados voltam para o controller, que chama o Schema para cuidar da sua serialização, para serem mandados de volta para quem requisitou.</p>
 
 ### 5.1 <a name="5_1">Diagrama de Pacotes</a>
 
 #### 5.1.1 <a name="5_1_1">Front-End</a>
 <div style="display:block;text-align:center"><img src="/2020.2-Anunbis/images/Diagrama_Pacotes_FrontEnd.png" alt="Diagrama de pacotes Front-End"/></div>
 
+#### 5.1.1.1 <a name="5.1.1.1">Organização das Pastas</a>
+* Assets: Possui a pasta de imagens e a pasta de constantes com arquivos de estilização globais ou recorrentes.
+
+* Components: Onde estão pastas de componentes React. Cada pasta contém o arquivo index que define a lógica do componente, o arquivo styles com os styled components (estilização do componente), e pode conter o arquivo validations caso precise fazer validações de entrada.
+
+* Services: Contém os arquivos de comunicação com a API e autenticação.
+
+* Views: Contém as páginas da aplicação.
+
+* Routes: Contém os arquivos de rotas do produto.
 #### 5.1.2 <a name="5_1_1">Back-End</a>
 <div style="display:block;text-align:center"><img src="/2020.2-Anunbis/images/Diagrama_Pacotes_BackEnd.png" alt="Diagrama de pacotes Back-End"/></div>
 
-
+#### 5.1.2.1 <a name="5.1.2.1">Organização das Pastas</a>
+* database: Contem os scrips SQL do banco de dados.
+* controller: Contém as rotas da api.
+* schemas: Contém os arquivos que cuidam da lógica de serialização, deserelização e validação dos JSON que vão entrar e sair.
+* model: Contém os arquivos que representam as entidades do banco de dados.
+* services: Contém os arquivos que cuidam da lógica de negócio e é a ponte que conecta o controller com o model.
+* ext: Contém os arquivos de bibliotecas externas da aplicação. Por exemplo, o conector com o banco de dados e autenticação.
 ## 6. <a name="6">Visão da Implementação</a>
 
 ### 6.1 <a name="6_1">Modelagem dos dados</a>
