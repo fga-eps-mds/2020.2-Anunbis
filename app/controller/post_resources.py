@@ -10,7 +10,7 @@ class PostList(Resource):
     @jwt_required()
     def post(self):
         try:
-            ps = post_schema.PostSchema()
+            ps = post_schema.PostSchema(exclude=['id_post'])
             post = ps.load(request.json)
             message, status_code = post_services.register_post(post)
             return make_response(jsonify(message), status_code)
@@ -21,7 +21,7 @@ class PostAgreesList(Resource):
     @jwt_required()
     def post(self):
         reg_student = get_jwt_identity()
-        ps = post_schema.PostSchema(context={'reg_student': reg_student})
+        ps = post_schema.PostSchema(only=['id_post'], context={'reg_student': reg_student})
         validate = ps.validate(request.json)
         
         if validate:
@@ -31,14 +31,14 @@ class PostAgreesList(Resource):
             if status_code == 404:
                 return make_response(jsonify(post), status_code)
             else:
+                ps = post_schema.PostSchema(context={'reg_student':reg_student})
                 return make_response(ps.jsonify(post), status_code)
 
 class PostDisagreesList(Resource):
     @jwt_required()
     def post(self):
         reg_student = get_jwt_identity()
-        ps = post_schema.PostSchema()
-        ps.context = {'reg_student': reg_student}
+        ps = post_schema.PostSchema(only=['id_post'])
         validate = ps.validate(request.json)
         
         if validate:
@@ -48,6 +48,7 @@ class PostDisagreesList(Resource):
             if status_code == 404:
                 return make_response(jsonify(post), status_code)
             else:
+                ps = post_schema.PostSchema(context={'reg_student': reg_student})
                 return make_response(ps.jsonify(post), status_code)
 
 def configure(api):
