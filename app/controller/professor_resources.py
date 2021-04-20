@@ -1,36 +1,29 @@
 from flask_restful import Resource
-from flask import request, make_response, jsonify, Blueprint
-from ..view.professor_schema import ProfessorSchema
-from ..model.services import professor_services
-from ..model.entity.professor import Professor
+from flask import request, make_response, jsonify
+from ..schemas.professor_schema import ProfessorSchema
+from ..services import professor_services
 from flask_jwt_extended import jwt_required
+from marshmallow import ValidationError
 
 
 class ProfessorDetail(Resource):
     @jwt_required()
     def get(self, name):
         professors = professor_services.get_professor_name_contains(name)
-        ps = ProfessorSchema(many=True, exclude=['email', 'password', 'reg_professor'])
+        ps = ProfessorSchema(many=True, exclude=['email', 'reg_professor'])
         return make_response(ps.jsonify(professors), 200)
 
 
 class ProfessorList(Resource):
     def post(self):
-        ps = ProfessorSchema()
-        validate = ps.validate(request.json)
-
-        if validate:
-            return make_response(jsonify(validate), 400)
-        else:
-            reg_professor = request.json["reg_professor"]
-            name = request.json["name"]
-            email = request.json["email"]
-            password = request.json["password"]
-
-            professor = Professor(reg_professor=reg_professor, name=name,
-                                  email=email, password=password)
+        try:
+            ps = ProfessorSchema()
+            validate = ps.validate(request.json)
+            professor = ps.load(request.json)
             message, status = professor_services.register_professor(professor)
             return make_response(jsonify(message), status)
+        except ValidationError as err:
+            return make_response(jsonify(err.messages), 400)
 
 
 def configure(api):

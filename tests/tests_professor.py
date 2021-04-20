@@ -1,6 +1,6 @@
 from flask_base_tests_cases import TestFlaskBase
 from flask import url_for
-from app.model.dao import professor_dao
+from app.model import professor
 from datetime import date
 class TestProfessorList(TestFlaskBase):
 
@@ -222,7 +222,7 @@ def valid_professor():
     }
         
 def create_professor_made_by_admin(self, name):
-    professor_bd = professor_dao.Professor()
+    professor_bd = professor.Professor()
     professor_bd.name = name
     self.app.db.session.add(professor_bd)
     self.app.db.session.commit()

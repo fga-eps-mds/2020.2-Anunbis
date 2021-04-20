@@ -98,6 +98,5 @@ class TestLogin(TestFlaskBase):
         user['email'] = "123456789@gmail.com"
 
         response = self.post(user)
-
         self.assertEqual(response.status_code, 400)
         self.assertEqual(response.json['email'][0], "The email must be matricula@aluno.unb.br")

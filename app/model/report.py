@@ -1,4 +1,4 @@
-from ...ext.database import db
+from app.ext.database import db
 import enum
 
 

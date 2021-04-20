@@ -2,6 +2,7 @@ from flask import Blueprint, redirect, url_for
 from flask_restful import Api
 from ..ext import auth, cors
 
+
 def init_app(app):
     url_prefix = "/anunbis/api/"
     api_bp = Blueprint("restapi", __name__, url_prefix=url_prefix)

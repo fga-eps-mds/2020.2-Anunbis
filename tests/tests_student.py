@@ -1,6 +1,7 @@
 from flask_base_tests_cases import TestFlaskBase
 from flask import url_for
-from app.model.dao import student_dao, post_dao
+from app.model import student
+from app.model import post
 from tests_post import register_post
 
 
@@ -151,7 +152,7 @@ class TestStudentDetail(TestFlaskBase):
         response = self.delete(reg_student, headers)
 
         self.assertEqual(response.status_code, 204)
-        self.assertIsNone(student_dao.Student.get(reg_student=reg_student))
+        self.assertIsNone(student.Student.get(reg_student=reg_student))
 
     def test_must_validate_reg_with_token(self):
         self.create_base_student()
@@ -183,5 +184,5 @@ class TestStudentDetail(TestFlaskBase):
 
         self.assertEqual(response_post.status_code, 201)
         self.assertEqual(response.status_code, 204)
-        self.assertIsNone(post_dao.Post.get(reg_student=reg_student))
+        self.assertIsNone(post.Post.get(reg_student=reg_student))
 

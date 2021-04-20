@@ -1,6 +1,4 @@
-from . import dao
 
 
 def init_app(app):
-    dao.init_app(app)
-
+    from . import course, discipline, post, professor, report, student

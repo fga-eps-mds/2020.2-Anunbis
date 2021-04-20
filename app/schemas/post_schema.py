@@ -1,11 +1,11 @@
 from . import ma, discipline_schema, student_schema
 from marshmallow import fields, validate
-from ..model.dao import post_dao
+from ..model import post
 
 
 class PostSchema(ma.SQLAlchemyAutoSchema):
     class Meta:
-        model = post_dao.Post
+        model = post.Post
 
     reg_student = fields.Integer(required=True, validate=validate.Range(min=0))
     id_professor = fields.Integer(required=True, validate=validate.Range(min=0))

@@ -1,7 +1,8 @@
 from flask_restful import Resource
-from ..model.services import course_services
+from ..services import course_services
 from flask import make_response
-from ..view.course_schema import CourseSchema
+from ..schemas.course_schema import CourseSchema
+
 
 class CourseList(Resource):
     def get(self):
