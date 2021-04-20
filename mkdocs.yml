@@ -48,6 +48,8 @@ nav:
         - Sprint 8:
             - Planejamento: sprints/planejamento-sprint-8.md
             - Revisão: sprints/revisao-sprint-8.md
+        - Sprint 9:
+            - Planejamento: sprints/planejamento-sprint-9.md
     - Projeto:
             - Documento de Visão: documentacao/documento-de-visao.md
             - Documento de Arquitetura: documentacao/documento-de-arquitetura.md
