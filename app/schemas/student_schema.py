@@ -8,7 +8,7 @@ class StudentSchema(ma.SQLAlchemySchema):
     class Meta:
         model = Student
 
-    reg_student = fields.Integer(required=True, validate=validate.Range(min=0))            
+    reg_student = fields.Integer(required=True, validate=validate.Range(min=100000000, max=999999999))            
     name = fields.String(required=True, validate=validate.Length(min=2,max=254))
     id_course = fields.Integer(required=True, validate=validate.Range(min=0))    
     password = fields.String(required=True, validate=validate.Length(min=8, max=100), load_only=True)

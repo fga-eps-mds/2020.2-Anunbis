@@ -10,7 +10,7 @@ class ProfessorSchema(ma.SQLAlchemySchema):
         additional = ['rating']
 
     id_professor = fields.Integer()
-    reg_professor = fields.Integer(required=True, validate=validate.Range(min=0))
+    reg_professor = fields.Integer(required=True, validate=validate.Range(min=10000000000, max=99999999999))
     name = fields.String(required=True, validate=validate.Length(min=2, max=254))
     password = fields.String(required=True, validate=validate.Length(min=8, max=100), load_only=True)
     email = fields.Email(required=True)
