@@ -18,11 +18,10 @@ class AgreeStudentPost(db.Model):
     reg_student = db.Column('reg_student', db.Integer, db.ForeignKey('student.reg_student'), nullable=False,
                             primary_key=True)
 
-
 class Post(db.Model):
     __tablename__ = "post"
 
-    id_post = db.Column(db.Integer, nullable=False, primary_key=True)
+    id_post = db.Column(db.Integer, nullable=False, primary_key=True, autoincrement=True)
     post_date = db.Column(db.Date, default=date.today(), nullable=False)
     rating = db.Column(db.Float, nullable=False)
     content = db.Column(db.String(480), nullable=False)
@@ -38,8 +37,8 @@ class Post(db.Model):
     professor = db.relationship(professor.Professor, back_populates="posts")
 
     agrees = db.relationship('Student', secondary="agree_student_post")
-    disagrees = db.relationship('Student', secondary="agree_student_post")
-
+    disagrees = db.relationship('Student', secondary="disagree_student_post")
+    
     @staticmethod
     def get(**kwargs):
         return Post.query.filter_by(**kwargs).first()

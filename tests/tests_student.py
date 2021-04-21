@@ -2,7 +2,7 @@ from flask_base_tests_cases import TestFlaskBase
 from flask import url_for
 from app.model import student
 from app.model import post
-from tests_post import register_post
+from tests_post import register_post, register_post_agree, register_post_disagree
 
 
 def valid_student(self):
@@ -104,7 +104,6 @@ class TestStudentPutList(TestFlaskBase):
         json=password, headers=headers)
 
     def test_api_must_modify_password(self):
-        # dado, quando, então
         self.create_base_student()
         password = {"password": self.student["password"] + "123"}
         headers = self.create_student_token()
@@ -186,3 +185,18 @@ class TestStudentDetail(TestFlaskBase):
         self.assertEqual(response.status_code, 204)
         self.assertIsNone(post.Post.get(reg_student=reg_student))
 
+    def test_must_delete_student_posts_agrees(self):
+        self.create_base_student()
+        register_post(self)
+        register_post_agree(self)
+        response = self.delete(self.student['reg_student'], self.create_student_token())
+
+        self.assertEqual(response.status_code, 204)
+
+    def test_must_delete_student_posts_disagrees(self):
+        self.create_base_student()
+        register_post(self)
+        register_post_disagree(self)
+        response = self.delete(self.student['reg_student'], self.create_student_token())
+
+        self.assertEqual(response.status_code, 204)
