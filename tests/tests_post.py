@@ -13,7 +13,7 @@ def valid_post(self):
         "is_anonymous": True
     } 
 
-def valid_post1(self):
+def valid_post_id(self):
     return {
         "id_post": 1,
     } 
@@ -30,7 +30,7 @@ def register_post_agree(self, post=None, headers=None):
     if headers is None:
         headers = self.create_student_token()
     if post is None:
-        post = valid_post1(self)
+        post = valid_post_id(self)
 
     return self.client.post(url_for('restapi.postagreeslist'), json=post, headers=headers)
 
@@ -38,7 +38,7 @@ def register_post_disagree(self, post=None, headers=None):
     if headers is None:
         headers = self.create_student_token()
     if post is None:
-        post = valid_post1(self)
+        post = valid_post_id(self)
 
     return self.client.post(url_for('restapi.postdisagreeslist'), json=post, headers=headers)
 
