@@ -19,6 +19,10 @@ class Professor(db.Model):
     posts = db.relationship(post.Post, back_populates="professor")
 
     @property
+    def reg(self):
+        return self.reg_professor
+
+    @property
     def password(self):
         raise AttributeError('password: write-only field')
 
