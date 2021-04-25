@@ -21,6 +21,14 @@ class PostList(Resource):
             return make_response(jsonify(message), status_code)
         except ValidationError as err:
             return make_response(jsonify(err.messages), 400)
+    
+    @jwt_required()
+    def get(self):
+        reg_student = get_jwt_identity()
+        student_post, status_code = post_services.post_student(reg_student)
+        ps = post_schema.PostSchema(many=True)
+        return make_response(ps.jsonify(student_post), status_code)
+
 
 
 class PostAgreesList(Resource):
@@ -59,6 +67,9 @@ class PostDisagreesList(Resource):
                 return make_response(ps.jsonify(post), status_code)
         except ValidationError as err:
             return make_response(jsonify(err.messages), 400)
+
+
+
 
 
 def configure(api):
