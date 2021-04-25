@@ -8,7 +8,7 @@ def auth_user(user):
     user = User(email=user.get('email'), password=user.get('password'))
     user_db = user.get()
     if user_db and user_db.verify_password(user.password):
-        access_token = create_access_token(identity=user_db)
+        access_token = create_access_token(identity=user_db, additional_claims={"is_student": not user.is_professor()})
         schema = (
             ProfessorSchema(only=['reg_professor', 'name', 'email'])
             if user.is_professor()
