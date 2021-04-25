@@ -63,3 +63,5 @@ class Student(db.Model):
     def __eq__(self, other):
         if isinstance(other, int):
             return other == self.reg_student
+        else:
+            return other.reg_student == self.reg_student
