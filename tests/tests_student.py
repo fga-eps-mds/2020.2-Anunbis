@@ -168,11 +168,10 @@ class TestStudentDetail(TestFlaskBase):
         headers = self.create_student_token()
         reg_student = self.student['reg_student']
 
-        response = self.delete(reg_student, headers)
+        self.delete(reg_student, headers)
         response = self.delete(reg_student, headers)
 
-        self.assertEqual(response.status_code, 404)
-        self.assertEqual(response.json['message'], "Student not found!")
+        self.assertEqual(response.status_code, 401)
 
     def test_must_delete_student_posts(self):
         self.create_base_student()

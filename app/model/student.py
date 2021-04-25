@@ -21,7 +21,7 @@ class Student(db.Model):
 
     @property
     def reg(self):
-        return self.reg_professor
+        return self.reg_student
 
     @property
     def password(self):
