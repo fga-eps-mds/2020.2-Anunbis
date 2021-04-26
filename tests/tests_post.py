@@ -94,13 +94,13 @@ class TestPostList(TestFlaskBase):
         self.assertEqual(response.status_code, 404)
         self.assertEqual(response.json['message'], "Professor not found!")
 
-    def test_api_must_validate_student_relationship_not_found(self):
+    def test_api_must_validate_student_different_from_tokens(self):
         post = valid_post(self)
         post['reg_student'] = int(self.student['reg_student']) + 1
         response = register_post(self, post=post)
 
-        self.assertEqual(response.status_code, 404)
-        self.assertEqual(response.json['message'], "Student not found!")
+        self.assertEqual(response.status_code, 400)
+        self.assertIsNotNone(response.json.get('reg_student'))
 
     def test_api_must_validate_discipline_relationship_not_found(self):
         post = valid_post(self)

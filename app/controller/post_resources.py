@@ -9,11 +9,14 @@ from ..ext.auth import student_required
 
 
 class PostList(Resource):
-    @jwt_required()
+    @student_required()
     def post(self):
         try:
             ps = post_schema.PostSchema(exclude=['id_post'])
             post = ps.load(request.json)
+            if post.get('reg_student') != current_user.reg_student:
+                raise ValidationError(
+                    {'reg_student': 'Your reg_student is different to post.reg_student'})
             message, status_code = post_services.register_post(post)
             return make_response(jsonify(message), status_code)
         except ValidationError as err:

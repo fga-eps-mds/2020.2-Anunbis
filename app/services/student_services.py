@@ -32,15 +32,12 @@ def get_student_reg(reg_student):
     return student
 
 
-def delete_student_by_reg(reg_student):
-    student_bd = Student.get(reg_student=reg_student)
-    if student_bd:
-        Student.delete(student_bd)
-        return {'message': "Student successfully deleted!"}, 204
+def delete_student(student_db):
+    Student.delete(student_db)
+    return {'message': "Student successfully deleted!"}, 204
 
 
-def modify_student(student):
-    student_bd = Student.get(reg_student=student.get('reg_student'))
-    if student_bd:
-        student_bd.password = student.get('password')
-        return {'message': 'Student successfully changed!'}, 200
+def modify_student(student_db, student_new):
+    student_db.password = student_new.get('password')
+    db.session.commit()
+    return {'message': 'Student successfully changed!'}, 200

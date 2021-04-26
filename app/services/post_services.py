@@ -20,8 +20,6 @@ def register_post(post):
 def __validate_post_relationship(post):
     if professor_services.get_professor_id(post.get('id_professor')) is None:
         return False, {'message': "Professor not found!"}, 404
-    if student_services.get_student_reg(post.get('reg_student')) is None:
-        return False, {'message': "Student not found!"}, 404
     if discipline_services.get_discipline_code(post.get('discipline_code')) is None:
         return False, {'message': "Discipline not found!"}, 404
 
