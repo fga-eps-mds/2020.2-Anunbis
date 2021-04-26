@@ -31,7 +31,6 @@ def register_post_agree(self, post=None, headers=None):
         headers = self.create_student_token()
     if post is None:
         post = valid_post_id(self)
-
     return self.client.post(url_for('restapi.postagreeslist'), json=post, headers=headers)
 
 def register_post_disagree(self, post=None, headers=None):
@@ -118,6 +117,11 @@ class TestPostAgree(TestFlaskBase):
 
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json['feedbacks'], {'agrees': 1, 'disagrees': 0, 'is_agreed': True, 'is_disagreed': False})
+
+    def test_api_must_block_professor_token(self):
+        register_post(self)
+        response = register_post_agree(self, headers=self.create_professor_token())
+        self.assertEqual(response.status_code, 403)
 
     def test_api_must_unagree_post(self): 
         register_post(self)
