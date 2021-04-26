@@ -2,27 +2,29 @@ from flask_base_tests_cases import TestFlaskBase
 from flask import url_for
 
 
+def valid_professor_user(self):
+    self.create_base_professor()
+    return {
+        'email': self.professor['email'],
+        'password': self.professor['password']
+    }
+
+
+def valid_student_user(self):
+    self.create_base_student()
+    return {
+        'email': self.student['email'],
+        'password': self.student['password']
+    }
+
+
 class TestLogin(TestFlaskBase):
 
     def post(self, user):
         return self.client.post(url_for('restapi.loginlist'), json=user)
 
-    def valid_student_user(self):
-        self.create_base_student()
-        return {
-            'email': self.student['email'],
-            'password': self.student['password']
-        }
-
-    def valid_professor(self):
-        self.create_base_professor()
-        return {
-            'email': self.professor['email'],
-            'password': self.professor['password']
-        }
-
     def test_must_retun_token_from_a_valid_student(self):
-        user = self.valid_student_user()
+        user = valid_student_user(self)
 
         response = self.post(user)
 
@@ -31,7 +33,7 @@ class TestLogin(TestFlaskBase):
         self.assertTrue(len(response.json['access_token']) > 0)
 
     def test_must_return_student_information(self):
-        user = self.valid_student_user()
+        user = valid_student_user(self)
 
         response = self.post(user)
 
@@ -58,7 +60,7 @@ class TestLogin(TestFlaskBase):
         self.assertEqual(response.json['message'], 'Email or Password invalid')
 
     def test_api_must_validate_student_wrong_password(self):
-        user = self.valid_student_user()
+        user = valid_student_user(self)
         user['password'] = user['password'] + "assadd"
 
         response = self.post(user)
@@ -74,7 +76,7 @@ class TestLogin(TestFlaskBase):
         self.assertIsNotNone(response.json['password'])
 
     def test_api_must_validate_password_min_len(self):
-        user = self.valid_student_user()
+        user = valid_student_user(self)
         user['password'] = "1234567"
 
         response = self.post(user)
@@ -83,7 +85,7 @@ class TestLogin(TestFlaskBase):
         self.assertIsNotNone(response.json['password'])
 
     def test_api_must_validate_password_max_len(self):
-        user = self.valid_student_user()
+        user = valid_student_user(self)
         user['password'] = "1"*101
 
         response = self.post(user)
@@ -92,7 +94,7 @@ class TestLogin(TestFlaskBase):
         self.assertIsNotNone(response.json['password'])
 
     def test_api_must_validate_email_max_len(self):
-        user = self.valid_student_user()
+        user = valid_student_user(self)
         user['email'] = "1"*101 + "@aluno.unb.br"
 
         response = self.post(user)
@@ -101,7 +103,7 @@ class TestLogin(TestFlaskBase):
         self.assertIsNotNone(response.json['email'])
 
     def test_api_must_validate_email_format(self):
-        user = self.valid_student_user()
+        user = valid_student_user(self)
         user['email'] = "123456789@gmail.com"
 
         response = self.post(user)
@@ -109,15 +111,15 @@ class TestLogin(TestFlaskBase):
         self.assertIsNotNone(response.json['email'][0])
 
     def test_api_must_validate_aluno_email_format(self):
-        user = self.valid_student_user()
+        user = valid_student_user(self)
         user['email'] = "123456789@aluno.gmail.com"
 
         response = self.post(user)
         self.assertEqual(response.status_code, 400)
         self.assertIsNotNone(response.json['email'][0])
 
-    def test_login_valid_professor(self):
-        professor = self.valid_professor()
+    def test_login_valid_professor_user_user(self):
+        professor = valid_professor_user(self)
         expected_status_code = 200
 
         response = self.post(professor)
@@ -127,7 +129,7 @@ class TestLogin(TestFlaskBase):
         self.assertTrue(len(response.json['access_token']) > 0)
 
     def test_login_not_registered(self):
-        professor = self.valid_professor()
+        professor = valid_professor_user(self)
 
         professor_diferente = {
             "email": '19002038888@unb.br',
