@@ -2,7 +2,6 @@ from flask_jwt_extended import JWTManager, verify_jwt_in_request, get_jwt
 from ..model import user
 from functools import wraps
 
-
 jwt = JWTManager()
 
 
@@ -19,11 +18,12 @@ def student_required():
             if claims["is_student"]:
                 return fn(*args, **kwargs)
             else:
-                return jsonify(msg="Students only!"), 403
+                return {"msg": "Students only!"}, 403
 
         return decorator
 
     return wrapper
+
 
 @jwt.user_identity_loader
 def user_identity_lookup(user):
