@@ -8,6 +8,7 @@ Data|Versão|Descrição|Autor
 02/03|0.4|Adição das Descrições das Telas|Eduardo e Victor|
 04/03|0.5|Atualização do Protótipo de Baixa Fidelidade, Fluxo de Usuário e Telas|Eduardo|
 09/03|0.6|Atualização das Telas e Adição do Protótipo de Alta Fidelidade|Eduardo|
+27/04|1.0|Lançamento do Protótipo de Alta fidelidade v2.0| Rafael|
 
 
 
@@ -24,7 +25,13 @@ Data|Versão|Descrição|Autor
 
 ## 2. <a name="2">Protótipo de Alta Fidelidade</a>
 
+### 2.1 <a name="2.1">Versão 1</a>
+
+
 <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FNqHjyO26dyCtuC8vnqjSwr%2FPrototipo-Alta-Fidelidade%3Fnode-id%3D60%253A201" allowfullscreen></iframe>
+
+### 2.2 <a name="2.2">Versão 2</a>
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FNqHjyO26dyCtuC8vnqjSwr%2FPrototipo-Alta-Fidelidade%3Fnode-id%3D1187%253A3014" allowfullscreen></iframe>
 
 ## 3. <a name="3">Fluxo de Usuário</a>
 
@@ -32,17 +39,22 @@ Data|Versão|Descrição|Autor
 
 ## 4. <a name="4">Telas</a>
 
-### 4.1 <a name="4.1">Cadastro</a>
+### 4.1 <a name="4.1">Página Home</a>
+<p align = "justify"> &emsp;&emsp;Página inicial cujo objetivo é apresentar mais informações sobre o aplicativo para o usuário, bem como apresentar a equipe de desenvolvedores e o contato do time. Fazendo com que a experiência de uso do aplicativo se torne mais fluída e amigável. </p>
+
+### 4.2 <a name="4.2">Cadastro</a>
 
  <p align = "justify"> &emsp;&emsp; Onde o usuário irá criar uma conta para utilizar a aplicação. Será necessário fornecer o nome, informações institucionais e uma senha para autenticação.</p>
 
-### 4.2 <a name="4.2">Login</a>
+### 4.3 <a name="4.3">Login</a>
 
  <p align = "justify"> &emsp;&emsp; Onde o usuário irá fornecer o e-mail e senha cadastrados para realizar o acesso a aplicação com a conta criada.</p>
 
-### 4.3 <a name="4.3">Página Inicial</a>
+### 4.4 <a name="4.4">Página Inicial (Logado)</a>
 
- <p align = "justify"> &emsp;&emsp; Terá um feed com as avaliações escritas pelo usuário caso seja aluno ou com as avaliações sobre o usuário caso seja professor, quantidade de pessoas que concordam ou discordam com as avaliações e um menu para acessar outras ferramentas.</p>
+ <p align = "justify"> &emsp;&emsp; <b>Aluno:</b> Terá um feed com as avaliações escritas pelo usuário e a quantidade de pessoas que concordam ou discordam com as avaliações.</p>
+
+ <p align = "justify"> &emsp;&emsp; <b>Professor:</b>  Feed com as avaliações feitas sobre você, bem como acesso a gráficos e estatísticas gerenciais que auxiliem na compreensão de suas avaliações, bem como seu progresso durante os anos.</p>
 
 ### 4.4 <a name="4.4">Resultado da Pesquisa</a>
 
@@ -51,12 +63,8 @@ Data|Versão|Descrição|Autor
 
 ### 4.5 <a name="4.5">Criar Avaliação</a>
 
- <p align = "justify"> &emsp;&emsp; Tela onde o usuário irá escrever suas avaliações. Nome do professor e o nome da disciplina serão preenchidos automaticamente, o usuário deverá preencher a nota dada ao professor, escolher se a postagem será pública ou anônima e deverá escrever os comentários.  </p>>
+ <p align = "justify"> &emsp;&emsp; Tela onde o usuário irá escrever suas avaliações. Nome do professor e o nome da disciplina serão preenchidos automaticamente, o usuário deverá preencher a nota dada ao professor em diferentes aspectos, escolher se a postagem será pública ou anônima e deverá escrever os comentários.  </p>>
 
 ### 4.6 <a name="4.6">Configurar</a>
 
- <p align = "justify"> &emsp;&emsp; Onde o usuário poderá alterar a senha da conta, ver informações sobre a conta ou excluir a conta.  </p>>
-
-### 4.6 <a name="4.6">Sobre</a>
-
- <p align = "justify"> &emsp;&emsp; Esta tela terá informações gerais sobre o projeto, créditos e referências a materiais de terceiros e e-mail para contato.  </p>>
+ <p align = "justify"> &emsp;&emsp; Onde o usuário poderá ter acesso as funcionalidades dedicadas ao seu perfil como alterar a senha, ver informações sobre o perfil ou excluir a conta.  </p>>
