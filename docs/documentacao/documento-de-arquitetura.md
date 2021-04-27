@@ -144,7 +144,7 @@ href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do m
 ### 5.1 <a name="5_1">Diagrama de Pacotes</a>
 
 #### 5.1.1 <a name="5_1_1">Front-End</a>
-<div style="display:block;text-align:center"><img src="/2020.2-Anunbis/images/Diagrama_Pacotes_FrontEnd.png" alt="Diagrama de pacotes Front-End"/></div>
+<div style="display:block;text-align:center"><img src="/2020.2-Anunbis/images/diagramaPacotesFrontEnd.png" alt="Diagrama de pacotes Front-End"/></div>
 
 #### 5.1.1.1 <a name="5.1.1.1">Organização das Pastas</a>
 * Assets: Possui a pasta de imagens e a pasta de constantes com arquivos de estilização globais ou recorrentes.
@@ -157,7 +157,7 @@ href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do m
 
 * Routes: Contém os arquivos de rotas do produto.
 #### 5.1.2 <a name="5_1_1">Back-End</a>
-<div style="display:block;text-align:center"><img src="/2020.2-Anunbis/images/Diagrama_Pacotes_BackEnd.png" alt="Diagrama de pacotes Back-End"/></div>
+<div style="display:block;text-align:center"><img src="/2020.2-Anunbis/images/diagramaPacotesBackEnd.png" alt="Diagrama de pacotes Back-End"/></div>
 
 #### 5.1.2.1 <a name="5.1.2.1">Organização das Pastas</a>
 * database: Contem os scrips SQL do banco de dados.

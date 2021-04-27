@@ -8,7 +8,8 @@ Data|Versão|Descrição|Autor
 02/03|0.4|Adição das Descrições das Telas|Eduardo e Victor|
 04/03|0.5|Atualização do Protótipo de Baixa Fidelidade, Fluxo de Usuário e Telas|Eduardo|
 09/03|0.6|Atualização das Telas e Adição do Protótipo de Alta Fidelidade|Eduardo|
-27/04|1.0|Lançamento do Protótipo de Alta fidelidade v2.0| Rafael|
+27/04|1.0|Lançamento do Protótipo de Alta fidelidade v2.0| Rafael, Eduardo, Roberto e Victor|
+27/04|1.1|Atualização do fluxo de usuário| Rafael|
 
 
 
@@ -56,15 +57,15 @@ Data|Versão|Descrição|Autor
 
  <p align = "justify"> &emsp;&emsp; <b>Professor:</b>  Feed com as avaliações feitas sobre você, bem como acesso a gráficos e estatísticas gerenciais que auxiliem na compreensão de suas avaliações, bem como seu progresso durante os anos.</p>
 
-### 4.4 <a name="4.4">Resultado da Pesquisa</a>
+### 4.5 <a name="4.5">Resultado da Pesquisa</a>
 
- <p align = "justify"> &emsp;&emsp; Caso o usuário informe o nome ou código da disciplina serão apresentados todos os professores que a ministram, um botão para escolher a ordem de apresentação, as avaliações feitas pelos usuários, botão para denunciar avaliação e um botão para o usuário escrever sua avaliação.  </p>
- <p align = "justify"> &emsp;&emsp; Caso o usuário informe o nome do professor serão apresentadas todas as disciplinas que o professor ministra, um botão para escolher a ordem de apresentação, as avaliações feitas pelos usuários, botão para denunciar avaliação e um botão para o usuário escrever sua avaliação.  </p>
+ <p align = "justify"> &emsp;&emsp; Caso o usuário informe o nome ou código da disciplina serão apresentados todos os professores que a ministram, um botão para escolher a ordem de apresentação, as avaliações feitas pelos usuários, botão para denunciar avaliação e um botão para o aluno escrever sua avaliação.  </p>
+ <p align = "justify"> &emsp;&emsp; Caso o usuário informe o nome do professor serão apresentadas todas as disciplinas que o professor ministra, um botão para escolher a ordem de apresentação, as avaliações feitas pelos usuários, botão para denunciar avaliação e um botão para o aluno escrever sua avaliação.  </p>
 
-### 4.5 <a name="4.5">Criar Avaliação</a>
+### 4.6 <a name="4.6">Criar Avaliação</a>
 
  <p align = "justify"> &emsp;&emsp; Tela onde o usuário irá escrever suas avaliações. Nome do professor e o nome da disciplina serão preenchidos automaticamente, o usuário deverá preencher a nota dada ao professor em diferentes aspectos, escolher se a postagem será pública ou anônima e deverá escrever os comentários.  </p>>
 
-### 4.6 <a name="4.6">Configurar</a>
+### 4.7 <a name="4.7">Configurar</a>
 
- <p align = "justify"> &emsp;&emsp; Onde o usuário poderá ter acesso as funcionalidades dedicadas ao seu perfil como alterar a senha, ver informações sobre o perfil ou excluir a conta.  </p>>
+ <p align = "justify"> &emsp;&emsp; Onde o usuário poderá ter acesso as funcionalidades dedicadas ao seu perfil como alterar a senha, ver informações sobre o perfil, excluir a conta ou desconectar.  </p>>
