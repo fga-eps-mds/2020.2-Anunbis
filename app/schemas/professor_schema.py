@@ -29,3 +29,9 @@ class ProfessorSchema(ma.SQLAlchemySchema):
             raise ValidationError("The email must be lower than 100")
         elif not match("[a-z . 0-9]+@unb.br", value.lower()):
             raise ValidationError("The email must be name(matricula)@unb.br")
+
+    @validates("name")
+    def validate_name(self, value):
+        for char in value:
+            if not char.isalpha() and char != ' ':
+                raise ValidationError("Name should have just letters!")

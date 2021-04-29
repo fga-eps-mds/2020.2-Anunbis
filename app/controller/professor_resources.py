@@ -9,7 +9,7 @@ from marshmallow import ValidationError
 class ProfessorDetail(Resource):
     @jwt_required()
     def get(self, name):
-        validate = professor_services.validate_name(name)
+        validate = ProfessorSchema(only=['name']).validate({'name': name})
         if validate:
             return make_response(jsonify(validate), 400)
         professors = professor_services.get_professor_name_contains(name)
