@@ -33,14 +33,10 @@ class ProfessorList(Resource):
 class ProfessorIdDetail(Resource):
     @jwt_required()
     def get(self, id):
-        try:
-            ProfessorSchema(only=['id_professor']).load({'id_professor': id})
-            professor = professor_services.get_professor_id(id)
-            ps = ProfessorSchema(exclude=['email', 'reg_professor'], context={
-                                 'reg_student': get_jwt_identity()})
-            return make_response(ps.jsonify(professor), 200)
-        except ValidationError as err:
-            return make_response(jsonify(err.messages), 400)
+        professor = professor_services.get_professor_id(id)
+        ps = ProfessorSchema(exclude=['email', 'reg_professor'], context={
+            'reg_student': get_jwt_identity()})
+        return make_response(ps.jsonify(professor), 200)
 
 
 def configure(api):
