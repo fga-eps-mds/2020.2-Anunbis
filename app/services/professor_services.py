@@ -15,11 +15,6 @@ def get_professor_name(name):
     return professor_bd
 
 
-def get_professor_reg(reg_professor):
-    professor = Professor.query.filter_by(reg_professor=reg_professor).first()
-    return professor
-
-
 def get_professor_id(id_professor):
     professor = Professor.query.filter_by(id_professor=id_professor).first()
     return professor
