@@ -18,7 +18,7 @@ def register_report(self, report=None, headers=None):
     if headers is None:
         headers = self.create_student_token()
     if report is None:
-        report = valid_student_report(self)
+        report = valid_report(self)
 
     return self.client.post(url_for('restapi.reportlist'), json=report, headers=headers)
 
