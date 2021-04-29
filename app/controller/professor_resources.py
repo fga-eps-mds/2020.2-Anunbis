@@ -36,7 +36,7 @@ class ProfessorIdDetail(Resource):
         try:
             ProfessorSchema(only=['id_professor']).load({'id_professor': id})
             professor = professor_services.get_professor_id(id)
-            ps = ProfessorSchema(many=True, exclude=['email', 'reg_professor'], context={
+            ps = ProfessorSchema(exclude=['email', 'reg_professor'], context={
                                  'reg_student': get_jwt_identity()})
             return make_response(ps.jsonify(professor), 200)
         except ValidationError as err:
