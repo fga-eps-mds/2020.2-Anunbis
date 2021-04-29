@@ -5,7 +5,8 @@ from sqlalchemy import func
 
 
 def get_professor_name_contains(name):
-    professors = Professor.query.filter(func.lower(Professor.name).contains(name.lower())).all()
+    professors = Professor.query.filter(func.lower(
+        Professor.name).contains(name.lower())).all()
     return professors
 
 
@@ -59,3 +60,11 @@ def __build_professor(professor):
 
 def __is_professor_made_by_admin(professor_bd):
     return professor_bd.email is None
+
+
+def validate_name(name):
+    for char in name:
+        if not char.isalpha():
+            return {"message": "Name should have just letters!"}
+
+    return None
