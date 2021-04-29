@@ -37,7 +37,7 @@ Essa Sprint foi bem atípica, pois por recomendação da nossa colaboradora, pro
 
 ### **Pontos Negativos:**
 * A equipe parece desanimada.
-* Estávamos pegando um ritmo bom denovo e quebramos o progresso.
+* Estávamos pegando um ritmo bom de novo e quebramos o progresso.
 * Sprint mais longa que o normal.
 
 ### **Pontos de melhoria:**
