@@ -111,16 +111,17 @@ class TestFlaskBase(TestCase):
 
         self.client.post(url_for("restapi.studentlist"), json=self.student)
 
-    def create_base_post(self):
-        if self.post:
-            return
-        from tests_post import valid_post
-        self.post = valid_post()
+    # def create_base_post(self):
+    #     if self.poste:
+    #         return
+    #     from tests_post import valid_post, valid_post_id
+    #     self.poste = valid_post_id(self)
 
-        self.client.post(url_for('restapi.postlist'), json=post, headers=headers)
+    #     self.client.post(url_for('restapi.postlist'), json=self.poste)
 
     def __create_atribute_entities(self):
         self.course = None
         self.discipline = None
         self.student = None
         self.professor = None
+        #self.poste = None
