@@ -1,22 +1,28 @@
 from ..model.report import Report
 from ..ext.database import db
 from . import student_services, post_services
+from ..model.post import Post
 
 
-def register_report(report):
-    validate, message, status_code = __validate_report_relationship(report)
-    if validate is not True:
+def register_report(report, user):
+    message, status_code = validate_post(report.get('id_post'))
+
+    if(status_code == 404):
         return message, status_code
 
-    report_db = Report(id_report=report.get('id_report'), id_post=report.get(
-        'id_post'), content=report.get('content'), reg_student=report.get('reg_student'), offensive=report.get('offensive'), prejudice=report.get('prejudice'), unrelated=report.get('unrelated'), others=report.get('others'))
+    report_db = Report(id_post=report.get(
+        'id_post'), content=report.get('content'), offensive=report.get('offensive'), prejudice=report.get('prejudice'), unrelated=report.get('unrelated'), others=report.get('others'))
+    if(user.is_professor()):
+        report_db.id_professor = user.id_professor
+    else:
+        report_db.reg_student = user.reg_student
     db.session.add(report_db)
     db.session.commit()
 
     return {'message': "Report successfully added"}, 201
 
-def __validate_report_relationship(report):
-    if student_services.get_student_reg(report.get('reg_student')) is None:
-        return False, {'message': "Student not found!"}, 404
+def validate_post(id_post):
+    if Post.get(id_post = id_post) is None:
+        return {'message': "Post not found!"}, 404
+    return None, None
 
-    return True, {'message': "Ok!"}, 200

@@ -63,6 +63,3 @@ class Post(db.Model):
         for disagree in DisagreeStudentPost.query.filter_by(id_post=post_db.id_post).all():
             db.session.delete(disagree)
         db.session.commit()
-
-    def delete_reports(post_db):
-        pass

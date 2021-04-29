@@ -86,8 +86,10 @@ CREATE TABLE IF NOT EXISTS report(
   prejudice TINYINT(1) NOT NULL,
   unrelated TINYINT(1) NOT NULL,
   others TINYINT(1) NOT NULL,
-  reg_student int UNSIGNED NOT NULL,
+  reg_student int UNSIGNED,
+  id_professor int UNSIGNED,
   PRIMARY KEY (id_report),
   FOREIGN KEY (id_post) REFERENCES post (id_post),
-  FOREIGN KEY (reg_student) REFERENCES student (reg_student)
+  FOREIGN KEY (reg_student) REFERENCES student (reg_student),
+  FOREIGN KEY (id_professor) REFERENCES professor (id_professor)
 )ENGINE InnoDB AUTO_INCREMENT = 0;

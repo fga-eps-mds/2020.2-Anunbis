@@ -1,6 +1,6 @@
 from unittest import TestCase
 from app.app import create_app
-from app.model import course, discipline, professor
+from app.model import course, discipline, professor, post
 from flask import url_for
 from json import loads
 
@@ -110,6 +110,14 @@ class TestFlaskBase(TestCase):
         self.student = valid_student(self)
 
         self.client.post(url_for("restapi.studentlist"), json=self.student)
+
+    def create_base_post(self):
+        if self.post:
+            return
+        from tests_post import valid_post
+        self.post = valid_post()
+
+        self.client.post(url_for('restapi.postlist'), json=post, headers=headers)
 
     def __create_atribute_entities(self):
         self.course = None

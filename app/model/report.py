@@ -9,7 +9,9 @@ class Report(db.Model):
         "post.id_post"), nullable=False)
     content = db.Column(db.String(120), nullable=False, default='')
     reg_student = db.Column(db.Integer, db.ForeignKey(
-        "student.reg_student"), nullable=False)
+        "student.reg_student"))
+    id_professor = db.Column(db.Integer, db.ForeignKey(
+        "professor.id_professor"))
     offensive = db.Column(db.Boolean, nullable=False)
     prejudice = db.Column(db.Boolean, nullable=False)
     unrelated = db.Column(db.Boolean, nullable=False)
