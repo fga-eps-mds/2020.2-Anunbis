@@ -36,12 +36,12 @@ Data|Versão|Descrição|Autor
 
 ## 3. <a name="3">Fluxo de Usuário</a>
 
-![Fluxo de Usuário](/2020.2-Anunbis/images/fluxoDeUsuario.jpg)
+<iframe width="768" height="432" src="https://miro.com/app/live-embed/o9J_lRVkZOs=/?moveToViewport=-2564,-1478,3849,2164" frameBorder="0" scrolling="no" allowFullScreen></iframe>
 
 ## 4. <a name="4">Telas</a>
 
 ### 4.1 <a name="4.1">Página Home</a>
-<p align = "justify"> &emsp;&emsp;Página inicial cujo objetivo é apresentar mais informações sobre o aplicativo para o usuário, bem como apresentar a equipe de desenvolvedores e o contato do time. Fazendo com que a experiência de uso do aplicativo se torne mais fluída e amigável. </p>
+<p align = "justify"> &emsp;&emsp;Página inicial cujo objetivo é apresentar mais informações sobre o aplicativo para o usuário, bem como apresentar a equipe de desenvolvedores e o contato do time. Fazendo com que a experiência de uso do aplicativo se torne mais fluida e amigável. </p>
 
 ### 4.2 <a name="4.2">Cadastro</a>
 
@@ -68,4 +68,4 @@ Data|Versão|Descrição|Autor
 
 ### 4.7 <a name="4.7">Configurar</a>
 
- <p align = "justify"> &emsp;&emsp; Onde o usuário poderá ter acesso as funcionalidades dedicadas ao seu perfil como alterar a senha, ver informações sobre o perfil, excluir a conta ou desconectar.  </p>>
+ <p align = "justify"> &emsp;&emsp; Onde o usuário poderá ter acesso as funcionalidades dedicadas ao seu perfil como alterar a senha, ver informações sobre o perfil, excluir a conta ou desconectar.  </p>
