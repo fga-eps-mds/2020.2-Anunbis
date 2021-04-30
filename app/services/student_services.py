@@ -20,11 +20,6 @@ def register_student(student):
         return {"message": "Student already registered"}, 409
 
 
-def get_student_email(email):
-    student = Student.query.filter_by(email=email).first()
-    return student
-
-
 def __validate_student_relationship(student):
     if course_services.get_course_id(student.get('id_course')) is None:
         return {"message": "Course not found!"}, 404
@@ -37,17 +32,12 @@ def get_student_reg(reg_student):
     return student
 
 
-def delete_student_by_reg(reg_student):
-    student_bd = Student.get(reg_student=reg_student)
-    if student_bd:
-        Student.delete(student_bd)
-        return {'message': "Student successfully deleted!"}, 204
-    else:
-        return {'message': "Student not found!"}, 404
+def delete_student(student_db):
+    Student.delete(student_db)
+    return {'message': "Student successfully deleted!"}, 204
 
 
-def modify_student(student):
-    student_bd = Student.get(reg_student=student.get('reg_student'))
-    if student_bd:
-        student_bd.password = student.get('password')
-        return {'message': 'Student successfully changed!'}, 200
+def modify_student(student_db, student_new):
+    student_db.password = student_new.get('password')
+    db.session.commit()
+    return {'message': 'Student successfully changed!'}, 200

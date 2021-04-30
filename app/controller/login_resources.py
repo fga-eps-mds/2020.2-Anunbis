@@ -10,12 +10,11 @@ class LoginList(Resource):
         try:
             ls = login_schema.LoginSchema()
             user = ls.load(request.json)
-            message, status_code = login_services.auth_student(user)
-            return make_response(jsonify(message), status_code)
+            user, status_code = login_services.auth_user(user)
+            return make_response(jsonify(user), status_code)
         except ValidationError as err:
             return make_response(jsonify(err.messages), 400)
 
 
 def configure(api):
     api.add_resource(LoginList, "/login")
-

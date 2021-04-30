@@ -5,18 +5,14 @@ from sqlalchemy import func
 
 
 def get_professor_name_contains(name):
-    professors = Professor.query.filter(func.lower(Professor.name).contains(name.lower())).all()
+    professors = Professor.query.filter(func.lower(
+        Professor.name).contains(name.lower())).all()
     return professors
 
 
 def get_professor_name(name):
     professor_bd = Professor.query.filter_by(name=name).first()
     return professor_bd
-
-
-def get_professor_reg(reg_professor):
-    professor = Professor.query.filter_by(reg_professor=reg_professor).first()
-    return professor
 
 
 def get_professor_id(id_professor):
@@ -44,8 +40,6 @@ def __modify_professor(professor_bd, professor):
         return {"message": "Professor registered sucessfully"}, 201
     except IntegrityError:
         return {"message": "Professor already registered"}, 409
-
-    return {"message": "Invalid request"}, 400
 
 
 def __build_professor(professor):
