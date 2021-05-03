@@ -7,7 +7,7 @@ from ..model.professor import Professor
 class ProfessorSchema(ma.SQLAlchemySchema):
     class Meta:
         model = Professor
-        additional = ["rating"]
+        additional = ["rating", "didactic", "metod", "avaliations", "disponibility"]
 
     id_professor = fields.Integer(validate=validate.Range(min=0))
     reg_professor = fields.Integer(
