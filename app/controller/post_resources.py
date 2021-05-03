@@ -21,13 +21,16 @@ class PostList(Resource):
             return make_response(jsonify(message), status_code)
         except ValidationError as err:
             return make_response(jsonify(err.messages), 400)
-    
+
     @jwt_required()
     def get(self):
         user = current_user
-        ps = post_schema.PostSchema(many=True)
+        if not user.is_professor():
+            ps = post_schema.PostSchema(
+                many=True, context={'reg_student': user.reg})
+        else:
+            ps = post_schema.PostSchema(many=True)
         return make_response(ps.jsonify(user.posts), 200)
-
 
 
 class PostAgreesList(Resource):
@@ -66,9 +69,6 @@ class PostDisagreesList(Resource):
                 return make_response(ps.jsonify(post), status_code)
         except ValidationError as err:
             return make_response(jsonify(err.messages), 400)
-
-
-
 
 
 def configure(api):
