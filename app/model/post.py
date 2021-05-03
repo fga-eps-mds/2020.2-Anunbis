@@ -64,5 +64,9 @@ class Post(db.Model):
             db.session.delete(disagree)
         db.session.commit()
 
+    @staticmethod
     def delete_reports(post_db):
-        pass
+        from .report import Report
+        for report in Report.query.filter_by(id_post=post_db.id_post).all():
+            db.session.delete(report)
+        db.session.commit()

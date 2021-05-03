@@ -82,9 +82,14 @@ CREATE TABLE IF NOT EXISTS report(
   id_report int UNSIGNED AUTO_INCREMENT,
   id_post int UNSIGNED NOT NULL,
   content varchar(120) NOT NULL DEFAULT '',
-  report_type enum('L', 'I', 'G', 'O') NOT NULL,
-  reg_student int UNSIGNED NOT NULL,
+  offensive TINYINT(1) NOT NULL,
+  prejudice TINYINT(1) NOT NULL,
+  unrelated TINYINT(1) NOT NULL,
+  others TINYINT(1) NOT NULL,
+  reg_student int UNSIGNED,
+  id_professor int UNSIGNED,
   PRIMARY KEY (id_report),
   FOREIGN KEY (id_post) REFERENCES post (id_post),
-  FOREIGN KEY (reg_student) REFERENCES student (reg_student)
+  FOREIGN KEY (reg_student) REFERENCES student (reg_student),
+  FOREIGN KEY (id_professor) REFERENCES professor (id_professor)
 )ENGINE InnoDB AUTO_INCREMENT = 0;

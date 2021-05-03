@@ -3,6 +3,7 @@ from flask import url_for
 from app.model import student
 from app.model import post
 from tests_post import register_post, register_post_agree, register_post_disagree
+from tests_report import register_report
 
 
 def valid_student(self):
@@ -210,4 +211,14 @@ class TestStudentDetail(TestFlaskBase):
         response = self.delete(
             self.student['reg_student'], self.create_student_token())
 
+        self.assertEqual(response.status_code, 204)
+
+    def test_must_delete_student_posts_reports(self):
+        self.create_base_student()
+        register_post(self)
+        register_report(self)
+        response = self.delete(
+            self.student['reg_student'], self.create_student_token())
+        status = response.status_code
+        
         self.assertEqual(response.status_code, 204)

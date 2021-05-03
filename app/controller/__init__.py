@@ -29,6 +29,9 @@ def init_app(app):
     from . import student_resources
     student_resources.configure(api)
 
+    from . import report_resources
+    report_resources.configure(api)
+
     app.register_blueprint(api_bp)
 
     @app.route("/")
