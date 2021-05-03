@@ -24,10 +24,9 @@ class PostList(Resource):
     
     @jwt_required()
     def get(self):
-        reg_student = get_jwt_identity()
-        student_post, status_code = post_services.post_student(reg_student)
+        user = current_user
         ps = post_schema.PostSchema(many=True)
-        return make_response(ps.jsonify(student_post), status_code)
+        return make_response(ps.jsonify(user.posts), 200)
 
 
 
