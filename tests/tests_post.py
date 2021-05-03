@@ -9,7 +9,10 @@ def valid_post(self):
         "reg_student": self.student["reg_student"],
         "discipline_code": self.discipline["discipline_code"],
         "content": "Professor nota dez",
-        "rating": "5",
+        "didactic": "5",
+        "metod": "5",
+        "avaliations": "5",
+        "disponibility": "5",
         "is_anonymous": True,
     }
 
@@ -75,36 +78,52 @@ class TestPostList(TestFlaskBase):
         response = register_post(self, post=post)
 
         expected_json_keys = [
+            "avaliations",
             "content",
+            "didactic",
             "discipline_code",
+            "disponibility",
             "id_professor",
             "is_anonymous",
-            "rating",
+            "metod",
             "reg_student",
         ]
         json_keys = list(response.json.keys())
+
         self.assertEqual(response.status_code, 400)
         self.assertEqual(json_keys, expected_json_keys)
 
     def test_api_must_validate_attributes_min(self):
         post = valid_post(self)
         post["content"] = ""
-        post["rating"] = -1
+        post["didactic"] = -1
+        post["metod"] = -1
+        post["avaliations"] = -1
+        post["disponibility"] = -1
         response = register_post(self, post=post)
 
         self.assertEqual(response.status_code, 400)
         self.assertIsNotNone(response.json["content"])
-        self.assertIsNotNone(response.json["rating"])
+        self.assertIsNotNone(response.json["didactic"])
+        self.assertIsNotNone(response.json["metod"])
+        self.assertIsNotNone(response.json["avaliations"])
+        self.assertIsNotNone(response.json["disponibility"])
 
     def test_api_must_validate_attributes_max(self):
         post = valid_post(self)
         post["content"] = "a" * 481
-        post["rating"] = 11
+        post["didactic"] = 11
+        post["metod"] = 11
+        post["avaliations"] = 11
+        post["disponibility"] = 11
         response = register_post(self, post=post)
 
         self.assertEqual(response.status_code, 400)
         self.assertIsNotNone(response.json["content"])
-        self.assertIsNotNone(response.json["rating"])
+        self.assertIsNotNone(response.json["didactic"])
+        self.assertIsNotNone(response.json["metod"])
+        self.assertIsNotNone(response.json["avaliations"])
+        self.assertIsNotNone(response.json["disponibility"])
 
     def test_api_must_validate_professor_relationship_not_found(self):
         post = valid_post(self)
