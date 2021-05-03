@@ -77,10 +77,3 @@ def disagree_post(post_db, student_db):
 
     return post_db, 200 
 
-def post_student(reg_student):
-    student_post = Post.query.filter_by(reg_student=reg_student).all()
-    if student_post:
-        return student_post, 200
-    else:
-        return [], 200
-
