@@ -5,6 +5,8 @@ Data|Versão|Descrição|Autor
 08/03|0.1|Abertura do Documento |Rafael|
 08/03|0.2|Criação da Tabela de Riscos |Rafael|
 03/05|0.3|Alteração da tabela e inserção do tópico de burndown de riscos| Rafael e Roberto
+03/05|0.4|Adição da tabela de burndown de riscos| Rafael e Roberto
+
 
 ## 1 <a name="1">Introdução</a>
 
@@ -65,7 +67,13 @@ Data|Versão|Descrição|Autor
 
 ## 5 <a name="5">Burndown de Riscos</a>
 
-<p align="justify"> &emsp;&emsp; Para o burndown de riscos, adotamos uma planilha compartilhada para servir como referência de cálculo de <u>Probabilidade</u> e <u>Impacto</u> para cada sprint do projeto. A intenção é gerar gráficos baseados nesses dados que sejam de fácil entendimento para uma melhor análise de como esses riscos se comportam ao decorrer do projeto, e como o grupo está lidando com eles.</p>
+<p align="justify"> &emsp;&emsp; Para o burndown de riscos, adotamos uma planilha compartilhada para servir como referência de cálculo de <u>Probabilidade</u> e <u>Impacto</u> para cada sprint do projeto. A intenção é gerar um gráfico baseado nesses dados que sejam de fácil entendimento para uma melhor análise de como esses riscos se comportam ao decorrer do projeto, e como o grupo está lidando com eles.</p>
+
+A tabela com os riscos se encontra abaixo:
+
+<iframe width="600" height="400" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQmkncJgu0YbqaXA8M-tPzSmEj5juXb-Tr1xBS9Z3ljDYItNyTJSyDyuC9cjgl4u8ggpbBpKNGxvstX/pubchart?oid=600106509&amp;format=interactive"></iframe>
+
+Os dados foram retirados da [planilha de gerenciamento de riscos](https://docs.google.com/spreadsheets/d/12WXr3bNG4Uke4vPLeR_h7lxr0sZETEj1ElInSU8CiWs/edit?usp=sharing).
 
 ## 6 <a name="6">Referências</a>
 
