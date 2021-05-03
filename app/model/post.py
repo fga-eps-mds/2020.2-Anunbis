@@ -47,7 +47,10 @@ class Post(db.Model):
         db.Integer, nullable=False, primary_key=True, autoincrement=True
     )
     post_date = db.Column(db.Date, default=date.today(), nullable=False)
-    rating = db.Column(db.Float, nullable=False)
+    didactic = db.Column(db.Float, nullable=False)
+    metod = db.Column(db.Float, nullable=False)
+    avaliations = db.Column(db.Float, nullable=False)
+    disponibility = db.Column(db.Float, nullable=False)
     content = db.Column(db.String(480), nullable=False)
     is_anonymous = db.Column(db.Boolean, nullable=False)
 
@@ -68,3 +71,12 @@ class Post(db.Model):
 
     agrees = db.relationship("Student", secondary="agree_student_post")
     disagrees = db.relationship("Student", secondary="disagree_student_post")
+
+    @property
+    def rating(self):
+        sum = 0
+        sum += self.didactic
+        sum += self.metod
+        sum += self.avaliations
+        sum += self.disponibility
+        return sum / 4
