@@ -8,7 +8,7 @@ def valid_post(self):
         "id_professor": self.professor["id_professor"],
         "reg_student": self.student["reg_student"],
         "discipline_code": self.discipline["discipline_code"],
-        "content": "Professor nota dez",
+        "content": "Professor nota cinco",
         "didactic": "5",
         "metod": "5",
         "avaliations": "5",
@@ -112,10 +112,11 @@ class TestPostList(TestFlaskBase):
     def test_api_must_validate_attributes_max(self):
         post = valid_post(self)
         post["content"] = "a" * 481
-        post["didactic"] = 11
-        post["metod"] = 11
-        post["avaliations"] = 11
-        post["disponibility"] = 11
+        post["didactic"] = 6
+        post["metod"] = 6
+        post["avaliations"] = 6
+        post["disponibility"] = 6
+
         response = register_post(self, post=post)
 
         self.assertEqual(response.status_code, 400)
