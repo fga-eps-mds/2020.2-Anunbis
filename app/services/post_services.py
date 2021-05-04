@@ -78,4 +78,6 @@ def undisagree_post(post_db, student_db):
 def disagree_post(post_db, student_db):
     post_db.disagrees.append(student_db)
     db.session.commit()
-    return post_db, 200
+
+    return post_db, 200 
+
