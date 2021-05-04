@@ -7,3 +7,7 @@ class TestHomeList(TestFlaskBase):
         response = self.client.get(url_for("restapi.homelist"))
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json, "Hello World of my heart!")
+
+    def test_api_must_redirect_to_home(self):
+        response = self.client.get("/")
+        self.assertEqual(response.status_code, 302)
