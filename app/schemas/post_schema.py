@@ -7,9 +7,9 @@ class PostSchema(ma.SQLAlchemySchema):
         model = post.Post
 
     id_post = fields.Integer(required=True, validate=validate.Range(min=0))
-    reg_student = fields.Integer(required=True, validate=validate.Range(min=0))
+    reg_student = fields.Integer(required=True, validate=validate.Range(min=0), load_only=True)
     id_professor = fields.Integer(required=True, validate=validate.Range(min=0))
-    discipline_code = fields.String(required=True, validate=validate.Length(max=80))
+    discipline_code = fields.String(required=True, validate=validate.Length(max=80), load_only=True)
     content = fields.String(required=True, validate=validate.Length(min=1, max=480))
     rating = fields.Float(required=True, validate=validate.Range(min=0, max=10))
     is_anonymous = fields.Boolean(required=True)

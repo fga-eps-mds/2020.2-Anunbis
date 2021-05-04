@@ -22,6 +22,9 @@ class Professor(db.Model):
     def reg(self):
         return self.reg_professor
 
+    def is_professor(self):
+        return True
+
     @property
     def password(self):
         raise AttributeError('password: write-only field')

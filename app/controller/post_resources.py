@@ -22,6 +22,16 @@ class PostList(Resource):
         except ValidationError as err:
             return make_response(jsonify(err.messages), 400)
 
+    @jwt_required()
+    def get(self):
+        user = current_user
+        if not user.is_professor():
+            ps = post_schema.PostSchema(
+                many=True, context={'reg_student': user.reg})
+        else:
+            ps = post_schema.PostSchema(many=True)
+        return make_response(ps.jsonify(user.posts), 200)
+
 
 class PostAgreesList(Resource):
     @student_required()

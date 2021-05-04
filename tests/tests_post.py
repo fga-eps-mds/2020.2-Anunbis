@@ -18,6 +18,13 @@ def valid_post_id(self):
         "id_post": 1,
     } 
 
+def get_posts(self, headers=None):
+    if headers is None:
+        headers = self.create_student_token()
+
+    return self.client.get(url_for('restapi.postlist'), headers = headers)
+
+
 def register_post(self, post=None, headers=None):
     if headers is None:
         headers = self.create_student_token()
@@ -108,6 +115,25 @@ class TestPostList(TestFlaskBase):
 
         self.assertEqual(response.status_code, 404)
         self.assertEqual(response.json['message'], "Discipline not found!")
+
+class TestGetPostList(TestFlaskBase):
+
+    def test_must_get_student_post_found_empty(self):
+        response = get_posts(self)
+        status_code_expected = 200
+
+        self.assertEqual(response.status_code, status_code_expected)
+        self.assertEqual(response.json, [])
+    
+    def test_must_get_student_post_found(self):
+        register_post(self)
+        response = get_posts(self)
+        status_code_expected = 200
+        self.assertEqual(response.status_code, status_code_expected)
+        
+
+    
+        
 
 class TestPostAgree(TestFlaskBase):
     
