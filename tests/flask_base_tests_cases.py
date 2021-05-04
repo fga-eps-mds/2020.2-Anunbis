@@ -1,18 +1,17 @@
 from unittest import TestCase
 from app.app import create_app
-from app.model import course, discipline, professor, post
+from app.model import course, discipline, professor
 from flask import url_for
-from json import loads
 
 
 class TestFlaskBase(TestCase):
-    def setUp(self):                                           # This method run before each test
+    def setUp(self):  # This method run before each test
         self.app = create_app()
         self.app.testing = True
         self.app_context = self.app.test_request_context()
         self.app_context.push()
         self.client = self.app.test_client()
-        self.app.config['JWT_SECRET_KEY'] = "anunbis-test"
+        self.app.config["JWT_SECRET_KEY"] = "anunbis-test"
         # This create a in-memory sqlite db
         self.app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///"
         self.app.db.create_all()
@@ -27,23 +26,15 @@ class TestFlaskBase(TestCase):
         from tests_login import valid_student_user
 
         student_user = valid_student_user(self)
-        login = self.client.post(
-            url_for("restapi.loginlist"), json=student_user)
-        return {
-            'Authorization':
-                'Bearer ' + login.json.get('access_token')
-        }
+        login = self.client.post(url_for("restapi.loginlist"), json=student_user)
+        return {"Authorization": "Bearer " + login.json.get("access_token")}
 
     def create_professor_token(self):
         from tests_login import valid_professor_user
 
         professor_user = valid_professor_user(self)
-        login = self.client.post(
-            url_for("restapi.loginlist"), json=professor_user)
-        return {
-            'Authorization':
-                'Bearer ' + login.json.get('access_token')
-        }
+        login = self.client.post(url_for("restapi.loginlist"), json=professor_user)
+        return {"Authorization": "Bearer " + login.json.get("access_token")}
 
     def create_base_entities(self):
         self.create_base_course()
@@ -54,13 +45,10 @@ class TestFlaskBase(TestCase):
     def create_base_course(self):
         if self.course:
             return
-        self.course = {
-            "id_course": 1,
-            "name": "Engenharia de Software"
-        }
+        self.course = {"id_course": 1, "name": "Engenharia de Software"}
         course_bd = course.Course()
-        course_bd.id_course = self.course['id_course']
-        course_bd.name = self.course['name']
+        course_bd.id_course = self.course["id_course"]
+        course_bd.name = self.course["name"]
         self.app.db.session.add(course_bd)
         self.app.db.session.commit()
 
@@ -73,13 +61,16 @@ class TestFlaskBase(TestCase):
         self.discipline = {
             "discipline_code": "FGA01",
             "name": "Metodos Desenvolvimento de Software",
-            "id_course": 1
+            "id_course": 1,
         }
         discipline_bd = discipline.Discipline()
-        discipline_bd.discipline_code = self.discipline['discipline_code']
-        discipline_bd.name = self.discipline['name']
-        discipline_bd.courses.append(course.Course.query.filter_by(
-            id_course=self.discipline['id_course']).first())
+        discipline_bd.discipline_code = self.discipline["discipline_code"]
+        discipline_bd.name = self.discipline["name"]
+        discipline_bd.courses.append(
+            course.Course.query.filter_by(
+                id_course=self.discipline["id_course"]
+            ).first()
+        )
         self.app.db.session.add(discipline_bd)
         self.app.db.session.commit()
 
@@ -87,17 +78,22 @@ class TestFlaskBase(TestCase):
         if self.professor:
             return
         from tests_professor import valid_professor
+
         self.professor = valid_professor()
 
         self.client.post(url_for("restapi.professorlist"), json=self.professor)
         professor_bd = professor.Professor.query.filter_by(
-            reg_professor=self.professor['reg_professor']).first()
-        self.professor['id_professor'] = professor_bd.id_professor
+            reg_professor=self.professor["reg_professor"]
+        ).first()
+        self.professor["id_professor"] = professor_bd.id_professor
         if self.discipline is None:
             self.create_base_discipline()
 
-        professor_bd.disciplines.append(discipline.Discipline.query.filter_by(
-            discipline_code=self.discipline['discipline_code']).first())
+        professor_bd.disciplines.append(
+            discipline.Discipline.query.filter_by(
+                discipline_code=self.discipline["discipline_code"]
+            ).first()
+        )
         self.app.db.session.commit()
 
     def create_base_student(self):
@@ -107,6 +103,7 @@ class TestFlaskBase(TestCase):
             self.create_base_course()
 
         from tests_student import valid_student
+
         self.student = valid_student(self)
 
         self.client.post(url_for("restapi.studentlist"), json=self.student)
@@ -124,4 +121,4 @@ class TestFlaskBase(TestCase):
         self.discipline = None
         self.student = None
         self.professor = None
-        #self.poste = None
+        # self.poste = None

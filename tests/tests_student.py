@@ -13,12 +13,11 @@ def valid_student(self):
         "reg_student": 190020000,
         "id_course": 1,
         "email": "190020000@aluno.unb.br",
-        "password": "password"
+        "password": "password",
     }
 
 
 class TestStudentPostList(TestFlaskBase):
-
     def post(self, json):
         return self.client.post(url_for("restapi.studentlist"), json=json)
 
@@ -30,7 +29,7 @@ class TestStudentPostList(TestFlaskBase):
 
     def test_must_validate_with_no_attributes(self):
         student = {}
-        expected = ['email', 'id_course', 'name', 'password', 'reg_student']
+        expected = ["email", "id_course", "name", "password", "reg_student"]
         response = self.post(student)
 
         self.assertEqual(list(response.json.keys()), expected)
@@ -42,26 +41,26 @@ class TestStudentPostList(TestFlaskBase):
         student["password"] = 123456789
 
         response = self.post(student)
-        self.assertIsNotNone(response.json['name'])
-        self.assertIsNotNone(response.json['email'])
-        self.assertIsNotNone(response.json['password'])
+        self.assertIsNotNone(response.json["name"])
+        self.assertIsNotNone(response.json["email"])
+        self.assertIsNotNone(response.json["password"])
 
     def test_must_validate_integer_attributes(self):
         student = valid_student(self)
-        student['id_course'] = "adsasadasdassd"
-        student['reg_student'] = "asddasasddas"
+        student["id_course"] = "adsasadasdassd"
+        student["reg_student"] = "asddasasddas"
 
         response = self.post(student)
-        self.assertIsNotNone(response.json['id_course'])
-        self.assertIsNotNone(response.json['reg_student'])
+        self.assertIsNotNone(response.json["id_course"])
+        self.assertIsNotNone(response.json["reg_student"])
 
     def test_must_validate_course_not_found(self):
         student = valid_student(self)
-        student['id_course'] = 10
+        student["id_course"] = 10
 
         response = self.post(student)
         self.assertEqual(response.status_code, 404)
-        self.assertIsNot(response.json['message'].lower().find("course"), -1)
+        self.assertIsNot(response.json["message"].lower().find("course"), -1)
 
     def test_must_not_register_duplicated(self):
         self.create_base_student()
@@ -72,41 +71,41 @@ class TestStudentPostList(TestFlaskBase):
         self.assertEqual(response.status_code, expected_status)
 
     def test_must_validate_email_len_greater_than_100(self):
-        email = '1'*100 + "@aluno.unb.br"
+        email = "1" * 100 + "@aluno.unb.br"
         student = valid_student(self)
-        student['email'] = email
+        student["email"] = email
 
         response = self.post(student)
         self.assertEqual(response.status_code, 400)
-        self.assertEqual(response.json['email']
-                         [0], "The email must be lower than 100")
+        self.assertEqual(response.json["email"][0], "The email must be lower than 100")
 
     def test_must_validate_email_format(self):
         email = "adsasdsa@gmail.com"
-        expected = "The email must be matricula@aluno.unb.br"
         student = valid_student(self)
-        student['email'] = email
+        student["email"] = email
 
         response = self.post(student)
         self.assertEqual(response.status_code, 400)
-        self.assertEqual(response.json['email'][0],
-                         "The email must be matricula@aluno.unb.br")
+        self.assertEqual(
+            response.json["email"][0], "The email must be matricula@aluno.unb.br"
+        )
 
     def test_must_validate_negative_integer(self):
         student = valid_student(self)
-        student['reg_student'] = -1
-        student['id_course'] = -1
+        student["reg_student"] = -1
+        student["id_course"] = -1
 
         response = self.post(student)
         self.assertEqual(response.status_code, 400)
-        self.assertIsNotNone(response.json['reg_student'])
-        self.assertIsNotNone(response.json['id_course'])
+        self.assertIsNotNone(response.json["reg_student"])
+        self.assertIsNotNone(response.json["id_course"])
 
 
 class TestStudentPutList(TestFlaskBase):
     def put(self, password, headers):
-        return self.client.put(url_for('restapi.studentlist'),
-                               json=password, headers=headers)
+        return self.client.put(
+            url_for("restapi.studentlist"), json=password, headers=headers
+        )
 
     def test_api_must_modify_password(self):
         self.create_base_student()
@@ -115,10 +114,12 @@ class TestStudentPutList(TestFlaskBase):
 
         response = self.put(password, headers)
         self.assertEqual(response.status_code, 200)
-        self.assertTrue(student.Student.query.filter_by(
-            reg_student=self.student['reg_student']).first().verify_password(password.get('password')))
-        self.assertEqual(response.json["message"],
-                         'Student successfully changed!')
+        self.assertTrue(
+            student.Student.query.filter_by(reg_student=self.student["reg_student"])
+            .first()
+            .verify_password(password.get("password"))
+        )
+        self.assertEqual(response.json["message"], "Student successfully changed!")
 
     def test_must_validate_password_length(self):
         self.create_base_student()
@@ -127,8 +128,9 @@ class TestStudentPutList(TestFlaskBase):
 
         response = self.put(password, headers)
         self.assertEqual(response.status_code, 400)
-        self.assertEqual(response.json["password"]
-                         [0], 'Length must be between 8 and 100.')
+        self.assertEqual(
+            response.json["password"][0], "Length must be between 8 and 100."
+        )
 
     def test_must_validate_null_password(self):
         self.create_base_student()
@@ -146,16 +148,18 @@ class TestStudentPutList(TestFlaskBase):
 
         response = self.put(password, headers)
         self.assertEqual(response.status_code, 401)
-        self.assertEqual(response.json["msg"], 'Missing Authorization Header')
+        self.assertEqual(response.json["msg"], "Missing Authorization Header")
 
 
 class TestStudentDetail(TestFlaskBase):
     def delete(self, reg_student, headers):
-        return self.client.delete(url_for('restapi.studentdetail', reg_student=reg_student), headers=headers)
+        return self.client.delete(
+            url_for("restapi.studentdetail", reg_student=reg_student), headers=headers
+        )
 
     def test_must_delete_student(self):
         self.create_base_student()
-        reg_student = self.student['reg_student']
+        reg_student = self.student["reg_student"]
         headers = self.create_student_token()
 
         response = self.delete(reg_student, headers)
@@ -166,18 +170,17 @@ class TestStudentDetail(TestFlaskBase):
     def test_must_validate_reg_with_token(self):
         self.create_base_student()
         headers = self.create_student_token()
-        reg_student = self.student['reg_student'] + 1
+        reg_student = self.student["reg_student"] + 1
 
         response = self.delete(reg_student, headers)
 
         self.assertEqual(response.status_code, 401)
-        self.assertEqual(response.json['message'],
-                         "Authorization Header Invalid")
+        self.assertEqual(response.json["message"], "Authorization Header Invalid")
 
     def test_must_validate_delete_on_deleted_student(self):
         self.create_base_student()
         headers = self.create_student_token()
-        reg_student = self.student['reg_student']
+        reg_student = self.student["reg_student"]
 
         self.delete(reg_student, headers)
         response = self.delete(reg_student, headers)
@@ -186,7 +189,7 @@ class TestStudentDetail(TestFlaskBase):
 
     def test_must_delete_student_posts(self):
         self.create_base_student()
-        reg_student = self.student['reg_student']
+        reg_student = self.student["reg_student"]
         response_post = register_post(self)
 
         response = self.delete(reg_student, self.create_student_token())
@@ -199,8 +202,7 @@ class TestStudentDetail(TestFlaskBase):
         self.create_base_student()
         register_post(self)
         register_post_agree(self)
-        response = self.delete(
-            self.student['reg_student'], self.create_student_token())
+        response = self.delete(self.student["reg_student"], self.create_student_token())
 
         self.assertEqual(response.status_code, 204)
 
@@ -208,8 +210,7 @@ class TestStudentDetail(TestFlaskBase):
         self.create_base_student()
         register_post(self)
         register_post_disagree(self)
-        response = self.delete(
-            self.student['reg_student'], self.create_student_token())
+        response = self.delete(self.student["reg_student"], self.create_student_token())
 
         self.assertEqual(response.status_code, 204)
 
@@ -217,8 +218,6 @@ class TestStudentDetail(TestFlaskBase):
         self.create_base_student()
         register_post(self)
         register_report(self)
-        response = self.delete(
-            self.student['reg_student'], self.create_student_token())
-        status = response.status_code
-        
+        response = self.delete(self.student["reg_student"], self.create_student_token())
+
         self.assertEqual(response.status_code, 204)

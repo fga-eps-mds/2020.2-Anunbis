@@ -9,12 +9,15 @@ from marshmallow import ValidationError
 class ProfessorDetail(Resource):
     @jwt_required()
     def get(self, name):
-        validate = ProfessorSchema(only=['name']).validate({'name': name})
+        validate = ProfessorSchema(only=["name"]).validate({"name": name})
         if validate:
             return make_response(jsonify(validate), 400)
         professors = professor_services.get_professor_name_contains(name)
-        ps = ProfessorSchema(many=True, exclude=['email', 'reg_professor', 'posts'], context={
-                             'reg_student': get_jwt_identity()})
+        ps = ProfessorSchema(
+            many=True,
+            exclude=["email", "reg_professor", "posts"],
+            context={"reg_student": get_jwt_identity()},
+        )
         return make_response(ps.jsonify(professors), 200)
 
 
@@ -22,7 +25,6 @@ class ProfessorList(Resource):
     def post(self):
         try:
             ps = ProfessorSchema()
-            validate = ps.validate(request.json)
             professor = ps.load(request.json)
             message, status = professor_services.register_professor(professor)
             return make_response(jsonify(message), status)
@@ -34,8 +36,10 @@ class ProfessorIdDetail(Resource):
     @jwt_required()
     def get(self, id):
         professor = professor_services.get_professor_id(id)
-        ps = ProfessorSchema(exclude=['email', 'reg_professor'], context={
-            'reg_student': get_jwt_identity()})
+        ps = ProfessorSchema(
+            exclude=["email", "reg_professor"],
+            context={"reg_student": get_jwt_identity()},
+        )
         return make_response(ps.jsonify(professor), 200)
 
 

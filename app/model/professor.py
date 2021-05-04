@@ -1,6 +1,5 @@
 from ..ext.database import db
 from passlib.hash import pbkdf2_sha256
-from . import post
 
 
 class Professor(db.Model):
@@ -11,12 +10,13 @@ class Professor(db.Model):
 
     name = db.Column(db.String(255), nullable=False)
     email = db.Column(db.String(255), nullable=True, unique=True)
-    __password_hash = db.Column('password', db.String(255), nullable=True)
+    __password_hash = db.Column("password", db.String(255), nullable=True)
 
     disciplines = db.relationship(
-        'Discipline', secondary='professor_discipline', lazy='dynamic')
+        "Discipline", secondary="professor_discipline", lazy="dynamic"
+    )
 
-    posts = db.relationship(post.Post, back_populates="professor")
+    posts = db.relationship("Post", back_populates="professor")
 
     @property
     def reg(self):
@@ -27,7 +27,7 @@ class Professor(db.Model):
 
     @property
     def password(self):
-        raise AttributeError('password: write-only field')
+        raise AttributeError("password: write-only field")
 
     @password.setter
     def password(self, password):
