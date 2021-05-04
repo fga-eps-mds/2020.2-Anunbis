@@ -30,7 +30,7 @@ def __validate_student_relationship(student):
 
     return None, 200
 
-  
+
 def delete_student(student_db):
     Student.delete(student_db)
     return {"message": "Student successfully deleted!"}, 204

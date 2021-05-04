@@ -3,7 +3,7 @@ from flask import request, make_response, jsonify
 from ..schemas import post_schema
 from ..services import post_services
 from marshmallow import ValidationError
-from flask_jwt_extended import current_user
+from flask_jwt_extended import current_user, jwt_required
 from ..ext.auth import student_required
 
 
@@ -29,8 +29,7 @@ class PostList(Resource):
     def get(self):
         user = current_user
         if not user.is_professor():
-            ps = post_schema.PostSchema(
-                many=True, context={'reg_student': user.reg})
+            ps = post_schema.PostSchema(many=True, context={"reg_student": user.reg})
         else:
             ps = post_schema.PostSchema(many=True)
         return make_response(ps.jsonify(user.posts), 200)

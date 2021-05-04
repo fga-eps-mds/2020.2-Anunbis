@@ -44,16 +44,19 @@ def __modify_professor(professor_bd, professor):
 
 
 def __build_professor(professor):
-    professor_bd = Professor(
-        name=professor.get("name"),
-        reg_professor=professor.get("reg_professor"),
-        email=professor.get("email"),
-        password=professor.get("password"),
-    )
+    try:
+        professor_bd = Professor(
+            name=professor.get("name"),
+            reg_professor=professor.get("reg_professor"),
+            email=professor.get("email"),
+            password=professor.get("password"),
+        )
 
-    db.session.add(professor_bd)
-    db.session.commit()
-    return {"message": "Professor sucessfully registered!"}, 201
+        db.session.add(professor_bd)
+        db.session.commit()
+        return {"message": "Professor sucessfully registered!"}, 201
+    except IntegrityError:
+        return {"message": "Professor already registered"}, 409
 
 
 def __is_professor_made_by_admin(professor_bd):

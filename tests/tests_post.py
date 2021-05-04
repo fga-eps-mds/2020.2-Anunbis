@@ -24,7 +24,7 @@ def get_posts(self, headers=None):
     if headers is None:
         headers = self.create_student_token()
 
-    return self.client.get(url_for('restapi.postlist'), headers = headers)
+    return self.client.get(url_for("restapi.postlist"), headers=headers)
 
 
 def register_post(self, post=None, headers=None):
@@ -132,23 +132,19 @@ class TestPostList(TestFlaskBase):
 
 
 class TestGetPostList(TestFlaskBase):
-
     def test_must_get_student_post_found_empty(self):
         response = get_posts(self)
         status_code_expected = 200
 
         self.assertEqual(response.status_code, status_code_expected)
         self.assertEqual(response.json, [])
-    
+
     def test_must_get_student_post_found(self):
         register_post(self)
         response = get_posts(self)
         status_code_expected = 200
         self.assertEqual(response.status_code, status_code_expected)
-        
 
-    
-        
 
 class TestPostAgree(TestFlaskBase):
     def test_api_must_agree_post(self):
