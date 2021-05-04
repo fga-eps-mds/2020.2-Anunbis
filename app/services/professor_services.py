@@ -8,6 +8,12 @@ def get(**kwargs):
     return Professor.query.filter_by(**kwargs).first()
 
 
+def get_by_email(email):
+    return Professor.query.filter(
+        func.lower(Professor.email) == email.lower()
+    ).one_or_none()
+
+
 def get_name_contains(name):
     professors = Professor.query.filter(
         func.lower(Professor.name).contains(name.lower())

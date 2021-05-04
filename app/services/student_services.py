@@ -3,10 +3,17 @@ from ..ext.database import db
 from sqlalchemy.exc import IntegrityError
 from . import course_services, post_services
 from ..model.post import AgreeStudentPost, DisagreeStudentPost
+from sqlalchemy import func
 
 
 def get(**kwargs):
     return Student.query.filter_by(**kwargs).first()
+
+
+def get_by_email(email):
+    return Student.query.filter(
+        func.lower(Student.email) == email.lower()
+    ).one_or_none()
 
 
 def delete(student_bd):

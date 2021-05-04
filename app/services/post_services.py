@@ -61,7 +61,7 @@ def agree_student_post(student_db, id_post):
     post_db = get(id_post=id_post)
     if post_db:
         if student_db in post_db.disagrees:
-            post_db.disagrees.remove(student_db)
+            undisagree_post(post_db, student_db)
         if student_db in post_db.agrees:
             return unagree_post(post_db, student_db)
         else:
@@ -83,11 +83,10 @@ def agree_post(post_db, student_db):
 
 
 def disagree_student_post(student_db, id_post):
-
     post_db = get(id_post=id_post)
     if post_db:
         if student_db in post_db.agrees:
-            post_db.agrees.remove(student_db)
+            unagree_post(post_db, student_db)
         if student_db in post_db.disagrees:
             return undisagree_post(post_db, student_db)
         else:
