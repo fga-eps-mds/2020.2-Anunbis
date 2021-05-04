@@ -6,6 +6,7 @@ Data|Versão|Descrição|Autor
 19/02|0.1|Abertura do Documento do Backlog do Produto| Equipe|
 19/03|0.2|Atualizando as funcionalidades| Rodrigo|
 19/03|0.3|Atualizando as histórias de usuário| Rodrigo|
+04/05|0.4|Simplificando histórias de usuário sobre ordem de pesquisa de professor| Rodrigo|
 
 ## 1. <a name="1">Épicos</a>
 
@@ -38,24 +39,16 @@ Data|Versão|Descrição|Autor
 |EP01|FT01|US02|Eu, como professor, desejo realizar o cadastro|5| 
 |EP01|FT02|US03|Eu, como aluno, desejo realizar e desfazer o login em minha conta|3|
 |EP01|FT02|US04|Eu, como professor, desejo realizar e desfazer o login em minha conta|3|
-|EP03|FT03, FT08|US05|Eu, como aluno da UnB, desejo buscar um professor por maior nota geral|3|
-|EP03|FT03, FT08|US06|Eu, como aluno da UnB, desejo buscar um professor por maior nota no último semestre|3|
-|EP03|FT03, FT08|US07|Eu, como aluno da UnB, desejo buscar um professor por maior número de avaliações|3|
-|EP03|FT03, FT08|US08|Eu, como aluno da UnB, desejo buscar por professor por ordem alfabética|3|
-|EP03|FT03, FT08|US09|Eu, como professor da UnB, desejo buscar um professor por maior nota geral|3|
-|EP03|FT03, FT08|US10|Eu, como professor da UnB, desejo buscar um professor por maior nota no último semestre|3|
-|EP03|FT03, FT08|US11|Eu, como professor da UnB, desejo buscar um professor por maior número de avaliações|3|
-|EP03|FT03, FT08|US12|Eu, como professor da UnB, desejo buscar um professor por ordem alfabética|3|
-|EP02|FT04|US13|Eu, como aluno da UnB, desejo avaliar um professor anonimamente|5|
-|EP02|FT04|US14|Eu, como aluno da UnB, desejo avaliar um professor de forma não anônima|5|
-|EP03|FT05|US15|Eu, como professor da UnB, desejo visualizar o comentário de terceiros|3|
-|EP03|FT05|US16|Eu, como aluno da UnB, desejo visualizar o comentário de terceiros|3|
-|EP03|FT06|US17|Eu, como aluno da UnB, desejo ver todas as avaliações que realizei|3| 
-|EP03|FT06|US18|Eu, como professor da UnB, desejo ver todas as avaliações sobre mim|3|
-|EP02|FT07|US19|Eu, como aluno da UnB, desejo avaliar o comentário de terceiros|3|
-|EP02|FT09|US20|Eu, como aluno da UnB, desejo denunciar  um comentário ofensivo |5|
-|EP02|FT09|US21|Eu, como professor da UnB, desejo denunciar  um comentário ofensivo |5|
-|EP01|FT10|US22|Eu, como aluno da UnB, desejo alterar minha senha|3|
-|EP01|FT10|US23|Eu, como professor da UnB, desejo alterar minha senha|3|
-|EP01|FT10|US24|Eu, como aluno da UnB, desejo excluir minha conta|3|
-|EP01|FT10|US25|Eu, como professor da UnB, desejo excluir minha conta|3|
+  |EP03|FT03, FT08|US05|Eu, como usuário, desejo buscar um professor por diferentes ordens|5|
+|EP02|FT04|US06|Eu, como aluno da UnB, desejo avaliar um professor anonimamente|5|
+|EP02|FT04|US07|Eu, como aluno da UnB, desejo avaliar um professor de forma não anônima|5| 
+|EP03|FT05|US08|Eu, como usuário, desejo visualizar o comentário de terceiros|3|
+|EP03|FT06|US09|Eu, como aluno da UnB, desejo ver todas as avaliações que realizei|3| 
+|EP03|FT06|US10|Eu, como professor da UnB, desejo ver todas as avaliações sobre mim|3|
+|EP02|FT07|US11|Eu, como aluno da UnB, desejo avaliar o comentário de terceiros|3|
+|EP02|FT09|US12|Eu, como aluno da UnB, desejo denunciar  um comentário ofensivo |5|
+|EP02|FT09|US13|Eu, como professor da UnB, desejo denunciar  um comentário ofensivo |5|
+|EP01|FT10|US14|Eu, como aluno da UnB, desejo alterar minha senha|3|
+|EP01|FT10|US15|Eu, como professor da UnB, desejo alterar minha senha|3|
+|EP01|FT10|US16|Eu, como aluno da UnB, desejo excluir minha conta|3|
+|EP01|FT10|US17|Eu, como professor da UnB, desejo excluir minha conta|3|
