@@ -34,6 +34,7 @@ Data|Versão|Descrição|Autor
 |EP01|FT10|Editar própria conta|
 |EP03|FT11|Visualizar tela home da aplicação|
 |EP03|FT12|Visualizar gráfico de desempenho do professor|
+|EP03|FT13|Visualizar informações do próprio perfil|
 
 
 ## 3. <a name="3">Histórias de Usuários</a>
@@ -51,11 +52,9 @@ Data|Versão|Descrição|Autor
 |EP03|FT06|US09|Eu, como aluno da UnB, desejo ver todas as avaliações que realizei|3| 
 |EP03|FT06|US10|Eu, como professor da UnB, desejo ver todas as avaliações sobre mim|3|
 |EP02|FT07|US11|Eu, como aluno da UnB, desejo avaliar o comentário de terceiros|3|
-|EP02|FT09|US12|Eu, como aluno da UnB, desejo denunciar  um comentário ofensivo |5|
-|EP02|FT09|US13|Eu, como professor da UnB, desejo denunciar  um comentário ofensivo |5|
-|EP01|FT10|US14|Eu, como aluno da UnB, desejo alterar minha senha|5|
-|EP01|FT10|US15|Eu, como professor da UnB, desejo alterar minha senha|3|
-|EP01|FT10|US16|Eu, como aluno da UnB, desejo excluir minha conta|5|
-|EP01|FT10|US17|Eu, como professor da UnB, desejo excluir minha conta|3|
-|EP03|FT11|US18|Eu, como usuário, desejo visualizar a página home da aplicação|8|
-|EP03|FT12|US19|Eu, como professor, desejo visualizar o meu gráfico de desempenho|3|
+|EP02|FT09|US12|Eu, como usuário, desejo denunciar  um comentário ofensivo |5|
+|EP01|FT10|US13|Eu, como usuário, desejo alterar minha senha|5|
+|EP01|FT10|US14|Eu, como usuário, desejo excluir minha conta|5|
+|EP03|FT11|US15|Eu, como usuário, desejo visualizar a página home da aplicação|8|
+|EP03|FT12|US16|Eu, como professor, desejo visualizar o meu gráfico de desempenho|3|
+|EP03|FT13|US17|Eu, como usuário, desejo visualizar informações sobre o meu perfil|3|
