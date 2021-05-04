@@ -12,6 +12,9 @@
 </h1>
 
 <p align="center">
+    <a href="https://codeclimate.com/github/fga-eps-mds/2020.2-Anunbis/maintainability">
+        <img src="https://api.codeclimate.com/v1/badges/a7c9be364b00a8f5c84b/maintainability" />
+    </a>
     <a href="https://codecov.io/gh/fga-eps-mds/2020.2-Anunbis">
         <img src="https://codecov.io/gh/fga-eps-mds/2020.2-Anunbis/branch/develop/graph/badge.svg?token=FSRH8CLJ6G"/>
     </a>
