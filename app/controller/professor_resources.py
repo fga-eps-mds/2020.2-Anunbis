@@ -12,7 +12,7 @@ class ProfessorDetail(Resource):
         validate = ProfessorSchema(only=["name"]).validate({"name": name})
         if validate:
             return make_response(jsonify(validate), 400)
-        professors = professor_services.get_professor_name_contains(name)
+        professors = professor_services.get_name_contains(name)
         ps = ProfessorSchema(
             many=True,
             exclude=["email", "reg_professor", "posts"],
@@ -35,7 +35,7 @@ class ProfessorList(Resource):
 class ProfessorIdDetail(Resource):
     @jwt_required()
     def get(self, id):
-        professor = professor_services.get_professor_id(id)
+        professor = professor_services.get(id_professor=id)
         ps = ProfessorSchema(
             exclude=["email", "reg_professor"],
             context={"reg_student": get_jwt_identity()},

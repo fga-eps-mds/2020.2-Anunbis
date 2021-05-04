@@ -1,7 +1,36 @@
 from ..model.student import Student
 from ..ext.database import db
 from sqlalchemy.exc import IntegrityError
-from . import course_services
+from . import course_services, post_services
+from ..model.post import AgreeStudentPost, DisagreeStudentPost
+
+
+def get(**kwargs):
+    return Student.query.filter_by(**kwargs).first()
+
+
+def delete(student_bd):
+    delete_feedbacks(student_bd)
+    delete_posts(student_bd)
+    db.session.delete(student_bd)
+    db.session.commit()
+
+
+def delete_posts(student_bd):
+    for post in student_bd.posts:
+        post_services.delete(post)
+
+
+def delete_feedbacks(student_bd):
+    for agree in AgreeStudentPost.query.filter_by(
+        reg_student=student_bd.reg_student
+    ).all():
+        db.session.delete(agree)
+    for disagree in DisagreeStudentPost.query.filter_by(
+        reg_student=student_bd.reg_student
+    ).all():
+        db.session.delete(disagree)
+    db.session.commit()
 
 
 def register_student(student):
@@ -24,19 +53,14 @@ def register_student(student):
         return {"message": "Student already registered"}, 409
 
 
+def modify_student(student_db, student_new):
+    student_db.password = student_new.get("password")
+    db.session.commit()
+    return {"message": "Student successfully changed!"}, 200
+
+
 def __validate_student_relationship(student):
     if course_services.get_course_id(student.get("id_course")) is None:
         return {"message": "Course not found!"}, 404
 
     return None, 200
-
-
-def delete_student(student_db):
-    Student.delete(student_db)
-    return {"message": "Student successfully deleted!"}, 204
-
-
-def modify_student(student_db, student_new):
-    student_db.password = student_new.get("password")
-    db.session.commit()
-    return {"message": "Student successfully changed!"}, 200

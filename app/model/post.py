@@ -68,32 +68,3 @@ class Post(db.Model):
 
     agrees = db.relationship("Student", secondary="agree_student_post")
     disagrees = db.relationship("Student", secondary="disagree_student_post")
-
-    @staticmethod
-    def get(**kwargs):
-        return Post.query.filter_by(**kwargs).first()
-
-    @staticmethod
-    def delete(post_db):
-        Post.delete_feedbacks(post_db)
-        Post.delete_reports(post_db)
-        db.session.delete(post_db)
-        db.session.commit()
-
-    @staticmethod
-    def delete_feedbacks(post_db):
-        for agree in AgreeStudentPost.query.filter_by(id_post=post_db.id_post).all():
-            db.session.delete(agree)
-        for disagree in DisagreeStudentPost.query.filter_by(
-            id_post=post_db.id_post
-        ).all():
-            db.session.delete(disagree)
-        db.session.commit()
-
-    @staticmethod
-    def delete_reports(post_db):
-        from .report import Report
-
-        for report in Report.query.filter_by(id_post=post_db.id_post).all():
-            db.session.delete(report)
-        db.session.commit()

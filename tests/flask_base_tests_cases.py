@@ -12,6 +12,7 @@ class TestFlaskBase(TestCase):
         self.app_context.push()
         self.client = self.app.test_client()
         self.app.config["JWT_SECRET_KEY"] = "anunbis-test"
+        self.app.config["PRESERVE_CONTEXT_ON_EXCEPTION"] = False
         # This create a in-memory sqlite db
         self.app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///"
         self.app.db.create_all()

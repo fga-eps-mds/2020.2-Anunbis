@@ -1,7 +1,7 @@
 from flask_base_tests_cases import TestFlaskBase
 from flask import url_for
 from app.model import student
-from app.model import post
+from app.services import student_services, post_services
 from tests_post import register_post, register_post_agree, register_post_disagree
 from tests_report import register_report
 
@@ -115,9 +115,9 @@ class TestStudentPutList(TestFlaskBase):
         response = self.put(password, headers)
         self.assertEqual(response.status_code, 200)
         self.assertTrue(
-            student.Student.query.filter_by(reg_student=self.student["reg_student"])
-            .first()
-            .verify_password(password.get("password"))
+            student_services.get(
+                reg_student=self.student["reg_student"]
+            ).verify_password(password.get("password"))
         )
         self.assertEqual(response.json["message"], "Student successfully changed!")
 
@@ -165,7 +165,7 @@ class TestStudentDetail(TestFlaskBase):
         response = self.delete(reg_student, headers)
 
         self.assertEqual(response.status_code, 204)
-        self.assertIsNone(student.Student.get(reg_student=reg_student))
+        self.assertIsNone(student_services.get(reg_student=reg_student))
 
     def test_api_must_validate_reg_with_token(self):
         self.create_base_student()
@@ -196,7 +196,7 @@ class TestStudentDetail(TestFlaskBase):
 
         self.assertEqual(response_post.status_code, 201)
         self.assertEqual(response.status_code, 204)
-        self.assertIsNone(post.Post.get(reg_student=reg_student))
+        self.assertIsNone(post_services.get(reg_student=reg_student))
 
     def test_api_must_delete_student_posts_agrees(self):
         self.create_base_student()

@@ -35,38 +35,6 @@ class Student(db.Model):
     def verify_password(self, password):
         return pbkdf2_sha256.verify(password, self.__password_hash)
 
-    @staticmethod
-    def get(**kwargs):
-        return Student.query.filter_by(**kwargs).first()
-
-    @staticmethod
-    def delete(student_bd):
-        Student.delete_feedbacks(student_bd)
-        Student.delete_posts(student_bd)
-        db.session.delete(student_bd)
-        db.session.commit()
-
-    @staticmethod
-    def delete_posts(student_bd):
-        from .post import Post
-
-        for post in student_bd.posts:
-            Post.delete(post)
-
-    @staticmethod
-    def delete_feedbacks(student_bd):
-        from .post import AgreeStudentPost, DisagreeStudentPost
-
-        for agree in AgreeStudentPost.query.filter_by(
-            reg_student=student_bd.reg_student
-        ).all():
-            db.session.delete(agree)
-        for disagree in DisagreeStudentPost.query.filter_by(
-            reg_student=student_bd.reg_student
-        ).all():
-            db.session.delete(disagree)
-        db.session.commit()
-
     def __eq__(self, other):
         if isinstance(other, int):
             return other == self.reg_student

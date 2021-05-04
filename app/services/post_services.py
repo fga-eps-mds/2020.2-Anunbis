@@ -1,6 +1,33 @@
 from . import professor_services, discipline_services
 from ..model.post import Post
+from ..model.report import Report
 from ..ext.database import db
+from ..model.post import AgreeStudentPost, DisagreeStudentPost
+
+
+def get(**kwargs):
+    return Post.query.filter_by(**kwargs).first()
+
+
+def delete(post_db):
+    delete_feedbacks(post_db)
+    delete_reports(post_db)
+    db.session.delete(post_db)
+    db.session.commit()
+
+
+def delete_feedbacks(post_db):
+    for agree in AgreeStudentPost.query.filter_by(id_post=post_db.id_post).all():
+        db.session.delete(agree)
+    for disagree in DisagreeStudentPost.query.filter_by(id_post=post_db.id_post).all():
+        db.session.delete(disagree)
+    db.session.commit()
+
+
+def delete_reports(post_db):
+    for report in Report.query.filter_by(id_post=post_db.id_post).all():
+        db.session.delete(report)
+    db.session.commit()
 
 
 def register_post(post):
@@ -22,16 +49,16 @@ def register_post(post):
 
 
 def __validate_post_relationship(post):
-    if professor_services.get_professor_id(post.get("id_professor")) is None:
+    if professor_services.get(id_professor=post.get("id_professor")) is None:
         return False, {"message": "Professor not found!"}, 404
-    if discipline_services.get_discipline_code(post.get("discipline_code")) is None:
+    if discipline_services.get(discipline_code=post.get("discipline_code")) is None:
         return False, {"message": "Discipline not found!"}, 404
 
     return True, {"message": "Ok!"}, 200
 
 
 def agree_student_post(student_db, id_post):
-    post_db = Post.get(id_post=id_post)
+    post_db = get(id_post=id_post)
     if post_db:
         if student_db in post_db.disagrees:
             post_db.disagrees.remove(student_db)
@@ -57,7 +84,7 @@ def agree_post(post_db, student_db):
 
 def disagree_student_post(student_db, id_post):
 
-    post_db = Post.get(id_post=id_post)
+    post_db = get(id_post=id_post)
     if post_db:
         if student_db in post_db.agrees:
             post_db.agrees.remove(student_db)

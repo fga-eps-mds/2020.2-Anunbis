@@ -37,9 +37,8 @@ class StudentDetail(Resource):
             return make_response(
                 jsonify({"message": "Authorization Header Invalid"}), 401
             )
-
-        message, status_code = student_services.delete_student(student)
-        return make_response(jsonify(message), status_code)
+        student_services.delete(student)
+        return make_response("", 204)
 
 
 def configure(api):

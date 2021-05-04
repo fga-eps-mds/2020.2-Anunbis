@@ -1,6 +1,6 @@
 from ..model.report import Report
 from ..ext.database import db
-from ..model.post import Post
+from . import post_services
 
 
 def register_report(report, user):
@@ -28,6 +28,6 @@ def register_report(report, user):
 
 
 def validate_post(id_post):
-    if Post.get(id_post=id_post) is None:
+    if post_services.get(id_post=id_post) is None:
         return {"message": "Post not found!"}, 404
     return None, None
