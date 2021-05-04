@@ -15,12 +15,37 @@ class TestProfessorList(TestFlaskBase):
         response = self.post(professor)
         self.assertEqual(response.status_code, status_code_expected)
 
-    def test_api_must_validate_professor_already_registered(self):
+    def test_api_must_validate_professor_with_name_already_registered(self):
         self.create_base_professor()
         professor = self.professor
         response = self.post(professor)
 
         expected_json = {"message": "This professor is already registered"}
+        expected_status_code = 409
+
+        self.assertEqual(response.status_code, expected_status_code)
+        self.assertEqual(response.json, expected_json)
+
+    def test_api_must_validate_professor_with_email_already_registered(self):
+        self.create_base_professor()
+        professor = self.professor
+        professor["name"] = "testingasdasd adssas"
+        response = self.post(professor)
+
+        expected_json = {"message": "Professor already registered"}
+        expected_status_code = 409
+
+        self.assertEqual(response.status_code, expected_status_code)
+        self.assertEqual(response.json, expected_json)
+
+    def test_api_must_validate_professor_with_reg_already_registered(self):
+        self.create_base_professor()
+        professor = self.professor
+        professor["name"] = "testingasdasd adssas"
+        professor["email"] = "190020377777@unb.br"
+        response = self.post(professor)
+
+        expected_json = {"message": "Professor already registered"}
         expected_status_code = 409
 
         self.assertEqual(response.status_code, expected_status_code)
@@ -227,3 +252,13 @@ def create_professor_made_by_admin(self, name):
     professor_bd.name = name
     self.app.db.session.add(professor_bd)
     self.app.db.session.commit()
+
+
+class TestProfessorModel(TestFlaskBase):
+    def test_must_block_password_access(self):
+        try:
+            prof = professor.Professor(password="123456789")
+            prof.password
+            self.assertTrue(False)
+        except AttributeError:
+            self.assertTrue(True)
