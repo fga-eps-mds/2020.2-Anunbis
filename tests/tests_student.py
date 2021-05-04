@@ -157,7 +157,7 @@ class TestStudentDetail(TestFlaskBase):
             url_for("restapi.studentdetail", reg_student=reg_student), headers=headers
         )
 
-    def test_must_delete_student(self):
+    def test_api_must_delete_student(self):
         self.create_base_student()
         reg_student = self.student["reg_student"]
         headers = self.create_student_token()
@@ -167,7 +167,7 @@ class TestStudentDetail(TestFlaskBase):
         self.assertEqual(response.status_code, 204)
         self.assertIsNone(student.Student.get(reg_student=reg_student))
 
-    def test_must_validate_reg_with_token(self):
+    def test_api_must_validate_reg_with_token(self):
         self.create_base_student()
         headers = self.create_student_token()
         reg_student = self.student["reg_student"] + 1
@@ -177,7 +177,7 @@ class TestStudentDetail(TestFlaskBase):
         self.assertEqual(response.status_code, 401)
         self.assertEqual(response.json["message"], "Authorization Header Invalid")
 
-    def test_must_validate_delete_on_deleted_student(self):
+    def test_api_must_validate_delete_on_deleted_student(self):
         self.create_base_student()
         headers = self.create_student_token()
         reg_student = self.student["reg_student"]
@@ -187,7 +187,7 @@ class TestStudentDetail(TestFlaskBase):
 
         self.assertEqual(response.status_code, 401)
 
-    def test_must_delete_student_posts(self):
+    def test_api_must_delete_student_posts(self):
         self.create_base_student()
         reg_student = self.student["reg_student"]
         response_post = register_post(self)
@@ -198,7 +198,7 @@ class TestStudentDetail(TestFlaskBase):
         self.assertEqual(response.status_code, 204)
         self.assertIsNone(post.Post.get(reg_student=reg_student))
 
-    def test_must_delete_student_posts_agrees(self):
+    def test_api_must_delete_student_posts_agrees(self):
         self.create_base_student()
         register_post(self)
         register_post_agree(self)
@@ -206,7 +206,7 @@ class TestStudentDetail(TestFlaskBase):
 
         self.assertEqual(response.status_code, 204)
 
-    def test_must_delete_student_posts_disagrees(self):
+    def test_api_must_delete_student_posts_disagrees(self):
         self.create_base_student()
         register_post(self)
         register_post_disagree(self)
@@ -214,10 +214,20 @@ class TestStudentDetail(TestFlaskBase):
 
         self.assertEqual(response.status_code, 204)
 
-    def test_must_delete_student_posts_reports(self):
+    def test_api_must_delete_student_posts_reports(self):
         self.create_base_student()
         register_post(self)
         register_report(self)
         response = self.delete(self.student["reg_student"], self.create_student_token())
 
         self.assertEqual(response.status_code, 204)
+
+
+class TestStudentModel(TestFlaskBase):
+    def test_must_block_password_access(self):
+        try:
+            std = student.Student(password="123456789")
+            std.password
+            self.assertTrue(False)
+        except AttributeError:
+            self.assertTrue(True)
