@@ -95,11 +95,13 @@ class TestPostList(TestFlaskBase):
 
     def test_api_must_validate_attributes_min(self):
         post = valid_post(self)
+
         post["content"] = ""
-        post["didactic"] = -1
-        post["metod"] = -1
-        post["avaliations"] = -1
-        post["disponibility"] = -1
+        post["didactic"] = 0
+        post["metod"] = 0
+        post["avaliations"] = 0
+        post["disponibility"] = 0
+
         response = register_post(self, post=post)
 
         self.assertEqual(response.status_code, 400)

@@ -16,10 +16,10 @@ class PostSchema(ma.SQLAlchemySchema):
         required=True, validate=validate.Length(max=80), load_only=True
     )
     content = fields.String(required=True, validate=validate.Length(min=1, max=480))
-    didactic = fields.Float(required=True, validate=validate.Range(min=0, max=5))
-    metod = fields.Float(required=True, validate=validate.Range(min=0, max=5))
-    avaliations = fields.Float(required=True, validate=validate.Range(min=0, max=5))
-    disponibility = fields.Float(required=True, validate=validate.Range(min=0, max=5))
+    didactic = fields.Integer(required=True, validate=validate.Range(min=1, max=5))
+    metod = fields.Integer(required=True, validate=validate.Range(min=1, max=5))
+    avaliations = fields.Integer(required=True, validate=validate.Range(min=1, max=5))
+    disponibility = fields.Integer(required=True, validate=validate.Range(min=1, max=5))
     is_anonymous = fields.Boolean(required=True)
     post_date = fields.Date()
 
