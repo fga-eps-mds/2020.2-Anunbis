@@ -22,7 +22,7 @@ Essa Sprint foi focada em terminar as dívidas técnicas que tinhamos além de a
 | [#135](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/135) | [US17] - Aluno ver avaliações que realizou  | 3 | Victor, Rodrigo e Thiago
 | [#184](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/184) | Criação da Tela Home no Front-End  | 8 | Rafael e Thiago
 | [#185](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/185) | Adicionar Burndown de riscos  | 3 | Rafael e Roberto
-| [#181](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/181) | Teste de código de qualidade estático  | 5 | Rafael e Thiago
+| [#181](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/181) | Teste de código de qualidade estático  | 8 | Rafael e Thiago
 | [#178](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/178) | Atualizar backlog do produto  | 1 | Rodrigo
 | [#136](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/136) | [US18] - Professor ver avaliações sobre si mesmo | 5 | Victor, Rodrigo e Roberto
 
@@ -31,10 +31,10 @@ Essa Sprint foi focada em terminar as dívidas técnicas que tinhamos além de a
 ### 2.3 <a name="2.3">Pontuação Final</a>
 |Pontuação Total|Pontuação Concluída|Pontuação Não Agregada
 |:-:|:-:|:-:|
-|49|38|11
+|52|38|14
 
 ## 3. <a name="3">Burndown Chart</a>
-![image](https://user-images.githubusercontent.com/74625814/116311410-9a859e80-a781-11eb-8d94-6fe809ecdd5c.png)
+![image](https://user-images.githubusercontent.com/74625814/117210153-b0244500-adcd-11eb-98ba-7726eb250947.png)
 
 
 ## 4. <a name="4">Velocity Tracking</a>
@@ -64,9 +64,8 @@ O time consegue se virar bem melhor, estamos tendo menos dificuldade nas tecnolo
 </p>
 
 ## 8. <a name="8">Quadro de Conhecimento</a>
-```
-Infelizmente não temos quadro de conhecimento nesta sprint...
-Nos vemos na próxima !
-```
+![image](https://user-images.githubusercontent.com/74625814/117209798-3b510b00-adcd-11eb-88e9-65e53d1b38d9.png)
+![image](https://user-images.githubusercontent.com/74625814/117209853-50c63500-adcd-11eb-9e3e-34cc7f2c94aa.png)
+
 
 
