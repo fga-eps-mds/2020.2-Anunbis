@@ -9,4 +9,3 @@ def get_course():
 def get_course_id(id):
     course_bd = course.Course.query.filter_by(id_course=id).first()
     return course_bd
-
