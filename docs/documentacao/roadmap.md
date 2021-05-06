@@ -99,6 +99,7 @@
 | [#116](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/116) | Revisar toda a Documentação | 
 | [#117](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/117) | Consertar rotas do Front-End | 
 
+## Release 2
 
 ### Sprint 8
 | ID | Issue |
