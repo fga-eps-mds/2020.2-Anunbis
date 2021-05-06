@@ -7,21 +7,24 @@ from ..model.professor import Professor
 class ProfessorSchema(ma.SQLAlchemySchema):
     class Meta:
         model = Professor
-        additional = ['rating']
+        additional = ["rating"]
 
     id_professor = fields.Integer(validate=validate.Range(min=0))
     reg_professor = fields.Integer(
-        required=True, validate=validate.Range(min=10000000000, max=99999999999))
-    name = fields.String(
-        required=True, validate=validate.Length(min=2, max=254))
-    password = fields.String(required=True, validate=validate.Length(
-        min=8, max=100), load_only=True)
+        required=True, validate=validate.Range(min=10000000000, max=99999999999)
+    )
+    name = fields.String(required=True, validate=validate.Length(min=2, max=254))
+    password = fields.String(
+        required=True, validate=validate.Length(min=8, max=100), load_only=True
+    )
     email = fields.Email(required=True)
 
-    posts = fields.List(fields.Nested(post_schema.PostSchema(
-        exclude=['discipline_code', 'reg_student'])))
-    disciplines = fields.List(fields.Nested(
-        discipline_schema.DisciplineSchema))
+    posts = fields.List(
+        fields.Nested(
+            post_schema.PostSchema(exclude=["discipline_code", "reg_student"])
+        )
+    )
+    disciplines = fields.List(fields.Nested(discipline_schema.DisciplineSchema))
 
     @validates("email")
     def validate_email(self, value):
@@ -33,5 +36,5 @@ class ProfessorSchema(ma.SQLAlchemySchema):
     @validates("name")
     def validate_name(self, value):
         for char in value:
-            if not char.isalpha() and char != ' ':
+            if not char.isalpha() and char != " ":
                 raise ValidationError("Name should have just letters!")
