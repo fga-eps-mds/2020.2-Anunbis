@@ -2,6 +2,7 @@ from . import ma
 from marshmallow import fields, validate
 from ..model import report
 
+
 class ReportSchema(ma.SQLAlchemySchema):
     class Meta:
         model = report.Report

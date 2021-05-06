@@ -1,5 +1,5 @@
 from flask_base_tests_cases import TestFlaskBase
-from flask import url_for, jsonify
+from flask import url_for
 
 
 class TestCourseList(TestFlaskBase):
@@ -7,6 +7,6 @@ class TestCourseList(TestFlaskBase):
         self.create_base_course()
         expected = [self.course]
 
-        response = self.client.get(url_for('restapi.courselist'))
+        response = self.client.get(url_for("restapi.courselist"))
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json, expected)
