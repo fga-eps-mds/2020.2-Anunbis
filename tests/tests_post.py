@@ -143,7 +143,24 @@ class TestGetPostList(TestFlaskBase):
         register_post(self)
         response = get_posts(self)
         status_code_expected = 200
+
         self.assertEqual(response.status_code, status_code_expected)
+        self.assertEqual(response.json[0]["content"], valid_post(self)["content"])
+
+    def test_must_get_posts_about_professor_found_empty(self):
+        response = get_posts(self, self.create_professor_token())
+        status_code_expected = 200
+
+        self.assertEqual(response.status_code, status_code_expected)
+        self.assertEqual(response.json, [])
+
+    def test_must_get_posts_about_professor_found(self):
+        register_post(self)
+        response = get_posts(self, self.create_professor_token())
+        status_code_expected = 200
+
+        self.assertEqual(response.status_code, status_code_expected)
+        self.assertEqual(response.json[0]["content"], valid_post(self)["content"])
 
 
 class TestPostAgree(TestFlaskBase):
