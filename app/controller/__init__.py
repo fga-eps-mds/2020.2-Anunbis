@@ -12,24 +12,31 @@ def init_app(app):
     cors.init_app(app)
 
     from . import home_resources
+
     home_resources.configure(api)
 
     from . import course_resources
+
     course_resources.configure(api)
 
     from . import login_resources
+
     login_resources.configure(api)
 
     from . import post_resources
+
     post_resources.configure(api)
 
     from . import professor_resources
+
     professor_resources.configure(api)
 
     from . import student_resources
+
     student_resources.configure(api)
 
     from . import report_resources
+
     report_resources.configure(api)
 
     app.register_blueprint(api_bp)

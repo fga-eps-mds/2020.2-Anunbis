@@ -21,5 +21,3 @@ class LoginSchema(ma.Schema):
         else:
             if not match("[0-9]+@unb.br", value.lower()):
                 raise ValidationError("The email must be matricula@unb.br")
-
-

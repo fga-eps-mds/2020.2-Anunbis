@@ -12,12 +12,18 @@
 </h1>
 
 <p align="center">
+    <a href="https://codeclimate.com/github/fga-eps-mds/2020.2-Anunbis/maintainability">
+        <img src="https://api.codeclimate.com/v1/badges/a7c9be364b00a8f5c84b/maintainability" />
+    </a>
+    <a href="https://codecov.io/gh/fga-eps-mds/2020.2-Anunbis">
+        <img src="https://codecov.io/gh/fga-eps-mds/2020.2-Anunbis/branch/develop/graph/badge.svg?token=FSRH8CLJ6G"/>
+    </a>
     <a href="http://isitmaintained.com/project/fga-eps-mds/2020.2-Anunbis">
-    <img alt="Average time to resolve an issue" src="http://isitmaintained.com/badge/resolution/fga-eps-mds/2020.2-Anunbis.svg">
+        <img alt="Average time to resolve an issue" src="http://isitmaintained.com/badge/resolution/fga-eps-mds/2020.2-Anunbis.svg"></a>
     <a href="http://isitmaintained.com/project/fga-eps-mds/2020.2-Anunbis">
-    <img alt="Percentage of issues still open" src="http://isitmaintained.com/badge/open/fga-eps-mds/2020.2-Anunbis.svg">
+        <img alt="Percentage of issues still open" src="http://isitmaintained.com/badge/open/fga-eps-mds/2020.2-Anunbis.svg"></a>
     <a href="https://www.gnu.org/licenses/gpl-3.0">
-    <img alt="License: GPL v3" src="https://img.shields.io/badge/License-GPLv3-blue.svg">
+        <img alt="License: GPL v3" src="https://img.shields.io/badge/License-GPLv3-blue.svg"></a>
 </p>
 
 <p align="center">

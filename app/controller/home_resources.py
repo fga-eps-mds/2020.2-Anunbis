@@ -8,4 +8,3 @@ class HomeList(Resource):
 
 def configure(api):
     api.add_resource(HomeList, "/")
-
