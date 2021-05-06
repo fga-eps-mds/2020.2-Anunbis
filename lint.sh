@@ -1,4 +1,4 @@
-#!/bin/sh 
+#!/bin/bash
 
 black --version
 if [[ "$?" != "0" ]]; then
