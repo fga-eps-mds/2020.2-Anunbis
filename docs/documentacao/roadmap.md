@@ -95,16 +95,17 @@
 |:--:| ------- |
 | [#112](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/112) | Documentar a Sprint 6 |
 | [#113](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/113) | Preparar Apresentação da R1 |
+| [#115](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/115) | Organizar Front-End de acordo com Documento de Arquitetura |
 | [#116](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/116) | Revisar toda a Documentação | 
 | [#117](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/117) | Consertar rotas do Front-End | 
-| [#115](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/115) | Organizar Front-End de acordo com Documento de Arquitetura |
+
 
 ### Sprint 8
 | ID | Issue |
 |:--:| ------- |
 | [#119](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/119) | Documentar a Sprint 7 | 
-| [#121](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/121) | Documentar Identidade visual do produto | 
 | [#120](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/120) | Estudar testes e deploy | 
+| [#121](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/121) | Documentar Identidade visual do produto | 
 | [#122](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/122) | Estudar e refatorar CSS do front-end | 
 | [#124](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/124) | Atualizar documento Canvas | 
 | [#148](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/148) | Deploy Heroku | 
@@ -112,20 +113,20 @@
 ### Sprint 9
 | ID | Issue |
 |:--:| ------- |
+| [#123](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/123) | Refatorar documento de visão | 
+| [#137](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/137) | [US19] - Aluno avaliar comentário de terceiros |
+| [#140](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/140) | [US22] - Aluno alterar senha | 
+| [#142](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/142) | [US24] - Aluno excluir a própria conta |
 | [#151](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/151) | Documentar a Sprint 8 | 
 | [#152](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/152) | Testes de integração do back-end |
 | [#154](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/154) | Autenticar rotas | 
-| [#158](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/158) | [BUG] Multiplas classes de testes |
 | [#157](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/157) | Testes das rotas | 
+| [#158](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/158) | [BUG] Multiplas classes de testes |
 | [#161](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/161) | Adicionando testes no github actions |
-| [#123](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/123) | Refatorar documento de visão | 
-| [#142](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/142) | [US24] - Aluno excluir a própria conta |
-| [#140](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/140) | [US22] - Aluno alterar senha | 
 | [#168](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/168) | Reavaliar Documento de Arquitetura |
+| [#169](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/169) | Reavaliação do protótipo | 
 | [#170](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/170) | Alterar Arquitetura do Front-End |
 | [#171](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/171) | Alterar Arquitetura do Back-End |
-| [#137](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/137) | [US19] - Aluno avaliar comentário de terceiros |
-| [#169](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/169) | Reavaliação do protótipo | 
 
 ### Sprint 10
 | ID | Issue |
@@ -136,13 +137,15 @@
 ### Sprint 11
 | ID | Issue |
 |:--:| ------- |
+| [#125](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/125) | [US04] - Login de professor  | 
+| [#135](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/135) | [US17] - Aluno ver avaliações que realizou  |
+| [#136](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/136) | [US18] - Professor ver avaliações sobre si mesmo |
+| [#138](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/138) | [US20] - Usuário denunciar comentário ofensivo  | 
+| [#178](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/178) | Atualizar backlog do produto  | 
 | [#179](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/179) | Documentar a Sprint 10 | 
 | [#180](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/180) | Melhorar Pesquisa de Professor  | 
-| [#125](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/125) | [US04] - Login de professor  | 
-| [#138](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/138) | [US20] - Usuário denunciar comentário ofensivo  | 
-| [#135](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/135) | [US17] - Aluno ver avaliações que realizou  |
+| [#181](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/181) | Teste de código de qualidade estático  | 
 | [#184](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/184) | Criação da Tela Home no Front-End  | 
 | [#185](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/185) | Adicionar Burndown de riscos  |
-| [#181](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/181) | Teste de código de qualidade estático  | 
-| [#178](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/178) | Atualizar backlog do produto  | 
-| [#136](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/136) | [US18] - Professor ver avaliações sobre si mesmo |
+
+
