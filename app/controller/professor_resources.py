@@ -2,8 +2,9 @@ from flask_restful import Resource
 from flask import request, make_response, jsonify
 from ..schemas.professor_schema import ProfessorSchema
 from ..services import professor_services
-from flask_jwt_extended import jwt_required, get_jwt_identity
+from flask_jwt_extended import jwt_required, get_jwt_identity, current_user
 from marshmallow import ValidationError
+from ..ext.auth import professor_required
 
 
 class ProfessorDetail(Resource):
