@@ -24,6 +24,21 @@ def student_required():
 
     return wrapper
 
+def professor_required():
+    def wrapper(fn):
+        @wraps(fn)
+        def decorator(*args, **kwargs):
+            verify_jwt_in_request()
+            claims = get_jwt()
+            if not claims["is_student"]:
+                return fn(*args, **kwargs)
+            else:
+                return {"msg": "Professors only!"}, 403
+
+        return decorator
+
+    return wrapper
+
 
 @jwt.user_identity_loader
 def user_identity_lookup(user):
