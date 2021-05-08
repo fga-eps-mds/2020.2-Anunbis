@@ -61,3 +61,13 @@ def __build_professor(professor):
 
 def __is_professor_made_by_admin(professor_bd):
     return professor_bd.email is None
+
+def modify_password_professor(professor_bd, professor_new):
+    professor_bd.password = professor_new.get('password')
+    db.session.commit()
+    return {'message': 'Professor password successfully changed!'}, 200
+
+def delete_professor(professor_db):
+    db.session.delete(professor_db)
+    db.session.commit()
+    return {"message": "Professor successfully deleted!"}, 204
