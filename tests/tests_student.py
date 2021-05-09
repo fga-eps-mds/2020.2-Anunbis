@@ -151,58 +151,45 @@ class TestStudentPutList(TestFlaskBase):
         self.assertEqual(response.json["msg"], "Missing Authorization Header")
 
 
-class TestStudentDetail(TestFlaskBase):
-    def delete(self, reg_student, headers):
+class TestStudentDeleteList(TestFlaskBase):
+    def delete(self, headers):
         return self.client.delete(
-            url_for("restapi.studentdetail", reg_student=reg_student), headers=headers
+            url_for("restapi.studentlist"), headers=headers
         )
 
     def test_api_must_delete_student(self):
         self.create_base_student()
-        reg_student = self.student["reg_student"]
         headers = self.create_student_token()
 
-        response = self.delete(reg_student, headers)
+        response = self.delete(headers)
 
         self.assertEqual(response.status_code, 204)
-        self.assertIsNone(student_services.get(reg_student=reg_student))
-
-    def test_api_must_validate_reg_with_token(self):
-        self.create_base_student()
-        headers = self.create_student_token()
-        reg_student = self.student["reg_student"] + 1
-
-        response = self.delete(reg_student, headers)
-
-        self.assertEqual(response.status_code, 401)
-        self.assertEqual(response.json["message"], "Authorization Header Invalid")
+        self.assertIsNone(student_services.get(reg_student=self.student['reg_student']))
 
     def test_api_must_validate_delete_on_deleted_student(self):
         self.create_base_student()
         headers = self.create_student_token()
-        reg_student = self.student["reg_student"]
 
-        self.delete(reg_student, headers)
-        response = self.delete(reg_student, headers)
+        self.delete(headers)
+        response = self.delete(headers)
 
         self.assertEqual(response.status_code, 401)
 
     def test_api_must_delete_student_posts(self):
         self.create_base_student()
-        reg_student = self.student["reg_student"]
         response_post = register_post(self)
 
-        response = self.delete(reg_student, self.create_student_token())
+        response = self.delete(self.create_student_token())
 
         self.assertEqual(response_post.status_code, 201)
         self.assertEqual(response.status_code, 204)
-        self.assertIsNone(post_services.get(reg_student=reg_student))
+        self.assertIsNone(post_services.get(reg_student=self.student['reg_student']))
 
     def test_api_must_delete_student_posts_agrees(self):
         self.create_base_student()
         register_post(self)
         register_post_agree(self)
-        response = self.delete(self.student["reg_student"], self.create_student_token())
+        response = self.delete(self.create_student_token())
 
         self.assertEqual(response.status_code, 204)
 
@@ -210,7 +197,7 @@ class TestStudentDetail(TestFlaskBase):
         self.create_base_student()
         register_post(self)
         register_post_disagree(self)
-        response = self.delete(self.student["reg_student"], self.create_student_token())
+        response = self.delete(self.create_student_token())
 
         self.assertEqual(response.status_code, 204)
 
@@ -218,7 +205,7 @@ class TestStudentDetail(TestFlaskBase):
         self.create_base_student()
         register_post(self)
         register_report(self)
-        response = self.delete(self.student["reg_student"], self.create_student_token())
+        response = self.delete(self.create_student_token())
 
         self.assertEqual(response.status_code, 204)
 
