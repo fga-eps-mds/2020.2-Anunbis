@@ -44,6 +44,12 @@ class ProfessorList(Resource):
         except ValidationError as err:
             return make_response(jsonify(err.messages), 400)
 
+    @professor_required()
+    def delete(self):
+        professor = current_user        
+        message, status = professor_services.delete_professor_login(professor)
+        return make_response(jsonify(message), status)
+
 class ProfessorIdDetail(Resource):
     @jwt_required()
     def get(self, id):
@@ -54,18 +60,7 @@ class ProfessorIdDetail(Resource):
         )
         return make_response(ps.jsonify(professor), 200)
 
-class ProfessorRegDetail(Resource):
-    @professor_required()
-    def delete(self, reg_professor):
-        professor = current_user
-        if professor.reg_professor != reg_professor:
-            return make_response(jsonify({'message': "Authorization Header Invalid"}), 401)
-        
-        message, status = professor_services.delete_professor(professor)
-        return make_response(jsonify(message), status)
-
 def configure(api):
     api.add_resource(ProfessorList, "/professor")
     api.add_resource(ProfessorDetail, "/professor/<string:name>")
     api.add_resource(ProfessorIdDetail, "/professor/<int:id>")
-    api.add_resource(ProfessorRegDetail, "/professor/<int:reg_professor>")
