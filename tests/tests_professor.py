@@ -2,11 +2,14 @@ from flask_base_tests_cases import TestFlaskBase
 from flask import url_for
 from app.model import professor
 from tests_post import valid_post, register_post
+from app.services import professor_services
+from tests_report import register_report
 
 
 class TestProfessorList(TestFlaskBase):
     def post(self, json):
         return self.client.post(url_for("restapi.professorlist"), json=json)
+    
 
     def test_api_must_register_a_valid_professor(self):
         professor = valid_professor()
@@ -155,7 +158,6 @@ class TestProfessorList(TestFlaskBase):
         self.assertEqual(response.status_code, 400)
         self.assertIsNotNone(response.json["email"])
 
-
 class TestProfessorDetail(TestFlaskBase):
     def get(self, name, headers):
         return self.client.get(
@@ -205,6 +207,93 @@ class TestProfessorDetail(TestFlaskBase):
         self.assertNotIn("password", json_attributes)
         self.assertNotIn("reg_professor", json_attributes)
 
+class TestProfessorPutList(TestFlaskBase):
+    def put(self, json, headers):
+        return self.client.put(url_for("restapi.professorlist"), json=json, headers=headers)
+
+    def test_api_must_modify_password(self):
+        self.create_base_professor()
+        password = {"password": self.professor["password"] + "123"}
+        headers = self.create_professor_token()
+
+        response = self.put(password, headers)
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(
+            professor_services.get(
+                reg_professor=self.professor["reg_professor"]
+            ).verify_password(password.get("password"))
+        )
+        self.assertEqual(response.json["message"], "Professor password successfully changed!")
+
+    def test_api_must_validate_password_lenght(self):
+        self.create_base_professor()
+        password = {'password': '123'}
+        headers = self.create_professor_token()
+
+        response = self.put(password, headers)
+        self.assertEqual(response.status_code, 400)
+        self.assertEqual(
+            response.json["password"][0], "Length must be between 8 and 100."
+        )
+    
+    def test_must_validate_null_password(self):
+        self.create_base_professor()
+        password = {}
+        headers = self.create_professor_token()
+
+        response = self.put(password, headers)
+        self.assertEqual(response.status_code, 400)
+        self.assertIsNotNone(response.json["password"]) 
+    
+    def test_api_validate_token(self):
+        self.create_base_professor()
+        password = {"password": "00000000"}
+        headers = None
+
+        response = self.put(password, headers)
+        self.assertEqual(response.status_code, 401)
+        self.assertEqual(response.json["msg"], "Missing Authorization Header") 
+
+
+class TestProfessorDeleteList(TestFlaskBase):
+    def delete(self, headers):
+        return self.client.delete(
+            url_for("restapi.professorlist"), headers=headers)
+    
+    def test_api_must_delete_professor(self):
+        self.create_base_professor()
+        headers = self.create_professor_token()
+
+        response = self.delete(headers)
+
+        self.assertEqual(response.status_code, 204)
+        self.assertIsNone(professor_services.get(reg_professor=self.professor['reg_professor']))
+    
+    def test_api_must_validate_delete_on_deleted_professor(self):
+        self.create_base_professor()
+        headers = self.create_professor_token()
+
+        self.delete(headers)
+        response = self.delete(headers)
+
+        self.assertEqual(response.status_code, 401)
+    
+    
+    def test_api_must_delete_student_posts_reports(self):
+        self.create_base_professor()
+        self.create_base_student()
+        register_post(self)
+        register_report(self)
+        response = self.delete(self.create_professor_token())
+
+        self.assertEqual(response.status_code, 204)
+    
+    def test_api_must_block_student_delete_professor(self):
+
+        response = self.delete(self.create_student_token())
+
+        self.assertEqual(response.status_code, 403)
+        self.assertEqual(response.json, {"msg": "Professors only!"})
 
 class TestProfessorIdDatail(TestFlaskBase):
     def get(self, id, headers):
@@ -252,7 +341,6 @@ def create_professor_made_by_admin(self, name):
     professor_bd.name = name
     self.app.db.session.add(professor_bd)
     self.app.db.session.commit()
-
 
 class TestProfessorModel(TestFlaskBase):
     def test_must_block_password_access(self):
