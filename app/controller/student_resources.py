@@ -27,12 +27,13 @@ class StudentList(Resource):
             return make_response(jsonify(message), status)
         except ValidationError as err:
             return make_response(jsonify(err.messages), 400)
-        
+
     @student_required()
     def delete(self):
         student = current_user
         student_services.delete(student)
         return make_response("", 204)
+
 
 def configure(api):
     api.add_resource(StudentList, "/student")

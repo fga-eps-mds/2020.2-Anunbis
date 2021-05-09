@@ -31,24 +31,26 @@ class ProfessorList(Resource):
             return make_response(jsonify(message), status)
         except ValidationError as err:
             return make_response(jsonify(err.messages), 400)
-    
+
     @professor_required()
     def put(self):
         try:
-            ps = ProfessorSchema(only=['password'])
+            ps = ProfessorSchema(only=["password"])
             professor_db = current_user
             professor_new = ps.load(request.json)
             message, status = professor_services.modify_password_professor(
-                professor_db, professor_new)
+                professor_db, professor_new
+            )
             return make_response(jsonify(message), status)
         except ValidationError as err:
             return make_response(jsonify(err.messages), 400)
 
     @professor_required()
     def delete(self):
-        professor = current_user        
+        professor = current_user
         message, status = professor_services.delete_professor_login(professor)
         return make_response(jsonify(message), status)
+
 
 class ProfessorIdDetail(Resource):
     @jwt_required()
@@ -59,6 +61,7 @@ class ProfessorIdDetail(Resource):
             context={"reg_student": get_jwt_identity()},
         )
         return make_response(ps.jsonify(professor), 200)
+
 
 def configure(api):
     api.add_resource(ProfessorList, "/professor")

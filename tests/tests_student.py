@@ -153,9 +153,7 @@ class TestStudentPutList(TestFlaskBase):
 
 class TestStudentDeleteList(TestFlaskBase):
     def delete(self, headers):
-        return self.client.delete(
-            url_for("restapi.studentlist"), headers=headers
-        )
+        return self.client.delete(url_for("restapi.studentlist"), headers=headers)
 
     def test_api_must_delete_student(self):
         self.create_base_student()
@@ -164,7 +162,7 @@ class TestStudentDeleteList(TestFlaskBase):
         response = self.delete(headers)
 
         self.assertEqual(response.status_code, 204)
-        self.assertIsNone(student_services.get(reg_student=self.student['reg_student']))
+        self.assertIsNone(student_services.get(reg_student=self.student["reg_student"]))
 
     def test_api_must_validate_delete_on_deleted_student(self):
         self.create_base_student()
@@ -183,7 +181,7 @@ class TestStudentDeleteList(TestFlaskBase):
 
         self.assertEqual(response_post.status_code, 201)
         self.assertEqual(response.status_code, 204)
-        self.assertIsNone(post_services.get(reg_student=self.student['reg_student']))
+        self.assertIsNone(post_services.get(reg_student=self.student["reg_student"]))
 
     def test_api_must_delete_student_posts_agrees(self):
         self.create_base_student()

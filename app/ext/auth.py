@@ -24,6 +24,7 @@ def student_required():
 
     return wrapper
 
+
 def professor_required():
     def wrapper(fn):
         @wraps(fn)

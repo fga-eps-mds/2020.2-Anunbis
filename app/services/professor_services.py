@@ -62,10 +62,12 @@ def __build_professor(professor):
 def __is_professor_made_by_admin(professor_bd):
     return professor_bd.email is None
 
+
 def modify_password_professor(professor_bd, professor_new):
-    professor_bd.password = professor_new.get('password')
+    professor_bd.password = professor_new.get("password")
     db.session.commit()
-    return {'message': 'Professor password successfully changed!'}, 200
+    return {"message": "Professor password successfully changed!"}, 200
+
 
 def delete_professor_login(professor_db):
     professor_db.clean_credentials()
