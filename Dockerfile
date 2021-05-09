@@ -5,6 +5,7 @@ ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONFAULTHANDLER 1
+ENV PYTHONUNBUFFERED 1
 
 
 FROM base AS python-deps
@@ -34,4 +35,4 @@ USER appuser
 COPY . .
 
 # Run the application
-ENTRYPOINT ["flask", "run", "--host=0.0.0.0"]
+ENTRYPOINT ["./scripts/flask.sh"]
