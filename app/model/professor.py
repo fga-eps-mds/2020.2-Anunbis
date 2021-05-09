@@ -45,3 +45,8 @@ class Professor(db.Model):
         for post in self.posts:
             sum += post.rating
         return sum / len(self.posts)
+    
+    def clean_credentials(self):
+        self.__password_hash = None
+        self.email = None
+        self.reg_professor = None

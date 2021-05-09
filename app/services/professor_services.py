@@ -67,7 +67,7 @@ def modify_password_professor(professor_bd, professor_new):
     db.session.commit()
     return {'message': 'Professor password successfully changed!'}, 200
 
-def delete_professor(professor_db):
-    db.session.delete(professor_db)
+def delete_professor_login(professor_db):
+    professor_db.clean_credentials()
     db.session.commit()
     return {"message": "Professor successfully deleted!"}, 204
