@@ -1,5 +1,5 @@
 from flask import Flask
-from .ext import database
+from .ext import database, migrate
 from . import controller, schemas
 from . import config
 
@@ -13,6 +13,7 @@ def minimal_app():
 def create_app():
     app = minimal_app()
     database.init_app(app)
+    migrate.init_app(app)
     controller.init_app(app)
     schemas.init_app(app)
     return app

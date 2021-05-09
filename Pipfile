@@ -19,6 +19,7 @@ python-dotenv = "==0.17.0"
 psycopg2-binary = "==2.8.6"
 ipdb = "==0.13.7"
 pexpect = "==4.8.0"
+flask-migrate = "==2.7.0"
 
 [dev-packages]
 coverage = "==5.5"

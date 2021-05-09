@@ -1,5 +1,4 @@
 from ..ext.database import db
-from .professor import Professor
 
 PROFESSOR_DISCIPLINE = db.Table(
     "professor_discipline",
@@ -28,6 +27,6 @@ class Discipline(db.Model):
     )
     name = db.Column(db.String(255), nullable=False, default="")
     professors = db.relationship(
-        Professor, secondary=PROFESSOR_DISCIPLINE, lazy="dynamic"
+        "Professor", secondary="professor_discipline", lazy="dynamic"
     )
     courses = db.relationship("Course", secondary="course_discipline", lazy="dynamic")
