@@ -18,46 +18,32 @@ def seed():
 def seed_courses():
     print("\nSeeding database with courses...")
     courses = read_json("courses")
-    return add_seeds(courses, lambda c: course.Course(name=c.get("name")))
+    return add_seeds(courses, lambda c: course.Course(**c))
 
 
 def seed_disciplines():
     print("\nSeeding database with disciplines...")
     disciplines = read_json("disciplines")
-    return add_seeds(
-        disciplines,
-        lambda d: discipline.Discipline(
-            discipline_code=d.get("discipline_code"), name=d.get("name")
-        ),
-    )
+    return add_seeds(disciplines, lambda d: discipline.Discipline(**d))
 
 
 def seed_course_discipline():
     print("\nSeeding database with course_discipline...")
     course_discipline = read_json("course_discipline")
-    return add_seeds(
-        course_discipline,
-        lambda cd: course.CourseDiscipline(
-            discipline_code=cd.get("discipline_code"), id_course=cd.get("id_course")
-        ),
-    )
+    return add_seeds(course_discipline, lambda cd: course.CourseDiscipline(**cd))
 
 
 def seed_professor():
     print("\nSeeding database with professor...")
     professors = read_json("professor")
-    return add_seeds(professors, lambda p: professor.Professor(name=p.get("name")))
+    return add_seeds(professors, lambda p: professor.Professor(**p))
 
 
 def seed_professor_discipline():
     print("\nSeeding database with professor_discipline...")
     professor_discipline = read_json("professor_discipline")
     return add_seeds(
-        professor_discipline,
-        lambda pd: discipline.ProfessorDiscipline(
-            discipline_code=pd.get("discipline_code"),
-            id_professor=pd.get("id_professor"),
-        ),
+        professor_discipline, lambda pd: discipline.ProfessorDiscipline(**pd)
     )
 
 
@@ -66,10 +52,10 @@ def add_seeds(obj_list, modelFactory):
         for obj in obj_list:
             db.session.add(modelFactory(obj))
         db.session.commit()
-        print(f"{len(obj_list)} seeds successfully added!\n\n")
+        print(f"{len(obj_list)} seeds successfully added!\n")
         return 0
     except (IntegrityError, InvalidRequestError):
-        print("Objs already in database! Cant seed!\n\n")
+        print("Objs already in database! Cant seed!\n")
         return 1
 
 
