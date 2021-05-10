@@ -45,3 +45,43 @@ class Professor(db.Model):
         for post in self.posts:
             sum += post.rating
         return sum / len(self.posts)
+
+    @property
+    def didactic(self):
+        if len(self.posts) == 0:
+            return
+
+        sum = 0
+        for post in self.posts:
+            sum += post.didactic
+        return sum / len(self.posts)
+
+    @property
+    def metod(self):
+        if len(self.posts) == 0:
+            return
+
+        sum = 0
+        for post in self.posts:
+            sum += post.metod
+        return sum / len(self.posts)
+
+    @property
+    def avaliations(self):
+        if len(self.posts) == 0:
+            return
+
+        sum = 0
+        for post in self.posts:
+            sum += post.avaliations
+        return sum / len(self.posts)
+
+    @property
+    def disponibility(self):
+        if len(self.posts) == 0:
+            return
+
+        sum = 0
+        for post in self.posts:
+            sum += post.disponibility
+        return sum / len(self.posts)

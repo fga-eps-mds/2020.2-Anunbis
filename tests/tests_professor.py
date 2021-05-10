@@ -170,7 +170,17 @@ class TestProfessorDetail(TestFlaskBase):
         response = self.get(name_substring, headers)
 
         json_attributes = list(response.json[0].keys())
-        expected_json_attributes = ["disciplines", "id_professor", "name", "rating"]
+        expected_json_attributes = [
+            "avaliations",
+            "didactic",
+            "disciplines",
+            "disponibility",
+            "id_professor",
+            "metod",
+            "name",
+            "rating",
+        ]
+
         self.assertEqual(response.status_code, 200)
         self.assertEqual(json_attributes, expected_json_attributes)
         self.assertEqual(response.json[0]["name"], self.professor["name"])

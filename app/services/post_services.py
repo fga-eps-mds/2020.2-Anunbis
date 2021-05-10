@@ -40,7 +40,10 @@ def register_post(post):
         id_professor=post.get("id_professor"),
         discipline_code=post.get("discipline_code"),
         content=post.get("content"),
-        rating=post.get("rating"),
+        didactic=post.get("didactic"),
+        metod=post.get("metod"),
+        avaliations=post.get("avaliations"),
+        disponibility=post.get("disponibility"),
         is_anonymous=post.get("is_anonymous"),
     )
     db.session.add(post_db)
