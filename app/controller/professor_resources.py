@@ -2,8 +2,9 @@ from flask_restful import Resource
 from flask import request, make_response, jsonify
 from ..schemas.professor_schema import ProfessorSchema
 from ..services import professor_services
-from flask_jwt_extended import jwt_required, get_jwt_identity
+from flask_jwt_extended import jwt_required, get_jwt_identity, current_user
 from marshmallow import ValidationError
+from ..ext.auth import professor_required
 
 
 class ProfessorDetail(Resource):
@@ -30,6 +31,25 @@ class ProfessorList(Resource):
             return make_response(jsonify(message), status)
         except ValidationError as err:
             return make_response(jsonify(err.messages), 400)
+
+    @professor_required()
+    def put(self):
+        try:
+            ps = ProfessorSchema(only=["password"])
+            professor_db = current_user
+            professor_new = ps.load(request.json)
+            message, status = professor_services.modify_password_professor(
+                professor_db, professor_new
+            )
+            return make_response(jsonify(message), status)
+        except ValidationError as err:
+            return make_response(jsonify(err.messages), 400)
+
+    @professor_required()
+    def delete(self):
+        professor = current_user
+        message, status = professor_services.delete_professor_login(professor)
+        return make_response(jsonify(message), status)
 
 
 class ProfessorIdDetail(Resource):

@@ -28,19 +28,12 @@ class StudentList(Resource):
         except ValidationError as err:
             return make_response(jsonify(err.messages), 400)
 
-
-class StudentDetail(Resource):
     @student_required()
-    def delete(self, reg_student):
+    def delete(self):
         student = current_user
-        if current_user.reg_student != reg_student:
-            return make_response(
-                jsonify({"message": "Authorization Header Invalid"}), 401
-            )
         student_services.delete(student)
         return make_response("", 204)
 
 
 def configure(api):
     api.add_resource(StudentList, "/student")
-    api.add_resource(StudentDetail, "/student/<int:reg_student>")
