@@ -7,7 +7,10 @@ up:
 down:
 	docker-compose down
 
-test: 
+seed:
+	docker-compose run --rm --entrypoint "flask seed" flask
+
+test:
 	docker-compose run --rm --no-deps --entrypoint "./scripts/tests.sh" flask
 
 lint:
