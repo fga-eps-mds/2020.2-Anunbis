@@ -1,22 +1,22 @@
 from ..ext.database import db
 
-PROFESSOR_DISCIPLINE = db.Table(
-    "professor_discipline",
-    db.Column(
-        "discipline_code",
+
+class ProfessorDiscipline(db.Model):
+    __tablename__ = "professor_discipline"
+
+    discipline_code = db.Column(
         db.String(80),
         db.ForeignKey("discipline.discipline_code"),
         nullable=False,
         primary_key=True,
-    ),
-    db.Column(
-        "id_professor",
+    )
+
+    id_professor = db.Column(
         db.Integer,
         db.ForeignKey("professor.id_professor"),
         nullable=False,
         primary_key=True,
-    ),
-)
+    )
 
 
 class Discipline(db.Model):
