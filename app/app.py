@@ -16,11 +16,5 @@ def create_app():
     migrate.init_app(app)
     controller.init_app(app)
     schemas.init_app(app)
-    cli_commands(app)
+    seed.init_app(app)
     return app
-
-
-def cli_commands(app):
-    @app.cli.command("seed")
-    def seed_command():
-        return seed.seed()

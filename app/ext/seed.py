@@ -3,8 +3,16 @@ import os
 from .database import db
 from ..model import course, discipline, professor
 from sqlalchemy.exc import IntegrityError, InvalidRequestError
+import click
+from flask.cli import with_appcontext
 
 
+def init_app(app):
+    app.cli.add_command(seed)
+
+
+@click.command()
+@with_appcontext
 def seed():
     exit_code = 0
     exit_code += seed_courses()
