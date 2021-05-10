@@ -50,7 +50,7 @@ class Professor(db.Model):
         self.__password_hash = None
         self.email = None
         self.reg_professor = None
-        
+
     @property
     def didactic(self):
         if len(self.posts) == 0:
@@ -90,4 +90,3 @@ class Professor(db.Model):
         for post in self.posts:
             sum += post.disponibility
         return sum / len(self.posts)
-      
