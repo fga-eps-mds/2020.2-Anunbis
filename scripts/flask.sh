@@ -7,7 +7,8 @@ while true; do
     if [[ "$?" == "0" ]]; then
         break
     fi
-    echo "upgrade command failed, retrying in 5 secs..."
+    echo "Upgrade command fail"
+    echo "Waiting for MYSQL to start, retrying in 5 secs..."
     sleep 5
 done
 
