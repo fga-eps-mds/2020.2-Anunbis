@@ -1,16 +1,16 @@
+from marshmallow import ValidationError
+from ..ext import auth, cors
 from flask import Blueprint, redirect, url_for, make_response, jsonify
 from flask_restful import Api
-from ..ext import auth, cors
-from marshmallow import ValidationError
+<< << << < HEAD
 
+== == == =
+>>>>>> > c581daa((  # 204) Removendo  auth e cors que foram adicionados em app.py)
 
 def init_app(app):
-    url_prefix = "/anunbis/api/"
-    api_bp = Blueprint("restapi", __name__, url_prefix=url_prefix)
-    api = Api(api_bp)
-
-    auth.init_app(app)
-    cors.init_app(app)
+    url_prefix="/anunbis/api/"
+    api_bp=Blueprint("restapi", __name__, url_prefix=url_prefix)
+    api=Api(api_bp)
 
     from . import home_resources
 
@@ -42,10 +42,10 @@ def init_app(app):
 
     app.register_blueprint(api_bp)
 
-    @app.route("/")
+    @ app.route("/")
     def redirect_home():
-        return redirect(url_for("restapi.homelist"))
+        return redirect(url_for("flasgger.apidocs"))
 
-    @app.errorhandler(ValidationError)
+    @ app.errorhandler(ValidationError)
     def handle_validation_error(error):
         return make_response(jsonify(error.messages), 400)
