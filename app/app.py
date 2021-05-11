@@ -1,5 +1,5 @@
 from flask import Flask
-from .ext import database, migrate, seed, email
+from .ext import database, migrate, seed, swagger, auth, cors, email
 from . import controller, schemas
 from . import config
 
@@ -15,7 +15,10 @@ def create_app(config_class=None):
     database.init_app(app)
     migrate.init_app(app)
     controller.init_app(app)
+    auth.init_app(app)
+    cors.init_app(app)
     schemas.init_app(app)
     seed.init_app(app)
     email.init_app(app)
+    swagger.init_app(app)
     return app

@@ -21,6 +21,7 @@ ipdb = "*"
 pexpect = "*"
 flask-migrate = "*"
 flask-mail = "*"
+flasgger = "*"
 
 [dev-packages]
 coverage = "*"
