@@ -1,23 +1,22 @@
 from ..ext.database import db
-from .professor import Professor
 
-PROFESSOR_DISCIPLINE = db.Table(
-    "professor_discipline",
-    db.Column(
-        "discipline_code",
+
+class ProfessorDiscipline(db.Model):
+    __tablename__ = "professor_discipline"
+
+    discipline_code = db.Column(
         db.String(80),
         db.ForeignKey("discipline.discipline_code"),
         nullable=False,
         primary_key=True,
-    ),
-    db.Column(
-        "id_professor",
+    )
+
+    id_professor = db.Column(
         db.Integer,
         db.ForeignKey("professor.id_professor"),
         nullable=False,
         primary_key=True,
-    ),
-)
+    )
 
 
 class Discipline(db.Model):
@@ -28,6 +27,6 @@ class Discipline(db.Model):
     )
     name = db.Column(db.String(255), nullable=False, default="")
     professors = db.relationship(
-        Professor, secondary=PROFESSOR_DISCIPLINE, lazy="dynamic"
+        "Professor", secondary="professor_discipline", lazy="dynamic"
     )
     courses = db.relationship("Course", secondary="course_discipline", lazy="dynamic")

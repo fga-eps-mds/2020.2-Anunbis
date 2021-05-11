@@ -47,15 +47,15 @@ class Post(db.Model):
         db.Integer, nullable=False, primary_key=True, autoincrement=True
     )
     post_date = db.Column(db.Date, default=date.today(), nullable=False)
-    didactic = db.Column(db.Integer, nullable=False)
-    metod = db.Column(db.Integer, nullable=False)
-    avaliations = db.Column(db.Integer, nullable=False)
-    disponibility = db.Column(db.Integer, nullable=False)
+    didactic = db.Column(db.SmallInteger, nullable=False)
+    metod = db.Column(db.SmallInteger, nullable=False)
+    avaliations = db.Column(db.SmallInteger, nullable=False)
+    disponibility = db.Column(db.SmallInteger, nullable=False)
     content = db.Column(db.String(480), nullable=False)
     is_anonymous = db.Column(db.Boolean, nullable=False)
 
     discipline_code = db.Column(
-        db.Integer, db.ForeignKey("discipline.discipline_code"), nullable=False
+        db.String(80), db.ForeignKey("discipline.discipline_code"), nullable=False
     )
     discipline = db.relationship("Discipline")
 

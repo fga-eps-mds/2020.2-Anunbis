@@ -1,0 +1,14 @@
+[
+    {
+        "discipline_code": "FGA01",
+        "name": "Metodos Desenvolvimento de Software"
+    },
+    {
+        "discipline_code": "FGA02",
+        "name": "Orientação a Objetos"
+    },
+    {
+        "discipline_code": "FGA03",
+        "name": "Estrutura de Dados"
+    }
+]
