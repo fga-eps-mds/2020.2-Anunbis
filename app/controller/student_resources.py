@@ -76,9 +76,9 @@ class StudentList(Resource):
           schema:
                 type: object
                 required:
-                    - NewPassword
+                    - password
                 properties:
-                    NewPassword:
+                    password:
                         type: string
         responses:
             200: 
@@ -101,7 +101,7 @@ class StudentList(Resource):
     def delete(self):
         """
         This path is responsable for deleting the student's account
-        It only needs to be given the authorization header 
+        It only needs to be given the authorization header
          to validate the user and delete the student's account.
         ---
         tags:
@@ -112,7 +112,7 @@ class StudentList(Resource):
           type: string
           required: true
         responses:
-            204: 
+            204:
                 description: "Nothing will be displayed"
 
         """
