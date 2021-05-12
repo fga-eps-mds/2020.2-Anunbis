@@ -22,7 +22,7 @@ class PostSchema(ma.SQLAlchemySchema):
     disponibility = fields.Integer(required=True, validate=validate.Range(min=1, max=5))
     is_anonymous = fields.Boolean(required=True)
     post_date = fields.Date()
-
+    rating = fields.Float()
     discipline = fields.Nested(discipline_schema.DisciplineSchema)
     student = fields.Method("gen_student")
     feedbacks = fields.Method("gen_feedbacks")
