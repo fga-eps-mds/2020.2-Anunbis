@@ -7,6 +7,7 @@ from flask_restful import Api
 == == == =
 >>>>>> > c581daa((  # 204) Removendo  auth e cors que foram adicionados em app.py)
 
+
 def init_app(app):
     url_prefix="/anunbis/api/"
     api_bp=Blueprint("restapi", __name__, url_prefix=url_prefix)
