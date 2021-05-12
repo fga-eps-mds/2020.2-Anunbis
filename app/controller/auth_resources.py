@@ -6,6 +6,37 @@ from ..services import auth_services, user_services
 
 class LoginList(Resource):
     def post(self):
+        """
+        This path is responsable for login
+        ---
+        tags:
+        - Login's paths
+        parameters:
+        - in: body
+          name: User's login
+          description:  It must have already successfuly registered a user for then be able to make login.
+           Although, it needs to be given an email and password to successfully login in the plataform.
+          schema:
+                type: object
+                required:
+                    - email
+                    - password
+                properties:
+                    email:
+                        type: string
+                    password:
+                        type: string
+        responses:
+            200:
+                description: It returns the information of the user and the access token
+
+            400:
+                description: Validation Error
+
+            401:
+                description: Email or password invalid
+
+        """
         ls = user_schema.UserSchema()
         user = ls.load(request.json)
         user, status_code = auth_services.auth_user(user)

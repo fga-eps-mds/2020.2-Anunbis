@@ -17,19 +17,19 @@ class StudentList(Resource):
         - in: body
           name: Register a studant
           description:  It needs to be given a name, email, student's registration,
-           course's identification and a password to make this method work and register a 
+           course's identification and a password to make this method work and register a
            student in the plataform.
           schema:
                 type: object
                 required:
                     - name
                     - email
-                    - reg_student            
+                    - reg_student
                     - id_course
                     - password
                 properties:
                     name:
-                        type: string 
+                        type: string
                     email:
                         type: string
                     reg_student:
@@ -39,7 +39,7 @@ class StudentList(Resource):
                     password:
                         type: string
         responses:
-            201: 
+            201:
                 description: Student successfully registered
 
             400:
@@ -71,7 +71,7 @@ class StudentList(Resource):
           required: true
         - in: body
           name: Modify student's password
-          description:  It needs to be given the authorization header 
+          description:  It needs to be given the authorization header
            to validate the user, and the new password to be able to modify the old one.
           schema:
                 type: object
@@ -81,7 +81,7 @@ class StudentList(Resource):
                     password:
                         type: string
         responses:
-            200: 
+            200:
                 description: Student successfully changed
 
             400:
@@ -94,7 +94,8 @@ class StudentList(Resource):
         ss = StudentSchema(only=["password"])
         student_db = current_user
         student_new = ss.load(request.json)
-        message, status = student_services.modify_student(student_db, student_new)
+        message, status = student_services.modify_student(
+            student_db, student_new)
         return make_response(jsonify(message), status)
 
     @student_required()

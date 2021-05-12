@@ -20,7 +20,7 @@ class ReportList(Resource):
           required: true
         - in: body
           name: Register a report
-          description:  It needs to be given the authorization header 
+          description:  It needs to be given the authorization header
             to validate the user, have a written content, a id_post,
              and be a true or false for the variables offensive, prejudice, unrelated and others,
              and then be able to register a report in the plataform.
@@ -30,7 +30,7 @@ class ReportList(Resource):
                     - id_post
                     - offensive
                     - prejudice
-                    - unrelated            
+                    - unrelated
                     - others
                     - content
                 properties:
@@ -47,7 +47,7 @@ class ReportList(Resource):
                     content:
                         type: string
         responses:
-            201: 
+            201:
                 description: Report successfully added
 
             400:
@@ -62,6 +62,7 @@ class ReportList(Resource):
         report = rs.load(request.json)
         message, status_code = report_services.register_report(report, user)
         return make_response(jsonify(message), status_code)
+
 
 
 def configure(api):

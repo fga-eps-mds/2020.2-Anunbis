@@ -11,7 +11,7 @@ class ProfessorDetail(Resource):
     def get(self, name):
         """
         This path is responsable for getting the professors by a part of its name.
-          It needs to be given the professor's part of the name and a authorization header. 
+          It needs to be given the professor's part of the name and a authorization header.
         ---
         tags:
         - Professor's paths
@@ -25,7 +25,7 @@ class ProfessorDetail(Resource):
           type: string
           required: true
         responses:
-            200: 
+            200:
                 description: It will return all the professors that have part of the given name, if there's any
 
             400:
@@ -59,11 +59,11 @@ class ProfessorList(Resource):
                 required:
                     - name
                     - email
-                    - reg_professor            
+                    - reg_professor
                     - password
                 properties:
                     name:
-                        type: string 
+                        type: string
                     email:
                         type: string
                     reg_professor:
@@ -71,7 +71,7 @@ class ProfessorList(Resource):
                     password:
                         type: string
         responses:
-            201: 
+            201:
                 description: Professor successfully registered
 
             400:
@@ -100,7 +100,7 @@ class ProfessorList(Resource):
           required: true
         - in: body
           name: Modify professor's password
-          description:  It needs to be given the authorization header 
+          description:  It needs to be given the authorization header
            to validate the user, and the new password to be able to modify the old one.
           schema:
                 type: object
@@ -110,7 +110,7 @@ class ProfessorList(Resource):
                     password:
                         type: string
         responses:
-            200: 
+            200:
                 description: Professor password successfully changed
 
             400:
@@ -132,7 +132,7 @@ class ProfessorList(Resource):
     def delete(self):
         """
         This path is responsable for deleting the professor's account
-        It only needs to be given the authorization header 
+        It only needs to be given the authorization header
          to validate the user and delete the professor's account.
         ---
         tags:
@@ -143,7 +143,7 @@ class ProfessorList(Resource):
           type: string
           required: true
         responses:
-            204: 
+            204:
                 description: "Nothing will be displayed"
 
         """
@@ -157,7 +157,7 @@ class ProfessorIdDetail(Resource):
     def get(self, id):
         """
         This path is responsable for getting a professor by its id
-          It needs to be given the the professor's id and a uthorization header. 
+          It needs to be given the the professor's id and a uthorization header.
         ---
         tags:
         - Professor's paths
@@ -171,7 +171,7 @@ class ProfessorIdDetail(Resource):
           type: integer
           required: true
         responses:
-            200: 
+            200:
                 description: It will return the professor's information by the id, if there's any
 
         """
