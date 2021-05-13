@@ -11,7 +11,8 @@ class ProfessorDetail(Resource):
     def get(self, name):
         """
         This path is responsable for getting the professors by a part of its name.
-          It needs to be given the professor's part of the name and a authorization header.
+         It needs to be given the professor's part of the name
+          and a authorization header.
         ---
         tags:
         - Professor's paths
@@ -26,7 +27,8 @@ class ProfessorDetail(Resource):
           required: true
         responses:
             200:
-                description: It will return all the professors that have part of the given name, if there's any
+                description: It will return all the professors that
+                 have part of the given name, if there's any
 
             400:
                 description: Validation Error
@@ -53,7 +55,8 @@ class ProfessorList(Resource):
         - in: body
           name: Register a professor
           description:  It needs to be given a name, email, professor's registration,
-            and a password to make this method work and register a professor in the plataform.
+            and a password to make this method work
+             and register a professor in the plataform.
           schema:
                 type: object
                 required:
@@ -172,7 +175,8 @@ class ProfessorIdDetail(Resource):
           required: true
         responses:
             200:
-                description: It will return the professor's information by the id, if there's any
+                description: It will return the professor's
+                 information by the id, if there's any
 
         """
         professor = professor_services.get(id_professor=id)

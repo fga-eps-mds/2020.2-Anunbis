@@ -22,8 +22,9 @@ class ReportList(Resource):
           name: Register a report
           description:  It needs to be given the authorization header
             to validate the user, have a written content, a id_post,
-             and be a true or false for the variables offensive, prejudice, unrelated and others,
-             and then be able to register a report in the plataform.
+             and be a true or false for the variables offensive,
+              prejudice, unrelated and others, and then be able to
+               register a report in the plataform.
           schema:
                 type: object
                 required:

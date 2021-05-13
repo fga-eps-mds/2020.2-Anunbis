@@ -16,9 +16,10 @@ class StudentList(Resource):
         parameters:
         - in: body
           name: Register a studant
-          description:  It needs to be given a name, email, student's registration,
-           course's identification and a password to make this method work and register a
-           student in the plataform.
+          description:  It needs to be given a name, email,
+           student's registration, course's identification and
+            a password to make this method work and register a
+            student in the plataform.
           schema:
                 type: object
                 required:
@@ -72,7 +73,8 @@ class StudentList(Resource):
         - in: body
           name: Modify student's password
           description:  It needs to be given the authorization header
-           to validate the user, and the new password to be able to modify the old one.
+           to validate the user, and the new password to be able
+            to modify the old one.
           schema:
                 type: object
                 required:

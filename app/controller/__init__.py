@@ -2,16 +2,12 @@ from marshmallow import ValidationError
 from ..ext import auth, cors
 from flask import Blueprint, redirect, url_for, make_response, jsonify
 from flask_restful import Api
-<< << << < HEAD
-
-== == == =
->>>>>> > c581daa((  # 204) Removendo  auth e cors que foram adicionados em app.py)
 
 
 def init_app(app):
-    url_prefix="/anunbis/api/"
-    api_bp=Blueprint("restapi", __name__, url_prefix=url_prefix)
-    api=Api(api_bp)
+    url_prefix = "/anunbis/api/"
+    api_bp = Blueprint("restapi", __name__, url_prefix=url_prefix)
+    api = Api(api_bp)
 
     from . import course_resources
 

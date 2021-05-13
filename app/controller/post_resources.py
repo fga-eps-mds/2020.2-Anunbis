@@ -22,9 +22,11 @@ class PostList(Resource):
           required: true
         - in: body
           name: Register a post from student
-          description:  It needs to be given a students' registration, professor's identification,
-             discipline code, content, didactic, metod, avaliations, disponibility and
-             if it is anonymous, to be able to make this method work and register a post in the plataform.
+          description:  It needs to be given a students' registration,
+            professor's identification, discipline code, content,
+             didactic, metod, avaliations, disponibility and
+              if it is anonymous, to be able to make this method
+                work and register a post in the plataform.
           schema:
                 type: object
                 required:
@@ -92,7 +94,8 @@ class PostList(Resource):
 
         responses:
             200:
-                description: It will return all the posts related to the user, if there's any
+                description: It will return all the posts related to the user,
+                  if there's any
 
         """
         user = current_user
@@ -107,20 +110,6 @@ class PostList(Resource):
 class PostAgreesList(Resource):
     @student_required()
     def post(self):
-
-
-<< << << < HEAD
-        student = current_user
-        ps = post_schema.PostSchema(only=["id_post"])
-        id = ps.load(request.json).get("id_post")
-        post, status_code = post_services.agree_student_post(student, id)
-        if status_code == 200:
-            ps = post_schema.PostSchema(
-                context={"reg_student": student.reg_student})
-            return make_response(ps.jsonify(post), status_code)
-        else:
-            return make_response(jsonify(post), status_code)
-== == == =
         """
         This path is responsable for registering an agree in an existed post
         ---
@@ -133,8 +122,9 @@ class PostAgreesList(Resource):
           required: true
         - in: body
           name: Register an agree in a post that already exists
-          description:  It only needs the post's id to be able to make this method work and
-           agree in the post of another student in the plataform.
+          description:  It only needs the post's id to be able to
+           make this method work and agree in the post of
+             another student in the plataform.
           schema:
                 type: object
                 required:
@@ -153,38 +143,22 @@ class PostAgreesList(Resource):
                 description: Post not found
 
         """
-        try:
-            student = current_user
-            ps = post_schema.PostSchema(only=["id_post"])
-            id = ps.load(request.json).get("id_post")
-            post, status_code = post_services.agree_student_post(student, id)
-            if status_code == 200:
-                ps = post_schema.PostSchema(
-                    context={"reg_student": student.reg_student}
-                )
-                return make_response(ps.jsonify(post), status_code)
-            else:
-                return make_response(jsonify(post), status_code)
-        except ValidationError as err:
-            return make_response(jsonify(err.messages), 400)
->>>>>> > 81d667a((  # 204)Adicionando docstring dos metodos de post)
+        student = current_user
+        ps = post_schema.PostSchema(only=["id_post"])
+        id = ps.load(request.json).get("id_post")
+        post, status_code = post_services.agree_student_post(student, id)
+        if status_code == 200:
+            ps = post_schema.PostSchema(
+                context={"reg_student": student.reg_student})
+            return make_response(ps.jsonify(post), status_code)
+        else:
+            return make_response(jsonify(post), status_code)
 
 
 class PostDisagreesList(Resource):
-    @ student_required()
+    
+    @student_required()
     def post(self):
-<< << << < HEAD
-        student=current_user
-        ps=post_schema.PostSchema(only=["id_post"])
-        id=ps.load(request.json).get("id_post")
-        post, status_code=post_services.disagree_student_post(student, id)
-        if status_code == 404:
-            return make_response(jsonify(post), status_code)
-        else:
-            ps=post_schema.PostSchema(
-                context={"reg_student": student.reg_student})
-            return make_response(ps.jsonify(post), status_code)
-== == == =
         """
         This path is responsable for registering a disagree in an existed post
         ---
@@ -197,8 +171,9 @@ class PostDisagreesList(Resource):
           required: true
         - in: body
           name: Register a disagree in a post that already exists
-          description:  It only needs the post's id to be able to make this method work and
-           disagree in the post of another student in the plataform.
+          description:  It only needs the post's id to be able to
+           make this method work and disagree in the post
+            of another student in the plataform.
           schema:
                 type: object
                 required:
@@ -217,21 +192,16 @@ class PostDisagreesList(Resource):
                 description: Post not found
 
         """
-        try:
-            student=current_user
-            ps=post_schema.PostSchema(only=["id_post"])
-            id=ps.load(request.json).get("id_post")
-            post, status_code=post_services.disagree_student_post(student, id)
-            if status_code == 404:
-                return make_response(jsonify(post), status_code)
-            else:
-                ps=post_schema.PostSchema(
-                    context={"reg_student": student.reg_student}
-                )
-                return make_response(ps.jsonify(post), status_code)
-        except ValidationError as err:
-            return make_response(jsonify(err.messages), 400)
-
+        student = current_user
+        ps = post_schema.PostSchema(only=["id_post"])
+        id = ps.load(request.json).get("id_post")
+        post, status_code=post_services.disagree_student_post(student, id)
+        if status_code == 404:
+            return make_response(jsonify(post), status_code)
+        else:
+            ps=post_schema.PostSchema(
+                context={"reg_student": student.reg_student})
+            return make_response(ps.jsonify(post), status_code)
 
 def configure(api):
     api.add_resource(PostList, "post")
