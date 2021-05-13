@@ -13,10 +13,6 @@ def init_app(app):
     api_bp=Blueprint("restapi", __name__, url_prefix=url_prefix)
     api=Api(api_bp)
 
-    from . import home_resources
-
-    home_resources.configure(api)
-
     from . import course_resources
 
     course_resources.configure(api)
