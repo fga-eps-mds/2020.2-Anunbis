@@ -7,11 +7,25 @@ from . import config
 def minimal_app(config_class):
     app = Flask(__name__)
     app.config.from_object(config_class)
+    app.config['SWAGGER'] = {
+        "swagger": "2.0",
+        "info": {
+            "title": "Anunbis back-end",
+            "description": "Here is the Anunbis backend documentation API, where you can find about all of our methods and how they work. ",
+            "contact": {
+                "email": "anunbis.team@gmail.com",
+                "url": "http://localhost:3000/",
+            },
+            "termsOfService": "http://localhost:3000/#contact",
+            "version": "0.0.1"
+        },
+    }
     return app
 
 
 def create_app(config_class=None):
-    app = minimal_app(config.DevConfig if config_class is None else config_class)
+    app = minimal_app(
+        config.DevConfig if config_class is None else config_class)
     database.init_app(app)
     migrate.init_app(app)
     controller.init_app(app)
