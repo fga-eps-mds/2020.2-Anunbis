@@ -10,8 +10,8 @@ down:
 seed:
 	docker-compose run --rm --entrypoint "flask seed" flask
 
-flask:
-	docker-compose run --rm --entrypoint "flask $(ARGS)" flask
+flask shell:
+	docker-compose run --rm --entrypoint "/bin/bash" flask
 
 test:
 	docker-compose run --rm --no-deps --entrypoint "./scripts/tests.sh" flask
