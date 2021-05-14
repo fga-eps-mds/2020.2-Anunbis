@@ -12,6 +12,8 @@ services:
         - mysql
       ports:
         - "5000:5000"
+      env_file:
+        - ./.env.dev
 
   adminer:
       image: adminer
