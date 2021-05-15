@@ -10,8 +10,9 @@ class ProfessorDetail(Resource):
     @jwt_required()
     def get(self, name):
         """
-        This path is responsable for getting the professors by a part of its name.
-         It needs to be given the professor's part of the name
+        This path is responsable for getting the professors by its name.
+
+        It needs to be given the professor's part of the name
           and a authorization header.
         ---
         tags:
@@ -54,7 +55,8 @@ class ProfessorList(Resource):
         parameters:
         - in: body
           name: Register a professor
-          description:  It needs to be given a name, email, professor's registration,
+          description:  It needs to be given a name,
+           email, professor's registration,
             and a password to make this method work
              and register a professor in the plataform.
           schema:
@@ -103,8 +105,9 @@ class ProfessorList(Resource):
           required: true
         - in: body
           name: Modify professor's password
-          description:  It needs to be given the authorization header
-           to validate the user, and the new password to be able to modify the old one.
+          description:  It needs to be given the authorization
+           header to validate the user, and the new password
+           to be able to modify the old one.
           schema:
                 type: object
                 required:
@@ -160,7 +163,8 @@ class ProfessorIdDetail(Resource):
     def get(self, id):
         """
         This path is responsable for getting a professor by its id
-          It needs to be given the the professor's id and a uthorization header.
+        It needs to be given the the professor's
+        id and authorization header.
         ---
         tags:
         - Professor's paths

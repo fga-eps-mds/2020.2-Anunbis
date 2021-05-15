@@ -7,19 +7,7 @@ from . import config
 def minimal_app(config_class):
     app = Flask(__name__)
     app.config.from_object(config_class)
-    app.config['SWAGGER'] = {
-        "swagger": "2.0",
-        "info": {
-            "title": "Anunbis back-end",
-            "description": "Here is the Anunbis backend documentation API, where you can find about all of our methods and how they work. ",
-            "contact": {
-                "email": "anunbis.team@gmail.com",
-                "url": "http://localhost:3000/",
-            },
-            "termsOfService": "http://localhost:3000/#contact",
-            "version": "0.0.1"
-        },
-    }
+    app.config["SWAGGER"] = swagger.config_specs_dict
     return app
 
 

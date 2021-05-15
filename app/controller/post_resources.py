@@ -82,7 +82,8 @@ class PostList(Resource):
     @jwt_required()
     def get(self):
         """
-        This path is responsable for obtaining the list of posts related to the user
+        This path is responsable for obtaining the
+         list of posts related to the user
         ---
         tags:
         - Post's paths
