@@ -13,9 +13,9 @@ class Student(db.Model):
     id_course = db.Column(db.Integer, db.ForeignKey("course.id_course"), nullable=False)
     course = db.relationship("Course")
 
-    posts = db.relationship("Post")
-    post_agrees = db.relationship("Post", secondary="agree_student_post")
-    post_disagrees = db.relationship("Post", secondary="disagree_student_post")
+    posts = db.relationship("Post", viewonly=True)
+    post_agrees = db.relationship("Post", viewonly=True)
+    post_disagrees = db.relationship("Post", viewonly=True)
 
     @property
     def reg(self):
