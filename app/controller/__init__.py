@@ -1,6 +1,7 @@
-from flask import Blueprint, redirect, url_for
+from flask import Blueprint, redirect, url_for, make_response, jsonify
 from flask_restful import Api
 from ..ext import auth, cors
+from marshmallow import ValidationError
 
 
 def init_app(app):
@@ -44,3 +45,7 @@ def init_app(app):
     @app.route("/")
     def redirect_home():
         return redirect(url_for("restapi.homelist"))
+
+    @app.errorhandler(ValidationError)
+    def handle_validation_error(error):
+        return make_response(jsonify(error.messages), 400)
