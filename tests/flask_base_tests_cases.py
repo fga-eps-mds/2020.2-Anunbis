@@ -21,14 +21,14 @@ class TestFlaskBase(TestCase):
         self.app_context.pop()
 
     def create_student_token(self):
-        from tests_login import valid_student_user
+        from tests_auth import valid_student_user
 
         student_user = valid_student_user(self)
         login = self.client.post(url_for("restapi.loginlist"), json=student_user)
         return {"Authorization": "Bearer " + login.json.get("access_token")}
 
     def create_professor_token(self):
-        from tests_login import valid_professor_user
+        from tests_auth import valid_professor_user
 
         professor_user = valid_professor_user(self)
         login = self.client.post(url_for("restapi.loginlist"), json=professor_user)

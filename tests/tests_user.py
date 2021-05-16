@@ -1,6 +1,7 @@
 from flask_base_tests_cases import TestFlaskBase
 from app.model import student, user
 
+
 class TestUser(TestFlaskBase):
     def test_must_block_password_access(self):
         try:
