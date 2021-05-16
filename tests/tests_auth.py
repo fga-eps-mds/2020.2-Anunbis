@@ -204,3 +204,40 @@ class TestEmailVerifyList(TestFlaskBase):
     def test_api_must_block_no_token(self):
         response = self.get(token=None)
         self.assertEqual(response.status_code, 400)
+
+
+class TestResendMailVerify(TestFlaskBase):
+    def post(self, email):
+        return self.client.post(url_for("restapi.emailverifylist"), json=email)
+
+    def test_api_must_resend_mail(self):
+        user = valid_student_user(self)
+
+        with self.app.mail.record_messages() as outbox:
+            response = self.post({"email": user.get("email")})
+
+            self.assertEqual(response.status_code, 200)
+            self.assertEqual(len(outbox), 1)
+            self.assertEqual(outbox[0].recipients, [user.get("email")])
+
+    def test_api_must_not_resent_email_when_user_is_actived(self):
+        user = valid_student_user(self)
+        user_db = student_services.get(email=user.get("email"))
+        user_db.active_user()
+        user_db.save_changes()
+
+        response = self.post({"email": user.get("email")})
+
+        self.assertEqual(response.status_code, 203)
+        self.assertEqual(response.json.get("message"), "User's e-mail already verified")
+
+    def test_api_must_validate_email(self):
+        email = {"email": "123456789@gmail.com"}
+        response = self.post(email)
+        self.assertEqual(response.status_code, 400)
+        self.assertIsNotNone(response.json.get("email"))
+
+    def test_api_must_validate_user_not_found(self):
+        email = {"email": "190020377@aluno.unb.br"}
+        response = self.post(email)
+        self.assertEqual(response.status_code, 404)
