@@ -10,7 +10,7 @@ from . import user_services
 def auth_user(user_json):
     user_db = user_services.get(email=user_json.get("email"))
     if user_db and user_db.verify_password(user_json.get("password")):
-        if user_db.is_verified() or current_app.testing:
+        if user_db.is_verified() or current_app.config.get("MAIL_SUPPRESS_SEND"):
             return create_login(user_db)
         else:
             return {
@@ -37,7 +37,7 @@ def create_login(user_db):
 
 
 def verify_email(user_db):
-    token = create_access_token(identity=user_db, expires_delta=timedelta(hours=1))
+    token = create_access_token(identity=user_db, expires_delta=timedelta(days=1))
     send_verify_email(user_db, token)
 
 

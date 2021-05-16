@@ -1,9 +1,8 @@
 from flask_restful import Resource
 from flask import request, make_response, jsonify, redirect, current_app
 from ..schemas import user_schema
-from ..services import auth_services
+from ..services import auth_services, user_services
 from marshmallow import ValidationError
-from flask_jwt_extended import jwt_required, current_user
 
 
 class LoginList(Resource):
@@ -27,16 +26,26 @@ class EmailVerifyList(Resource):
         else:
             return redirect(current_app.config["ANUNBIS_FRONTEND_URI"])
 
-
-class TestEmail(Resource):
-    @jwt_required()
-    def get(self):
-        user = current_user
-        auth_services.verify_email(user)
-        return make_response("Recebido", 200)
+    def post(self):
+        try:
+            email = user_schema.UserSchema(only=["email"]).load(request.json)
+            user_db = user_services.get(**email)
+            if user_db:
+                if not user_db.is_verified():
+                    auth_services.verify_email(user_db)
+                    return make_response(
+                        jsonify({"message": "Email successfully sent!"}), 200
+                    )
+                else:
+                    return make_response(
+                        jsonify({"message": "User's e-mail already verified"}), 203
+                    )
+            else:
+                return make_response(jsonify({"message": "User not found!"}), 404)
+        except ValidationError as err:
+            return make_response(jsonify(err.messages), 400)
 
 
 def configure(api):
     api.add_resource(LoginList, "/login")
     api.add_resource(EmailVerifyList, "/auth/email")
-    api.add_resource(TestEmail, "/tests")
