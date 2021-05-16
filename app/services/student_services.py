@@ -1,7 +1,7 @@
 from ..model.student import Student
 from ..ext.database import db
 from sqlalchemy.exc import IntegrityError
-from . import course_services, post_services
+from . import course_services, post_services, auth_services
 from ..model.post import AgreeStudentPost, DisagreeStudentPost
 from sqlalchemy import func
 
@@ -46,15 +46,10 @@ def register_student(student):
         return validate, status_code
 
     try:
-        student_bd = Student(
-            reg_student=student.get("reg_student"),
-            name=student.get("name"),
-            id_course=student.get("id_course"),
-            email=student.get("email"),
-            password=student.get("password"),
-        )
+        student_bd = Student(**student)
         db.session.add(student_bd)
         db.session.commit()
+        auth_services.verify_email(student_bd)
         return {"message": "Student successfully registered!"}, 201
     except IntegrityError:
         return {"message": "Student already registered"}, 409
