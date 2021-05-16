@@ -1,5 +1,6 @@
 from flask_base_tests_cases import TestFlaskBase
 from flask import url_for
+from app.services import student_services, auth_services
 
 
 def valid_professor_user(self):
@@ -168,3 +169,26 @@ class TestLogin(TestFlaskBase):
         response = self.post(professor)
         self.assertEqual(response.status_code, expected_status_code)
         self.assertEqual(response.json, expected_json)
+
+
+class TestEmailVerifyList(TestFlaskBase):
+    def get(self, token):
+        return self.client.get(url_for("restapi.emailverifylist", token=token))
+
+    def test_api_must_active_user(self):
+        student = valid_student_user(self)
+        user_db = student_services.get(email=student.get("email"))
+        token = auth_services.create_email_token(user_db)
+
+        response = self.get(token)
+        self.assertEqual(response.status_code, 302)
+
+    def test_api_must_validate_token(self):
+        token = "asdc1a5a1sc6a1ca" * 5
+        response = self.get(token)
+        self.assertEqual(response.status_code, 400)
+        self.assertEqual(response.json.get("message"), "Token invalid")
+
+    def test_api_must_block_no_token(self):
+        response = self.get(token=None)
+        self.assertEqual(response.status_code, 400)
