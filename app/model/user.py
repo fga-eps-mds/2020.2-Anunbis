@@ -1,7 +1,6 @@
 from ..ext.database import db
 from passlib.hash import pbkdf2_sha256
 
-
 class User(db.Model):
     __abstract__ = True
 
@@ -21,7 +20,7 @@ class User(db.Model):
         self.__password_hash = pbkdf2_sha256.hash(password)
 
     def is_professor(self):
-        pass
+        raise NotImplementedError
 
     def is_verified(self):
         return self.__email_verified

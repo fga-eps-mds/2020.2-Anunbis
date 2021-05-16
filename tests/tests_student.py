@@ -206,13 +206,3 @@ class TestStudentDeleteList(TestFlaskBase):
         response = self.delete(self.create_student_token())
 
         self.assertEqual(response.status_code, 204)
-
-
-class TestStudentModel(TestFlaskBase):
-    def test_must_block_password_access(self):
-        try:
-            std = student.Student(password="123456789")
-            std.password
-            self.assertTrue(False)
-        except AttributeError:
-            self.assertTrue(True)
