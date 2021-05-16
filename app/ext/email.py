@@ -18,7 +18,7 @@ def send_verify_email(user_db, token):
     first_name = user_db.name.split(" ")[0]
     message = (
         f"Bem vindo, {first_name}.<br>"
-        "Para confirmar seu cadastro, voce precisa clicar no botão abaixo."
+        "Para confirmar seu cadastro, voce precisa clicar no botão abaixo. "
         "Esse procedimento é importante para sua segurança "
         "e o melhor funcionamento da comunidade."
     )
