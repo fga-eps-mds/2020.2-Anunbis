@@ -37,8 +37,12 @@ def create_login(user_db):
 
 
 def verify_email(user_db):
-    token = create_access_token(identity=user_db, expires_delta=timedelta(days=1))
+    token = create_email_token(user_db)
     send_verify_email(user_db, token)
+
+
+def create_email_token(user_db):
+    return create_access_token(identity=user_db, expires_delta=timedelta(days=1))
 
 
 def active_email_user(token_send):
