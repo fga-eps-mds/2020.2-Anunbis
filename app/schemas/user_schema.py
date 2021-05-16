@@ -13,11 +13,21 @@ class UserSchema(ma.Schema):
 
     @validates("email")
     def validate_email(self, value):
+        if value.lower().find("aluno") != -1:
+            from .student_schema import ValidateStudentEmail
+
+            ValidateStudentEmail().validate(value)
+        else:
+            from .professor_schema import ValidateProfessorEmail
+
+            ValidateProfessorEmail().validate(value)
+
+
+class ValidateEmail:
+    def validate_length(self, value):
         if len(value) > 100:
             raise ValidationError("The email must be lower than 100")
-        if value.lower().find("aluno") != -1:
-            if not match("[0-9]+@aluno.unb.br", value.lower()):
-                raise ValidationError("The email must be matricula@aluno.unb.br")
-        else:
-            if not match("[0-9]+@unb.br", value.lower()):
-                raise ValidationError("The email must be matricula@unb.br")
+
+    def validate_format(self, value, format, error_message):
+        if not match(format, value.lower()):
+            raise ValidationError(error_message)

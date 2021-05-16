@@ -114,7 +114,7 @@ class TestLogin(TestFlaskBase):
         self.assertEqual(response.status_code, 400)
         self.assertIsNotNone(response.json["email"][0])
 
-    def test_api_must_validate_aluno_email_format(self):
+    def test_api_must_validate_student_email_format(self):
         user = valid_student_user(self)
         user["email"] = "123456789@aluno.gmail.com"
 
@@ -171,10 +171,10 @@ class TestLogin(TestFlaskBase):
         self.assertEqual(response.json, expected_json)
 
     def test_invalid_format_email_and_min_password(self):
-        professor = {"email": "0123456dasd789@unb.br", "password": "123"}
+        professor = {"email": "0123456dasd789@unb.brassasa", "password": "123"}
         expected_status_code = 400
         expected_json = {
-            "email": ["The email must be matricula@unb.br"],
+            "email": ["The email must be name(matricula)@unb.br"],
             "password": ["Length must be between 8 and 100."],
         }
 
