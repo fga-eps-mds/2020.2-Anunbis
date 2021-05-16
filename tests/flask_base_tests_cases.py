@@ -1,20 +1,17 @@
 from unittest import TestCase
 from app.app import create_app
+from app import config
 from app.model import course, discipline, professor
 from flask import url_for
 
 
 class TestFlaskBase(TestCase):
     def setUp(self):  # This method run before each test
-        self.app = create_app()
+        self.app = create_app(config.TestConfig)
         self.app.testing = True
         self.app_context = self.app.test_request_context()
         self.app_context.push()
         self.client = self.app.test_client()
-        self.app.config["JWT_SECRET_KEY"] = "anunbis-test"
-        self.app.config["PRESERVE_CONTEXT_ON_EXCEPTION"] = False
-        # This create a in-memory sqlite db
-        self.app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///"
         self.app.db.create_all()
         self.__create_atribute_entities()
 

@@ -4,14 +4,14 @@ from . import controller, schemas
 from . import config
 
 
-def minimal_app():
+def minimal_app(config_class):
     app = Flask(__name__)
-    app.config.from_object(config)
+    app.config.from_object(config_class)
     return app
 
 
-def create_app():
-    app = minimal_app()
+def create_app(config_class=None):
+    app = minimal_app(config.DevConfig if config_class is None else config_class)
     database.init_app(app)
     migrate.init_app(app)
     controller.init_app(app)
