@@ -23,7 +23,7 @@ class User(db.Model):
     def is_professor(self):
         pass
 
-    def is_email_verified(self):
+    def is_verified(self):
         return self.__email_verified
 
     def active_user(self):
