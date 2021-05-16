@@ -26,15 +26,8 @@ class EmailVerifyList(Resource):
         email = user_schema.UserSchema(only=["email"]).load(request.json)
         user_db = user_services.get(**email)
         if user_db:
-            if not user_db.is_verified():
-                auth_services.verify_email(user_db)
-                return make_response(
-                    jsonify({"message": "Email successfully sent!"}), 200
-                )
-            else:
-                return make_response(
-                    jsonify({"message": "User's e-mail already verified"}), 203
-                )
+            message, status_code = auth_services.resend_verify_email(user_db)
+            return make_response(jsonify(message), status_code)
         else:
             return make_response(jsonify({"message": "User not found!"}), 404)
 

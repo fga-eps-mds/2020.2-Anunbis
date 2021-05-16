@@ -45,6 +45,14 @@ def create_email_token(user_db):
     return create_access_token(identity=user_db, expires_delta=timedelta(days=1))
 
 
+def resend_verify_email(user_db):
+    if not user_db.is_verified():
+        verify_email(user_db)
+        return {"message": "Email successfully sent!"}, 200
+    else:
+        return {"message": "User's e-mail already verified"}, 203
+
+
 def active_email_user(token_send):
     try:
         token_verified = decode_token(token_send)
