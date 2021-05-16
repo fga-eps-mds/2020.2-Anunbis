@@ -26,6 +26,3 @@ class Student(User):
             return other == self.reg_student
         else:
             return other.reg == self.reg
-
-    def save_changes(self):
-        db.session.commit()

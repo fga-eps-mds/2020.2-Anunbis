@@ -1,6 +1,7 @@
 from ..ext.database import db
 from passlib.hash import pbkdf2_sha256
 
+
 class User(db.Model):
     __abstract__ = True
 
