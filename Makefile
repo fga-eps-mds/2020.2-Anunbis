@@ -10,6 +10,9 @@ down:
 seed:
 	docker-compose run --rm --entrypoint "flask seed" flask
 
+ipdb:
+	docker-compose run --service-ports flask
+
 flask shell:
 	docker-compose run --rm --entrypoint "/bin/bash" flask
 
