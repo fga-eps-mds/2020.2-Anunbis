@@ -40,6 +40,18 @@ class TestLogin(TestFlaskBase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json["user"], student_expected)
 
+    def test_api_must_block_no_actived_user(self):
+        self.app.config["MAIL_SUPPRESS_SEND"] = False
+        user = valid_student_user(self)
+
+        with self.app.mail.record_messages():
+            response = self.post(user)
+            self.assertEqual(response.status_code, 203)
+            self.assertEqual(
+                response.json.get("message"),
+                "User's email not actived. Please, active your e-mail!",
+            )
+
     def test_api_must_validate_student_not_registered(self):
         from tests_student import valid_student
 
