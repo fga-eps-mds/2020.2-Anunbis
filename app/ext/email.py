@@ -30,9 +30,10 @@ def send_verify_email(user_db, token):
     href_button = current_app.config["ANUNBIS_BACKEND_URI"] + url_for(
         "restapi.emailverifylist", token=token
     )
-    email_html = mount_email_html(
+    email_template = EmailTemplate(
         header_text, message, footer_text, button_text, href_button
     )
+    email_html = email_template.get_html()
     send_email(
         title,
         email_html,
@@ -40,15 +41,22 @@ def send_verify_email(user_db, token):
     )
 
 
-def mount_email_html(header_text, message, footer_text, button_text, href_button):
-    with current_app.open_resource("static/email/index.html") as fp:
-        email_html = fp.read().decode("utf-8").replace("\n", "")
+class EmailTemplate:
+    def __init__(self, header_text, message, footer_text, button_text, href_button):
+        with current_app.open_resource("static/email/index.html") as fp:
+            self.email_html = fp.read().decode("utf-8").replace("\n", "")
+        self.header_text = header_text
+        self.message = message
+        self.footer_text = footer_text
+        self.button_text = button_text
+        self.href_button = href_button
 
-    return render_template_string(
-        email_html,
-        header_text=header_text,
-        main_text=message,
-        footer_text=footer_text,
-        button_text=button_text,
-        href_button=href_button,
-    )
+    def get_html(self):
+        return render_template_string(
+            self.email_html,
+            header_text=self.header_text,
+            main_text=self.message,
+            footer_text=self.footer_text,
+            button_text=self.button_text,
+            href_button=self.href_button,
+        )
