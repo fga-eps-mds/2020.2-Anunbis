@@ -19,9 +19,9 @@ def init_app(app):
 
     course_resources.configure(api)
 
-    from . import login_resources
+    from . import auth_resources
 
-    login_resources.configure(api)
+    auth_resources.configure(api)
 
     from . import post_resources
 

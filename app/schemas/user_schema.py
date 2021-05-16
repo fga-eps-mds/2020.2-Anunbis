@@ -4,7 +4,7 @@ from ..model.user import User
 from re import match
 
 
-class LoginSchema(ma.Schema):
+class UserSchema(ma.Schema):
     class Meta:
         model = User
 
