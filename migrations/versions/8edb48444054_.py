@@ -22,7 +22,6 @@ def upgrade():
     sa.Column('id_course', sa.Integer(), nullable=False),
     sa.Column('name', sa.String(length=255), nullable=False),
     sa.PrimaryKeyConstraint('id_course'),
-    sa.UniqueConstraint('name'),
     sa.UniqueConstraint('name')
     )
     op.create_table('discipline',
@@ -38,8 +37,6 @@ def upgrade():
     sa.Column('password', sa.String(length=255), nullable=True),
     sa.PrimaryKeyConstraint('id_professor'),
     sa.UniqueConstraint('email'),
-    sa.UniqueConstraint('email'),
-    sa.UniqueConstraint('reg_professor'),
     sa.UniqueConstraint('reg_professor')
     )
     op.create_table('course_discipline',
@@ -65,9 +62,7 @@ def upgrade():
     sa.ForeignKeyConstraint(['id_course'], ['course.id_course'], ),
     sa.PrimaryKeyConstraint('reg_student'),
     sa.UniqueConstraint('email'),
-    sa.UniqueConstraint('email'),
     sa.UniqueConstraint('reg_student'),
-    sa.UniqueConstraint('reg_student')
     )
     op.create_table('post',
     sa.Column('id_post', sa.Integer(), autoincrement=True, nullable=False),
