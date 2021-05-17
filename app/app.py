@@ -7,7 +7,6 @@ from . import config
 def minimal_app(config_class):
     app = Flask(__name__)
     app.config.from_object(config_class)
-    app.config["SWAGGER"] = swagger.config_specs_dict
     return app
 
 

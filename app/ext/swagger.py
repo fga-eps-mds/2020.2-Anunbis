@@ -5,18 +5,25 @@ def init_app(app):
     Swagger(app)
 
 
-config_specs_dict = {
-    "swagger": "2.0",
-    "info": {
-        "title": "Anunbis back-end",
-        "description": "Here is the Anunbis backend "
-        "documentation API, where you can find "
-        "about all of our methods and how they work. ",
-        "contact": {
-            "email": "anunbis.team@gmail.com",
-            "url": "http://localhost:3000/",
+def config_specs_dict(ANUNBIS_FRONTEND_URI, ANUNBIS_VERSION):
+    return {
+        "swagger": "2.0",
+        "info": {
+            "title": "Anunbis",
+            "description": "Here is the Anunbis backend "
+            "documentation API, where you can find "
+            "about all of our methods and how they work. ",
+            "contact": {
+                "email": "anunbis.team@gmail.com",
+                "url": ANUNBIS_FRONTEND_URI,
+            },
+            "termsOfService": ANUNBIS_FRONTEND_URI + "/#contact",
+            "version": ANUNBIS_VERSION,
         },
-        "termsOfService": "http://localhost:3000/#contact",
-        "version": "0.0.1",
-    },
-}
+        "specs": [
+            {
+                "endpoint": "anunbis",
+                "route": "/anunbis.json",
+            }
+        ],
+    }
