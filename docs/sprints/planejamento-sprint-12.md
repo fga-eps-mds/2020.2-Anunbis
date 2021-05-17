@@ -49,6 +49,6 @@ A Milestone da _Sprint_ 12 encontra-se neste [link](https://github.com/fga-eps-m
 |:--|:--:|
 | [#136](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/136) | [US18] - Professor ver avaliações sobre si mesmo|
 | [#178](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/178) | Atualizar backlog do produto |
-| [#181](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/181) | [Teste de código de qualidade estático |
+| [#181](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/181) | Teste de código de qualidade estático |
 
 
