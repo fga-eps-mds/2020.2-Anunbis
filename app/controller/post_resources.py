@@ -5,71 +5,14 @@ from ..services import post_services
 from flask_jwt_extended import current_user, jwt_required
 from ..ext.auth import student_required
 from marshmallow import ValidationError
+from flasgger import swag_from
+from ..docs import post
 
 
 class PostList(Resource):
+    @swag_from(post.post_list_post)
     @student_required()
     def post(self):
-        """
-        This path is responsable for registering a post about a professor
-        ---
-        tags:
-        - Post's paths
-        parameters:
-        - in: header
-          name: authorization
-          type: string
-          required: true
-        - in: body
-          name: Register a post from student
-          description:  It needs to be given a students' registration,
-            professor's identification, discipline code, content,
-             didactic, metod, avaliations, disponibility and
-              if it is anonymous, to be able to make this method
-                work and register a post in the plataform.
-          schema:
-                type: object
-                required:
-                    - reg_student
-                    - id_professor
-                    - discipline_code
-                    - content
-                    - didactic
-                    - metod
-                    - avaliations
-                    - disponibility
-                    - is_anonymous
-                properties:
-                    reg_student:
-                        type: integer
-                    id_professor:
-                        type: integer
-                    discipline_code:
-                        type: string
-                    content:
-                        type: string
-                    didactic:
-                        type: integer
-                    metod:
-                        type: integer
-                    avaliations:
-                        type: integer
-                    disponibility:
-                        type: integer
-                    is_anonymous:
-                        type: boolean
-        responses:
-            201:
-                description: Post successfully added
-
-            400:
-                description: Validation Error
-
-            404:
-                description: Professor or discipline not found
-
-
-        """
         ps = post_schema.PostSchema(exclude=["id_post"])
         post = ps.load(request.json)
         if post.get("reg_student") != current_user.reg_student:
@@ -157,7 +100,7 @@ class PostAgreesList(Resource):
 
 
 class PostDisagreesList(Resource):
-    
+
     @student_required()
     def post(self):
         """
@@ -196,13 +139,14 @@ class PostDisagreesList(Resource):
         student = current_user
         ps = post_schema.PostSchema(only=["id_post"])
         id = ps.load(request.json).get("id_post")
-        post, status_code=post_services.disagree_student_post(student, id)
+        post, status_code = post_services.disagree_student_post(student, id)
         if status_code == 404:
             return make_response(jsonify(post), status_code)
         else:
-            ps=post_schema.PostSchema(
+            ps = post_schema.PostSchema(
                 context={"reg_student": student.reg_student})
             return make_response(ps.jsonify(post), status_code)
+
 
 def configure(api):
     api.add_resource(PostList, "post")
