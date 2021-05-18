@@ -23,6 +23,7 @@ Data|Versão|Descrição|Autor
 18/05|1.9|Adição da organização das pastas do back-end|Thiago|
 18/05|2.0|Adição da relação do Banco de dados e do Flask|Thiago|
 18/05|2.1|Atualicação dos atributos das entidades|Thiago|
+18/05|2.2|Atualização da organização das pastas do front-end|Thiago|
 
 ## 1. <a name="1">Introdução</a>
 
@@ -72,12 +73,12 @@ Data|Versão|Descrição|Autor
 
 <p align = "justify"> &emsp;&emsp; Para este projeto, decidimos escolher a micro framework web Flask, implementada em Python para ficar responsável pelo back-end do projeto. Por ser um micro framework, o <a href="https://flask.palletsprojects.com/en/1.1.x/">Flask</a> possui apenas o mínimo possível para a API funcionar.</p>
 
-<p align = "justify"> &emsp;&emsp; Assim, se for necessário, é possível instalar pacotes extras para todo desenvolvimento da aplicação. Isso permite que um projeto implementado com o Flask só tenha o que realmente precisa, ao invés de termos inúmeras ferramentas e módulos sem nenhuma utilização no projeto. Dentre estes pacotes extras há: o <a href="https://flask-sqlalchemy.palletsprojects.com/en/2.x/">SQLAlchemy</a> para cuidar da comunicação com o banco de dados; <a href="https://flask-marshmallow.readthedocs.io/en/latest">Mashmallow</a> para cuidar da serialização; o <a href="https://flask-migrate.readthedocs.io/en/latest/" >Migrate</a>, que cuida do versionamento do banco de dados pelo Python; o <a href="https://github.com/flasgger/flasgger" >Flasgger</a> para a documentação da API; e o <a href="https://pythonhosted.org/Flask-Mail/">Flask-mail</a> para o envio de e-mails.</p>
+<p align = "justify"> &emsp;&emsp; Assim, se for necessário, é possível instalar pacotes extras para todo desenvolvimento da aplicação. Isso permite que um projeto implementado com o Flask só tenha o que realmente precisa, ao invés de termos inúmeras ferramentas e módulos sem nenhuma utilização no projeto. Dentre estes pacotes extras há: o <a href="https://flask-sqlalchemy.palletsprojects.com/en/2.x/">SQLAlchemy</a> para cuidar da comunicação com o banco de dados; <a href="https://flask-marshmallow.readthedocs.io/en/latest">Mashmallow</a> para cuidar da serialização; o <a href="https://flask-migrate.readthedocs.io/en/latest/" >Migrate</a>, que cuida do versionamento do banco de dados pelo Python; o <a href="https://github.com/flasgger/flasgger" >Flasgger</a> para a documentação da API; <a href="https://flask-jwt-extended.readthedocs.io/en/stable/">Flask Jwt Extended</a>  para a autenticação; e o <a href="https://pythonhosted.org/Flask-Mail/">Flask-mail</a> para o envio de e-mails.</p>
 
 ### 2.3 <a name="2_3">MySQL</a>
 
 <p align = "justify"> &emsp;&emsp;Para a persistência dos dados, o banco utilizado é o MySQL, pois utiliza a linguagem SQL e é <a 
-href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do mercado</a>. Além disso, pelo fato de ser relacional, será bastante útil em fazer as relações entre as entidades. No entanto, não há a necessidade de utilizar a linguagem SQL diretamente, pois o SQLAlchemy e o Flask-Migrate cuidam do trabalho de acesso aos dados e do versionamento.</p>
+href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do mercado</a>. Além disso, pelo fato de ser relacional, será bastante útil para fazer as relações entre as entidades. No entanto, não há a necessidade de utilizar a linguagem SQL diretamente, pois o SQLAlchemy e o Flask-Migrate cuidam do trabalho de acesso aos dados e do versionamento.</p>
 <p align = "justify">&emsp;&emsp;Deste modo, o SQLAlchemy e o Flask-migrate são capazes de mediar todas as tarefas necessárias, como criar tabelas, relacionamentos, realizar  consultas, adicionar e remover informações para o pleno funcionamento desse projeto.</p>
 <!--
 ### 2.4 <a name="2_4">Modelo MVC</a>
@@ -149,15 +150,18 @@ href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do m
 <div style="display:block;text-align:center"><img src="/2020.2-Anunbis/images/diagramaPacotesFrontEnd.png" alt="Diagrama de pacotes Front-End"/></div>
 
 #### 5.1.1.1 <a name="5.1.1.1">Organização das Pastas</a>
-* Assets: Possui a pasta de imagens e a pasta de constantes com arquivos de estilização globais ou recorrentes.
+* assets: Possui a pasta de imagens e a pasta de constantes com arquivos de estilização globais ou recorrentes.
 
-* Components: Onde estão pastas de componentes React. Cada pasta contém o arquivo index que define a lógica do componente, o arquivo styles com os styled components (estilização do componente), e pode conter o arquivo validations caso precise fazer validações de entrada.
+* components: Onde estão pastas de componentes React. Cada pasta contém o arquivo index que define a lógica do componente, o arquivo styles com os styled components (estilização do componente), e pode conter o arquivo validations caso precise fazer validações de entrada.
 
-* Services: Contém os arquivos de comunicação com a API e autenticação.
+* services: Contém os arquivos de comunicação com a API e autenticação.
 
-* Views: Contém as páginas da aplicação.
+* views: Contém as páginas da aplicação.
 
-* Routes: Contém os arquivos de rotas do produto.
+* routes: Contém os arquivos de rotas do produto.
+
+* tests: Contém os testes da aplicação.
+
 #### 5.1.2 <a name="5_1_1">Back-End</a>
 <div style="display:block;text-align:center"><img src="/2020.2-Anunbis/images/diagramaPacotesBackEnd.png" alt="Diagrama de pacotes Back-End"/></div>
 
