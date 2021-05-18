@@ -9,7 +9,9 @@
 ## 2. <a name="2">Fechamento da _Sprint_</a>
 ### 2.1 <a name="2.1">Relato da _Sprint_</a>
 <p align="justify">&emsp;&emsp; 
-Essa Sprint foi focada em concluir o máximo de funcionalidades possíveis pois o semestre já estava acabando, tendo em vista a chegada da release 2 que já estava se aproximando.
+Essa Sprint foi focada em concluir o máximo de funcionalidades possíveis pois o semestre já estava acabando, tendo em vista a chegada da release 2 que já estava se aproximando. Além disso, após muita discussão, entramos no consenso de que o Thiago Paiva deveria ser promovido para DevOps, devido ao seu desempenho destacado. </p>
+<p align="justify">&emsp;&emsp; 
+Então eu, Rodrigo Balbino Azevedo de Brito, munido da responsabilidade de nos guiar ao sucesso, representando todos os integrantes do grupo, declaro agora Thiago Sampaio de Paiva, como o DevOps oficial dessa equipe.
 </p>
 
 ### 2.2 <a name="2.2">Backlog da Sprint</a>
