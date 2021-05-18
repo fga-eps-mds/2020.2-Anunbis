@@ -5,9 +5,22 @@ from ..services import post_services
 from flask_jwt_extended import current_user, jwt_required
 from ..ext.auth import student_required
 from marshmallow import ValidationError
+from flasgger import swag_from
+from ..docs import post
 
 
 class PostList(Resource):
+    @swag_from(post.post_list_get)
+    @jwt_required()
+    def get(self):
+        user = current_user
+        if not user.is_professor():
+            ps = post_schema.PostSchema(many=True, context={"reg_student": user.reg})
+        else:
+            ps = post_schema.PostSchema(many=True)
+        return make_response(ps.jsonify(user.posts), 200)
+
+    @swag_from(post.post_list_post)
     @student_required()
     def post(self):
         ps = post_schema.PostSchema(exclude=["id_post"])
@@ -19,17 +32,9 @@ class PostList(Resource):
         message, status_code = post_services.register_post(post)
         return make_response(jsonify(message), status_code)
 
-    @jwt_required()
-    def get(self):
-        user = current_user
-        if not user.is_professor():
-            ps = post_schema.PostSchema(many=True, context={"reg_student": user.reg})
-        else:
-            ps = post_schema.PostSchema(many=True)
-        return make_response(ps.jsonify(user.posts), 200)
-
 
 class PostAgreesList(Resource):
+    @swag_from(post.post_list_postAgree)
     @student_required()
     def post(self):
         student = current_user
@@ -44,6 +49,7 @@ class PostAgreesList(Resource):
 
 
 class PostDisagreesList(Resource):
+    @swag_from(post.post_list_postDisagree)
     @student_required()
     def post(self):
         student = current_user
@@ -58,6 +64,6 @@ class PostDisagreesList(Resource):
 
 
 def configure(api):
-    api.add_resource(PostList, "/post")
-    api.add_resource(PostAgreesList, "/post/agree")
-    api.add_resource(PostDisagreesList, "/post/disagree")
+    api.add_resource(PostList, "post")
+    api.add_resource(PostAgreesList, "post/agree")
+    api.add_resource(PostDisagreesList, "post/disagree")
