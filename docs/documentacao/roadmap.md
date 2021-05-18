@@ -149,4 +149,16 @@
 | [#184](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/184) | Criação da Tela Home no Front-End  | 
 | [#185](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/185) | Adicionar Burndown de riscos  |
 
-
+### Sprint 12
+| ID | Issue |
+|:--:| ------- |
+| [#141](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/141) | [US23] - Professor alterar senha  | 
+| [#143](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/143) | [US25] - Professor excluir a própria conta  |
+| [#178](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/178) | Atualizar Backlog do Produto | 
+| [#189](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/189) | Atualizar Critérios de Avaliações | 
+| [#193](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/193) | Documentar a Sprint 11 | 
+| [#196](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/196) | Atualizar Roadmap  |
+| [#200](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/200) | Deploy contínuo front e back  | 
+| [#201](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/201) | [BUG] - Tela autenticada e pesquisa   | 
+| [#209](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/209) | [BUG] - tela inicial do professor  | 
+| [#210](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/210) | [BUG] - Matricula do professor excede o limite do inteiro  |
