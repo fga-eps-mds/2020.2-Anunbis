@@ -10,6 +10,17 @@ from ..docs import post
 
 
 class PostList(Resource):
+    @swag_from(post.post_list_get)
+    @jwt_required()
+    def get(self):
+        user = current_user
+        if not user.is_professor():
+            ps = post_schema.PostSchema(
+                many=True, context={"reg_student": user.reg})
+        else:
+            ps = post_schema.PostSchema(many=True)
+        return make_response(ps.jsonify(user.posts), 200)
+
     @swag_from(post.post_list_post)
     @student_required()
     def post(self):
@@ -22,71 +33,11 @@ class PostList(Resource):
         message, status_code = post_services.register_post(post)
         return make_response(jsonify(message), status_code)
 
-    @jwt_required()
-    def get(self):
-        """
-        This path is responsable for obtaining the
-         list of posts related to the user
-        ---
-        tags:
-        - Post's paths
-        parameters:
-        - in: header
-          name: authorization
-          type: string
-          required: true
-
-        responses:
-            200:
-                description: It will return all the posts related to the user,
-                  if there's any
-
-        """
-        user = current_user
-        if not user.is_professor():
-            ps = post_schema.PostSchema(
-                many=True, context={"reg_student": user.reg})
-        else:
-            ps = post_schema.PostSchema(many=True)
-        return make_response(ps.jsonify(user.posts), 200)
-
 
 class PostAgreesList(Resource):
+    @swag_from(post.post_list_postAgree)
     @student_required()
     def post(self):
-        """
-        This path is responsable for registering an agree in an existed post
-        ---
-        tags:
-        - Post's paths
-        parameters:
-        - in: header
-          name: authorization
-          type: string
-          required: true
-        - in: body
-          name: Register an agree in a post that already exists
-          description:  It only needs the post's id to be able to
-           make this method work and agree in the post of
-             another student in the plataform.
-          schema:
-                type: object
-                required:
-                    - id_post
-                properties:
-                    id_post:
-                        type: integer
-        responses:
-            200:
-                description: The post agreed will be returned
-
-            400:
-                description: Validation Error
-
-            404:
-                description: Post not found
-
-        """
         student = current_user
         ps = post_schema.PostSchema(only=["id_post"])
         id = ps.load(request.json).get("id_post")
@@ -101,41 +52,9 @@ class PostAgreesList(Resource):
 
 class PostDisagreesList(Resource):
 
+    @swag_from(post.post_list_postDisagree)
     @student_required()
     def post(self):
-        """
-        This path is responsable for registering a disagree in an existed post
-        ---
-        tags:
-        - Post's paths
-        parameters:
-        - in: header
-          name: authorization
-          type: string
-          required: true
-        - in: body
-          name: Register a disagree in a post that already exists
-          description:  It only needs the post's id to be able to
-           make this method work and disagree in the post
-            of another student in the plataform.
-          schema:
-                type: object
-                required:
-                    - id_post
-                properties:
-                    id_post:
-                        type: integer
-        responses:
-            200:
-                description: The post disagreed will be returned
-
-            400:
-                description: Validation Error
-
-            404:
-                description: Post not found
-
-        """
         student = current_user
         ps = post_schema.PostSchema(only=["id_post"])
         id = ps.load(request.json).get("id_post")
