@@ -1,20 +1,13 @@
-<div align="center"><img src="/2020.2-Anunbis/images/logo.png" height="75px" width="350px"></img></div>
-<h1><div align="center"><b style="font-family: Arial;"><span style="color:#1D2935">AN</span><span style="color:#FFD700">UNB</span><span style="color:#1D2935">IS</span></b></div></h1>
 
-# <h2><div align="center"><b>Avaliações de professores da Universidade de Brasília</b></div><h2>
----
+## 1. <a name="1">Visão Geral</a>
 
+| Data de Início | 04/05/2021 |
+|:--|:--:|
+| **Data de Término** | **11/05/2021** |
+| **Duração** | **7 dias** |
 
-## Sobre o projeto
-<p align="justify"> &emsp;&emsp; Um dos fatores que definem o sucesso acadêmico de um estudante da Universidade de Brasília são seus professores, pois, dependendo deles, o aluno terá uma experiência diferente em relação à disciplina. Alguns professores cobram mais e outros menos, de fato o aprendizado de um estudante não depende apenas dele mesmo, e sim de um conjunto de fatores incluindo o seu professor.</p>
+## 2. <a name="2">Papéis</a>
 
-<p align = "justify"> &emsp;&emsp; Pensando em melhorar a experiência dos alunos com seus professores, o Anunbis permite que estudantes da UnB avaliem os professores com que já estudaram, disponibilizando esse feedback aos outros discentes e também aos docentes. Dessa forma, tanto os professores quanto os alunos podem tomar as melhores decisões em relação ao seu futuro acadêmico. </p>
-
-## Links
-* [Repositório Anunbis - front-end](https://github.com/fga-eps-mds/2020.2-Anunbis-Frontend)
-* [Repositório Anunbis - back-end](https://github.com/fga-eps-mds/2020.2-Anunbis)
-
-## Equipe
 <table>
     <tr>
      <!-- Eduardo   -->
@@ -33,3 +26,29 @@
         <td align="center"><a href=https://github.com/victorhugo21><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/54643372?s=400&u=662c17b015a365ca35b5b4ea519c0fd64fd00184&v=4" width="100px;" alt=""/><br /><sub><b>Victor Hugo</b><br><b>Desenvolvedor</sub></a><br/></td>
         </tr>
     </table>
+    
+## 3. <a name="3">Objetivo da _Sprint 12_</a>
+
+<p align="justify">Esta <i>Sprint</i> tem como objetivo:</p>
+
+- Refatorar critérios de avaliação 
+- Documentar Sprint 11 
+- Atualizar roadmap do projeto 
+- Edição de perfil do professor 
+- Configurar deploy continuo no heroku (Front e Back)
+
+
+
+## 4. <a name="4">Sprint Backlog</a>
+
+A Milestone da _Sprint_ 12 encontra-se neste [link](https://github.com/fga-eps-mds/2020.2-Anunbis/milestone/13)
+
+## 5. <a name="5">Débitos Acumulados</a>
+
+| Issue | Descrição |
+|:--|:--:|
+| [#136](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/136) | [US18] - Professor ver avaliações sobre si mesmo|
+| [#178](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/178) | Atualizar backlog do produto |
+| [#181](https://github.com/fga-eps-mds/2020.2-Anunbis/issues/181) | Teste de código de qualidade estático |
+
+
