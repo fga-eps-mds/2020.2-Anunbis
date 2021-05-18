@@ -26,7 +26,4 @@ class Discipline(db.Model):
         db.String(80), nullable=False, default="", primary_key=True
     )
     name = db.Column(db.String(255), nullable=False, default="")
-    professors = db.relationship(
-        "Professor", secondary="professor_discipline", lazy="dynamic"
-    )
     courses = db.relationship("Course", secondary="course_discipline", lazy="dynamic")

@@ -1,7 +1,7 @@
 from . import ma, post_schema, discipline_schema
 from marshmallow import fields, validates, validate, ValidationError
-from re import match
 from ..model.professor import Professor
+from .user_schema import ValidateEmail
 
 
 class ProfessorSchema(ma.SQLAlchemySchema):
@@ -28,13 +28,18 @@ class ProfessorSchema(ma.SQLAlchemySchema):
 
     @validates("email")
     def validate_email(self, value):
-        if len(value) > 100:
-            raise ValidationError("The email must be lower than 100")
-        elif not match("[a-z . 0-9]+@unb.br", value.lower()):
-            raise ValidationError("The email must be name(matricula)@unb.br")
+        ValidateProfessorEmail().validate(value)
 
     @validates("name")
     def validate_name(self, value):
         for char in value:
             if not char.isalpha() and char != " ":
                 raise ValidationError("Name should have just letters!")
+
+
+class ValidateProfessorEmail(ValidateEmail):
+    def validate(self, value):
+        self.validate_length(value)
+        self.validate_format(
+            value, "[a-z.0-9]+@unb.br$", "The email must be name(matricula)@unb.br"
+        )

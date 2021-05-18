@@ -1,10 +1,10 @@
 import json
-import os
 from .database import db
 from ..model import course, discipline, professor
 from sqlalchemy.exc import IntegrityError, InvalidRequestError
 import click
 from flask.cli import with_appcontext
+from flask import current_app
 
 
 def init_app(app):
@@ -68,13 +68,6 @@ def add_seeds(obj_list, modelFactory):
 
 
 def read_json(name):
-    file = open(absolute_path(name), "r")
-    data = json.loads(file.read())
-    file.close()
+    with current_app.open_resource(f"static/seeds/{name}.json") as fp:
+        data = json.loads(fp.read())
     return data
-
-
-def absolute_path(json_name):
-    this_path = os.path.dirname(__file__)
-    file_path = f"static/{json_name}.json"
-    return os.path.join(this_path, file_path)

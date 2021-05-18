@@ -2,6 +2,7 @@ from ..model.professor import Professor
 from ..ext.database import db
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy import func
+from . import auth_services
 
 
 def get(**kwargs):
@@ -38,6 +39,7 @@ def __modify_professor(professor_bd, professor):
         professor_bd.reg_professor = professor.get("reg_professor")
         professor_bd.password = professor.get("password")
         db.session.commit()
+        auth_services.verify_email(professor_bd)
         return {"message": "Professor registered sucessfully"}, 201
     except IntegrityError:
         return {"message": "Professor already registered"}, 409
@@ -54,6 +56,7 @@ def __build_professor(professor):
 
         db.session.add(professor_bd)
         db.session.commit()
+        auth_services.verify_email(professor_bd)
         return {"message": "Professor sucessfully registered!"}, 201
     except IntegrityError:
         return {"message": "Professor already registered"}, 409

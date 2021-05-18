@@ -1,6 +1,5 @@
 from flask_base_tests_cases import TestFlaskBase
 from flask import url_for
-from app.model import student
 from app.services import student_services, post_services
 from tests_post import register_post, register_post_agree, register_post_disagree
 from tests_report import register_report
@@ -26,6 +25,15 @@ class TestStudentPostList(TestFlaskBase):
 
         response = self.post(student)
         self.assertEqual(response.status_code, 201)
+
+    def test_api_must_send_email_when_register(self):
+        with self.app.mail.record_messages() as outbox:
+            student = valid_student(self)
+
+            response = self.post(student)
+            self.assertEqual(response.status_code, 201)
+            self.assertEqual(len(outbox), 1)
+            self.assertEqual(outbox[0].recipients, [student.get("email")])
 
     def test_must_validate_with_no_attributes(self):
         student = {}
@@ -206,13 +214,3 @@ class TestStudentDeleteList(TestFlaskBase):
         response = self.delete(self.create_student_token())
 
         self.assertEqual(response.status_code, 204)
-
-
-class TestStudentModel(TestFlaskBase):
-    def test_must_block_password_access(self):
-        try:
-            std = student.Student(password="123456789")
-            std.password
-            self.assertTrue(False)
-        except AttributeError:
-            self.assertTrue(True)

@@ -1,5 +1,6 @@
 from flask_base_tests_cases import TestFlaskBase
 from flask import url_for
+from app.services import student_services, auth_services
 
 
 def valid_professor_user(self):
@@ -38,6 +39,18 @@ class TestLogin(TestFlaskBase):
         }
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json["user"], student_expected)
+
+    def test_api_must_block_no_actived_user(self):
+        self.app.config["MAIL_SUPPRESS_SEND"] = False
+        user = valid_student_user(self)
+
+        with self.app.mail.record_messages():
+            response = self.post(user)
+            self.assertEqual(response.status_code, 203)
+            self.assertEqual(
+                response.json.get("message"),
+                "User's email not actived. Please, active your e-mail!",
+            )
 
     def test_api_must_validate_student_not_registered(self):
         from tests_student import valid_student
@@ -101,7 +114,7 @@ class TestLogin(TestFlaskBase):
         self.assertEqual(response.status_code, 400)
         self.assertIsNotNone(response.json["email"][0])
 
-    def test_api_must_validate_aluno_email_format(self):
+    def test_api_must_validate_student_email_format(self):
         user = valid_student_user(self)
         user["email"] = "123456789@aluno.gmail.com"
 
@@ -158,13 +171,73 @@ class TestLogin(TestFlaskBase):
         self.assertEqual(response.json, expected_json)
 
     def test_invalid_format_email_and_min_password(self):
-        professor = {"email": "0123456dasd789@unb.br", "password": "123"}
+        professor = {"email": "0123456dasd789@unb.brassasa", "password": "123"}
         expected_status_code = 400
         expected_json = {
-            "email": ["The email must be matricula@unb.br"],
+            "email": ["The email must be name(matricula)@unb.br"],
             "password": ["Length must be between 8 and 100."],
         }
 
         response = self.post(professor)
         self.assertEqual(response.status_code, expected_status_code)
         self.assertEqual(response.json, expected_json)
+
+
+class TestEmailVerifyList(TestFlaskBase):
+    def get(self, token):
+        return self.client.get(url_for("restapi.emailverifylist", token=token))
+
+    def test_api_must_active_user(self):
+        student = valid_student_user(self)
+        user_db = student_services.get(email=student.get("email"))
+        token = auth_services.create_email_token(user_db)
+
+        response = self.get(token)
+        self.assertEqual(response.status_code, 302)
+
+    def test_api_must_validate_token(self):
+        token = "asdc1a5a1sc6a1ca" * 5
+        response = self.get(token)
+        self.assertEqual(response.status_code, 400)
+        self.assertEqual(response.json.get("message"), "Token invalid")
+
+    def test_api_must_block_no_token(self):
+        response = self.get(token=None)
+        self.assertEqual(response.status_code, 400)
+
+
+class TestResendMailVerify(TestFlaskBase):
+    def post(self, email):
+        return self.client.post(url_for("restapi.emailverifylist"), json=email)
+
+    def test_api_must_resend_mail(self):
+        user = valid_student_user(self)
+
+        with self.app.mail.record_messages() as outbox:
+            response = self.post({"email": user.get("email")})
+
+            self.assertEqual(response.status_code, 200)
+            self.assertEqual(len(outbox), 1)
+            self.assertEqual(outbox[0].recipients, [user.get("email")])
+
+    def test_api_must_not_resent_email_when_user_is_actived(self):
+        user = valid_student_user(self)
+        user_db = student_services.get(email=user.get("email"))
+        user_db.active_user()
+        user_db.save_changes()
+
+        response = self.post({"email": user.get("email")})
+
+        self.assertEqual(response.status_code, 203)
+        self.assertEqual(response.json.get("message"), "User's e-mail already verified")
+
+    def test_api_must_validate_email(self):
+        email = {"email": "123456789@gmail.com"}
+        response = self.post(email)
+        self.assertEqual(response.status_code, 400)
+        self.assertIsNotNone(response.json.get("email"))
+
+    def test_api_must_validate_user_not_found(self):
+        email = {"email": "190020377@aluno.unb.br"}
+        response = self.post(email)
+        self.assertEqual(response.status_code, 404)
