@@ -30,8 +30,8 @@ class ProfessorList(Resource):
         message, status = professor_services.register_professor(professor)
         return make_response(jsonify(message), status)
 
-    @professor_required()
     @swag_from(professor.professor_put)
+    @professor_required()
     def put(self):
         ps = ProfessorSchema(only=["password"])
         professor_db = current_user

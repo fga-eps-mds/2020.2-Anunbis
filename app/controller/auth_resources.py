@@ -2,12 +2,12 @@ from flask_restful import Resource
 from flask import request, make_response, jsonify, redirect, current_app
 from ..schemas import user_schema
 from ..services import auth_services, user_services
-from ..docs.login import login_list_post
+from ..docs import auth
 from flasgger import swag_from
 
 
 class LoginList(Resource):
-    @swag_from(login_list_post)
+    @swag_from(auth.login_list_post)
     def post(self):
         ls = user_schema.UserSchema()
         user = ls.load(request.json)
@@ -16,6 +16,7 @@ class LoginList(Resource):
 
 
 class EmailVerifyList(Resource):
+    @swag_from(auth.email_verify_get)
     def get(self):
         token_sended = request.args.get("token")
         message = auth_services.active_email_user(token_sended)
@@ -25,6 +26,7 @@ class EmailVerifyList(Resource):
         else:
             return redirect(current_app.config["ANUNBIS_FRONTEND_URI"])
 
+    @swag_from(auth.email_verify_post)
     def post(self):
         email = user_schema.UserSchema(only=["email"]).load(request.json)
         user_db = user_services.get(**email)
@@ -36,5 +38,5 @@ class EmailVerifyList(Resource):
 
 
 def configure(api):
-    api.add_resource(LoginList, "/login")
-    api.add_resource(EmailVerifyList, "/auth/email")
+    api.add_resource(LoginList, "login")
+    api.add_resource(EmailVerifyList, "auth/email")
