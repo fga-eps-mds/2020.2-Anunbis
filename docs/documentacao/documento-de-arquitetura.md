@@ -21,6 +21,8 @@ Data|Versão|Descrição|Autor
 18/05|1.7|Adição do Flask-Migrate e Flask-Swagger |Thiago|
 18/05|1.8|Atualização do Diagrama de Pacotes |Thiago|
 18/05|1.9|Adição da organização das pastas do back-end|Thiago|
+18/05|2.0|Adição da relação do Banco de dados e do Flask|Thiago|
+18/05|2.1|Atualicação dos atributos das entidades|Thiago|
 ## 1. <a name="1">Introdução</a>
 
 ### 1.1 <a name="1_1">Finalidade</a>
@@ -74,20 +76,18 @@ Data|Versão|Descrição|Autor
 ### 2.3 <a name="2_3">MySQL</a>
 
 <p align = "justify"> &emsp;&emsp;Para a persistência dos dados, o banco utilizado é o MySQL, pois utiliza a linguagem SQL e é <a 
-href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do mercado</a>. Além disso, pelo fato de ser relacional, será bastante útil em fazer as relações entre as entidades.</p>
-<!-- No entanto, não há a necessidade de utilizar a linguagem SQL diretamente, pois o SQLAlchemy juntamente com o micro framework Flask realizam esse trabalho. -->
-
-<!-- <p align = "justify">&emsp;&emsp;Sendo assim, o SQLAlchemy é capaz de mediar todas as tarefas necessárias, como por exemplo, criar tabelas, relacionamentos, realizar  consultas, adicionar e remover informações, para o pleno funcionamento desse projeto.</p> -->
+href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do mercado</a>. Além disso, pelo fato de ser relacional, será bastante útil em fazer as relações entre as entidades. No entanto, não há a necessidade de utilizar a linguagem SQL diretamente, pois o SQLAlchemy e o Flask-Migrate cuidam do trabalho de acesso aos dados e do versionamento.</p>
+<p align = "justify">&emsp;&emsp;Deste modo, o SQLAlchemy e o Flask-migrate são capazes de mediar todas as tarefas necessárias, como criar tabelas, relacionamentos, realizar  consultas, adicionar e remover informações para o pleno funcionamento desse projeto.</p>
 <!--
 ### 2.4 <a name="2_4">Modelo MVC</a>
 <p align="justify">&emsp;&emsp;É um modelo para a organização do software do projeto, sendo ele um padrão de arquitetura de software que contribui para melhorar a performance do programa, tornando-o mais produtivo. Essa arquitetura é baseada na separação do código entre Modelo, controle e visão. Sendo assim, esse modelo é utilizado no back-end da aplicação. </p>
-
+<--
 <p align="justify">&emsp;&emsp; O pacote ‘modelo’ é responsável por gerenciar os dados, determinando suas funções, lógicas e o padrão de organização que será apresentado ao banco de dados. </p>
 <p align="justify">&emsp;&emsp;O pacote ‘controle’ é responsável por ser o intermediador das requisições realizadas pelo pacote ‘visão’ e o ‘modelo’, processando os dados e repassando para seus respectivos destinos.</p>
 <p align="justify">&emsp;&emsp;O pacote ‘Visão’ apresenta as informações ao usuário, sendo o local por onde o usuário irá interagir. Nessa camada é onde interações com o usuário são elaboradas, são capturadas, validadas e disponibilizadas. Tudo isso por meio do JSON.</p>
-
+<--
 <p align="justify">&emsp;&emsp;Essa arquitetura gera inúmeros benefícios ao projeto, a camada de controle, por exemplo, serve como um filtro de segurança, pois impede que informações incorretas cheguem até a camada modelo. Contribui com a organização, pois possui fácil leitura e eventuais erros são mais fáceis de serem localizados. Além disso, essa arquitetura de camadas permite que vários programadores trabalhem ao mesmo tempo em diferentes camadas, contribuindo para o desenvolvimento do projeto.</p>
-
+<--
 <div style="display:block;text-align:center"><a style="text-align:center" href="https://edisciplinas.usp.br/pluginfile.php/4632609/mod_resource/content/1/5%20Arquitetura%20MVC.pdf"><img src="/2020.2-Anunbis/images/arquiteturaMVCBackEnd.png" alt="representação da arquitetura MVC no back-end"></a></div>
 -->
 
@@ -187,8 +187,8 @@ href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do m
 
 #### 6.1.2 <a name="6_1_2">Atributos</a>
 
-* Um **Estudante**, para que possa ser cadastrado, tem uma **matrícula**, **nome** , **curso**, **email** e uma **senha**.
-* Um **Professor** tem uma **matrícula**, **identificação**, **nome**, **email** e uma **senha**.
+* Um **Estudante**, para que possa ser cadastrado, tem uma **matrícula**, **nome** , **curso**, **email**, **senha** e um booleano que guarda se o **e-mail foi confirmado**.
+* Um **Professor** tem uma **matrícula**, **identificação**, **nome**, **email**, **senha** e um booleano que guarda se o **e-mail foi confirmado**.
 * Um **Curso** tem um **nome**.
 * Uma **Disciplina** tem um **nome** e um **código**.
 * Uma **Avaliação**, para ser cadastrada, tem uma **identificação**, **conteúdo**, **data de postagem**, se é **anônima** ou não e uma **nota** sobre o professor.
