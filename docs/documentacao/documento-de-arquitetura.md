@@ -23,6 +23,7 @@ Data|Versão|Descrição|Autor
 18/05|1.9|Adição da organização das pastas do back-end|Thiago|
 18/05|2.0|Adição da relação do Banco de dados e do Flask|Thiago|
 18/05|2.1|Atualicação dos atributos das entidades|Thiago|
+
 ## 1. <a name="1">Introdução</a>
 
 ### 1.1 <a name="1_1">Finalidade</a>
@@ -116,7 +117,7 @@ href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do m
 ### 4.3 <a name="4_3">Descrição dos Casos de Uso</a>
 |Caso de Uso|Descrição|
 |:-|:-|
-|US01 - Pontuar Professor| Dar uma nota ao professor avaliado. |
+|US01 - Pontuar Professor| Dar uma nota ao professor avaliado.|
 |US02 - Fazer Comentário| Dar um feedback de determinado docente.|
 |US03 - Avaliar outros Comentários| Concordar ou Discordar dos feedbacks de um professor.|
 |US04 - Avaliar Professor| Fazer um feedback geral de um docente.|
@@ -191,7 +192,7 @@ href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do m
 * Um **Professor** tem uma **matrícula**, **identificação**, **nome**, **email**, **senha** e um booleano que guarda se o **e-mail foi confirmado**.
 * Um **Curso** tem um **nome**.
 * Uma **Disciplina** tem um **nome** e um **código**.
-* Uma **Avaliação**, para ser cadastrada, tem uma **identificação**, **conteúdo**, **data de postagem**, se é **anônima** ou não e uma **nota** sobre o professor.
+* Uma **Avaliação**, para ser cadastrada, tem uma **identificação**, **conteúdo**, **data de postagem**, se é **anônima** ou não e os **feedbacks** sobre o professor.
 * Uma **Denúncia** tem uma **identificação**, **conteúdo** e um **tipo**, que pode ser uma denúncia grave, incoerente, ofensiva e outras.
 
 #### 6.1.3 <a name="6_1_3">Relacionamentos</a>
