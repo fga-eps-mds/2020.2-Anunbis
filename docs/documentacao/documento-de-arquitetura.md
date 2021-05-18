@@ -19,7 +19,7 @@ Data|Versão|Descrição|Autor
 16/04|1.5|Adição do detalhamento das pastas do Back-End|Thiago|
 18/04|1.6|Revisão da visão lógica | Rafael e Thiago|
 18/05|1.7|Adição do Flask-Migrate e Flask-Swagger |Thiago|
-
+18/05|1.8|Atualização do Diagrama de Pacotes |Thiago|
 ## 1. <a name="1">Introdução</a>
 
 ### 1.1 <a name="1_1">Finalidade</a>
@@ -68,7 +68,7 @@ Data|Versão|Descrição|Autor
 
 <p align = "justify"> &emsp;&emsp; Para este projeto, decidimos escolher a micro framework web Flask, implementada em Python para ficar responsável pelo back-end do projeto. Por ser um micro framework, o <a href="https://flask.palletsprojects.com/en/1.1.x/">Flask</a> possui apenas o mínimo possível para a API funcionar.</p>
 
-<p align = "justify"> &emsp;&emsp; Assim, se for necessário, é possível instalar pacotes extras para todo desenvolvimento da aplicação. Isso permite que um projeto implementado com o Flask só tenha o que realmente precisa, ao invés de termos inúmeras ferramentas e módulos sem nenhuma utilização no projeto. Dentre estes pacotes extras há: o <a href="https://flask-sqlalchemy.palletsprojects.com/en/2.x/">SQLAlchemy</a> para cuidar da comunicação com o banco de dados; <a href="https://flask-marshmallow.readthedocs.io/en/latest/">Mashmallow</a> para cuidar da serialização; o <a href="https://flask-migrate.readthedocs.io/en/latest/" >Migrate</a>, que cuida do versionamento do banco de dados pelo Python; o <a href="https://github.com/flasgger/flasgger" >Flasgger</a> para a documentação da API; e o <a href="https://pythonhosted.org/Flask-Mail/">Flask-mail</a> para o envio de e-mails.</p>
+<p align = "justify"> &emsp;&emsp; Assim, se for necessário, é possível instalar pacotes extras para todo desenvolvimento da aplicação. Isso permite que um projeto implementado com o Flask só tenha o que realmente precisa, ao invés de termos inúmeras ferramentas e módulos sem nenhuma utilização no projeto. Dentre estes pacotes extras há: o <a href="https://flask-sqlalchemy.palletsprojects.com/en/2.x/">SQLAlchemy</a> para cuidar da comunicação com o banco de dados; <a href="https://flask-marshmallow.readthedocs.io/en/latest">Mashmallow</a> para cuidar da serialização; o <a href="https://flask-migrate.readthedocs.io/en/latest/" >Migrate</a>, que cuida do versionamento do banco de dados pelo Python; o <a href="https://github.com/flasgger/flasgger" >Flasgger</a> para a documentação da API; e o <a href="https://pythonhosted.org/Flask-Mail/">Flask-mail</a> para o envio de e-mails.</p>
 
 ### 2.3 <a name="2_3">MySQL</a>
 
@@ -159,13 +159,14 @@ href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do m
 #### 5.1.2 <a name="5_1_1">Back-End</a>
 <div style="display:block;text-align:center"><img src="/2020.2-Anunbis/images/diagramaPacotesBackEnd.png" alt="Diagrama de pacotes Back-End"/></div>
 
-#### 5.1.2.1 <a name="5.1.2.1">Organização das Pastas</a>
-* database: Contem os scrips SQL do banco de dados.
+#### 5.1.2.1 <a name="5.1.2.1">Organização dos pacotes</a>
 * controller: Contém as rotas da api.
-* schemas: Contém os arquivos que cuidam da lógica de serialização, deserelização e validação dos JSON que vão entrar e sair.
+* schemas: Contém os arquivos que cuidam da lógica de serialização, deserelização e validação dos JSON que vão entrar e sair pela API.
 * model: Contém os arquivos que representam as entidades do banco de dados.
 * services: Contém os arquivos que cuidam da lógica de negócio e é a ponte que conecta o controller com o model.
-* ext: Contém os arquivos de bibliotecas externas da aplicação. Por exemplo, o conector com o banco de dados e autenticação.
+* ext: Contém os arquivos de bibliotecas externas da aplicação. Por exemplo, o conector com o banco de dados, a autenticação e os e-mails.
+* docs: Contém os arquivos do Swagger que documentam cada rota da API.
+* static: Contém os arquivos estáticos, como os templates de e-mail e os dados dos cursos, disciplinas e professores que populam o banco de dados.
 ## 6. <a name="6">Visão da Implementação</a>
 
 ### 6.1 <a name="6_1">Modelagem dos dados</a>
