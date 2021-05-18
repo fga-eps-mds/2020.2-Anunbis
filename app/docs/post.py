@@ -3,8 +3,7 @@ from . import authorization_header
 tags = ["Post's paths"]
 
 post_list_post = {
-    "summary": "This path is responsable for "
-    "registering a post about a professor",
+    "summary": "This path is responsable for " "registering a post about a professor",
     "description": "It requires the authorization header "
     "and the post's informations",
     "tags": tags,

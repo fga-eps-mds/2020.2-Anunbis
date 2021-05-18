@@ -1,5 +1,4 @@
 from flask_base_tests_cases import TestFlaskBase
-from flask import url_for
 
 
 class TestHomeList(TestFlaskBase):

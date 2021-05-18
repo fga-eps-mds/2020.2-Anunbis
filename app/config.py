@@ -11,17 +11,16 @@ class BaseConfig:
     ANUNBIS_BACKEND_URI = os.getenv("ANUNBIS_BACKEND_URI", "localhost:5000")
     ANUNBIS_VERSION = os.getenv("ANUNBIS_VERSION", "0.1.0")
     SWAGGER = swagger.config_specs_dict(
-        ANUNBIS_FRONTEND_URI=ANUNBIS_FRONTEND_URI, ANUNBIS_VERSION=ANUNBIS_VERSION)
+        ANUNBIS_FRONTEND_URI=ANUNBIS_FRONTEND_URI, ANUNBIS_VERSION=ANUNBIS_VERSION
+    )
 
 
 class DevConfig(BaseConfig):
     DEBUG = os.getenv("FLASK_DEBUG") == "1"
     SQLALCHEMY_DATABASE_URI = os.getenv("FLASK_SQLALCHEMY_DATABASE_URI")
-    SQLALCHEMY_TRACK_MODIFICATIONS = os.getenv(
-        "SQLALCHEMY_TRACK_MODIFICATIONS", True)
+    SQLALCHEMY_TRACK_MODIFICATIONS = os.getenv("SQLALCHEMY_TRACK_MODIFICATIONS", True)
     SECRET_KEY = os.getenv("FLASK_SECRET_KEY")
-    JWT_ACCESS_TOKEN_EXPIRES = timedelta(
-        hours=int(os.getenv("TOKEN_EXPIRES_HOURS", 1)))
+    JWT_ACCESS_TOKEN_EXPIRES = timedelta(hours=int(os.getenv("TOKEN_EXPIRES_HOURS", 1)))
     MAIL_SERVER = os.getenv("MAIL_SERVER")
     MAIL_PORT = int(os.getenv("MAIL_PORT", 465))
     MAIL_USE_SSL = os.getenv("MAIL_USE_SSL") == "1"

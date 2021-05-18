@@ -22,8 +22,7 @@ class StudentList(Resource):
         ss = StudentSchema(only=["password"])
         student_db = current_user
         student_new = ss.load(request.json)
-        message, status = student_services.modify_student(
-            student_db, student_new)
+        message, status = student_services.modify_student(student_db, student_new)
         return make_response(jsonify(message), status)
 
     @student_required()

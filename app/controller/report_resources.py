@@ -17,5 +17,6 @@ class ReportList(Resource):
         message, status_code = report_services.register_report(report, user)
         return make_response(jsonify(message), status_code)
 
+
 def configure(api):
     api.add_resource(ReportList, "report")

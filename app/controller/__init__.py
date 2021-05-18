@@ -1,5 +1,4 @@
 from marshmallow import ValidationError
-from ..ext import auth, cors
 from flask import Blueprint, redirect, url_for, make_response, jsonify
 from flask_restful import Api
 
@@ -35,10 +34,10 @@ def init_app(app):
 
     app.register_blueprint(api_bp)
 
-    @ app.route("/")
+    @app.route("/")
     def redirect_home():
         return redirect(url_for("flasgger.apidocs"))
 
-    @ app.errorhandler(ValidationError)
+    @app.errorhandler(ValidationError)
     def handle_validation_error(error):
         return make_response(jsonify(error.messages), 400)

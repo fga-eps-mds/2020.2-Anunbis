@@ -11,8 +11,7 @@ def minimal_app(config_class):
 
 
 def create_app(config_class=None):
-    app = minimal_app(
-        config.DevConfig if config_class is None else config_class)
+    app = minimal_app(config.DevConfig if config_class is None else config_class)
     database.init_app(app)
     migrate.init_app(app)
     controller.init_app(app)

@@ -3,8 +3,7 @@ from . import authorization_header
 tags = ["Professor's paths"]
 
 professor_get_by_name = {
-    "summary": "This path is responsable for getting "
-    "the professors by its name.",
+    "summary": "This path is responsable for getting " "the professors by its name.",
     "tags": tags,
     "description": "It needs to be given an "
     "authorization header and part of the professor's name.",
@@ -15,8 +14,7 @@ professor_get_by_name = {
             "name": "name",
             "type": "string",
             "required": "true",
-            "description": "It needs to be given the "
-            "professor's part of the name.",
+            "description": "It needs to be given the " "professor's part of the name.",
         },
     ],
     "responses": {
@@ -30,8 +28,7 @@ professor_get_by_name = {
 
 
 professor_get_by_id = {
-    "summary": "This path is responsable "
-    "for getting a professor by its id",
+    "summary": "This path is responsable " "for getting a professor by its id",
     "tags": tags,
     "description": "It needs to be given an authorization"
     " header and the professor's id.",
@@ -54,8 +51,7 @@ professor_get_by_id = {
 }
 
 professor_post = {
-    "summary": "This path is responsable for"
-    " registering a professor",
+    "summary": "This path is responsable for" " registering a professor",
     "tags": tags,
     "description": "It doesn't require an authorization header.",
     "parameters": [
@@ -83,8 +79,7 @@ professor_post = {
 }
 
 professor_put = {
-    "summary": "This path is responsable"
-    " for modfying the professor's password",
+    "summary": "This path is responsable" " for modfying the professor's password",
     "tags": tags,
     "description": "It needs to be given the"
     " authorization header to validate the user"
@@ -110,11 +105,9 @@ professor_put = {
 }
 
 professor_delete = {
-    "summary": "This path is responsable for deleting"
-    " the professor's account",
+    "summary": "This path is responsable for deleting" " the professor's account",
     "tags": tags,
-    "description": "Only the header is needed to delete "
-    "the professor's account",
+    "description": "Only the header is needed to delete " "the professor's account",
     "parameters": [
         authorization_header,
     ],

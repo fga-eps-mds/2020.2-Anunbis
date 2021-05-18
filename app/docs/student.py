@@ -35,8 +35,7 @@ student_post = {
 }
 
 student_put = {
-    "summary": "This path is responsable for"
-    " modfying the student's password",
+    "summary": "This path is responsable for" " modfying the student's password",
     "tags": tags,
     "description": "It needs to be given the "
     "authorization header to validate the user"

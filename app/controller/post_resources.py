@@ -15,8 +15,7 @@ class PostList(Resource):
     def get(self):
         user = current_user
         if not user.is_professor():
-            ps = post_schema.PostSchema(
-                many=True, context={"reg_student": user.reg})
+            ps = post_schema.PostSchema(many=True, context={"reg_student": user.reg})
         else:
             ps = post_schema.PostSchema(many=True)
         return make_response(ps.jsonify(user.posts), 200)
@@ -43,15 +42,13 @@ class PostAgreesList(Resource):
         id = ps.load(request.json).get("id_post")
         post, status_code = post_services.agree_student_post(student, id)
         if status_code == 200:
-            ps = post_schema.PostSchema(
-                context={"reg_student": student.reg_student})
+            ps = post_schema.PostSchema(context={"reg_student": student.reg_student})
             return make_response(ps.jsonify(post), status_code)
         else:
             return make_response(jsonify(post), status_code)
 
 
 class PostDisagreesList(Resource):
-
     @swag_from(post.post_list_postDisagree)
     @student_required()
     def post(self):
@@ -62,8 +59,7 @@ class PostDisagreesList(Resource):
         if status_code == 404:
             return make_response(jsonify(post), status_code)
         else:
-            ps = post_schema.PostSchema(
-                context={"reg_student": student.reg_student})
+            ps = post_schema.PostSchema(context={"reg_student": student.reg_student})
             return make_response(ps.jsonify(post), status_code)
 
 
