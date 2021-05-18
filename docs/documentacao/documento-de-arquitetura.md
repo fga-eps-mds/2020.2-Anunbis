@@ -20,6 +20,7 @@ Data|Versão|Descrição|Autor
 18/04|1.6|Revisão da visão lógica | Rafael e Thiago|
 18/05|1.7|Adição do Flask-Migrate e Flask-Swagger |Thiago|
 18/05|1.8|Atualização do Diagrama de Pacotes |Thiago|
+18/05|1.9|Adição da organização das pastas do back-end|Thiago|
 ## 1. <a name="1">Introdução</a>
 
 ### 1.1 <a name="1_1">Finalidade</a>
@@ -159,7 +160,12 @@ href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do m
 #### 5.1.2 <a name="5_1_1">Back-End</a>
 <div style="display:block;text-align:center"><img src="/2020.2-Anunbis/images/diagramaPacotesBackEnd.png" alt="Diagrama de pacotes Back-End"/></div>
 
-#### 5.1.2.1 <a name="5.1.2.1">Organização dos pacotes</a>
+#### 5.1.2.1 <a name="5.1.2.1">Organização das pastas</a>
+* app: Pasta principal que contém todos os codigos fonte da aplicação.
+* tests: Contém o teste unitário e de integração.
+* migrations: Contém o versionamento do banco de dados.
+* scripts: Contém os scrips de inicialização da aplicação.
+#### 5.1.2.2 <a name="5.1.2.2">Organização dos pacotes</a>
 * controller: Contém as rotas da api.
 * schemas: Contém os arquivos que cuidam da lógica de serialização, deserelização e validação dos JSON que vão entrar e sair pela API.
 * model: Contém os arquivos que representam as entidades do banco de dados.
