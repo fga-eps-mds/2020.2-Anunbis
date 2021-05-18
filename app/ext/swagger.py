@@ -7,6 +7,7 @@ def init_app(app):
 
 def config_specs_dict(ANUNBIS_FRONTEND_URI, ANUNBIS_VERSION):
     return {
+        "title": "Anunbis API",
         "swagger": "2.0",
         "info": {
             "title": "Anunbis",
