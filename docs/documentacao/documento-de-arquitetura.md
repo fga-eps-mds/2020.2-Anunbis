@@ -18,6 +18,7 @@ Data|Versão|Descrição|Autor
 16/04|1.4|Adição do detalhamento das pastas do Front-End|Rafael, Roberto, Eduardo e Victor|
 16/04|1.5|Adição do detalhamento das pastas do Back-End|Thiago|
 18/04|1.6|Revisão da visão lógica | Rafael e Thiago|
+18/05|1.7|Adição do Flask-Migrate e Flask-Swagger |Thiago|
 
 ## 1. <a name="1">Introdução</a>
 
@@ -67,8 +68,7 @@ Data|Versão|Descrição|Autor
 
 <p align = "justify"> &emsp;&emsp; Para este projeto, decidimos escolher a micro framework web Flask, implementada em Python para ficar responsável pelo back-end do projeto. Por ser um micro framework, o <a href="https://flask.palletsprojects.com/en/1.1.x/">Flask</a> possui apenas o mínimo possível para a API funcionar.</p>
 
-<p align = "justify"> &emsp;&emsp; Assim, se for necessário, é possível instalar pacotes extras para todo desenvolvimento da aplicação. Isso permite que um projeto implementado com o Flask só tenha o que realmente precisa, ao invés de termos inúmeras ferramentas e módulos sem nenhuma utilização no projeto. Dentre estes pacotes extras há: o <a href="https://flask-sqlalchemy.palletsprojects.com/en/2.x/">SQLAlchemy</a>, para cuidar da comunicação com o banco de dados; <a href="https://flask-marshmallow.readthedocs.io/en/latest/">Mashmallow</a>, para cuidar da serialização.</p>
- <!-- e o <a href="https://flask-migrate.readthedocs.io/en/latest/" >Migrate</a>, que cuida do versionamento do banco de dados pelo Python. -->
+<p align = "justify"> &emsp;&emsp; Assim, se for necessário, é possível instalar pacotes extras para todo desenvolvimento da aplicação. Isso permite que um projeto implementado com o Flask só tenha o que realmente precisa, ao invés de termos inúmeras ferramentas e módulos sem nenhuma utilização no projeto. Dentre estes pacotes extras há: o <a href="https://flask-sqlalchemy.palletsprojects.com/en/2.x/">SQLAlchemy</a> para cuidar da comunicação com o banco de dados; <a href="https://flask-marshmallow.readthedocs.io/en/latest/">Mashmallow</a> para cuidar da serialização; o <a href="https://flask-migrate.readthedocs.io/en/latest/" >Migrate</a>, que cuida do versionamento do banco de dados pelo Python; o <a href="https://github.com/flasgger/flasgger" >Flasgger</a> para a documentação da API; e o <a href="https://pythonhosted.org/Flask-Mail/">Flask-mail</a> para o envio de e-mails.</p>
 
 ### 2.3 <a name="2_3">MySQL</a>
 
