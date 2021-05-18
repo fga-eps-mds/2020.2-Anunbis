@@ -41,6 +41,9 @@ post_list_post = {
                     "disponibility": {
                         "type": "integer",
                     },
+                    "didactic": {
+                        "type": "integer",
+                    },
                     "is_anonymous": {
                         "type": "boolean",
                     },
