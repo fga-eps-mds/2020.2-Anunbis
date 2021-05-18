@@ -23,6 +23,3 @@ class Course(db.Model):
 
     id_course = db.Column(db.Integer, nullable=False, primary_key=True)
     name = db.Column(db.String(255), nullable=False, unique=True)
-    disciplines = db.relationship(
-        "Discipline", secondary="course_discipline", lazy="dynamic"
-    )

@@ -3,16 +3,13 @@ from flask import request, make_response, jsonify
 from ..schemas.professor_schema import ProfessorSchema
 from ..services import professor_services
 from flask_jwt_extended import jwt_required, get_jwt_identity, current_user
-from marshmallow import ValidationError
 from ..ext.auth import professor_required
 
 
 class ProfessorDetail(Resource):
     @jwt_required()
     def get(self, name):
-        validate = ProfessorSchema(only=["name"]).validate({"name": name})
-        if validate:
-            return make_response(jsonify(validate), 400)
+        ProfessorSchema(only=["name"]).load({"name": name})
         professors = professor_services.get_name_contains(name)
         ps = ProfessorSchema(
             many=True,
@@ -24,26 +21,20 @@ class ProfessorDetail(Resource):
 
 class ProfessorList(Resource):
     def post(self):
-        try:
-            ps = ProfessorSchema()
-            professor = ps.load(request.json)
-            message, status = professor_services.register_professor(professor)
-            return make_response(jsonify(message), status)
-        except ValidationError as err:
-            return make_response(jsonify(err.messages), 400)
+        ps = ProfessorSchema()
+        professor = ps.load(request.json)
+        message, status = professor_services.register_professor(professor)
+        return make_response(jsonify(message), status)
 
     @professor_required()
     def put(self):
-        try:
-            ps = ProfessorSchema(only=["password"])
-            professor_db = current_user
-            professor_new = ps.load(request.json)
-            message, status = professor_services.modify_password_professor(
-                professor_db, professor_new
-            )
-            return make_response(jsonify(message), status)
-        except ValidationError as err:
-            return make_response(jsonify(err.messages), 400)
+        ps = ProfessorSchema(only=["password"])
+        professor_db = current_user
+        professor_new = ps.load(request.json)
+        message, status = professor_services.modify_password_professor(
+            professor_db, professor_new
+        )
+        return make_response(jsonify(message), status)
 
     @professor_required()
     def delete(self):

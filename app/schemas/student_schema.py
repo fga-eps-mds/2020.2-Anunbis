@@ -1,7 +1,7 @@
 from . import ma, course_schema
-from marshmallow import fields, validates, validate, ValidationError
-from re import match
+from marshmallow import fields, validates, validate
 from ..model.student import Student
+from .user_schema import ValidateEmail
 
 
 class StudentSchema(ma.SQLAlchemySchema):
@@ -22,7 +22,12 @@ class StudentSchema(ma.SQLAlchemySchema):
 
     @validates("email")
     def validate_email(self, value):
-        if len(value) > 100:
-            raise ValidationError("The email must be lower than 100")
-        elif not match("[0-9]+@aluno.unb.br", value.lower()):
-            raise ValidationError("The email must be matricula@aluno.unb.br")
+        ValidateStudentEmail().validate(value)
+
+
+class ValidateStudentEmail(ValidateEmail):
+    def validate(self, value):
+        self.validate_length(value)
+        self.validate_format(
+            value, "[0-9]+@aluno.unb.br$", "The email must be matricula@aluno.unb.br"
+        )

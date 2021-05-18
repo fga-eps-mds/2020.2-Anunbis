@@ -69,8 +69,12 @@ class Post(db.Model):
     )
     professor = db.relationship("Professor", back_populates="posts")
 
-    agrees = db.relationship("Student", secondary="agree_student_post")
-    disagrees = db.relationship("Student", secondary="disagree_student_post")
+    agrees = db.relationship(
+        "Student", secondary="agree_student_post", back_populates="post_agrees"
+    )
+    disagrees = db.relationship(
+        "Student", secondary="disagree_student_post", back_populates="post_disagrees"
+    )
 
     @property
     def rating(self):

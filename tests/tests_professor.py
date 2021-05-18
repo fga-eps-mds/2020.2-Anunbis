@@ -6,6 +6,15 @@ from app.services import professor_services
 from tests_report import register_report
 
 
+def valid_professor():
+    return {
+        "name": "Carla Rocha",
+        "reg_professor": 19002037777,
+        "email": "19002037777@unb.br",
+        "password": "123456789",
+    }
+
+
 class TestProfessorList(TestFlaskBase):
     def post(self, json):
         return self.client.post(url_for("restapi.professorlist"), json=json)
@@ -16,6 +25,15 @@ class TestProfessorList(TestFlaskBase):
 
         response = self.post(professor)
         self.assertEqual(response.status_code, status_code_expected)
+
+    def test_api_must_send_email_when_register(self):
+        with self.app.mail.record_messages() as outbox:
+            professor = valid_professor()
+
+            response = self.post(professor)
+            self.assertEqual(response.status_code, 201)
+            self.assertEqual(len(outbox), 1)
+            self.assertEqual(outbox[0].recipients, [professor.get("email")])
 
     def test_api_must_validate_professor_with_name_already_registered(self):
         self.create_base_professor()
@@ -343,27 +361,8 @@ class TestProfessorIdDatail(TestFlaskBase):
         self.assertEqual(student_response, student_expected)
 
 
-def valid_professor():
-    return {
-        "name": "Carla Rocha",
-        "reg_professor": 19002037777,
-        "email": "19002037777@unb.br",
-        "password": "123456789",
-    }
-
-
 def create_professor_made_by_admin(self, name):
     professor_bd = professor.Professor()
     professor_bd.name = name
     self.app.db.session.add(professor_bd)
     self.app.db.session.commit()
-
-
-class TestProfessorModel(TestFlaskBase):
-    def test_must_block_password_access(self):
-        try:
-            prof = professor.Professor(password="123456789")
-            prof.password
-            self.assertTrue(False)
-        except AttributeError:
-            self.assertTrue(True)
