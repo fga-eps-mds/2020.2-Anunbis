@@ -170,10 +170,10 @@ href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do m
 <div style="display:block;text-align:center"><img src="/2020.2-Anunbis/images/diagramaPacotesBackEnd.png" alt="Diagrama de pacotes Back-End"/></div>
 
 #### 5.1.2.1 <a name="5.1.2.1">Organização das pastas</a>
-* app: Pasta principal que contém todos os codigos fonte da aplicação.
+* app: Pasta principal que contém todos os códigos fonte da aplicação.
 * tests: Contém o teste unitário e de integração.
 * migrations: Contém o versionamento do banco de dados.
-* scripts: Contém os scrips de inicialização da aplicação.
+* scripts: Contém os scripts de inicialização da aplicação.
 #### 5.1.2.2 <a name="5.1.2.2">Organização dos pacotes</a>
 * controller: Contém as rotas da api.
 * schemas: Contém os arquivos que cuidam da lógica de serialização, deserelização e validação dos JSON que vão entrar e sair pela API.
