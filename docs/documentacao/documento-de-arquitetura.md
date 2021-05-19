@@ -18,6 +18,13 @@ Data|Versão|Descrição|Autor
 16/04|1.4|Adição do detalhamento das pastas do Front-End|Rafael, Roberto, Eduardo e Victor|
 16/04|1.5|Adição do detalhamento das pastas do Back-End|Thiago|
 18/04|1.6|Revisão da visão lógica | Rafael e Thiago|
+18/05|1.7|Adição do Flask-Migrate e Flask-Swagger |Thiago|
+18/05|1.8|Atualização do Diagrama de Pacotes |Thiago|
+18/05|1.9|Adição da organização das pastas do back-end|Thiago|
+18/05|2.0|Adição da relação do Banco de dados e do Flask|Thiago|
+18/05|2.1|Atualicação dos atributos das entidades|Thiago|
+18/05|2.2|Atualização da organização das pastas do front-end|Thiago|
+18/05|2.3|Atualização dos casos de uso|Thiago|
 
 ## 1. <a name="1">Introdução</a>
 
@@ -53,7 +60,7 @@ Data|Versão|Descrição|Autor
 
 <div style="display:block;text-align:center"><img src="/2020.2-Anunbis/images/diagramaArquitetura.png" alt="representação da arquitetura no projeto"></div>
 
-<p align = "justify"> &emsp;&emsp;Ele se baseia em requisições e respostas Http para se relacionar. O usuário, com seu navegador, entra no site gerado pelo React e, a partir dai, pode realizar varias ações, como cadastrar, postar e comentar. O react lida com essas ações e, se precisar, se conecta com o Flask. O Flask, por sua vez, cuida da lógica de negócio, manuseamento de dados e faz a conexão com o Mysql para a persistência desses dados.</p>
+<p align = "justify"> &emsp;&emsp;Ele se baseia em requisições e respostas Http para se relacionar. O usuário, com seu navegador, entra no site gerado pelo React e, a partir dai, pode realizar varias ações, como cadastrar, postar e comentar. O React lida com essas ações e, se precisar, se conecta com o Flask. O Flask, por sua vez, cuida da lógica de negócio, manuseamento de dados e faz a conexão com o Mysql para a persistência desses dados.</p>
 
 ### 2.1 <a name="2_1">React</a>
 
@@ -67,26 +74,23 @@ Data|Versão|Descrição|Autor
 
 <p align = "justify"> &emsp;&emsp; Para este projeto, decidimos escolher a micro framework web Flask, implementada em Python para ficar responsável pelo back-end do projeto. Por ser um micro framework, o <a href="https://flask.palletsprojects.com/en/1.1.x/">Flask</a> possui apenas o mínimo possível para a API funcionar.</p>
 
-<p align = "justify"> &emsp;&emsp; Assim, se for necessário, é possível instalar pacotes extras para todo desenvolvimento da aplicação. Isso permite que um projeto implementado com o Flask só tenha o que realmente precisa, ao invés de termos inúmeras ferramentas e módulos sem nenhuma utilização no projeto. Dentre estes pacotes extras há: o <a href="https://flask-sqlalchemy.palletsprojects.com/en/2.x/">SQLAlchemy</a>, para cuidar da comunicação com o banco de dados; <a href="https://flask-marshmallow.readthedocs.io/en/latest/">Mashmallow</a>, para cuidar da serialização.</p>
- <!-- e o <a href="https://flask-migrate.readthedocs.io/en/latest/" >Migrate</a>, que cuida do versionamento do banco de dados pelo Python. -->
+<p align = "justify"> &emsp;&emsp; Assim, se for necessário, é possível instalar pacotes extras para todo desenvolvimento da aplicação. Isso permite que um projeto implementado com o Flask só tenha o que realmente precisa, ao invés de termos inúmeras ferramentas e módulos sem nenhuma utilização no projeto. Dentre estes pacotes extras há: o <a href="https://flask-sqlalchemy.palletsprojects.com/en/2.x/">SQLAlchemy</a> para cuidar da comunicação com o banco de dados; <a href="https://flask-marshmallow.readthedocs.io/en/latest">Mashmallow</a> para cuidar da serialização; o <a href="https://flask-migrate.readthedocs.io/en/latest/" >Migrate</a>, que cuida do versionamento do banco de dados pelo Python; o <a href="https://github.com/flasgger/flasgger" >Flasgger</a> para a documentação da API; <a href="https://flask-jwt-extended.readthedocs.io/en/stable/">Flask Jwt Extended</a>  para a autenticação; e o <a href="https://pythonhosted.org/Flask-Mail/">Flask-mail</a> para o envio de e-mails.</p>
 
 ### 2.3 <a name="2_3">MySQL</a>
 
 <p align = "justify"> &emsp;&emsp;Para a persistência dos dados, o banco utilizado é o MySQL, pois utiliza a linguagem SQL e é <a 
-href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do mercado</a>. Além disso, pelo fato de ser relacional, será bastante útil em fazer as relações entre as entidades.</p>
-<!-- No entanto, não há a necessidade de utilizar a linguagem SQL diretamente, pois o SQLAlchemy juntamente com o micro framework Flask realizam esse trabalho. -->
-
-<!-- <p align = "justify">&emsp;&emsp;Sendo assim, o SQLAlchemy é capaz de mediar todas as tarefas necessárias, como por exemplo, criar tabelas, relacionamentos, realizar  consultas, adicionar e remover informações, para o pleno funcionamento desse projeto.</p> -->
+href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do mercado</a>. Além disso, pelo fato de ser relacional, será bastante útil para fazer as relações entre as entidades. No entanto, não há a necessidade de utilizar a linguagem SQL diretamente, pois o SQLAlchemy e o Flask-Migrate cuidam do trabalho de acesso aos dados e do versionamento.</p>
+<p align = "justify">&emsp;&emsp;Deste modo, o SQLAlchemy e o Flask-migrate são capazes de mediar todas as tarefas necessárias, como criar tabelas, relacionamentos, realizar  consultas, adicionar e remover informações para o pleno funcionamento desse projeto.</p>
 <!--
 ### 2.4 <a name="2_4">Modelo MVC</a>
 <p align="justify">&emsp;&emsp;É um modelo para a organização do software do projeto, sendo ele um padrão de arquitetura de software que contribui para melhorar a performance do programa, tornando-o mais produtivo. Essa arquitetura é baseada na separação do código entre Modelo, controle e visão. Sendo assim, esse modelo é utilizado no back-end da aplicação. </p>
-
+<--
 <p align="justify">&emsp;&emsp; O pacote ‘modelo’ é responsável por gerenciar os dados, determinando suas funções, lógicas e o padrão de organização que será apresentado ao banco de dados. </p>
 <p align="justify">&emsp;&emsp;O pacote ‘controle’ é responsável por ser o intermediador das requisições realizadas pelo pacote ‘visão’ e o ‘modelo’, processando os dados e repassando para seus respectivos destinos.</p>
 <p align="justify">&emsp;&emsp;O pacote ‘Visão’ apresenta as informações ao usuário, sendo o local por onde o usuário irá interagir. Nessa camada é onde interações com o usuário são elaboradas, são capturadas, validadas e disponibilizadas. Tudo isso por meio do JSON.</p>
-
+<--
 <p align="justify">&emsp;&emsp;Essa arquitetura gera inúmeros benefícios ao projeto, a camada de controle, por exemplo, serve como um filtro de segurança, pois impede que informações incorretas cheguem até a camada modelo. Contribui com a organização, pois possui fácil leitura e eventuais erros são mais fáceis de serem localizados. Além disso, essa arquitetura de camadas permite que vários programadores trabalhem ao mesmo tempo em diferentes camadas, contribuindo para o desenvolvimento do projeto.</p>
-
+<--
 <div style="display:block;text-align:center"><a style="text-align:center" href="https://edisciplinas.usp.br/pluginfile.php/4632609/mod_resource/content/1/5%20Arquitetura%20MVC.pdf"><img src="/2020.2-Anunbis/images/arquiteturaMVCBackEnd.png" alt="representação da arquitetura MVC no back-end"></a></div>
 -->
 
@@ -109,29 +113,32 @@ href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do m
 
 |Ator|Descrição|
 |:-|:-|
-|**Discente**| O discente poderá avaliar professores pontuando-os, fazendo comentários e apoiando/discordando de outros feedbacks. Poderá também visualizar o rank de professores e acompanhar os comentários de outros alunos por meio da pesquisa por matéria/docente. |
-|**Docente**| O docente poderá visualizar as avaliações que os estudantes fizeram a ele. Isso ocorrerá por meio da visualização de comentários e da sua pontuação média.|
+|**Discente**| O discente será um aluno da UnB.|
+|**Docente**| O docente será um professor da UnB.|
+|**Visitante**| O visitante pode ser qualquer pessoa.|
 
 ### 4.3 <a name="4_3">Descrição dos Casos de Uso</a>
-|Caso de Uso|Descrição|
-|:-|:-|
-|US01 - Pontuar Professor| Dar uma nota ao professor avaliado. |
-|US02 - Fazer Comentário| Dar um feedback de determinado docente.|
-|US03 - Avaliar outros Comentários| Concordar ou Discordar dos feedbacks de um professor.|
-|US04 - Avaliar Professor| Fazer um feedback geral de um docente.|
-|US05 - Visualizar Rank de Docentes| Ver quais os docentes melhores pontuados por disciplina.|
-|US06 - Visualizar Comentários de Outros Alunos| Ver feedbacks dos outros discentes para aquele professor.|
-|US07 - Pesquisar Disciplina ou Professor| Procurar a disciplina/professor da UnB que o aluno deseja.|
-|US08 - Visualizar Comentários| Professor visualizar os comentários dos alunos.|
-|US09 - Visualizar Média de Pontuação| O docente pode ver sua pontuação média no sistema.|
-|US10 - Visualizar Avaliações dos Alunos|O docente pode ver as avaliações gerais dos alunos.|
+|US|Caso de Uso|Descrição|
+|:-|:-|:-|
+|US01 e US02|Cadastro de usuário|Eu, como aluno/professor da UnB, desejo realizar o cadastro.|
+|US03 e US04|Login de usuário| Eu, como aluno/professor da UnB, desejo fazer login em minha conta.|
+|US05 | Pesquisar professores|Eu, como usuário, desejo buscar professores por diferentes ordens	|
+|US10 | Visualizar avaliações|Eu, como usuário, desejo ver todas as avaliações que realizei/sobre mim|
+|US04 | Avaliar professor|Eu, como aluno da UnB, desejo avaliar um professor|
+|US13 | Denunciar avaliações|Eu, como usuário, desejo denunciar uma avaliação|
+|US12 | Concordar ou discordar de avaliações|Eu, como aluno da UnB, desejo avaliar o comentário de terceiros|
+|US17 | Visualizar gráficos de desempenho|Eu, como professor da UnB, desejo visualizar o meu gráfico de desempenho|
+|US18 | Visualizar perfil|Eu, como usuário, desejo visualizar informações sobre o meu perfil|
+|US14 | Alterar senha|Eu, como usuário, desejo alterar minha senha|
+|US15 | Excluir conta|Eu, como usuário, desejo excluir minha conta|
+|US16 | Home| Eu, como visitante, desejo visualizar a página home da aplicação|
 
 ## 5. <a name="5">Visão Lógica</a>
 <p align = "justify">&emsp;&emsp;As interações entre usuário e plataforma, tanto mobile quanto desktop, serão feitas pelo front-end, sendo o React responsável por interpretar esses eventos passados e tratá-los de maneira adequada.</p>
 
 <p align = "justify">&emsp;&emsp;Existem 2 possibilidades de eventos a serem tratados: os que podem ser tratados apenas no lado do client (client side), que não necessitam de comunicação externa; e os que necessitam dessa comunicação via API com o back-end. Assim, o React é responsável por organizar as informações necessárias para apresentação ao usuário e em realizar as trocas de dados com o back-end.</p>
 
-<p align = "justify">&emsp;&emsp;Para se comunicar com o back-end, será necessária enviar uma requisição para o servidor do Back-End, fazendo uso do protocolo de comunicação HTTP e respeitando as regras de interface RESTful.</p>
+<p align = "justify">&emsp;&emsp;Para se comunicar com o back-end, será necessário enviar uma requisição para o servidor do Back-End, fazendo uso do protocolo de comunicação HTTP e respeitando as regras de interface RESTful.</p>
 
 <p align = "justify">&emsp;&emsp;O tratamento das interações do Front-End com o Back-End será por meio da API, criada pelo Flask, e suas rotas se encontram no pacote controller. Esse pacote é responsavel por tratar tanto as requisições como as respostas.</p>
 
@@ -147,25 +154,34 @@ href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do m
 <div style="display:block;text-align:center"><img src="/2020.2-Anunbis/images/diagramaPacotesFrontEnd.png" alt="Diagrama de pacotes Front-End"/></div>
 
 #### 5.1.1.1 <a name="5.1.1.1">Organização das Pastas</a>
-* Assets: Possui a pasta de imagens e a pasta de constantes com arquivos de estilização globais ou recorrentes.
+* assets: Possui a pasta de imagens e a pasta de constantes com arquivos de estilização globais ou recorrentes.
 
-* Components: Onde estão pastas de componentes React. Cada pasta contém o arquivo index que define a lógica do componente, o arquivo styles com os styled components (estilização do componente), e pode conter o arquivo validations caso precise fazer validações de entrada.
+* components: Onde estão pastas de componentes React. Cada pasta contém o arquivo index que define a lógica do componente, o arquivo styles com os styled components (estilização do componente), e pode conter o arquivo validations caso precise fazer validações de entrada.
 
-* Services: Contém os arquivos de comunicação com a API e autenticação.
+* services: Contém os arquivos de comunicação com a API e autenticação.
 
-* Views: Contém as páginas da aplicação.
+* views: Contém as páginas da aplicação.
 
-* Routes: Contém os arquivos de rotas do produto.
+* routes: Contém os arquivos de rotas do produto.
+
+* tests: Contém os testes da aplicação.
+
 #### 5.1.2 <a name="5_1_1">Back-End</a>
 <div style="display:block;text-align:center"><img src="/2020.2-Anunbis/images/diagramaPacotesBackEnd.png" alt="Diagrama de pacotes Back-End"/></div>
 
-#### 5.1.2.1 <a name="5.1.2.1">Organização das Pastas</a>
-* database: Contem os scrips SQL do banco de dados.
+#### 5.1.2.1 <a name="5.1.2.1">Organização das pastas</a>
+* app: Pasta principal que contém todos os códigos fonte da aplicação.
+* tests: Contém o teste unitário e de integração.
+* migrations: Contém o versionamento do banco de dados.
+* scripts: Contém os scripts de inicialização da aplicação.
+#### 5.1.2.2 <a name="5.1.2.2">Organização dos pacotes</a>
 * controller: Contém as rotas da api.
-* schemas: Contém os arquivos que cuidam da lógica de serialização, deserelização e validação dos JSON que vão entrar e sair.
+* schemas: Contém os arquivos que cuidam da lógica de serialização, deserelização e validação dos JSON que vão entrar e sair pela API.
 * model: Contém os arquivos que representam as entidades do banco de dados.
 * services: Contém os arquivos que cuidam da lógica de negócio e é a ponte que conecta o controller com o model.
-* ext: Contém os arquivos de bibliotecas externas da aplicação. Por exemplo, o conector com o banco de dados e autenticação.
+* ext: Contém os arquivos de bibliotecas externas da aplicação. Por exemplo, o conector com o banco de dados, a autenticação e os e-mails.
+* docs: Contém os arquivos do Swagger que documentam cada rota da API.
+* static: Contém os arquivos estáticos, como os templates de e-mail e os dados dos cursos, disciplinas e professores que populam o banco de dados.
 ## 6. <a name="6">Visão da Implementação</a>
 
 ### 6.1 <a name="6_1">Modelagem dos dados</a>
@@ -180,12 +196,12 @@ href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do m
 
 #### 6.1.2 <a name="6_1_2">Atributos</a>
 
-* Um **Estudante**, para que possa ser cadastrado, tem uma **matrícula**, **nome** , **curso**, **email** e uma **senha**.
-* Um **Professor** tem uma **matrícula**, **identificação**, **nome**, **email** e uma **senha**.
+* Um **Estudante**, para que possa ser cadastrado, tem uma **matrícula**, **nome** , **curso**, **email**, **senha** e um booleano que guarda se o **e-mail foi confirmado**.
+* Um **Professor** tem uma **matrícula**, **identificação**, **nome**, **email**, **senha** e um booleano que guarda se o **e-mail foi confirmado**.
 * Um **Curso** tem um **nome**.
 * Uma **Disciplina** tem um **nome** e um **código**.
-* Uma **Avaliação**, para ser cadastrada, tem uma **identificação**, **conteúdo**, **data de postagem**, se é **anônima** ou não e uma **nota** sobre o professor.
-* Uma **Denúncia** tem uma **identificação**, **conteúdo** e um **tipo**, que pode ser uma denúncia grave, incoerente, ofensiva e outras.
+* Uma **Avaliação**, para ser cadastrada, tem uma **identificação**, **conteúdo**, **data de postagem**, se é **anônima** ou não e os **feedbacks** sobre o professor.
+* Uma **Denúncia** tem uma **identificação**, **conteúdo** e um **tipo**, que pode ser uma denúncia grave, incoerente, ofensiva ou outras.
 
 #### 6.1.3 <a name="6_1_3">Relacionamentos</a>
 
