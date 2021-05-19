@@ -5,6 +5,7 @@ from sqlalchemy import func
 from . import auth_services
 import re
 
+
 def get(**kwargs):
     return Professor.query.filter_by(**kwargs).first()
 
