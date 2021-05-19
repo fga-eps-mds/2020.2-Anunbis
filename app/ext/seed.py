@@ -1,6 +1,7 @@
 import json
 from .database import db
 from ..model import course, discipline, professor
+from ..services import discipline_services
 from sqlalchemy.exc import IntegrityError, InvalidRequestError
 import click
 from flask.cli import with_appcontext
@@ -17,9 +18,7 @@ def seed():
     exit_code = 0
     exit_code += seed_courses()
     exit_code += seed_disciplines()
-    exit_code += seed_course_discipline()
     exit_code += seed_professor()
-    exit_code += seed_professor_discipline()
     return 1 if exit_code > 0 else 0
 
 
@@ -35,25 +34,19 @@ def seed_disciplines():
     return add_seeds(disciplines, lambda d: discipline.Discipline(**d))
 
 
-def seed_course_discipline():
-    print("\nSeeding database with course_discipline...")
-    course_discipline = read_json("course_discipline")
-    return add_seeds(course_discipline, lambda cd: course.CourseDiscipline(**cd))
-
-
 def seed_professor():
+    def create_professor(prof):
+        p = professor.Professor(name=prof.get("name"))
+        
+        for dis in prof.get("disciplines"):
+            code = discipline_services.get(discipline_code=dis.get("discipline_code"))
+            if code:
+                p.disciplines.append(code)
+        return p
+
     print("\nSeeding database with professor...")
     professors = read_json("professor")
-    return add_seeds(professors, lambda p: professor.Professor(**p))
-
-
-def seed_professor_discipline():
-    print("\nSeeding database with professor_discipline...")
-    professor_discipline = read_json("professor_discipline")
-    return add_seeds(
-        professor_discipline, lambda pd: discipline.ProfessorDiscipline(**pd)
-    )
-
+    return add_seeds(professors, create_professor)
 
 def add_seeds(obj_list, modelFactory):
     try:
