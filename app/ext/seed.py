@@ -1,10 +1,17 @@
 import json
 from .database import db
-from ..model import course, discipline, professor
+from ..model import course
+from ..model.discipline import Discipline
+from ..model.professor import Professor
 from sqlalchemy.exc import IntegrityError, InvalidRequestError
 import click
 from flask.cli import with_appcontext
 from flask import current_app
+import time
+
+
+def current_milli_time():
+    return round(time.time() * 1000)
 
 
 def init_app(app):
@@ -14,12 +21,14 @@ def init_app(app):
 @click.command()
 @with_appcontext
 def seed():
+    initial_time = current_milli_time()
     exit_code = 0
     exit_code += seed_courses()
-    exit_code += seed_disciplines()
-    exit_code += seed_course_discipline()
-    exit_code += seed_professor()
-    exit_code += seed_professor_discipline()
+    exit_code_disciplines, disciplines_dict = seed_disciplines()
+    exit_code += exit_code_disciplines
+    exit_code += seed_professor(disciplines_dict)
+    final_time = current_milli_time()
+    print(f"time = {final_time - initial_time}ms")
     return 1 if exit_code > 0 else 0
 
 
@@ -30,29 +39,31 @@ def seed_courses():
 
 
 def seed_disciplines():
+    disciplines_dict = {}
+
+    def create_discipline(**d):
+        discipline = Discipline(**d)
+        disciplines_dict[d.get("discipline_code")] = discipline
+        return discipline
+
     print("\nSeeding database with disciplines...")
     disciplines = read_json("disciplines")
-    return add_seeds(disciplines, lambda d: discipline.Discipline(**d))
+    return add_seeds(disciplines, lambda d: create_discipline(**d)), disciplines_dict
 
 
-def seed_course_discipline():
-    print("\nSeeding database with course_discipline...")
-    course_discipline = read_json("course_discipline")
-    return add_seeds(course_discipline, lambda cd: course.CourseDiscipline(**cd))
+def seed_professor(disciplines_dict):
+    def create_professor(professor_json):
+        professor = Professor(name=professor_json.get("name"))
 
+        for discipline_json in professor_json.get("disciplines"):
+            discipline = disciplines_dict.get(discipline_json.get("discipline_code"))
+            if discipline:
+                professor.disciplines.append(discipline)
+        return professor
 
-def seed_professor():
     print("\nSeeding database with professor...")
     professors = read_json("professor")
-    return add_seeds(professors, lambda p: professor.Professor(**p))
-
-
-def seed_professor_discipline():
-    print("\nSeeding database with professor_discipline...")
-    professor_discipline = read_json("professor_discipline")
-    return add_seeds(
-        professor_discipline, lambda pd: discipline.ProfessorDiscipline(**pd)
-    )
+    return add_seeds(professors, create_professor)
 
 
 def add_seeds(obj_list, modelFactory):

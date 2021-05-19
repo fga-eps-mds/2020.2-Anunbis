@@ -25,7 +25,6 @@ def upgrade():
     op.alter_column('student', 'password',
                existing_type=sa.String(collation='utf8_unicode_ci', length=255),
                nullable=True)
-    op.drop_index('reg_student', table_name='student')
     # ### end Alembic commands ###
 
 
