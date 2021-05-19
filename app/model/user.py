@@ -34,3 +34,8 @@ class User(db.Model):
 
     def save_changes(self):
         db.session.commit()
+
+    def clean(self):
+        self.email = None
+        self.__email_verified = False
+        self.__password_hash = None
