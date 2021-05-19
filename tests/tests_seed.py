@@ -29,5 +29,7 @@ class TestSeed(TestFlaskBase):
         self.verify_json_in_db("disciplines", discipline.Discipline)
 
     def test_must_seed_professor(self):
-        seed.seed_professor()
+        exit_code, disciplines_dict = seed.seed_disciplines()
+        seed.seed_professor(disciplines_dict)
+        self.assertEqual(exit_code, 0)
         self.verify_json_in_db("professor", professor.Professor)
