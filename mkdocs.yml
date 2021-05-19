@@ -67,6 +67,7 @@ nav:
             - Planejamento de riscos: documentacao/planejamento-de-riscos.md
             - Roadmap: documentacao/roadmap.md
             - Termo de Abertura: documentacao/termo-de-abertura.md
+    - Post Mortem: post_mortem.md
     - Produto: 
         - Canvas: documentacao/canvas.md
         - Backlog do Produto: produto/backlog.md
