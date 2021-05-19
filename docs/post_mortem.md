@@ -38,9 +38,9 @@ LINUX é bacana, no começo é um susto, mas todos se comprometeram em utilizá-
 <p align="justify"> &emsp;&emsp;O único ponto negativo que penso da minha experiência foi que além do tempo dedicado a documentação e análise de métricas, “pulei muito de galho em galho” para promover uma melhora na equipe como um todo, e acabei perdendo algumas partes importantes como desenvolvedor, por exemplo, enquanto eu sentia que todo mundo estava aprendendo e se especializando mais em alguma tecnologia específica, eu me sentia um pouco atrás, sabendo um pouco de tudo mas não sabendo nada kkk, porém desempenhar algumas atividades de devops como testes e automatização, além de realizar algumas issues no front-end me trouxeram ânimo de aprendizado novamente, então ao final de tudo com muito esforço, sinto que valeu a pena.</p>
 <p align="justify"> &emsp;&emsp;A mensagem que fica da minha experiência como um todo é gratidão, muita gratidão ao meu time, sério, são pessoas que tenho hoje como família ! Nos divertimos muito com as gameplays de gartic ao final das sprints, sinto que posso contar com cada membro, após vivenciar e ouvir algumas experiências com trabalhos em grupo na faculdade sinto que essa foi minha melhor experiência. Além de me sentir parte de algo que realmente tem valor,a todas pessoas que apresento o produto acham a ideia bacana, principalmente os universitários haha !</p>
 
-Gif que me representa:
-
-![gif](https://media.giphy.com/media/EldfH1VJdbrwY/giphy.gif)
+<p align="center">
+  <img src="https://media.giphy.com/media/EldfH1VJdbrwY/giphy.gif"  width="300"/>
+</p>
 
 * **Rodrigo Balbino (Product Owner)**
 
@@ -48,12 +48,12 @@ Gif que me representa:
 <p align="justify"> &emsp;&emsp;A primeira parte do projeto foi mais voltada à documentação, o que foi frustrante pois não tínhamos EPS, eles que fariam essa parte, iniciei a matéria achando que aprenderia muita programação e estava com todo gás pra trabalhar. Infelizmente o gás passou, depois da release 1 foi que iniciamos a programação, fiquei responsável pelo back-end usando Python e Flask, infelizmente nesse período todas as matérias começaram a requisitar muita atenção, até PI1 que estava tranquilo acabei assumindo liderança. Mesmo estudando todos os dias, apenas liberando sábado ou domingo no final de semana, estive sempre atrasado em relação a MDS, tudo era pra ontem, me faltava tempo.</p>
 <p align="justify"> &emsp;&emsp;Estive sempre correndo pra tentar entender o que estava acontecendo, em algum momento tudo começou a desandar, mas toda a equipe ajudava bastante, então o projeto nunca parava. Fui um Product Owner muito ruim, não consegui ajudar tanto quanto queria, não consegui aprender tanto quanto gostaria, tenho certeza que se tivesse pego menos matérias e tivesse mais tempo para focar nessa disciplina teria sido capaz de me desenvolver muito melhor, teria conseguido ajudar mais.</p>
 
-Gif que me representa:
+<p align="center">
+  <img  src="https://media.tenor.com/images/bf220e7f45a2b6e666362759cc0dad6a/tenor.gif" width="300"/>
+</p>
 
-![gif](https://media.tenor.com/images/bf220e7f45a2b6e666362759cc0dad6a/tenor.gif)
 
-
-* **Roberto (Desenvolvedor)**
+* **Roberto Mangabeira (Desenvolvedor)**
 
 <p align="justify"> &emsp;&emsp;Então, desde que comecei a cursar engenharia de software senti que não estava fazendo algo que realmente condizia com a realidade. Isso mudou completamente com MDS. Diferente de muitos, eu não havia ouvido muito dessa matéria e quando comecei a fazê-la, percebi que seria necessário muita dedicação. Fiquei com papel de desenvolvedor o que achei perfeito para mim, e assim comecei a matéria.</p>
 <p align="justify"> &emsp;&emsp;Nas primeiras semanas, parte da confecção das documentações iniciais do projeto, confesso que não me senti muito animado. A falta de EPS fez com que eu me sentisse perdido em muitos momentos. Entretanto, com o passar das semanas entendi que esse era um projeto inteiramente planejado e executado por nós, um grupo de 6 pessoas, então para tudo seria nós que buscaríamos, aprenderíamos e faríamos. </p>
@@ -64,18 +64,18 @@ Além disso, errar é bom, pois futuramente é possível escolher os melhores ca
 Por fim, MDS foi demais para mim, me sinto maduro, mais esperto, me sinto parte de algo ao qual muitas pessoas deram suor e esforço, de algo bom.
 </p>
 
-Gif que me representa:
+<p align="center">
+  <img src="https://thumbs.gfycat.com/DelightfulEmptyGermanshorthairedpointer-size_restricted.gif" width="300" />
+</p>
 
-![gif](https://thumbs.gfycat.com/DelightfulEmptyGermanshorthairedpointer-size_restricted.gif)
-
-* **Thiago (DevOps)**
+* **Thiago Sampaio (DevOps)**
 <p align="justify"> &emsp;&emsp;Comecei a matéria bastante ansioso porque, sem EPS, tudo parecia nebuloso, não tinha um roteiro a seguir, ainda mais sabendo que já estávamos atrasados, pois demoramos para definir um tema. No entanto, a falta de EPS não foi tão ruim, pois ter a oportunidade de tomar a decisão por si só e errar, errar muito, foi muito importante para o nosso amadurecimento. </p>
 <p align="justify"> &emsp;&emsp;No começo, felizmente ou não, consegui fugir um pouco da documentação porque tive a honra de poder configurar o ambiente, não muito bem porque era tudo muito novo, para desenvolvermos. Se eu pudesse voltar no tempo, acredito que não teria o background suficiente para isso, mas, após a configuração do ambiente, teria começado a configurar todos os testes e a documentação da API porque fazer isso no final do produto é MUITO trabalhoso, mas extremamente importante.</p>
 <p align="justify"> &emsp;&emsp;Outra coisa imprescindível é ter uma equipe bastante comunicativa, interativa e diferente. A diversidade foi muito importante porque um conseguia completar a falha do outro. Ainda mais no começo, essa diversidade foi o diferencial, uma vez que mal sabíamos o básico das linguagens do projeto, então o aprendizado conjunto e o pareamento foi fundamental. Todos foram ótimos, e tive muita sorte de ter a oportunidade de desenvolver o Anunbis. </p>
 
-Gif que me representa:
-
-![gif](https://i.pinimg.com/originals/f6/ce/59/f6ce593f08ede5d6d7ba7b558ec6bf51.gif)
+<p align="center">
+  <img src="https://i.pinimg.com/originals/f6/ce/59/f6ce593f08ede5d6d7ba7b558ec6bf51.gif" width="300" />
+</p>
 
 * **Victor Hugo (Desenvolvedor)**
 
@@ -83,17 +83,17 @@ Gif que me representa:
 <p align="justify"> &emsp;&emsp;As conversas,  brincadeiras, zoeiras e partidas competitivas no gartic ajudaram a tornar os membros do grupo muito mais próximos e isso refletiu bastante durante o desenvolvimento, a equipe se tornou bastante unida, sempre dispostos a ajudar em qualquer aspecto, com uma boa comunicação e cada um dando tudo de si a cada semana, para podermos entregar um produto de boa qualidade. Com o andamento do projeto, fomos amadurecendo em conhecimento nas tecnologias que escolhemos, aprendendo novas práticas e conceitos utilizados em um projeto de desenvolvimento de um software Open source.</p>
 <p align="justify"> &emsp;&emsp;Portanto, apesar de ter sido um semestre muito cansativo, com várias disciplinas que exigiam bastante, o sentimento que tenho hoje é de realização, conquista, de gratidão a minha excelente equipe, de estar mais maduro não somente como desenvolvedor, mas como pessoa também, MDS deu um gás pra continuar a faculdade e por isso só tenho a agradecer.</p>
 
-Gif que me representa:
-
-![gif](https://media1.tenor.com/images/3fc4688dc266777821d0849c28d98e74/tenor.gif?itemid=5518465)
+<p align="center">
+  <img src="https://media1.tenor.com/images/3fc4688dc266777821d0849c28d98e74/tenor.gif?itemid=5518465" width="300" />
+</p>
 
 * **Eduardo Afonso (Desenvolvedor)**
 
 <p align="justify"> &emsp;&emsp;Nós praticamente adotamos a metodologia de aprender com nossos erros, então tiveram alguns que voltando atrás eu faria diferente. O primeiro é quanto ao escopo do projeto, é importante ter bem definido qual será o público alvo exato que a aplicação vai atender, assim todo o projeto vai girar em torno das necessidades dele. Outra coisa seria a escalabilidade do produto, é importante pensar no produto final de um jeito que ele consiga receber e apresentar múltiplos dados e não só os que são utilizados na produção. E por último a padronização do código, é importante definir logo cedo quais serão os padrões a serem seguidos (idioma, estilo de escrita das variáveis e funções, etc)</p>
 <p align="justify"> &emsp;&emsp;Eu gostei bastante da metodologia da disciplina, nós ficamos livres para aprender por nós mesmos e trabalhar em equipe para ajudar os outros. Eu fiquei basicamente todo o período da disciplina trabalhando no front-end e no final fui fazer algumas partes do back-end, mas acho que se essa transição fosse feita mais cedo eu seria capaz de aprender bem mais. Foi uma ótima experiência e acho que todos conseguimos extrair bastante da disciplina, nós seguimos bem as práticas ágeis e acho que no fim deu tudo certo.</p>
 
-Gif que me representa:
-
-![gif](https://media1.tenor.com/images/d6add31c664d6a7f9066d81d52a46259/tenor.gif)
+<p align="center">
+  <img src="https://media1.tenor.com/images/d6add31c664d6a7f9066d81d52a46259/tenor.gif" width="300" />
+</p>
 
 
