@@ -1,3 +1,6 @@
+checks:
+  similar-code:
+    enabled: false
 plugins:
   pycodestyle:
     enabled: true
@@ -15,3 +18,5 @@ exclude_patterns:
 - "**/*.d.ts"
 - "migrations/"
 - "scripts/"
+- "app/static/"
+- "app/docs/"

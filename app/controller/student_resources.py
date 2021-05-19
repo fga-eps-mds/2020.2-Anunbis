@@ -4,9 +4,12 @@ from ..schemas.student_schema import StudentSchema
 from ..services import student_services
 from flask_jwt_extended import current_user
 from ..ext.auth import student_required
+from flasgger import swag_from
+from ..docs import student
 
 
 class StudentList(Resource):
+    @swag_from(student.student_post)
     def post(self):
         ss = StudentSchema()
         student = ss.load(request.json)
@@ -14,6 +17,7 @@ class StudentList(Resource):
         return make_response(jsonify(message), status)
 
     @student_required()
+    @swag_from(student.student_put)
     def put(self):
         ss = StudentSchema(only=["password"])
         student_db = current_user
@@ -22,6 +26,7 @@ class StudentList(Resource):
         return make_response(jsonify(message), status)
 
     @student_required()
+    @swag_from(student.student_delete)
     def delete(self):
         student = current_user
         student_services.delete(student)
@@ -29,4 +34,4 @@ class StudentList(Resource):
 
 
 def configure(api):
-    api.add_resource(StudentList, "/student")
+    api.add_resource(StudentList, "student")

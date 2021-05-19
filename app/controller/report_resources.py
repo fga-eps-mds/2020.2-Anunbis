@@ -3,9 +3,12 @@ from flask import request, make_response, jsonify
 from ..schemas import report_schema
 from ..services import report_services
 from flask_jwt_extended import jwt_required, current_user
+from flasgger import swag_from
+from ..docs import report
 
 
 class ReportList(Resource):
+    @swag_from(report.report_post)
     @jwt_required()
     def post(self):
         user = current_user
@@ -16,4 +19,4 @@ class ReportList(Resource):
 
 
 def configure(api):
-    api.add_resource(ReportList, "/report")
+    api.add_resource(ReportList, "report")

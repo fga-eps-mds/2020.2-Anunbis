@@ -1,5 +1,6 @@
 import os
 from datetime import timedelta
+from .ext import swagger
 
 
 class BaseConfig:
@@ -8,6 +9,10 @@ class BaseConfig:
     MAIL_DEBUG = True
     ANUNBIS_FRONTEND_URI = os.getenv("ANUNBIS_FRONTEND_URI", "localhost:3000")
     ANUNBIS_BACKEND_URI = os.getenv("ANUNBIS_BACKEND_URI", "localhost:5000")
+    ANUNBIS_VERSION = os.getenv("ANUNBIS_VERSION", "0.1.0")
+    SWAGGER = swagger.config_specs_dict(
+        ANUNBIS_FRONTEND_URI=ANUNBIS_FRONTEND_URI, ANUNBIS_VERSION=ANUNBIS_VERSION
+    )
 
 
 class DevConfig(BaseConfig):
