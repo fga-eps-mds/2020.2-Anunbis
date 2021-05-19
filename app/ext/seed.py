@@ -37,7 +37,7 @@ def seed_disciplines():
 def seed_professor():
     def create_professor(prof):
         p = professor.Professor(name=prof.get("name"))
-        
+
         for dis in prof.get("disciplines"):
             code = discipline_services.get(discipline_code=dis.get("discipline_code"))
             if code:
@@ -47,6 +47,7 @@ def seed_professor():
     print("\nSeeding database with professor...")
     professors = read_json("professor")
     return add_seeds(professors, create_professor)
+
 
 def add_seeds(obj_list, modelFactory):
     try:
