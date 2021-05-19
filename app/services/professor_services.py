@@ -3,6 +3,7 @@ from ..ext.database import db
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy import func
 from . import auth_services
+import re
 
 
 def get(**kwargs):
@@ -23,7 +24,8 @@ def get_name_contains(name):
 
 
 def register_professor(professor):
-    professor_bd = get(name=professor.get("name"))
+    name = re.sub("[ ]+", " ", professor.get("name").strip())
+    professor_bd = get(name=name)
 
     if professor_bd is None:
         return __build_professor(professor)
