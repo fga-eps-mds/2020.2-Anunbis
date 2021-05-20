@@ -1,0 +1,28 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flask = "===1.1.4"
+flask-restful = "*"
+marshmallow = "*"
+SQLAlchemy = "*"
+marshmallow-sqlalchemy = "*"
+flask-marshmallow = "*"
+flask-sqlalchemy = "*"
+mysql-connector-python = "*"
+flask-jwt-extended = "*"
+flask-cors = "*"
+passlib = "*"
+python-dotenv = "*"
+psycopg2-binary = "*"
+ipdb = "*"
+pexpect = "*"
+flask-migrate = "*"
+flask-mail = "*"
+flasgger = "*"
+
+[dev-packages]
+coverage = "*"
+

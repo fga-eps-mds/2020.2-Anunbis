@@ -1,15 +1,20 @@
 site_name: Anunbis
-site_description: Repositório do Grupo 05
-repo_url: https://github.com/fga-eps-mds/2020.2-Anunbis.git
+site_description: Site de documentação do grupo Anunbis.
+repo_name: '2020.2-Anunbis'
+repo_url: 'https://github.com/fga-eps-mds/2020.2-Anunbis'
 
 theme:
     name: 'material'
+    icon:
+        repo: fontawesome/brands/github
+    logo: 'images/logo.png'
+    favicon: 'images/logo.png'
     palette:
-        primary: 'black'
-        accent: 'amber'
+        scheme: 'default'
+        primary: 'amber'
+        accent: 'grey'
     features:
         navigation.tabs
-
 plugins:
     - search
 
@@ -28,12 +33,52 @@ nav:
         - Sprint 3:
             - Planejamento: sprints/planejamento-sprint-3.md
             - Revisão: sprints/revisao-sprint-3.md
+        - Sprint 4:
+            - Planejamento: sprints/planejamento-sprint-4.md 
+            - Revisão: sprints/revisao-sprint-4.md
+        - Sprint 5:
+            - Planejamento: sprints/planejamento-sprint-5.md
+            - Revisão: sprints/revisao-sprint-5.md
+        - Sprint 6:
+            - Planejamento: sprints/planejamento-sprint-6.md
+            - Revisão: sprints/revisao-sprint-6.md
+        - Sprint 7:
+            - Planejamento: sprints/planejamento-sprint-7.md
+            - Revisão: sprints/revisao-sprint-7.md
+        - Sprint 8:
+            - Planejamento: sprints/planejamento-sprint-8.md
+            - Revisão: sprints/revisao-sprint-8.md
+        - Sprint 9:
+            - Planejamento: sprints/planejamento-sprint-9.md
+            - Revisão: sprints/revisao-sprint-9.md
+        - Sprint 10:
+            - Planejamento: sprints/planejamento-sprint-10.md
+            - Revisão: sprints/revisao-sprint-10.md
+        - Sprint 11:
+            - Planejamento: sprints/planejamento-sprint-11.md
+            - Revisão: sprints/revisao-sprint-11.md
+        - Sprint 12:
+            - Planejamento: sprints/planejamento-sprint-12.md
+            - Revisão: sprints/revisao-sprint-12.md
     - Projeto:
             - Documento de Visão: documentacao/documento-de-visao.md
             - Documento de Arquitetura: documentacao/documento-de-arquitetura.md
             - Documento de Metodologias: documentacao/documento-de-metodologias.md
+            - Planejamento de riscos: documentacao/planejamento-de-riscos.md
             - Roadmap: documentacao/roadmap.md
             - Termo de Abertura: documentacao/termo-de-abertura.md
+    - Post Mortem: post_mortem.md
     - Produto: 
+        - Canvas: documentacao/canvas.md
         - Backlog do Produto: produto/backlog.md
         - Protótipos: produto/prototipos.md
+        - Identidade Visual: produto/identidade-visual.md
+    - Contribuição:
+        - Como Contribuir?: como_contribuir.md
+        - Código de Conduta: CODE_OF_CONDUCT.md
+        - Políticas:
+            - Commits: policies/commits.md
+            - Branches: policies/branches.md
+            - Issues: policies/issues.md
+            - Pull Requests: policies/pullRequests.md 
+

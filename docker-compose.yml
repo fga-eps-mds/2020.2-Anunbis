@@ -1,0 +1,32 @@
+version: "3.7"
+services:
+  flask:
+      container_name: anunbis_backend
+      stdin_open: true
+      tty: true
+      build:
+        ./
+      volumes: 
+        - .:/home/appuser
+      depends_on:
+        - mysql
+      ports:
+        - "5000:5000"
+      env_file:
+        - ./.env.dev
+
+  adminer:
+      image: adminer
+      ports:
+        - 8888:8080
+
+  mysql:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: db_anunbis
+      LANG: C.UTF-8
+    expose: 
+      - "3306"
+    command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci --init-connect='SET NAMES UTF8;' --innodb-flush-log-at-trx-commit=0 --default-authentication-plugin=mysql_native_password
