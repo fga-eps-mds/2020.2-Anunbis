@@ -105,6 +105,10 @@ Acesso a aplicação:
 
 [Vídeo](https://www.youtube.com/watch?v=FL6XEwcVBhA)
 
+### Release 2
+[Slides](https://www.canva.com/design/DAEe5GeecbQ/pj290HIPGtk0VkJHGQHesA/view?utm_content=DAEe5GeecbQ&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
+
+[Vídeo](https://drive.google.com/drive/folders/1ZXRgm4K9r3HePXX2FrBa0lDOPfqwmyI-?usp=sharing)
 ## Equipe
 <table>
     <tr>
