@@ -38,10 +38,49 @@
     
 ## Principais Funcionalidades
 
-* Encontra Professor(a)
-* Avaliar Professor(a)
-* Ver Avaliações Feitas por Alunos
-* Concordar ou Discordar de Avaliações
+<p align="center">
+    <b>
+        Encontra Professor(a)
+    </b>
+</p>
+<div align="center">
+    <img src="https://user-images.githubusercontent.com/54921791/119206474-a5c2a600-ba71-11eb-8831-b420fd59a77a.png" width="500" height="500" />
+</div>
+
+<p align="center">
+    <b>
+        Avaliar Professor(a)
+    </b>
+</p>
+<div align="center">
+    <img src="https://user-images.githubusercontent.com/54921791/119206907-d0f9c500-ba72-11eb-83d2-ddba9f8d70ee.png" width="500" height="600" />
+</div>
+
+<p align="center">
+    <b>
+        Concordar ou Discordar de Avaliações
+    </b>
+</p>
+<div align="center">
+    <img src="https://user-images.githubusercontent.com/54921791/119206983-174f2400-ba73-11eb-876f-c9ed4e73d529.png" width="500" height="350" />
+</div>
+<p align="center">
+    <b>
+        Ver Avaliações Feitas por Alunos
+    </b>
+</p>
+<div align="center">
+    <img src="https://user-images.githubusercontent.com/54921791/119207181-c55ace00-ba73-11eb-84d8-52e6a665eff6.png" width="500" height="600" />
+</div>
+<p align="center">
+    <b>
+        Ver Estatisticas Sobre o Desempenho
+    </b>
+</p>
+<div align="center">
+    <img src="https://user-images.githubusercontent.com/54921791/119207269-094dd300-ba74-11eb-9422-af2cbddabf65.png" width="500" height="300" />
+</div>
+
     
 ## Visão Geral
 
