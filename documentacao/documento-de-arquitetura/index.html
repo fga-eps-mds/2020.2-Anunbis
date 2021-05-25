@@ -1,0 +1,2477 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Site de documentação do grupo Anunbis.">
+      
+      
+      
+      
+      <link rel="icon" href="../../images/logo.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.5">
+    
+    
+      
+        <title>Documento de Arquitetura - Anunbis</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bde7dde4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ffc105">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="grey">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#historico-de-versoes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Anunbis" class="md-header__button md-logo" aria-label="Anunbis" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Anunbis
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Documento de Arquitetura
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/fga-eps-mds/2020.2-Anunbis/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    2020.2-Anunbis
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Início
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../sprints/planejamento-sprint-0/" class="md-tabs__link">
+        Sprints
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../documento-de-visao/" class="md-tabs__link md-tabs__link--active">
+        Projeto
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../post_mortem/" class="md-tabs__link">
+      Post Mortem
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../canvas/" class="md-tabs__link">
+        Produto
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../como_contribuir/" class="md-tabs__link">
+        Contribuição
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Anunbis" class="md-nav__button md-logo" aria-label="Anunbis" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    Anunbis
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/fga-eps-mds/2020.2-Anunbis/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    2020.2-Anunbis
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Início
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Sprints
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprints" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Sprints
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      <label class="md-nav__link" for="__nav_2_1">
+        Sprint 0
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprint 0" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Sprint 0
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/planejamento-sprint-0/" class="md-nav__link">
+        Planejamento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/revisao-sprint-0/" class="md-nav__link">
+        Revisão
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        Sprint 1
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprint 1" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Sprint 1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/planejamento-sprint-1/" class="md-nav__link">
+        Planejamento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/revisao-sprint-1/" class="md-nav__link">
+        Revisão
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      <label class="md-nav__link" for="__nav_2_3">
+        Sprint 2
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprint 2" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Sprint 2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/planejamento-sprint-2/" class="md-nav__link">
+        Planejamento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/revisao-sprint-2/" class="md-nav__link">
+        Revisão
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      <label class="md-nav__link" for="__nav_2_4">
+        Sprint 3
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprint 3" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Sprint 3
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/planejamento-sprint-3/" class="md-nav__link">
+        Planejamento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/revisao-sprint-3/" class="md-nav__link">
+        Revisão
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      <label class="md-nav__link" for="__nav_2_5">
+        Sprint 4
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprint 4" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Sprint 4
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/planejamento-sprint-4/" class="md-nav__link">
+        Planejamento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/revisao-sprint-4/" class="md-nav__link">
+        Revisão
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+      
+      <label class="md-nav__link" for="__nav_2_6">
+        Sprint 5
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprint 5" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          Sprint 5
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/planejamento-sprint-5/" class="md-nav__link">
+        Planejamento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/revisao-sprint-5/" class="md-nav__link">
+        Revisão
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+      
+      <label class="md-nav__link" for="__nav_2_7">
+        Sprint 6
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprint 6" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          Sprint 6
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/planejamento-sprint-6/" class="md-nav__link">
+        Planejamento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/revisao-sprint-6/" class="md-nav__link">
+        Revisão
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
+      
+      <label class="md-nav__link" for="__nav_2_8">
+        Sprint 7
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprint 7" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_8">
+          <span class="md-nav__icon md-icon"></span>
+          Sprint 7
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/planejamento-sprint-7/" class="md-nav__link">
+        Planejamento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/revisao-sprint-7/" class="md-nav__link">
+        Revisão
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_9" type="checkbox" id="__nav_2_9" >
+      
+      <label class="md-nav__link" for="__nav_2_9">
+        Sprint 8
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprint 8" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_9">
+          <span class="md-nav__icon md-icon"></span>
+          Sprint 8
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/planejamento-sprint-8/" class="md-nav__link">
+        Planejamento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/revisao-sprint-8/" class="md-nav__link">
+        Revisão
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_10" type="checkbox" id="__nav_2_10" >
+      
+      <label class="md-nav__link" for="__nav_2_10">
+        Sprint 9
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprint 9" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_10">
+          <span class="md-nav__icon md-icon"></span>
+          Sprint 9
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/planejamento-sprint-9/" class="md-nav__link">
+        Planejamento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/revisao-sprint-9/" class="md-nav__link">
+        Revisão
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_11" type="checkbox" id="__nav_2_11" >
+      
+      <label class="md-nav__link" for="__nav_2_11">
+        Sprint 10
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprint 10" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_11">
+          <span class="md-nav__icon md-icon"></span>
+          Sprint 10
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/planejamento-sprint-10/" class="md-nav__link">
+        Planejamento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/revisao-sprint-10/" class="md-nav__link">
+        Revisão
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_12" type="checkbox" id="__nav_2_12" >
+      
+      <label class="md-nav__link" for="__nav_2_12">
+        Sprint 11
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprint 11" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_12">
+          <span class="md-nav__icon md-icon"></span>
+          Sprint 11
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/planejamento-sprint-11/" class="md-nav__link">
+        Planejamento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/revisao-sprint-11/" class="md-nav__link">
+        Revisão
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_13" type="checkbox" id="__nav_2_13" >
+      
+      <label class="md-nav__link" for="__nav_2_13">
+        Sprint 12
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprint 12" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_13">
+          <span class="md-nav__icon md-icon"></span>
+          Sprint 12
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/planejamento-sprint-12/" class="md-nav__link">
+        Planejamento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/revisao-sprint-12/" class="md-nav__link">
+        Revisão
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        Projeto
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Projeto" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Projeto
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documento-de-visao/" class="md-nav__link">
+        Documento de Visão
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Documento de Arquitetura
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Documento de Arquitetura
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#historico-de-versoes" class="md-nav__link">
+    Histórico de Versões
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introducao" class="md-nav__link">
+    1. Introdução
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Introdução">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-finalidade" class="md-nav__link">
+    1.1 Finalidade
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-escopo" class="md-nav__link">
+    1.2 Escopo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-definicoes-acronimos-e-abreviacoes" class="md-nav__link">
+    1.3 Definições, Acrônimos e Abreviações
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-visao-geral" class="md-nav__link">
+    1.4 Visão Geral
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-representacao-arquitetural" class="md-nav__link">
+    2. Representação arquitetural
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Representação arquitetural">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-react" class="md-nav__link">
+    2.1 React
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-flask" class="md-nav__link">
+    2.2 Flask
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-mysql" class="md-nav__link">
+    2.3 MySQL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-metas-e-restricoes-de-arquitetura" class="md-nav__link">
+    3. Metas e Restrições de Arquitetura
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Metas e Restrições de Arquitetura">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-metas" class="md-nav__link">
+    3.1 Metas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-restricoes" class="md-nav__link">
+    3.2 Restrições
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-visao-dos-casos-de-uso" class="md-nav__link">
+    4. Visão dos Casos de Uso
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Visão dos Casos de Uso">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-diagrama-dos-casos-de-uso" class="md-nav__link">
+    4.1 Diagrama dos Casos de Uso
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-atores-dos-casos-de-uso" class="md-nav__link">
+    4.2 Atores dos Casos de Uso
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-descricao-dos-casos-de-uso" class="md-nav__link">
+    4.3 Descrição dos Casos de Uso
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-visao-logica" class="md-nav__link">
+    5. Visão Lógica
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Visão Lógica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-diagrama-de-pacotes" class="md-nav__link">
+    5.1 Diagrama de Pacotes
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 Diagrama de Pacotes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#511-front-end" class="md-nav__link">
+    5.1.1 Front-End
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5111-organizacao-das-pastas" class="md-nav__link">
+    5.1.1.1 Organização das Pastas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#512-back-end" class="md-nav__link">
+    5.1.2 Back-End
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5121-organizacao-das-pastas" class="md-nav__link">
+    5.1.2.1 Organização das pastas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5122-organizacao-dos-pacotes" class="md-nav__link">
+    5.1.2.2 Organização dos pacotes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-visao-da-implementacao" class="md-nav__link">
+    6. Visão da Implementação
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Visão da Implementação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-modelagem-dos-dados" class="md-nav__link">
+    6.1 Modelagem dos dados
+  </a>
+  
+    <nav class="md-nav" aria-label="6.1 Modelagem dos dados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#611-entidades" class="md-nav__link">
+    6.1.1 Entidades
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#612-atributos" class="md-nav__link">
+    6.1.2 Atributos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#613-relacionamentos" class="md-nav__link">
+    6.1.3 Relacionamentos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#614-diagrama-entidade-relacionamento" class="md-nav__link">
+    6.1.4 Diagrama Entidade Relacionamento
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#614-diagrama-do-banco-de-dados" class="md-nav__link">
+    6.1.4 Diagrama do Banco de Dados
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-referencias" class="md-nav__link">
+    7. Referências
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documento-de-metodologias/" class="md-nav__link">
+        Documento de Metodologias
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../planejamento-de-riscos/" class="md-nav__link">
+        Planejamento de riscos
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../roadmap/" class="md-nav__link">
+        Roadmap
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../termo-de-abertura/" class="md-nav__link">
+        Termo de Abertura
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../post_mortem/" class="md-nav__link">
+        Post Mortem
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Produto
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Produto" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Produto
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../canvas/" class="md-nav__link">
+        Canvas
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../produto/backlog/" class="md-nav__link">
+        Backlog do Produto
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../produto/prototipos/" class="md-nav__link">
+        Protótipos
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../produto/identidade-visual/" class="md-nav__link">
+        Identidade Visual
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Contribuição
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Contribuição" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Contribuição
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../como_contribuir/" class="md-nav__link">
+        Como Contribuir?
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CODE_OF_CONDUCT/" class="md-nav__link">
+        Código de Conduta
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" type="checkbox" id="__nav_6_3" >
+      
+      <label class="md-nav__link" for="__nav_6_3">
+        Políticas
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Políticas" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_3">
+          <span class="md-nav__icon md-icon"></span>
+          Políticas
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../policies/commits/" class="md-nav__link">
+        Commits
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../policies/branches/" class="md-nav__link">
+        Branches
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../policies/issues/" class="md-nav__link">
+        Issues
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../policies/pullRequests/" class="md-nav__link">
+        Pull Requests
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#historico-de-versoes" class="md-nav__link">
+    Histórico de Versões
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introducao" class="md-nav__link">
+    1. Introdução
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Introdução">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-finalidade" class="md-nav__link">
+    1.1 Finalidade
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-escopo" class="md-nav__link">
+    1.2 Escopo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-definicoes-acronimos-e-abreviacoes" class="md-nav__link">
+    1.3 Definições, Acrônimos e Abreviações
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-visao-geral" class="md-nav__link">
+    1.4 Visão Geral
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-representacao-arquitetural" class="md-nav__link">
+    2. Representação arquitetural
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Representação arquitetural">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-react" class="md-nav__link">
+    2.1 React
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-flask" class="md-nav__link">
+    2.2 Flask
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-mysql" class="md-nav__link">
+    2.3 MySQL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-metas-e-restricoes-de-arquitetura" class="md-nav__link">
+    3. Metas e Restrições de Arquitetura
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Metas e Restrições de Arquitetura">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-metas" class="md-nav__link">
+    3.1 Metas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-restricoes" class="md-nav__link">
+    3.2 Restrições
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-visao-dos-casos-de-uso" class="md-nav__link">
+    4. Visão dos Casos de Uso
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Visão dos Casos de Uso">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-diagrama-dos-casos-de-uso" class="md-nav__link">
+    4.1 Diagrama dos Casos de Uso
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-atores-dos-casos-de-uso" class="md-nav__link">
+    4.2 Atores dos Casos de Uso
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-descricao-dos-casos-de-uso" class="md-nav__link">
+    4.3 Descrição dos Casos de Uso
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-visao-logica" class="md-nav__link">
+    5. Visão Lógica
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Visão Lógica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-diagrama-de-pacotes" class="md-nav__link">
+    5.1 Diagrama de Pacotes
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 Diagrama de Pacotes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#511-front-end" class="md-nav__link">
+    5.1.1 Front-End
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5111-organizacao-das-pastas" class="md-nav__link">
+    5.1.1.1 Organização das Pastas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#512-back-end" class="md-nav__link">
+    5.1.2 Back-End
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5121-organizacao-das-pastas" class="md-nav__link">
+    5.1.2.1 Organização das pastas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5122-organizacao-dos-pacotes" class="md-nav__link">
+    5.1.2.2 Organização dos pacotes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-visao-da-implementacao" class="md-nav__link">
+    6. Visão da Implementação
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Visão da Implementação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-modelagem-dos-dados" class="md-nav__link">
+    6.1 Modelagem dos dados
+  </a>
+  
+    <nav class="md-nav" aria-label="6.1 Modelagem dos dados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#611-entidades" class="md-nav__link">
+    6.1.1 Entidades
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#612-atributos" class="md-nav__link">
+    6.1.2 Atributos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#613-relacionamentos" class="md-nav__link">
+    6.1.3 Relacionamentos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#614-diagrama-entidade-relacionamento" class="md-nav__link">
+    6.1.4 Diagrama Entidade Relacionamento
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#614-diagrama-do-banco-de-dados" class="md-nav__link">
+    6.1.4 Diagrama do Banco de Dados
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-referencias" class="md-nav__link">
+    7. Referências
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/fga-eps-mds/2020.2-Anunbis/edit/master/docs/documentacao/documento-de-arquitetura.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>Documento de Arquitetura</h1>
+                
+                <h2 id="historico-de-versoes">Histórico de Versões</h2>
+<table>
+<thead>
+<tr>
+<th>Data</th>
+<th>Versão</th>
+<th>Descrição</th>
+<th>Autor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>18/02</td>
+<td>0.1</td>
+<td>Abertura do Documento de Arquitetura</td>
+<td>Rafael e Roberto</td>
+</tr>
+<tr>
+<td>28/02</td>
+<td>0.2</td>
+<td>Atualização do Documento de Arquitetura</td>
+<td>Rodrigo e Thiago</td>
+</tr>
+<tr>
+<td>28/02</td>
+<td>0.3</td>
+<td>Adição do tópico Flask</td>
+<td>Rodrigo e Thiago</td>
+</tr>
+<tr>
+<td>28/02</td>
+<td>0.4</td>
+<td>Adição do tópico MySQL</td>
+<td>Rodrigo e Thiago</td>
+</tr>
+<tr>
+<td>28/02</td>
+<td>0.5</td>
+<td>Adição do tópico Modelo MVC</td>
+<td>Rodrigo e Thiago</td>
+</tr>
+<tr>
+<td>02/03</td>
+<td>0.6</td>
+<td>Adição do tópico React</td>
+<td>Victor</td>
+</tr>
+<tr>
+<td>05/03</td>
+<td>0.7</td>
+<td>Adição do tópico Visão dos Casos de Uso</td>
+<td>Roberto</td>
+</tr>
+<tr>
+<td>05/03</td>
+<td>0.8</td>
+<td>Adição do tópico Visão Lógica</td>
+<td>Roberto</td>
+</tr>
+<tr>
+<td>06/03</td>
+<td>0.9</td>
+<td>Adição do diagrama arquitetural</td>
+<td>Thiago</td>
+</tr>
+<tr>
+<td>19/03</td>
+<td>1.0</td>
+<td>Adição do tópico Visão da Implementação</td>
+<td>Thiago</td>
+</tr>
+<tr>
+<td>20/03</td>
+<td>1.1</td>
+<td>Atualizando tópico das metas</td>
+<td>Rodrigo</td>
+</tr>
+<tr>
+<td>22/03</td>
+<td>1.2</td>
+<td>Atualizando Modelagem de dados</td>
+<td>Thiago</td>
+</tr>
+<tr>
+<td>24/03</td>
+<td>1.3</td>
+<td>Adição dos diagramas de pacotes</td>
+<td>Rafael e Roberto</td>
+</tr>
+<tr>
+<td>16/04</td>
+<td>1.4</td>
+<td>Adição do detalhamento das pastas do Front-End</td>
+<td>Rafael, Roberto, Eduardo e Victor</td>
+</tr>
+<tr>
+<td>16/04</td>
+<td>1.5</td>
+<td>Adição do detalhamento das pastas do Back-End</td>
+<td>Thiago</td>
+</tr>
+<tr>
+<td>18/04</td>
+<td>1.6</td>
+<td>Revisão da visão lógica</td>
+<td>Rafael e Thiago</td>
+</tr>
+<tr>
+<td>18/05</td>
+<td>1.7</td>
+<td>Adição do Flask-Migrate e Flask-Swagger</td>
+<td>Thiago</td>
+</tr>
+<tr>
+<td>18/05</td>
+<td>1.8</td>
+<td>Atualização do Diagrama de Pacotes</td>
+<td>Thiago</td>
+</tr>
+<tr>
+<td>18/05</td>
+<td>1.9</td>
+<td>Adição da organização das pastas do back-end</td>
+<td>Thiago</td>
+</tr>
+<tr>
+<td>18/05</td>
+<td>2.0</td>
+<td>Adição da relação do Banco de dados e do Flask</td>
+<td>Thiago</td>
+</tr>
+<tr>
+<td>18/05</td>
+<td>2.1</td>
+<td>Atualicação dos atributos das entidades</td>
+<td>Thiago</td>
+</tr>
+<tr>
+<td>18/05</td>
+<td>2.2</td>
+<td>Atualização da organização das pastas do front-end</td>
+<td>Thiago</td>
+</tr>
+<tr>
+<td>18/05</td>
+<td>2.3</td>
+<td>Atualização dos casos de uso</td>
+<td>Thiago</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-introducao">1. <a name="1">Introdução</a></h2>
+<h3 id="11-finalidade">1.1 <a name="1_1">Finalidade</a></h3>
+<p align = "justify"> &emsp;&emsp; Essa documentação tem como finalidade fornecer uma visão geral da arquitetura do projeto Anunbis, demonstrando inicialmente, suas metas e objetivos. Para assim esclarecer as decisões de desenvolvimento que foram tomadas ao longo do projeto. </p>
+
+<h3 id="12-escopo">1.2 <a name="1_2">Escopo</a></h3>
+<p align="justify"> &emsp;&emsp; Com esse documento, é possível entender de maneira mais clara e objetiva toda a arquitetura do projeto, permitindo ao leitor a compreensão de todo o sistema, bem como as abordagens usadas para o desenvolvimento do mesmo.</p>
+
+<h3 id="13-definicoes-acronimos-e-abreviacoes">1.3 <a name="1_3">Definições, Acrônimos e Abreviações</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">Abreviação</th>
+<th align="left">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>MDS</strong></td>
+<td align="left">Métodos de Desenvolvimento de Software</td>
+</tr>
+</tbody>
+</table>
+<h3 id="14-visao-geral">1.4 <a name="1_4">Visão Geral</a></h3>
+<p align="justify"> &emsp;&emsp; Este documento é dividido, atualmente, em 7 tópicos, descrevendo de maneira concisa o projeto. Esses tópicos são divididos em:
+</p>
+
+<ul>
+<li><strong>Introdução</strong>: Fornece uma visão geral do documento inteiro;</li>
+<li><strong>Representação arquitetural</strong>: Descreve as tecnologias que serão utilizadas no projeto, bem como o porquê da escolha dessas tecnologias.</li>
+<li><strong>Metas e restrições da arquitetura</strong>: Descreve os requisitos e objetivos do software que possui algum impacto sobre a arquitetura.</li>
+<li><strong>Visão dos Casos de Uso</strong>: Descreve as funcionalidades que o usuario poderá efetuar.</li>
+<li><strong>Visão Lógica</strong>: Descreve as interações entre as camadas e as tecnologias.</li>
+<li><strong>Visão da Implementação</strong>: Descreve as implementações das camadas e tecnologias.</li>
+<li><strong>Referências</strong>: Emprega as fontes utilizadas nas pesquisas para relacionar as publicações que foram consultadas e citadas.</li>
+</ul>
+<h2 id="2-representacao-arquitetural">2. <a name="2">Representação arquitetural</a></h2>
+<p align = "justify"> &emsp;&emsp;Este projeto utiliza diversas tecnologias que se relacionam para fazer uma aplicação web. A figura abaixo mostra um diagrama com a representação arquitetural do programa.</p>
+
+<div style="display:block;text-align:center"><img src="/2020.2-Anunbis/images/diagramaArquitetura.png" alt="representação da arquitetura no projeto"></div>
+
+<p align = "justify"> &emsp;&emsp;Ele se baseia em requisições e respostas Http para se relacionar. O usuário, com seu navegador, entra no site gerado pelo React e, a partir dai, pode realizar varias ações, como cadastrar, postar e comentar. O React lida com essas ações e, se precisar, se conecta com o Flask. O Flask, por sua vez, cuida da lógica de negócio, manuseamento de dados e faz a conexão com o Mysql para a persistência desses dados.</p>
+
+<h3 id="21-react">2.1 <a name="2_1">React</a></h3>
+<p align = "justify"> &emsp;&emsp; Para representarmos a camada de contato com o usuário, decidimos usar a biblioteca <a href="https://pt-br.reactjs.org/docs/getting-started.html">ReactJS</a> como front-end do projeto, realizando a parte onde se tem a interação do usuário com a página. Essa biblioteca JavaScript torna a criação de interfaces de usuário uma tarefa fácil, renderizando de forma eficiente apenas os componentes necessários, caso os dados mudem.</p>
+
+<p align = "justify"> &emsp;&emsp; Os <a href="https://pt-br.reactjs.org/docs/react-component.html">componentes</a> são a base do ReactJS, são como elementos HTML personalizados, reutilizáveis, permitem dividir a interface do usuário em partes independentes e pensar em cada parte isoladamente. O React também agiliza como os dados são armazenados e tratados, usando o <a href="https://pt-br.reactjs.org/docs/state-and-lifecycle.html">estado</a> e os <a href="https://pt-br.reactjs.org/docs/render-props.html">props</a>.</p>
+
+<h3 id="22-flask">2.2 <a name="2_2">Flask</a></h3>
+<!-- <a href= "" ></a>   ## pra colocar link -->
+
+<p align = "justify"> &emsp;&emsp; Para este projeto, decidimos escolher a micro framework web Flask, implementada em Python para ficar responsável pelo back-end do projeto. Por ser um micro framework, o <a href="https://flask.palletsprojects.com/en/1.1.x/">Flask</a> possui apenas o mínimo possível para a API funcionar.</p>
+
+<p align = "justify"> &emsp;&emsp; Assim, se for necessário, é possível instalar pacotes extras para todo desenvolvimento da aplicação. Isso permite que um projeto implementado com o Flask só tenha o que realmente precisa, ao invés de termos inúmeras ferramentas e módulos sem nenhuma utilização no projeto. Dentre estes pacotes extras há: o <a href="https://flask-sqlalchemy.palletsprojects.com/en/2.x/">SQLAlchemy</a> para cuidar da comunicação com o banco de dados; <a href="https://flask-marshmallow.readthedocs.io/en/latest">Mashmallow</a> para cuidar da serialização; o <a href="https://flask-migrate.readthedocs.io/en/latest/" >Migrate</a>, que cuida do versionamento do banco de dados pelo Python; o <a href="https://github.com/flasgger/flasgger" >Flasgger</a> para a documentação da API; <a href="https://flask-jwt-extended.readthedocs.io/en/stable/">Flask Jwt Extended</a>  para a autenticação; e o <a href="https://pythonhosted.org/Flask-Mail/">Flask-mail</a> para o envio de e-mails.</p>
+
+<h3 id="23-mysql">2.3 <a name="2_3">MySQL</a></h3>
+<p align = "justify"> &emsp;&emsp;Para a persistência dos dados, o banco utilizado é o MySQL, pois utiliza a linguagem SQL e é <a 
+href="https://insights.stackoverflow.com/survey/2020#technology">o favorito do mercado</a>. Além disso, pelo fato de ser relacional, será bastante útil para fazer as relações entre as entidades. No entanto, não há a necessidade de utilizar a linguagem SQL diretamente, pois o SQLAlchemy e o Flask-Migrate cuidam do trabalho de acesso aos dados e do versionamento.</p>
+<p align = "justify">&emsp;&emsp;Deste modo, o SQLAlchemy e o Flask-migrate são capazes de mediar todas as tarefas necessárias, como criar tabelas, relacionamentos, realizar  consultas, adicionar e remover informações para o pleno funcionamento desse projeto.</p>
+<!--
+### 2.4 <a name="2_4">Modelo MVC</a>
+<p align="justify">&emsp;&emsp;É um modelo para a organização do software do projeto, sendo ele um padrão de arquitetura de software que contribui para melhorar a performance do programa, tornando-o mais produtivo. Essa arquitetura é baseada na separação do código entre Modelo, controle e visão. Sendo assim, esse modelo é utilizado no back-end da aplicação. </p>
+<--
+<p align="justify">&emsp;&emsp; O pacote ‘modelo’ é responsável por gerenciar os dados, determinando suas funções, lógicas e o padrão de organização que será apresentado ao banco de dados. </p>
+<p align="justify">&emsp;&emsp;O pacote ‘controle’ é responsável por ser o intermediador das requisições realizadas pelo pacote ‘visão’ e o ‘modelo’, processando os dados e repassando para seus respectivos destinos.</p>
+<p align="justify">&emsp;&emsp;O pacote ‘Visão’ apresenta as informações ao usuário, sendo o local por onde o usuário irá interagir. Nessa camada é onde interações com o usuário são elaboradas, são capturadas, validadas e disponibilizadas. Tudo isso por meio do JSON.</p>
+<--
+<p align="justify">&emsp;&emsp;Essa arquitetura gera inúmeros benefícios ao projeto, a camada de controle, por exemplo, serve como um filtro de segurança, pois impede que informações incorretas cheguem até a camada modelo. Contribui com a organização, pois possui fácil leitura e eventuais erros são mais fáceis de serem localizados. Além disso, essa arquitetura de camadas permite que vários programadores trabalhem ao mesmo tempo em diferentes camadas, contribuindo para o desenvolvimento do projeto.</p>
+<--
+<div style="display:block;text-align:center"><a style="text-align:center" href="https://edisciplinas.usp.br/pluginfile.php/4632609/mod_resource/content/1/5%20Arquitetura%20MVC.pdf"><img src="/2020.2-Anunbis/images/arquiteturaMVCBackEnd.png" alt="representação da arquitetura MVC no back-end"></a></div>
+-->
+
+<h2 id="3-metas-e-restricoes-de-arquitetura">3. <a name="3">Metas e Restrições de Arquitetura</a></h2>
+<h3 id="31-metas">3.1 <a name="3_1">Metas</a></h3>
+<p align = "justify">&emsp;&emsp; O projeto deve ter acesso às funções básicas de plataformas web para  possibilitar que os usuários compartilhem, entre si, suas experiências com os professores e disciplinas. O objetivo é ajudar os estudantes a escolherem suas disciplinas, e os professores receberem feedback para melhorarem suas metodologias.</p>
+
+<h3 id="32-restricoes">3.2 <a name="3_2">Restrições</a></h3>
+<p align = "justify">&emsp;&emsp;A aplicação será gerada por meio da biblioteca React.js, que é implementada com o Javascript, CSS e HTML e executada em um navegador. Sobre a comunicação front-end e back-end, ela ocorre por meio de uma API RestFul implementada por um microframework de python chamado Flask.
+</p>
+
+<h2 id="4-visao-dos-casos-de-uso">4. <a name="4">Visão dos Casos de Uso</a></h2>
+<h3 id="41-diagrama-dos-casos-de-uso">4.1 <a name="4_1">Diagrama dos Casos de Uso</a></h3>
+<div style="display:block;text-align:center"><img src="/2020.2-Anunbis/images/casosDeUso.png" alt="Diagrama dos casos de Uso"></div>
+
+<h3 id="42-atores-dos-casos-de-uso">4.2 <a name="4_2">Atores dos Casos de Uso</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">Ator</th>
+<th align="left">Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>Discente</strong></td>
+<td align="left">O discente será um aluno da UnB.</td>
+</tr>
+<tr>
+<td align="left"><strong>Docente</strong></td>
+<td align="left">O docente será um professor da UnB.</td>
+</tr>
+<tr>
+<td align="left"><strong>Visitante</strong></td>
+<td align="left">O visitante pode ser qualquer pessoa.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="43-descricao-dos-casos-de-uso">4.3 <a name="4_3">Descrição dos Casos de Uso</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">US</th>
+<th align="left">Caso de Uso</th>
+<th align="left">Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">US01 e US02</td>
+<td align="left">Cadastro de usuário</td>
+<td align="left">Eu, como aluno/professor da UnB, desejo realizar o cadastro.</td>
+</tr>
+<tr>
+<td align="left">US03 e US04</td>
+<td align="left">Login de usuário</td>
+<td align="left">Eu, como aluno/professor da UnB, desejo fazer login em minha conta.</td>
+</tr>
+<tr>
+<td align="left">US05</td>
+<td align="left">Pesquisar professores</td>
+<td align="left">Eu, como usuário, desejo buscar professores por diferentes ordens</td>
+</tr>
+<tr>
+<td align="left">US10</td>
+<td align="left">Visualizar avaliações</td>
+<td align="left">Eu, como usuário, desejo ver todas as avaliações que realizei/sobre mim</td>
+</tr>
+<tr>
+<td align="left">US04</td>
+<td align="left">Avaliar professor</td>
+<td align="left">Eu, como aluno da UnB, desejo avaliar um professor</td>
+</tr>
+<tr>
+<td align="left">US13</td>
+<td align="left">Denunciar avaliações</td>
+<td align="left">Eu, como usuário, desejo denunciar uma avaliação</td>
+</tr>
+<tr>
+<td align="left">US12</td>
+<td align="left">Concordar ou discordar de avaliações</td>
+<td align="left">Eu, como aluno da UnB, desejo avaliar o comentário de terceiros</td>
+</tr>
+<tr>
+<td align="left">US17</td>
+<td align="left">Visualizar gráficos de desempenho</td>
+<td align="left">Eu, como professor da UnB, desejo visualizar o meu gráfico de desempenho</td>
+</tr>
+<tr>
+<td align="left">US18</td>
+<td align="left">Visualizar perfil</td>
+<td align="left">Eu, como usuário, desejo visualizar informações sobre o meu perfil</td>
+</tr>
+<tr>
+<td align="left">US14</td>
+<td align="left">Alterar senha</td>
+<td align="left">Eu, como usuário, desejo alterar minha senha</td>
+</tr>
+<tr>
+<td align="left">US15</td>
+<td align="left">Excluir conta</td>
+<td align="left">Eu, como usuário, desejo excluir minha conta</td>
+</tr>
+<tr>
+<td align="left">US16</td>
+<td align="left">Home</td>
+<td align="left">Eu, como visitante, desejo visualizar a página home da aplicação</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-visao-logica">5. <a name="5">Visão Lógica</a></h2>
+<p align = "justify">&emsp;&emsp;As interações entre usuário e plataforma, tanto mobile quanto desktop, serão feitas pelo front-end, sendo o React responsável por interpretar esses eventos passados e tratá-los de maneira adequada.</p>
+
+<p align = "justify">&emsp;&emsp;Existem 2 possibilidades de eventos a serem tratados: os que podem ser tratados apenas no lado do client (client side), que não necessitam de comunicação externa; e os que necessitam dessa comunicação via API com o back-end. Assim, o React é responsável por organizar as informações necessárias para apresentação ao usuário e em realizar as trocas de dados com o back-end.</p>
+
+<p align = "justify">&emsp;&emsp;Para se comunicar com o back-end, será necessário enviar uma requisição para o servidor do Back-End, fazendo uso do protocolo de comunicação HTTP e respeitando as regras de interface RESTful.</p>
+
+<p align = "justify">&emsp;&emsp;O tratamento das interações do Front-End com o Back-End será por meio da API, criada pelo Flask, e suas rotas se encontram no pacote controller. Esse pacote é responsavel por tratar tanto as requisições como as respostas.</p>
+
+<p align = "justify">&emsp;&emsp;Assim que se recebe uma requisição, deve-se validar os dados e <a href="https://qastack.com.br/programming/3316762/what-is-deserialize-and-serialize-in-json#:~:text=JSON%20%C3%A9%20um%20formato%20que,converter%20cadeia%20%2D%3E%20objeto%20)">desserializar</a>, caso seja necessário, por meio dos Schemas do Marshmallow. Cada entidade tem seu Schema que irá cuidar da sua serialização/desserialização e da validação dos dados recebidos por meio da requisição.</p>
+
+<p align = "justify">&emsp;&emsp;Após as validações dos dados, inicia a lógica de negócio que, geralmente, se encontra no pacote services, e que encaminha, se precisar, para as entidades do model, que utilizam o SqlAlchemy para representar as tabelas do banco de dados.</p>
+
+<p align="justify">&emsp;&emsp;Tendo feito seus serviços, os dados voltam para o controller, que chama o Schema para cuidar da sua serialização, para serem mandados de volta para quem requisitou.</p>
+
+<h3 id="51-diagrama-de-pacotes">5.1 <a name="5_1">Diagrama de Pacotes</a></h3>
+<h4 id="511-front-end">5.1.1 <a name="5_1_1">Front-End</a></h4>
+<div style="display:block;text-align:center"><img src="/2020.2-Anunbis/images/diagramaPacotesFrontEnd.png" alt="Diagrama de pacotes Front-End"/></div>
+
+<h4 id="5111-organizacao-das-pastas">5.1.1.1 <a name="5.1.1.1">Organização das Pastas</a></h4>
+<ul>
+<li>
+<p>assets: Possui a pasta de imagens e a pasta de constantes com arquivos de estilização globais ou recorrentes.</p>
+</li>
+<li>
+<p>components: Onde estão pastas de componentes React. Cada pasta contém o arquivo index que define a lógica do componente, o arquivo styles com os styled components (estilização do componente), e pode conter o arquivo validations caso precise fazer validações de entrada.</p>
+</li>
+<li>
+<p>services: Contém os arquivos de comunicação com a API e autenticação.</p>
+</li>
+<li>
+<p>views: Contém as páginas da aplicação.</p>
+</li>
+<li>
+<p>routes: Contém os arquivos de rotas do produto.</p>
+</li>
+<li>
+<p>tests: Contém os testes da aplicação.</p>
+</li>
+</ul>
+<h4 id="512-back-end">5.1.2 <a name="5_1_1">Back-End</a></h4>
+<div style="display:block;text-align:center"><img src="/2020.2-Anunbis/images/diagramaPacotesBackEnd.png" alt="Diagrama de pacotes Back-End"/></div>
+
+<h4 id="5121-organizacao-das-pastas">5.1.2.1 <a name="5.1.2.1">Organização das pastas</a></h4>
+<ul>
+<li>app: Pasta principal que contém todos os códigos fonte da aplicação.</li>
+<li>tests: Contém o teste unitário e de integração.</li>
+<li>migrations: Contém o versionamento do banco de dados.</li>
+<li>scripts: Contém os scripts de inicialização da aplicação.</li>
+</ul>
+<h4 id="5122-organizacao-dos-pacotes">5.1.2.2 <a name="5.1.2.2">Organização dos pacotes</a></h4>
+<ul>
+<li>controller: Contém as rotas da api.</li>
+<li>schemas: Contém os arquivos que cuidam da lógica de serialização, deserelização e validação dos JSON que vão entrar e sair pela API.</li>
+<li>model: Contém os arquivos que representam as entidades do banco de dados.</li>
+<li>services: Contém os arquivos que cuidam da lógica de negócio e é a ponte que conecta o controller com o model.</li>
+<li>ext: Contém os arquivos de bibliotecas externas da aplicação. Por exemplo, o conector com o banco de dados, a autenticação e os e-mails.</li>
+<li>docs: Contém os arquivos do Swagger que documentam cada rota da API.</li>
+<li>static: Contém os arquivos estáticos, como os templates de e-mail e os dados dos cursos, disciplinas e professores que populam o banco de dados.</li>
+</ul>
+<h2 id="6-visao-da-implementacao">6. <a name="6">Visão da Implementação</a></h2>
+<h3 id="61-modelagem-dos-dados">6.1 <a name="6_1">Modelagem dos dados</a></h3>
+<h4 id="611-entidades">6.1.1 <a name="6_1_1">Entidades</a></h4>
+<ul>
+<li>Estudante</li>
+<li>Professor</li>
+<li>Curso</li>
+<li>Disciplina</li>
+<li>Avaliação</li>
+<li>Denúncia</li>
+</ul>
+<h4 id="612-atributos">6.1.2 <a name="6_1_2">Atributos</a></h4>
+<ul>
+<li>Um <strong>Estudante</strong>, para que possa ser cadastrado, tem uma <strong>matrícula</strong>, <strong>nome</strong> , <strong>curso</strong>, <strong>email</strong>, <strong>senha</strong> e um booleano que guarda se o <strong>e-mail foi confirmado</strong>.</li>
+<li>Um <strong>Professor</strong> tem uma <strong>matrícula</strong>, <strong>identificação</strong>, <strong>nome</strong>, <strong>email</strong>, <strong>senha</strong> e um booleano que guarda se o <strong>e-mail foi confirmado</strong>.</li>
+<li>Um <strong>Curso</strong> tem um <strong>nome</strong>.</li>
+<li>Uma <strong>Disciplina</strong> tem um <strong>nome</strong> e um <strong>código</strong>.</li>
+<li>Uma <strong>Avaliação</strong>, para ser cadastrada, tem uma <strong>identificação</strong>, <strong>conteúdo</strong>, <strong>data de postagem</strong>, se é <strong>anônima</strong> ou não e os <strong>feedbacks</strong> sobre o professor.</li>
+<li>Uma <strong>Denúncia</strong> tem uma <strong>identificação</strong>, <strong>conteúdo</strong> e um <strong>tipo</strong>, que pode ser uma denúncia grave, incoerente, ofensiva ou outras.</li>
+</ul>
+<h4 id="613-relacionamentos">6.1.3 <a name="6_1_3">Relacionamentos</a></h4>
+<ul>
+<li>
+<p>Um <strong>estudante</strong> pertence a um <strong>curso</strong>, já um <strong>curso</strong> pode ter vários <strong>estudantes</strong>. <strong>Cardinalidade: N:1</strong></p>
+</li>
+<li>
+<p>Uma <strong>estudante</strong> pode fazer várias <strong>avaliações</strong>, mas uma <strong>avaliação</strong> só pode ter um <strong>autor</strong>, que é um <strong>estudante</strong>. <strong>Cardinalidade: 1:N</strong></p>
+</li>
+<li>
+<p>Um <strong>estudante</strong> pode <strong>concordar</strong> ou <strong>discordar</strong> de várias <strong>avaliações</strong>, e uma <strong>avaliação</strong> pode ter vários <strong>alunos</strong> que <strong>concordam</strong> ou <strong>discordam</strong>. <strong>Cardinalidade: N:N</strong></p>
+</li>
+<li>
+<p>Um <strong>estudante</strong> pode <strong>denunciar</strong> várias <strong>avaliações</strong>. <strong>Cardinalidade: 1:N</strong></p>
+</li>
+<li>
+<p>Um <strong>professor</strong> pode ministrar várias <strong>disciplinas</strong> e uma <strong>disciplina</strong> tem vários <strong>professores</strong>. <strong>Cardinalidade: N:N</strong> </p>
+</li>
+<li>
+<p>Um <strong>curso</strong> pode ter várias <strong>disciplinas</strong> e uma <strong>disciplina</strong> pode pertencer a mais de um <strong>curso</strong>. <strong>Cardinalidade: N:N</strong></p>
+</li>
+<li>
+<p>Uma <strong>avaliação</strong> pode sofrer várias <strong>denuncias</strong>. <strong>Cardinalidade: 1:N</strong></p>
+</li>
+<li>
+<p>Uma <strong>avaliação</strong> se refere a um <strong>professor</strong>, e um <strong>professor</strong> pode ter várias <strong>avaliações</strong>. <strong>Cardinalidade: N:1</strong></p>
+</li>
+<li>
+<p>Uma <strong>avaliação</strong> se refere a uma <strong>disciplina</strong>. <strong>Cardinalidade: 1:1</strong></p>
+</li>
+</ul>
+<h4 id="614-diagrama-entidade-relacionamento">6.1.4 <a name="6_1_4">Diagrama Entidade Relacionamento</a></h4>
+<div style="display:block;text-align:center"><img src="/2020.2-Anunbis/images/diagramaEntidadeRelacionamento.png" alt="Diagrama Entidade Relacionamento"/></div>
+
+<h4 id="614-diagrama-do-banco-de-dados">6.1.4 <a name="6_1_4">Diagrama do Banco de Dados</a></h4>
+<div style="display:block;text-align:center"><img src="/2020.2-Anunbis/images/diagramaLogicoDados.png" alt="Diagrama Logico dos Dados"/></div>
+
+<h2 id="7-referencias">7. <a name="7">Referências</a></h2>
+<p>Wilian, João. Flask: o que é e como codar com esse micro framework Python. <strong>GeekHunter</strong>, 2020. Disponivel em: <a href="https://blog.geekhunter.com.br/flask-framework-python/">Flask: o que é e como codar com esse micro framework Python</a></p>
+<p>COzer, Carolina. O que é SQL e para que ele serve?. <strong>Tecmundo</strong>, 2019. Disponível em : <a href= "https://www.tecmundo.com.br/software/146482-sql-que-ele-serve.htm">  O que é SQL e para que ele serve?</a> </p>
+<p>PRAVALER, Carreira. SQL – o que é e como funciona na prática?. <strong>PRAVALER</strong>, 2020. Disponivel em: <a href="https://www.pravaler.com.br/sql-o-que-e-e-como-funciona-na-pratica/">SQL – o que é e como funciona na prática?</a>
+ SQL – o que é e como funciona na prática?</p>
+<p>Medeiros, Higor. Introdução ao Padrão MVC. <strong>DEVMEDIA</strong>, 2013. Disponivel em: <a href="https://www.devmedia.com.br/introducao-ao-padrao-mvc/29308">Introdução ao Padrão MVC</a></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../documento-de-visao/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Documento de Visão
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../documento-de-metodologias/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Documento de Metodologias
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": "navigation.tabs", "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a1609d9a.min.js"></script>
+      
+    
+  </body>
+</html>

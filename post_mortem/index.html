@@ -1,0 +1,1682 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Site de documentação do grupo Anunbis.">
+      
+      
+      
+      
+      <link rel="icon" href="../images/logo.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.5">
+    
+    
+      
+        <title>Post Mortem - Anunbis</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bde7dde4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ffc105">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="grey">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introducao" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Anunbis" class="md-header__button md-logo" aria-label="Anunbis" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Anunbis
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Post Mortem
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/fga-eps-mds/2020.2-Anunbis/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    2020.2-Anunbis
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      Início
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../sprints/planejamento-sprint-0/" class="md-tabs__link">
+        Sprints
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../documentacao/documento-de-visao/" class="md-tabs__link">
+        Projeto
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  <li class="md-tabs__item">
+    <a href="./" class="md-tabs__link md-tabs__link--active">
+      Post Mortem
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../documentacao/canvas/" class="md-tabs__link">
+        Produto
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../como_contribuir/" class="md-tabs__link">
+        Contribuição
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Anunbis" class="md-nav__button md-logo" aria-label="Anunbis" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    Anunbis
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/fga-eps-mds/2020.2-Anunbis/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    2020.2-Anunbis
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Início
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Sprints
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprints" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Sprints
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      <label class="md-nav__link" for="__nav_2_1">
+        Sprint 0
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprint 0" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Sprint 0
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprints/planejamento-sprint-0/" class="md-nav__link">
+        Planejamento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprints/revisao-sprint-0/" class="md-nav__link">
+        Revisão
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        Sprint 1
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprint 1" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Sprint 1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprints/planejamento-sprint-1/" class="md-nav__link">
+        Planejamento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprints/revisao-sprint-1/" class="md-nav__link">
+        Revisão
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      <label class="md-nav__link" for="__nav_2_3">
+        Sprint 2
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprint 2" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Sprint 2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprints/planejamento-sprint-2/" class="md-nav__link">
+        Planejamento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprints/revisao-sprint-2/" class="md-nav__link">
+        Revisão
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      <label class="md-nav__link" for="__nav_2_4">
+        Sprint 3
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprint 3" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Sprint 3
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprints/planejamento-sprint-3/" class="md-nav__link">
+        Planejamento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprints/revisao-sprint-3/" class="md-nav__link">
+        Revisão
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      <label class="md-nav__link" for="__nav_2_5">
+        Sprint 4
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprint 4" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Sprint 4
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprints/planejamento-sprint-4/" class="md-nav__link">
+        Planejamento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprints/revisao-sprint-4/" class="md-nav__link">
+        Revisão
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+      
+      <label class="md-nav__link" for="__nav_2_6">
+        Sprint 5
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprint 5" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          Sprint 5
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprints/planejamento-sprint-5/" class="md-nav__link">
+        Planejamento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprints/revisao-sprint-5/" class="md-nav__link">
+        Revisão
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+      
+      <label class="md-nav__link" for="__nav_2_7">
+        Sprint 6
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprint 6" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          Sprint 6
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprints/planejamento-sprint-6/" class="md-nav__link">
+        Planejamento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprints/revisao-sprint-6/" class="md-nav__link">
+        Revisão
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
+      
+      <label class="md-nav__link" for="__nav_2_8">
+        Sprint 7
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprint 7" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_8">
+          <span class="md-nav__icon md-icon"></span>
+          Sprint 7
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprints/planejamento-sprint-7/" class="md-nav__link">
+        Planejamento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprints/revisao-sprint-7/" class="md-nav__link">
+        Revisão
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_9" type="checkbox" id="__nav_2_9" >
+      
+      <label class="md-nav__link" for="__nav_2_9">
+        Sprint 8
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprint 8" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_9">
+          <span class="md-nav__icon md-icon"></span>
+          Sprint 8
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprints/planejamento-sprint-8/" class="md-nav__link">
+        Planejamento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprints/revisao-sprint-8/" class="md-nav__link">
+        Revisão
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_10" type="checkbox" id="__nav_2_10" >
+      
+      <label class="md-nav__link" for="__nav_2_10">
+        Sprint 9
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprint 9" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_10">
+          <span class="md-nav__icon md-icon"></span>
+          Sprint 9
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprints/planejamento-sprint-9/" class="md-nav__link">
+        Planejamento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprints/revisao-sprint-9/" class="md-nav__link">
+        Revisão
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_11" type="checkbox" id="__nav_2_11" >
+      
+      <label class="md-nav__link" for="__nav_2_11">
+        Sprint 10
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprint 10" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_11">
+          <span class="md-nav__icon md-icon"></span>
+          Sprint 10
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprints/planejamento-sprint-10/" class="md-nav__link">
+        Planejamento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprints/revisao-sprint-10/" class="md-nav__link">
+        Revisão
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_12" type="checkbox" id="__nav_2_12" >
+      
+      <label class="md-nav__link" for="__nav_2_12">
+        Sprint 11
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprint 11" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_12">
+          <span class="md-nav__icon md-icon"></span>
+          Sprint 11
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprints/planejamento-sprint-11/" class="md-nav__link">
+        Planejamento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprints/revisao-sprint-11/" class="md-nav__link">
+        Revisão
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_13" type="checkbox" id="__nav_2_13" >
+      
+      <label class="md-nav__link" for="__nav_2_13">
+        Sprint 12
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprint 12" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_13">
+          <span class="md-nav__icon md-icon"></span>
+          Sprint 12
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprints/planejamento-sprint-12/" class="md-nav__link">
+        Planejamento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprints/revisao-sprint-12/" class="md-nav__link">
+        Revisão
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Projeto
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Projeto" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Projeto
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentacao/documento-de-visao/" class="md-nav__link">
+        Documento de Visão
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentacao/documento-de-arquitetura/" class="md-nav__link">
+        Documento de Arquitetura
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentacao/documento-de-metodologias/" class="md-nav__link">
+        Documento de Metodologias
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentacao/planejamento-de-riscos/" class="md-nav__link">
+        Planejamento de riscos
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentacao/roadmap/" class="md-nav__link">
+        Roadmap
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentacao/termo-de-abertura/" class="md-nav__link">
+        Termo de Abertura
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Post Mortem
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Post Mortem
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introducao" class="md-nav__link">
+    Introdução
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pontos-do-projeto" class="md-nav__link">
+    Pontos do Projeto
+  </a>
+  
+    <nav class="md-nav" aria-label="Pontos do Projeto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#positivos" class="md-nav__link">
+    Positivos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#negativos" class="md-nav__link">
+    Negativos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conselhos-para-projetos-futuros" class="md-nav__link">
+    Conselhos para projetos futuros
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feeling-individual" class="md-nav__link">
+    Feeling individual 
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Produto
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Produto" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Produto
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentacao/canvas/" class="md-nav__link">
+        Canvas
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../produto/backlog/" class="md-nav__link">
+        Backlog do Produto
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../produto/prototipos/" class="md-nav__link">
+        Protótipos
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../produto/identidade-visual/" class="md-nav__link">
+        Identidade Visual
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Contribuição
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Contribuição" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Contribuição
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../como_contribuir/" class="md-nav__link">
+        Como Contribuir?
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CODE_OF_CONDUCT/" class="md-nav__link">
+        Código de Conduta
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" type="checkbox" id="__nav_6_3" >
+      
+      <label class="md-nav__link" for="__nav_6_3">
+        Políticas
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Políticas" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_3">
+          <span class="md-nav__icon md-icon"></span>
+          Políticas
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../policies/commits/" class="md-nav__link">
+        Commits
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../policies/branches/" class="md-nav__link">
+        Branches
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../policies/issues/" class="md-nav__link">
+        Issues
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../policies/pullRequests/" class="md-nav__link">
+        Pull Requests
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introducao" class="md-nav__link">
+    Introdução
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pontos-do-projeto" class="md-nav__link">
+    Pontos do Projeto
+  </a>
+  
+    <nav class="md-nav" aria-label="Pontos do Projeto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#positivos" class="md-nav__link">
+    Positivos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#negativos" class="md-nav__link">
+    Negativos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conselhos-para-projetos-futuros" class="md-nav__link">
+    Conselhos para projetos futuros
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feeling-individual" class="md-nav__link">
+    Feeling individual 
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/fga-eps-mds/2020.2-Anunbis/edit/master/docs/post_mortem.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>Post Mortem</h1>
+                
+                <h2 id="introducao"><a name="1">Introdução</a></h2>
+<p align="justify"> &emsp;&emsp;Este documento tem por finalidade fornecer uma avaliação crítica quanto ao projeto, realizado na etapa final, é de suma importância sua leitura, pois ele contém informações cruciais para auxiliar no desenvolvimento de projetos futuros.</p>
+
+<h2 id="pontos-do-projeto"><a name="2">Pontos do Projeto</a></h2>
+<h3 id="positivos">Positivos</h3>
+<ul>
+<li>Nossa equipe sempre esteve muito engajada no projeto, todos se empenharam muito durante o seu desenvolvimento, o que realmente facilitou todo o processo.</li>
+<li>Nossa equipe não tinha muita experiência, então tudo era novo, o que nos permitiu aprender muito.
+Aprendemos muito sobre metodologias ágeis como o scrum, e sobre como trabalhar em equipe, utilizamos as funções de Scrum master, Product Owner, Devops …, não tínhamos muita noção de trabalho em equipe, mas todos nos demos bem e conseguimos fazer funcionar.</li>
+<li>Por não termos EPS nos tornamos muito mais independentes, mesmo o monitor que foi designado para nos ajudar não esteve muito presente, então sempre tínhamos que descobrir tudo por nós mesmos, parece algo negativo, mas na verdade contribuiu bastante para criarmos uma visão mais crítica de todo o projeto. </li>
+<li>Tivemos a oportunidade de utilizar diversas tecnologias que nem sabíamos que existiam como React, Flask, docker, heroku??,o que foi bem assustador de início, mas deu tudo certo.</li>
+<li>Projetos Open Source eram um mistério, mas agora entendemos melhor como funcionam.
+LINUX é bacana, no começo é um susto, mas todos se comprometeram em utilizá-lo, saber se virar com linux é bem importante para um programador.</li>
+<li>Nós conseguimos desenvolver muito vocabulário de programador na disciplina, sempre aparecia algum nome diferente que nunca tínhamos visto, mas depois de vê-lo, era só pesquisar e descobrir o que era.</li>
+<li>Agora temos mais direcionamento em relação à carreira que podemos construir, tem o front-end, back-end, devops, todo mundo começa como programador padrão, mas agora somos capazes de pelo menos tentar a sorte em algum estágio.</li>
+<li>Github é MUITO importante para qualquer programador, finalmente tivemos a oportunidade de utilizá-la á fundo e continuaremos a usá-la por um bom tempo.</li>
+</ul>
+<h3 id="negativos">Negativos</h3>
+<ul>
+<li>O escopo do projeto foi mal definido, tivemos que refatorar algumas vezes durante o projeto, o que acabou gastando um tempo que poderia ser melhor utilizado caso o escopo fosse bem definido.</li>
+<li>Normalmente os PR’s demoravam muito para serem avaliados, isso devido ao fato de termos ciência da importância de uma boa avaliação causou um sentimento de “deixa pra depois que avalio melhor” no pessoal e atrasou bastante algumas issues e métricas.</li>
+<li>Um fator importante do nosso escopo que era a responsividade do app poder ser usado de dispositivos mobiles foi focada só no final do projeto, o que prejudicou sua visualização pois teria que refatorar um “pouco” de código para poder implementar da melhor maneira.</li>
+<li>Essa disciplina demanda muito tempo e dedicação, muito mais do que os créditos pré-estabelecidos, o ideal seria pegar menos matérias do que o fluxo oferece, pois se não fica bem pesado. </li>
+</ul>
+<h2 id="conselhos-para-projetos-futuros"><a name="3">Conselhos para projetos futuros</a></h2>
+<ul>
+<li>A comunicação é um fator extremamente importante, então investir em uma boa comunicação integra bem mais o time, fornecendo um espírito de equipe e união que funciona como base para ânimo durante o projeto.</li>
+<li>Explorar os repositórios antigos foi a atividade mais importante para o início do projeto, pois eles são uma boa base para se apoiar no momento de desespero inicial da disciplina haha.</li>
+<li>Tivemos muita dor de cabeça na implementação de testes de qualidade de códigos estáticos (codeclimate, sonarcloud) e o lint, foram muitos problemas para consertar, então utilizar o lint desde o começo é uma excelente prática.</li>
+<li>Explore ao máximo a utilização de batedores(membros que estudam determinado assunto e passam pro resto da equipe ) em pareamento no início do projeto, isso facilita a integração do time…</li>
+<li>Ter uma boa definição do escopo com o que é  possível de ser feito é extremamente importante para o projeto como um todo, então na hora de definir funcionalidades pega leve para conseguir entregar tudo, foquem mais nos pontos principais do produto.</li>
+<li>Não tenham medo de mudanças, mudar é importante em alguns cenários, principalmente quando se refere a produtividade da equipe (Ínicio de sprints, rotação de pareamento).</li>
+<li>Cuidem da saúde mental de vocês, promover alguma atividade extra como jogos pode ser interessante em um cenário remoto, se tiver possibilidade de se encontrar, se encontrem, lanchem, conversem sobre a vida, busquem conhecer melhor uns aos outros, pois ter uma equipe unida facilita muito.</li>
+<li>Se possível não pegue muitas disciplinas, MDS oferece muito conhecimento, porém é necessário ter tempo para estudar.</li>
+</ul>
+<h2 id="feeling-individual"><a name="4">Feeling individual </a></h2>
+<ul>
+<li><strong>Rafael Ramos (Scrum Master)</strong></li>
+</ul>
+<p align="justify">&emsp;&emsp;Sempre escutei frases do tipo “MDS é muito pesado e demanda tempo”, “O curso de software é separado em pré-MDS e pós-MDS” e realmente todas essas frases parecem ter um pouco de sentido, senti que vivi toda essa experiência com muito tempo dedicado e muito conhecimento adquirido, porém o mais importante que molda essa experiência é ter uma boa equipe que esteja interessada em aprender e se desenvolver juntos.</p>
+<p align="justify"> &emsp;&emsp;Pensei que desempenhar o papel de Scrum Master não seria algo muito difícil de ser cumprido pois já conhecia alguns membros da equipe e saberia lidar um pouco com cada, porém foi algo extremamente desafiador pois manter viva as práticas ágeis em um semestre tão pesado pra todos não é uma tarefa fácil, sinto que aprendi muito melhor como me organizar, como me comunicar de maneira mais clara, além analisar melhor algumas métricas importantes para uma equipe de software.</p>
+<p align="justify"> &emsp;&emsp;O único ponto negativo que penso da minha experiência foi que além do tempo dedicado a documentação e análise de métricas, “pulei muito de galho em galho” para promover uma melhora na equipe como um todo, e acabei perdendo algumas partes importantes como desenvolvedor, por exemplo, enquanto eu sentia que todo mundo estava aprendendo e se especializando mais em alguma tecnologia específica, eu me sentia um pouco atrás, sabendo um pouco de tudo mas não sabendo nada kkk, porém desempenhar algumas atividades de devops como testes e automatização, além de realizar algumas issues no front-end me trouxeram ânimo de aprendizado novamente, então ao final de tudo com muito esforço, sinto que valeu a pena.</p>
+<p align="justify"> &emsp;&emsp;A mensagem que fica da minha experiência como um todo é gratidão, muita gratidão ao meu time, sério, são pessoas que tenho hoje como família ! Nos divertimos muito com as gameplays de gartic ao final das sprints, sinto que posso contar com cada membro, após vivenciar e ouvir algumas experiências com trabalhos em grupo na faculdade sinto que essa foi minha melhor experiência. Além de me sentir parte de algo que realmente tem valor,a todas pessoas que apresento o produto acham a ideia bacana, principalmente os universitários haha !</p>
+
+<p align="center">
+  <img src="https://media.giphy.com/media/EldfH1VJdbrwY/giphy.gif"  width="300"/>
+</p>
+
+<ul>
+<li><strong>Rodrigo Balbino (Product Owner)</strong></li>
+</ul>
+<p align="justify"> &emsp;&emsp;Essa foi a primeira disciplina que senti que estava desenvolvendo algo real que tivesse algum tipo de valor como engenheiro de software, claro que deu aquela ansiedade por estar pegando essa matéria, já havia ouvido sobre a matéria e sabia que não seria algo simples. Por acaso dei a ideia sobre o tema do nosso projeto e acabei virando o product owner, não entendia muito do que estava acontecendo mas sempre tentei ajudar como podia. Inicialmente senti um pouco de dificuldade em relação ao github e as documentações que precisavam ser feitas, não tinha tido muita experiência em relação a nada disso, e todos pareciam estar se saindo muito bem.</p>
+<p align="justify"> &emsp;&emsp;A primeira parte do projeto foi mais voltada à documentação, o que foi frustrante pois não tínhamos EPS, eles que fariam essa parte, iniciei a matéria achando que aprenderia muita programação e estava com todo gás pra trabalhar. Infelizmente o gás passou, depois da release 1 foi que iniciamos a programação, fiquei responsável pelo back-end usando Python e Flask, infelizmente nesse período todas as matérias começaram a requisitar muita atenção, até PI1 que estava tranquilo acabei assumindo liderança. Mesmo estudando todos os dias, apenas liberando sábado ou domingo no final de semana, estive sempre atrasado em relação a MDS, tudo era pra ontem, me faltava tempo.</p>
+<p align="justify"> &emsp;&emsp;Estive sempre correndo pra tentar entender o que estava acontecendo, em algum momento tudo começou a desandar, mas toda a equipe ajudava bastante, então o projeto nunca parava. Fui um Product Owner muito ruim, não consegui ajudar tanto quanto queria, não consegui aprender tanto quanto gostaria, tenho certeza que se tivesse pego menos matérias e tivesse mais tempo para focar nessa disciplina teria sido capaz de me desenvolver muito melhor, teria conseguido ajudar mais.</p>
+
+<p align="center">
+  <img  src="https://media.tenor.com/images/bf220e7f45a2b6e666362759cc0dad6a/tenor.gif" width="300"/>
+</p>
+
+<ul>
+<li><strong>Roberto Mangabeira (Desenvolvedor)</strong></li>
+</ul>
+<p align="justify"> &emsp;&emsp;Então, desde que comecei a cursar engenharia de software senti que não estava fazendo algo que realmente condizia com a realidade. Isso mudou completamente com MDS. Diferente de muitos, eu não havia ouvido muito dessa matéria e quando comecei a fazê-la, percebi que seria necessário muita dedicação. Fiquei com papel de desenvolvedor o que achei perfeito para mim, e assim comecei a matéria.</p>
+<p align="justify"> &emsp;&emsp;Nas primeiras semanas, parte da confecção das documentações iniciais do projeto, confesso que não me senti muito animado. A falta de EPS fez com que eu me sentisse perdido em muitos momentos. Entretanto, com o passar das semanas entendi que esse era um projeto inteiramente planejado e executado por nós, um grupo de 6 pessoas, então para tudo seria nós que buscaríamos, aprenderíamos e faríamos. </p>
+<p align="justify"> &emsp;&emsp;Então, com esse sentimento de independência, entramos nas semanas de programação e foi aí  que realmente além de aprender mais, errei mais também. O bom de MDS é que você não sente medo de tentar nem de errar, você sabe que está aprendendo, assim como todos do seu grupo, então coragem para tentar novas soluções nunca faltaram. 
+Além disso, errar é bom, pois futuramente é possível escolher os melhores caminhos baseado em suas experiências passadas. A existência de um grupo que trabalha com você é gatilho para se esforçar, aprender e evoluir mais com o passar dos dias. O período de programação também não foi só flores, como eu não tinha muito conhecimento sobre MDS peguei muitas outras matérias e por vezes me senti sobrecarregado e muito cansado. Tinha semanas que estava muito animado e fazia muito para matéria, pois gostava muito dela, outras que não tinha tempo nem gás.
+</p>
+<p align="justify"> &emsp;&emsp;Todas essas experiências me mostraram que, por vezes, estamos muito bem, e por outras, nem tanto, e a presença de um grupo ajuda muito no decorrer da matéria. Só tenho a agradecer todos meus incríveis companheiros que compartilharam essa jornada comigo. 
+Por fim, MDS foi demais para mim, me sinto maduro, mais esperto, me sinto parte de algo ao qual muitas pessoas deram suor e esforço, de algo bom.
+</p>
+
+<p align="center">
+  <img src="https://thumbs.gfycat.com/DelightfulEmptyGermanshorthairedpointer-size_restricted.gif" width="300" />
+</p>
+
+<ul>
+<li><strong>Thiago Sampaio (DevOps)</strong></li>
+</ul>
+<p align="justify"> &emsp;&emsp;Comecei a matéria bastante ansioso porque, sem EPS, tudo parecia nebuloso, não tinha um roteiro a seguir, ainda mais sabendo que já estávamos atrasados, pois demoramos para definir um tema. No entanto, a falta de EPS não foi tão ruim, pois ter a oportunidade de tomar a decisão por si só e errar, errar muito, foi muito importante para o nosso amadurecimento. </p>
+<p align="justify"> &emsp;&emsp;No começo, felizmente ou não, consegui fugir um pouco da documentação porque tive a honra de poder configurar o ambiente, não muito bem porque era tudo muito novo, para desenvolvermos. Se eu pudesse voltar no tempo, acredito que não teria o background suficiente para isso, mas, após a configuração do ambiente, teria começado a configurar todos os testes e a documentação da API porque fazer isso no final do produto é MUITO trabalhoso, mas extremamente importante.</p>
+<p align="justify"> &emsp;&emsp;Outra coisa imprescindível é ter uma equipe bastante comunicativa, interativa e diferente. A diversidade foi muito importante porque um conseguia completar a falha do outro. Ainda mais no começo, essa diversidade foi o diferencial, uma vez que mal sabíamos o básico das linguagens do projeto, então o aprendizado conjunto e o pareamento foi fundamental. Todos foram ótimos, e tive muita sorte de ter a oportunidade de desenvolver o Anunbis. </p>
+
+<p align="center">
+  <img src="https://i.pinimg.com/originals/f6/ce/59/f6ce593f08ede5d6d7ba7b558ec6bf51.gif" width="300" />
+</p>
+
+<ul>
+<li><strong>Victor Hugo (Desenvolvedor)</strong></li>
+</ul>
+<p align="justify"> &emsp;&emsp;Foi minha primeira experiência desenvolvendo algo que de fato possa ter um valor de mercado, que se aproxima mais da realidade de como é o fluxo de trabalho de um desenvolvedor de software, eu não tinha muita informação da disciplina, então não sabia muito o que esperar, por isso quando começou e a professora já fala que estávamos atrasados, assustou um pouco, a falta de experiência no desenvolvimento de aplicações neste estilo dificultou bastante, principalmente durante as primeiras semanas de projeto, que fiquei bastante perdido no que fazer, porém, apesar de algumas vezes sentir que estava atrás em relação aos outros membros do grupo, com o tempo entrei no ritmo e entendi o que a professora quis dizer no início do semestre.</p>
+<p align="justify"> &emsp;&emsp;As conversas,  brincadeiras, zoeiras e partidas competitivas no gartic ajudaram a tornar os membros do grupo muito mais próximos e isso refletiu bastante durante o desenvolvimento, a equipe se tornou bastante unida, sempre dispostos a ajudar em qualquer aspecto, com uma boa comunicação e cada um dando tudo de si a cada semana, para podermos entregar um produto de boa qualidade. Com o andamento do projeto, fomos amadurecendo em conhecimento nas tecnologias que escolhemos, aprendendo novas práticas e conceitos utilizados em um projeto de desenvolvimento de um software Open source.</p>
+<p align="justify"> &emsp;&emsp;Portanto, apesar de ter sido um semestre muito cansativo, com várias disciplinas que exigiam bastante, o sentimento que tenho hoje é de realização, conquista, de gratidão a minha excelente equipe, de estar mais maduro não somente como desenvolvedor, mas como pessoa também, MDS deu um gás pra continuar a faculdade e por isso só tenho a agradecer.</p>
+
+<p align="center">
+  <img src="https://media1.tenor.com/images/3fc4688dc266777821d0849c28d98e74/tenor.gif?itemid=5518465" width="300" />
+</p>
+
+<ul>
+<li><strong>Eduardo Afonso (Desenvolvedor)</strong></li>
+</ul>
+<p align="justify"> &emsp;&emsp;Nós praticamente adotamos a metodologia de aprender com nossos erros, então tiveram alguns que voltando atrás eu faria diferente. O primeiro é quanto ao escopo do projeto, é importante ter bem definido qual será o público alvo exato que a aplicação vai atender, assim todo o projeto vai girar em torno das necessidades dele. Outra coisa seria a escalabilidade do produto, é importante pensar no produto final de um jeito que ele consiga receber e apresentar múltiplos dados e não só os que são utilizados na produção. E por último a padronização do código, é importante definir logo cedo quais serão os padrões a serem seguidos (idioma, estilo de escrita das variáveis e funções, etc)</p>
+<p align="justify"> &emsp;&emsp;Eu gostei bastante da metodologia da disciplina, nós ficamos livres para aprender por nós mesmos e trabalhar em equipe para ajudar os outros. Eu fiquei basicamente todo o período da disciplina trabalhando no front-end e no final fui fazer algumas partes do back-end, mas acho que se essa transição fosse feita mais cedo eu seria capaz de aprender bem mais. Foi uma ótima experiência e acho que todos conseguimos extrair bastante da disciplina, nós seguimos bem as práticas ágeis e acho que no fim deu tudo certo.</p>
+
+<p align="center">
+  <img src="https://media1.tenor.com/images/d6add31c664d6a7f9066d81d52a46259/tenor.gif" width="300" />
+</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../documentacao/termo-de-abertura/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Termo de Abertura
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../documentacao/canvas/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Canvas
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": "navigation.tabs", "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a1609d9a.min.js"></script>
+      
+    
+  </body>
+</html>

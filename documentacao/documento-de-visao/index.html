@@ -1,0 +1,2624 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Site de documentação do grupo Anunbis.">
+      
+      
+      
+      
+      <link rel="icon" href="../../images/logo.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.5">
+    
+    
+      
+        <title>Documento de Visão - Anunbis</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bde7dde4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ffc105">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="grey">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#historico-de-versoes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Anunbis" class="md-header__button md-logo" aria-label="Anunbis" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Anunbis
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Documento de Visão
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/fga-eps-mds/2020.2-Anunbis/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    2020.2-Anunbis
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Início
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../sprints/planejamento-sprint-0/" class="md-tabs__link">
+        Sprints
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        Projeto
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../post_mortem/" class="md-tabs__link">
+      Post Mortem
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../canvas/" class="md-tabs__link">
+        Produto
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../como_contribuir/" class="md-tabs__link">
+        Contribuição
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Anunbis" class="md-nav__button md-logo" aria-label="Anunbis" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    Anunbis
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/fga-eps-mds/2020.2-Anunbis/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    2020.2-Anunbis
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Início
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Sprints
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprints" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Sprints
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      <label class="md-nav__link" for="__nav_2_1">
+        Sprint 0
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprint 0" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Sprint 0
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/planejamento-sprint-0/" class="md-nav__link">
+        Planejamento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/revisao-sprint-0/" class="md-nav__link">
+        Revisão
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        Sprint 1
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprint 1" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Sprint 1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/planejamento-sprint-1/" class="md-nav__link">
+        Planejamento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/revisao-sprint-1/" class="md-nav__link">
+        Revisão
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      <label class="md-nav__link" for="__nav_2_3">
+        Sprint 2
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprint 2" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Sprint 2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/planejamento-sprint-2/" class="md-nav__link">
+        Planejamento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/revisao-sprint-2/" class="md-nav__link">
+        Revisão
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      <label class="md-nav__link" for="__nav_2_4">
+        Sprint 3
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprint 3" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Sprint 3
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/planejamento-sprint-3/" class="md-nav__link">
+        Planejamento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/revisao-sprint-3/" class="md-nav__link">
+        Revisão
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      <label class="md-nav__link" for="__nav_2_5">
+        Sprint 4
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprint 4" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Sprint 4
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/planejamento-sprint-4/" class="md-nav__link">
+        Planejamento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/revisao-sprint-4/" class="md-nav__link">
+        Revisão
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+      
+      <label class="md-nav__link" for="__nav_2_6">
+        Sprint 5
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprint 5" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          Sprint 5
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/planejamento-sprint-5/" class="md-nav__link">
+        Planejamento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/revisao-sprint-5/" class="md-nav__link">
+        Revisão
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+      
+      <label class="md-nav__link" for="__nav_2_7">
+        Sprint 6
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprint 6" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          Sprint 6
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/planejamento-sprint-6/" class="md-nav__link">
+        Planejamento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/revisao-sprint-6/" class="md-nav__link">
+        Revisão
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
+      
+      <label class="md-nav__link" for="__nav_2_8">
+        Sprint 7
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprint 7" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_8">
+          <span class="md-nav__icon md-icon"></span>
+          Sprint 7
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/planejamento-sprint-7/" class="md-nav__link">
+        Planejamento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/revisao-sprint-7/" class="md-nav__link">
+        Revisão
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_9" type="checkbox" id="__nav_2_9" >
+      
+      <label class="md-nav__link" for="__nav_2_9">
+        Sprint 8
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprint 8" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_9">
+          <span class="md-nav__icon md-icon"></span>
+          Sprint 8
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/planejamento-sprint-8/" class="md-nav__link">
+        Planejamento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/revisao-sprint-8/" class="md-nav__link">
+        Revisão
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_10" type="checkbox" id="__nav_2_10" >
+      
+      <label class="md-nav__link" for="__nav_2_10">
+        Sprint 9
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprint 9" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_10">
+          <span class="md-nav__icon md-icon"></span>
+          Sprint 9
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/planejamento-sprint-9/" class="md-nav__link">
+        Planejamento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/revisao-sprint-9/" class="md-nav__link">
+        Revisão
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_11" type="checkbox" id="__nav_2_11" >
+      
+      <label class="md-nav__link" for="__nav_2_11">
+        Sprint 10
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprint 10" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_11">
+          <span class="md-nav__icon md-icon"></span>
+          Sprint 10
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/planejamento-sprint-10/" class="md-nav__link">
+        Planejamento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/revisao-sprint-10/" class="md-nav__link">
+        Revisão
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_12" type="checkbox" id="__nav_2_12" >
+      
+      <label class="md-nav__link" for="__nav_2_12">
+        Sprint 11
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprint 11" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_12">
+          <span class="md-nav__icon md-icon"></span>
+          Sprint 11
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/planejamento-sprint-11/" class="md-nav__link">
+        Planejamento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/revisao-sprint-11/" class="md-nav__link">
+        Revisão
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_13" type="checkbox" id="__nav_2_13" >
+      
+      <label class="md-nav__link" for="__nav_2_13">
+        Sprint 12
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sprint 12" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_13">
+          <span class="md-nav__icon md-icon"></span>
+          Sprint 12
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/planejamento-sprint-12/" class="md-nav__link">
+        Planejamento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/revisao-sprint-12/" class="md-nav__link">
+        Revisão
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        Projeto
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Projeto" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Projeto
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Documento de Visão
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Documento de Visão
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#historico-de-versoes" class="md-nav__link">
+    Histórico de Versões
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introducao" class="md-nav__link">
+    1. Introdução
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Introdução">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-proposito" class="md-nav__link">
+    1.1 Propósito
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-escopo" class="md-nav__link">
+    1.2 Escopo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-definicoes-acronimos-e-abreviacoes" class="md-nav__link">
+    1.3 Definições, acrônimos e abreviações
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-posicionamento" class="md-nav__link">
+    2. Posicionamento
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Posicionamento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-oportunidade-de-negocio" class="md-nav__link">
+    2.1 Oportunidade de negócio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-descricao-do-problema" class="md-nav__link">
+    2.2 Descrição do problema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-descricao-da-posicao-do-produto" class="md-nav__link">
+    2.3 Descrição da Posição do Produto
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-descricao-dos-usuarios-e-envolvidos" class="md-nav__link">
+    3. Descrição dos Usuários e Envolvidos
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Descrição dos Usuários e Envolvidos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-descricao-dos-usuarios" class="md-nav__link">
+    3.1 Descrição dos Usuários
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-descricao-dos-envolvidos" class="md-nav__link">
+    3.2 Descrição dos Envolvidos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-principais-necessidades-dos-usuarios" class="md-nav__link">
+    3.3 Principais Necessidades dos Usuários
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-perfis-dos-envolvidos" class="md-nav__link">
+    3.4 Perfis dos Envolvidos
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4 Perfis dos Envolvidos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#341-equipe-de-desenvolvimento-de-software" class="md-nav__link">
+    3.4.1 Equipe de Desenvolvimento de Software
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#342-avaliadores-e-monitores" class="md-nav__link">
+    3.4.2 Avaliadores e Monitores
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-perfis-dos-usuarios" class="md-nav__link">
+    3.5 Perfis dos Usuários
+  </a>
+  
+    <nav class="md-nav" aria-label="3.5 Perfis dos Usuários">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#351-estudantes-da-unb" class="md-nav__link">
+    3.5.1 Estudantes da UnB
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#352-professores-da-unb" class="md-nav__link">
+    3.5.2 Professores da UnB
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-alternativas-e-concorrencias" class="md-nav__link">
+    3.6 Alternativas e Concorrências
+  </a>
+  
+    <nav class="md-nav" aria-label="3.6 Alternativas e Concorrências">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#361-grupos-do-facebook" class="md-nav__link">
+    3.6.1 Grupos do Facebook
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#362-avaliacao-institucional" class="md-nav__link">
+    3.6.2 Avaliação Institucional
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-visao-geral-do-produto" class="md-nav__link">
+    4. Visão Geral do Produto
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Visão Geral do Produto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-perspectivas" class="md-nav__link">
+    4.1 Perspectivas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-resumo-das-capacidades" class="md-nav__link">
+    4.2 Resumo das capacidades
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-funcoes-do-produto" class="md-nav__link">
+    4.3 Funções do Produto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-suposicoes-e-dependencias" class="md-nav__link">
+    4.4 Suposições e Dependências
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-recursos-do-produto" class="md-nav__link">
+    5. Recursos do Produto
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Recursos do Produto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-recursos-dos-discentes" class="md-nav__link">
+    5.1 Recursos dos Discentes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-recursos-dos-docentes" class="md-nav__link">
+    5.2 Recursos dos Docentes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-disponibilizar-informacoes-do-projeto" class="md-nav__link">
+    5.3 Disponibilizar informações do projeto
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-restricoes" class="md-nav__link">
+    6. Restrições
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Restrições">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-restricoes-de-implementacao" class="md-nav__link">
+    6.1 Restrições de Implementação
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-restricoes-externas" class="md-nav__link">
+    6.2 Restrições Externas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-restricoes-de-design" class="md-nav__link">
+    6.3 Restrições de Design
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-restricos-de-uso" class="md-nav__link">
+    6.4 Restriçõs de Uso
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-requisitos-do-produto" class="md-nav__link">
+    7. Requisitos do Produto
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Requisitos do Produto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-lista-de-categorias-dos-requisitos-do-produto" class="md-nav__link">
+    7.1 Lista de categorias dos requisitos do produto:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-lista-de-requisitos" class="md-nav__link">
+    7.2 Lista de Requisitos:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-referencias" class="md-nav__link">
+    8. Referências
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documento-de-arquitetura/" class="md-nav__link">
+        Documento de Arquitetura
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documento-de-metodologias/" class="md-nav__link">
+        Documento de Metodologias
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../planejamento-de-riscos/" class="md-nav__link">
+        Planejamento de riscos
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../roadmap/" class="md-nav__link">
+        Roadmap
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../termo-de-abertura/" class="md-nav__link">
+        Termo de Abertura
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../post_mortem/" class="md-nav__link">
+        Post Mortem
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Produto
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Produto" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Produto
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../canvas/" class="md-nav__link">
+        Canvas
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../produto/backlog/" class="md-nav__link">
+        Backlog do Produto
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../produto/prototipos/" class="md-nav__link">
+        Protótipos
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../produto/identidade-visual/" class="md-nav__link">
+        Identidade Visual
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Contribuição
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Contribuição" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Contribuição
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../como_contribuir/" class="md-nav__link">
+        Como Contribuir?
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CODE_OF_CONDUCT/" class="md-nav__link">
+        Código de Conduta
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" type="checkbox" id="__nav_6_3" >
+      
+      <label class="md-nav__link" for="__nav_6_3">
+        Políticas
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Políticas" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_3">
+          <span class="md-nav__icon md-icon"></span>
+          Políticas
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../policies/commits/" class="md-nav__link">
+        Commits
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../policies/branches/" class="md-nav__link">
+        Branches
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../policies/issues/" class="md-nav__link">
+        Issues
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../policies/pullRequests/" class="md-nav__link">
+        Pull Requests
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#historico-de-versoes" class="md-nav__link">
+    Histórico de Versões
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introducao" class="md-nav__link">
+    1. Introdução
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Introdução">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-proposito" class="md-nav__link">
+    1.1 Propósito
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-escopo" class="md-nav__link">
+    1.2 Escopo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-definicoes-acronimos-e-abreviacoes" class="md-nav__link">
+    1.3 Definições, acrônimos e abreviações
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-posicionamento" class="md-nav__link">
+    2. Posicionamento
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Posicionamento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-oportunidade-de-negocio" class="md-nav__link">
+    2.1 Oportunidade de negócio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-descricao-do-problema" class="md-nav__link">
+    2.2 Descrição do problema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-descricao-da-posicao-do-produto" class="md-nav__link">
+    2.3 Descrição da Posição do Produto
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-descricao-dos-usuarios-e-envolvidos" class="md-nav__link">
+    3. Descrição dos Usuários e Envolvidos
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Descrição dos Usuários e Envolvidos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-descricao-dos-usuarios" class="md-nav__link">
+    3.1 Descrição dos Usuários
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-descricao-dos-envolvidos" class="md-nav__link">
+    3.2 Descrição dos Envolvidos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-principais-necessidades-dos-usuarios" class="md-nav__link">
+    3.3 Principais Necessidades dos Usuários
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-perfis-dos-envolvidos" class="md-nav__link">
+    3.4 Perfis dos Envolvidos
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4 Perfis dos Envolvidos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#341-equipe-de-desenvolvimento-de-software" class="md-nav__link">
+    3.4.1 Equipe de Desenvolvimento de Software
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#342-avaliadores-e-monitores" class="md-nav__link">
+    3.4.2 Avaliadores e Monitores
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-perfis-dos-usuarios" class="md-nav__link">
+    3.5 Perfis dos Usuários
+  </a>
+  
+    <nav class="md-nav" aria-label="3.5 Perfis dos Usuários">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#351-estudantes-da-unb" class="md-nav__link">
+    3.5.1 Estudantes da UnB
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#352-professores-da-unb" class="md-nav__link">
+    3.5.2 Professores da UnB
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-alternativas-e-concorrencias" class="md-nav__link">
+    3.6 Alternativas e Concorrências
+  </a>
+  
+    <nav class="md-nav" aria-label="3.6 Alternativas e Concorrências">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#361-grupos-do-facebook" class="md-nav__link">
+    3.6.1 Grupos do Facebook
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#362-avaliacao-institucional" class="md-nav__link">
+    3.6.2 Avaliação Institucional
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-visao-geral-do-produto" class="md-nav__link">
+    4. Visão Geral do Produto
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Visão Geral do Produto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-perspectivas" class="md-nav__link">
+    4.1 Perspectivas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-resumo-das-capacidades" class="md-nav__link">
+    4.2 Resumo das capacidades
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-funcoes-do-produto" class="md-nav__link">
+    4.3 Funções do Produto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-suposicoes-e-dependencias" class="md-nav__link">
+    4.4 Suposições e Dependências
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-recursos-do-produto" class="md-nav__link">
+    5. Recursos do Produto
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Recursos do Produto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-recursos-dos-discentes" class="md-nav__link">
+    5.1 Recursos dos Discentes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-recursos-dos-docentes" class="md-nav__link">
+    5.2 Recursos dos Docentes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-disponibilizar-informacoes-do-projeto" class="md-nav__link">
+    5.3 Disponibilizar informações do projeto
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-restricoes" class="md-nav__link">
+    6. Restrições
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Restrições">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-restricoes-de-implementacao" class="md-nav__link">
+    6.1 Restrições de Implementação
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-restricoes-externas" class="md-nav__link">
+    6.2 Restrições Externas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-restricoes-de-design" class="md-nav__link">
+    6.3 Restrições de Design
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-restricos-de-uso" class="md-nav__link">
+    6.4 Restriçõs de Uso
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-requisitos-do-produto" class="md-nav__link">
+    7. Requisitos do Produto
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Requisitos do Produto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-lista-de-categorias-dos-requisitos-do-produto" class="md-nav__link">
+    7.1 Lista de categorias dos requisitos do produto:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-lista-de-requisitos" class="md-nav__link">
+    7.2 Lista de Requisitos:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-referencias" class="md-nav__link">
+    8. Referências
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/fga-eps-mds/2020.2-Anunbis/edit/master/docs/documentacao/documento-de-visao.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>Documento de Visão</h1>
+                
+                <h2 id="historico-de-versoes">Histórico de Versões</h2>
+<table>
+<thead>
+<tr>
+<th>Data</th>
+<th>Versão</th>
+<th>Descrição</th>
+<th>Autor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>17/02</td>
+<td>0.1</td>
+<td>Abertura do Documento de Visão</td>
+<td>Equipe</td>
+</tr>
+<tr>
+<td>04/03</td>
+<td>0.2</td>
+<td>Adição dos itens 5, 6 e 7</td>
+<td>Roberto</td>
+</tr>
+<tr>
+<td>26/03</td>
+<td>0.2</td>
+<td>Atualizando contéudo da página</td>
+<td>Rodrigo</td>
+</tr>
+<tr>
+<td>13/04</td>
+<td>0.3</td>
+<td>Refatorando Descrição dos usuários e envolvidos</td>
+<td>Equipe</td>
+</tr>
+<tr>
+<td>13/04</td>
+<td>0.4</td>
+<td>Revisão da Introdução e Posicionamento</td>
+<td>Equipe</td>
+</tr>
+<tr>
+<td>14/04</td>
+<td>0.5</td>
+<td>Revisão da Visão Geral do Produto</td>
+<td>Rafael e Victor</td>
+</tr>
+<tr>
+<td>14/04</td>
+<td>0.6</td>
+<td>Revisando Recursos do produto</td>
+<td>Rafael e Victor</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-introducao">1. <a name="1">Introdução</a></h2>
+<h3 id="11-proposito">1.1 <a name ="1_1">Propósito</a></h3>
+<p align="justify"> &emsp;&emsp; Este documento tem por objetivo estabelecer um posicionamento sobre a aplicação, suas características e seu desenvolvimento em questão. Também definindo seus requisitos em termos de necessidade para usuários finais.</p>
+
+<h3 id="12-escopo">1.2 <a name="1_2">Escopo</a></h3>
+<p align="justify"> &emsp;&emsp; Um dos fatores que definem o sucesso acadêmico de um estudante da Universidade de Brasília são seus professores, pois, dependendo deles, o aluno terá uma experiência diferente em relação à disciplina. Alguns professores cobram mais e outros menos, de fato o aprendizado de um estudante não depende apenas dele mesmo e sim de um conjunto de aspectos incluindo o seu professor. </p>
+
+<p align="justify"> &emsp;&emsp; Sendo o foco desse projeto, ajudar os alunos e os professores. Os alunos serão capazes de escolher professores com metodologias de ensino mais compatíveis com os próprios objetivos, e os professores receberão um fluxo de feedback contínuo em relação á sua forma de ensino. Assim ambos entrarão em um ciclo colaborativo que irá beneficiar todos na UnB. </p>
+
+<h3 id="13-definicoes-acronimos-e-abreviacoes">1.3 <a name=1_3>Definições, acrônimos e abreviações</a></h3>
+<p>Tópico destinado as definições, acrônimos e abreviações dos termos usados neste documento, visando facilitar o compreendimento do público interessado no projeto</p>
+<table>
+<thead>
+<tr>
+<th>Siglas, Acrônimos</th>
+<th>Definição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>FGA</strong></td>
+<td>Faculdade do Gama</td>
+</tr>
+<tr>
+<td><strong>UnB</strong></td>
+<td>Universidade de Brasília</td>
+</tr>
+<tr>
+<td><strong>MDS</strong></td>
+<td>Métodos de Desenvolvimento de Software</td>
+</tr>
+<tr>
+<td><strong>CPA</strong></td>
+<td>Comissão própria de AutoAvaliação</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-posicionamento">2. <a name="2">Posicionamento</a></h2>
+<p align="justify">&emsp;&emsp; A maior parte dos estudantes entram na universidade com um grande anseio por conhecimento, porém com o tempo, esse desejo acaba sendo anulado por professores que não possuem uma boa didática, ou não se dedicam a ajudar o estudante, ou apenas docentes que possuem uma metodologia que não é compatível à alguns dos alunos.</p>
+
+<p align="justify">&emsp;&emsp; Além de que, por outro lado, muitos professores querem ajudar os estudantes o máximo possível, porém não possuem informações bem definidas de como evoluir suas metodologias, tendo que se apoiar a formas empíricas de tentativa e erro, para assim, tentar descobrir o que melhor funciona na disciplina que ministra. </p>
+
+<p align="justify">&emsp;&emsp; Neste sentido, este programa visa produzir um ambiente no qual ambas as partes possam se beneficiar. </p>
+
+<h3 id="21-oportunidade-de-negocio">2.1 <a name="2_1">Oportunidade de negócio</a></h3>
+<p align="justify">&emsp;&emsp; O projeto dá ao aluno a opção de escolher com mais segurança o professor com o qual deseja aprender naquele semestre, baseando-se na análise de quem já teve alguma experiência com esse docente. Do mesmo modo que, o professor passa a receber todos os semestres um feedback em relação a sua forma de ensino, podendo assim melhorar os pontos que forem sendo apontados pelos seus antigos alunos.</p>
+
+<h3 id="22-descricao-do-problema">2.2 <a name="2_2">Descrição do problema</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left"><em>Questão</em></th>
+<th align="left"><em>Informações do Produto</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>O Problema é</em></td>
+<td align="left">Aluno com falta de conhecimento prévio sobre os professores e as disciplinas/ Professor com dificuldade em evoluir a própria metodologia de ensino.</td>
+</tr>
+<tr>
+<td align="left"><em>Que afeta</em></td>
+<td align="left">A comunidade acadêmica.</td>
+</tr>
+<tr>
+<td align="left"><em>Cujo impacto é</em></td>
+<td align="left">O aluno não encontrar uma metodologia de ensino compatível com si mesmo/ O professor não conseguir melhorar sua forma de ensino.</td>
+</tr>
+<tr>
+<td align="left"><em>Uma boa solução seria</em></td>
+<td align="left">Uma aplicação que permita os alunos compartilharem entre si as experiências com as disciplinas e professores/ Uma aplicação que permite os professores receberem feedback sobre sua forma de ensino.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="23-descricao-da-posicao-do-produto">2.3 <a name="2_3">Descrição da Posição do Produto</a></h3>
+<p align="justify">&emsp;&emsp;A aplicação, quando desenvolvida, se posicionará como uma aplicação web que pode ser usada facilmente em navegadores mobile proporcionando uma experiência muito parecida a de um app nativo. Isso proporciona que os alunos troquem experiências de suas disciplinas realizadas de forma eficiente e rápida, possibilitando que os alunos encontrem metodologias de ensino compatíveis com si mesmo.</p>
+
+<h2 id="3-descricao-dos-usuarios-e-envolvidos">3. <a name="3">Descrição dos Usuários e Envolvidos</a></h2>
+<h3 id="31-descricao-dos-usuarios">3.1 <a name="3.1">Descrição dos Usuários</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>Nome</strong></th>
+<th align="left"><strong>Descrição</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Estudantes da UnB</td>
+<td align="left">Estudantes buscando prévio conhecimento sobre disciplinas/professores.</td>
+</tr>
+<tr>
+<td align="left">Professores da UnB</td>
+<td align="left">Professores com desejo de melhorar a própria metodologia e entender como sua aula impacta os alunos.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32-descricao-dos-envolvidos">3.2 <a name="3.2">Descrição dos Envolvidos</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>Nome</strong></th>
+<th align="center"><strong>Descrição</strong></th>
+<th align="center"><strong>Responsabilidade</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Equipe de MDS (Desenvolvedores)</td>
+<td align="center">Estudantes da Disciplina MDS da UnB FGA</td>
+<td align="center">Criar e manter documentos;<br /> Desenvolver e testar o software; <br /> Tomar decisões a respeito do produto.</td>
+</tr>
+<tr>
+<td align="center">Avaliadores</td>
+<td align="center">Professores e monitores das disciplinas de MDS.</td>
+<td align="center">Avaliar e conceder feedback sobre a qualidade do projeto desenvolvido pelos alunos de MDS</td>
+</tr>
+</tbody>
+</table>
+<h3 id="33-principais-necessidades-dos-usuarios">3.3 <a name="3.3">Principais Necessidades dos Usuários</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>Usuário</strong></th>
+<th align="center"><strong>Necessidade</strong></th>
+<th align="center"><strong>Solução Atual</strong></th>
+<th align="center"><strong>Solução Proposta</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Estudantes da UnB</td>
+<td align="center">Escolher uma metodologia de ensino que melhor se adequa e fornecer feedback para os professores</td>
+<td align="center">Avaliação institucional; Grupo no facebook feito por alunos; Conversas informais com colegas</td>
+<td align="center">Website para submeter avaliações e comentários sobre a experiência do aluno com a metologia do professsor avaliado</td>
+</tr>
+<tr>
+<td align="center">Professores da UnB</td>
+<td align="center">Interesse de professores com desejo de melhorar a própria metodologia e entender como sua aula impacta os alunos.</td>
+<td align="center">Avaliação institucional; Conversas e/ou questionários informais sobre a disciplina</td>
+<td align="center">Website para visualizar avaliações e comentários sobre a experiência de alunos com a metodologia do professsor avaliado</td>
+</tr>
+</tbody>
+</table>
+<h3 id="34-perfis-dos-envolvidos">3.4 <a name="3.4">Perfis dos Envolvidos</a></h3>
+<h4 id="341-equipe-de-desenvolvimento-de-software">3.4.1 <a name="3.4.1">Equipe de Desenvolvimento de Software</a></h4>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>Representantes</strong></th>
+<th align="center"><strong>Tipo</strong></th>
+<th align="center"><strong>Responsabilidade</strong></th>
+<th align="center"><strong>Critério de Sucesso</strong></th>
+<th align="center"><strong>Envolvimento</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Eduardo Afonso Dutra Silva; Rafael C. da S. Ramos; Roberto M. Santana; Rodrigo B. A. de Brito; Thiago S. de Paiva; Victor H. Carvalho</td>
+<td align="center">Estudantes da disciplina de MDS da FGA</td>
+<td align="center">Criar e manter documentos; Desenvolver e testar o software; Tomar decisões a respeito do produto.</td>
+<td align="center">Concluir o projeto proposto dentro do periodo estipulado atendendo à todos os requisitos</td>
+<td align="center">Alto</td>
+</tr>
+</tbody>
+</table>
+<h4 id="342-avaliadores-e-monitores">3.4.2 <a name="3.4.2">Avaliadores e Monitores</a></h4>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>Representantes</strong></th>
+<th align="center"><strong>Tipo</strong></th>
+<th align="center"><strong>Responsabilidade</strong></th>
+<th align="center"><strong>Critério de Sucesso</strong></th>
+<th align="center"><strong>Envolvimento</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Carla Rocha e Sérgio Cipriano</td>
+<td align="center">Professora e monitor de MDS na UnB FGA</td>
+<td align="center">Avaliar o projeto e desenvolvedores do produto</td>
+<td align="center">Lecionar sobre matérias e ferramentas para o desenvolvimento e contribuição em projetos de software Open Source</td>
+<td align="center">Baixo</td>
+</tr>
+</tbody>
+</table>
+<h3 id="35-perfis-dos-usuarios">3.5 <a name="3.5">Perfis dos Usuários</a></h3>
+<h4 id="351-estudantes-da-unb">3.5.1 <a name="3.5.1">Estudantes da UnB</a></h4>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>Representantes</strong></th>
+<th align="center"><strong>tipo</strong></th>
+<th align="center"><strong>Responsabilidade</strong></th>
+<th align="center"><strong>Critério de sucesso</strong></th>
+<th align="center"><strong>Envolvimento</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Interessados em ajudar outros estudantes, além de visualizar avaliações</td>
+<td align="center">Estudantes matriculados na UnB</td>
+<td align="center">Disponibilizar por meio de comentários e notas um feedback para os professores da UnB e auxiliar os alunos a escolher a melhor metodologia para ele</td>
+<td align="center">Conseguir ajudar os professores a tentarem melhorar seus métodos de ensino e alunos a escolherem docentes com técnicas que possam se adaptar melhor</td>
+<td align="center">Alto</td>
+</tr>
+</tbody>
+</table>
+<h4 id="352-professores-da-unb">3.5.2 <a name="3.5.2">Professores da UnB</a></h4>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>Representantes</strong></th>
+<th align="center"><strong>tipo</strong></th>
+<th align="center"><strong>Responsabilidade</strong></th>
+<th align="center"><strong>Critério de sucesso</strong></th>
+<th align="center"><strong>Envolvimento</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Interessados em receber feedbacks sobre seu trabalho e melhorá-lo</td>
+<td align="center">Professores da UnB</td>
+<td align="center">Visualizar avaliações e comentários sobre sua metodologia e tentar melhorá-la</td>
+<td align="center">Conseguir a cada semestre um maior número de aprovação por parte dos estudantes e consequentemente melhores avaliações</td>
+<td align="center">Médio</td>
+</tr>
+</tbody>
+</table>
+<h3 id="36-alternativas-e-concorrencias">3.6 <a name="3.6">Alternativas e Concorrências</a></h3>
+<h4 id="361-grupos-do-facebook">3.6.1 <a name="3.6.1">Grupos do Facebook</a></h4>
+<p align="justify"> &emsp;&emsp; Utilizando a plataforma do facebook os estudantes são capazes de criar grupos para debater sobre suas experiências com os professores. Porém, além de existirem vários grupos diferentes com a mesma temática, todos eles necessitam que um membro daquele grupo aceite o pedido do usuário que deseja entrar no grupo, e só assim o usuário tem acesso ao conteúdo. Entretanto, por existirem diversos grupos com a mesma temática, as informações acabam se tornando escassas ou defasadas em cada grupo, necessitando de uma busca profunda para encontrar qualquer informação. O que também não ajuda os professores, pois também possuem dificuldade encontrar informações sobre suas metodologias ou até de ter acesso a esses grupos. </p>
+
+<h4 id="362-avaliacao-institucional">3.6.2 <a name="3.6.2">Avaliação Institucional</a></h4>
+<p align="justify"> &emsp;&emsp; As avaliações instucionais é uma ferramenta da própria UnB conduzida pela CPA para fornecer o feedback aos professores ao final de determinado semestre, porém, os alunos não têm acesso a tais avaliações mesmo elas sendo bem elaboradas devido as diferentes perguntas que acabam forçando os discentes a fazerem uma boa avaliação visando uma maior crítica construtiva aos professores. Então a príncipio parece ser um ambiente fechado, buscamos refatorar esse ambiente para trazer fácil acesso aos alunos e professores interessados nas avaliações, de maneira a mitigar ao máximo os comentários ofensivos e que não agregam valor a avaliação. </p>
+
+<h2 id="4-visao-geral-do-produto">4. <a name="4">Visão Geral do Produto</a></h2>
+<h3 id="41-perspectivas">4.1 <a name="4.1">Perspectivas</a></h3>
+<p align="justify"> &emsp;&emsp; A aplicação tem como objetivo criar um ambiente específico para que haja uma troca de informações entre os alunos da UnB a respeito dos professores e suas metodologias de ensino, tornando viável que qualquer aluno possa escrever suas próprias avaliações de maneira anônima ou não, e ler as avaliações feitas por outros alunos. Além de possibilitar que os professores tenham acesso a esses comentários, o que ajuda o professor a planejar melhor sua disciplina, melhorando sua metodologia e constribuindo na melhora da qualidade de ensino na UnB.
+</p>
+
+<h3 id="42-resumo-das-capacidades">4.2 <a name="4.2">Resumo das capacidades</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>Benefícios</strong></th>
+<th align="center"><strong>Recurso de Suporte</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Facilidade em visualizar e cadastrar avaliações de professores/disciplinas.</td>
+<td align="center">A aplicação possui uma interface de fácil uso para visualizar essas avaliações, também conduz de maneira coerente e amigável o usuário para que ele realize boas avaliações.</td>
+</tr>
+<tr>
+<td align="center">Disponibilização de feedbacks construtivos para os professores</td>
+<td align="center">A aplicação se encarrega de  disponibilizar uma interface de uso prático onde os professores podem visualizar feedbacks sobre seu ensino, bem como relatórios gerenciais que buscam otimizar as interpretações desses feedbacks.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="43-funcoes-do-produto">4.3 <a name="4.3">Funções do Produto</a></h3>
+<p align="justify"> &emsp;&emsp; 
+O produto tem a função de ser um elo dos docentes com os discentes da UnB, facilitando uma resposta do aluno às técnicas e metodologia aplicada pelos seus professores, tornando mais fácil para esses profissionais uma adapção de sua maneira de ensino que melhor se adequa aos estudantes. Dentre as funcionalidades da aplicação estão, cadastro, login, avaliação, feed de postagens, gerenciamento de conta, entre outras.
+</p>
+
+<h3 id="44-suposicoes-e-dependencias">4.4 <a name="4.4">Suposições e Dependências</a></h3>
+<ul>
+<li>Os usuários deverão ter um computador, celular ou tablet com acesso à internet para conseguir ter acesso à aplicação.</li>
+<li>A aplicação será usada por alunos e professores da UnB, para melhorar o ensino e aprendizagem do corpo docente/discente da universidade.</li>
+<li>A aplicação facilitará a realização e visualização de feedbacks aos professores, feitos por alunos.</li>
+</ul>
+<h2 id="5-recursos-do-produto">5. <a name="5">Recursos do Produto</a></h2>
+<h3 id="51-recursos-dos-discentes">5.1 <a name="5.1">Recursos dos Discentes</a></h3>
+<p align="justify"> &emsp;&emsp; Os alunos poderão se cadastrar na aplicação. Quando cadastrados e logados, poderão ter acesso aos seguintes recursos:</p>
+
+<ul>
+<li>Fazer avaliação dos professores;</li>
+<li>Visualizar avaliações feitas sobre outros professores;</li>
+<li>Concordar ou discordar do comentário de outros discentes;</li>
+<li>Visualizar a quantidade de alunos que concordam e discordam desses comentários;</li>
+<li>Pesquisar os professores por ranking;</li>
+<li>Visualizar relatórios de avaliações;</li>
+<li>Denunciar avaliações ofensivas de outros alunos;</li>
+</ul>
+<h3 id="52-recursos-dos-docentes">5.2 <a name="5.2">Recursos dos Docentes</a></h3>
+<p align="justify"> &emsp;&emsp; Os professores poderão também se cadastrar na aplicação. Quando cadastrados e logados, terão acesso às seguintes funcionalidades:</p>
+
+<ul>
+<li>Visualizar o feedback dos estudantes;</li>
+<li>Visualizar a sua pontuação na aplicação;</li>
+<li>Denunciar avaliações ofensivas feitas por alunos;</li>
+<li>Visualizar relatórios de avaliações;</li>
+</ul>
+<h3 id="53-disponibilizar-informacoes-do-projeto">5.3 <a name="5.3">Disponibilizar informações do projeto</a></h3>
+<p align="justify"> &emsp;&emsp;
+Antes de ter acesso às páginas de cadastro e login, possíveis usuários ou contribuidores devem poder visualizar as informações gerais do projeto, suas ideias e objetivos, além dos meios de contato dos gerênciadores do projeto, como também o repositório do mesmo no github e toda a documentação da aplicação, pois por se tratar de um projeto de software Open Source esses dados são de extrema importância para a comunidade.
+</p>
+
+<h2 id="6-restricoes">6. <a name="6">Restrições</a></h2>
+<h3 id="61-restricoes-de-implementacao">6.1 <a name="6.1">Restrições de Implementação</a></h3>
+<p align="justify">&emsp;&emsp;O sistema será implementado usando ReactJS, Flask e Python, e será desenvolvido de forma remota devido à pandemia.</p>
+
+<h3 id="62-restricoes-externas">6.2 <a name="6.2">Restrições Externas</a></h3>
+<p align="justify">&emsp;&emsp;O grupo não tem muita experiência com as tecnologias utilizadas.</p>
+
+<h3 id="63-restricoes-de-design">6.3 <a name="6.3">Restrições de Design</a></h3>
+<p align="justify"> &emsp;&emsp;Toda experiência com a aplicação deve ser limpa e natural. O usuário não deve ter dificuldades de entender o que ele pode fazer, e como encontrar determinada funcionalidade. Além disso, a aplicação será destinada aos usuários web.</p>
+
+<h3 id="64-restricos-de-uso">6.4 <a name="6.4">Restriçõs de Uso</a></h3>
+<p align="justify"> &emsp;&emsp;É necessário que os usuários (a comunidade acadêmica) tenham acesso à um computador ou smartphone com acesso à internet para usar todos os recursos da aplicação.</p>
+
+<h2 id="7-requisitos-do-produto">7. <a name="7">Requisitos do Produto</a></h2>
+<h3 id="71-lista-de-categorias-dos-requisitos-do-produto">7.1 <a name="7.1">Lista de categorias dos requisitos do produto:</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>Prioridade</strong></th>
+<th align="left"><strong>Descrição</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Alta</td>
+<td align="left">Requisito indispensável para o funcionamento do sistema</td>
+</tr>
+<tr>
+<td align="left">Média</td>
+<td align="left">Requisito importante, mas a sua não implementação não compromete o funcionamento da aplicação</td>
+</tr>
+<tr>
+<td align="left">Baixa</td>
+<td align="left">Requisito não usado com muita frequência e não é tão necessário para a satisfação do usuário com o projeto</td>
+</tr>
+</tbody>
+</table>
+<h3 id="72-lista-de-requisitos">7.2 <a name="7.2">Lista de Requisitos:</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>Identificador</strong></th>
+<th align="left"><strong>Requisito</strong></th>
+<th align="left"><strong>Prioridade</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">RF01</td>
+<td align="left">Permitir que o usuário crie uma conta, edite, faça login e a delete</td>
+<td align="left">Alta</td>
+</tr>
+<tr>
+<td align="left">RF02</td>
+<td align="left">Permitir que o usuário pesquise professores</td>
+<td align="left">Alta</td>
+</tr>
+<tr>
+<td align="left">RF03</td>
+<td align="left">Permitir que o usuário discente crie uma avalição e a delete</td>
+<td align="left">Alta</td>
+</tr>
+<tr>
+<td align="left">RF04</td>
+<td align="left">Permitir que o aluno concorde ou discorde do comentário de outro aluno</td>
+<td align="left">Alta</td>
+</tr>
+<tr>
+<td align="left">RF05</td>
+<td align="left">Exibir pontuação média e rank dos professores para todos os usuários</td>
+<td align="left">Alta</td>
+</tr>
+<tr>
+<td align="left">RF06</td>
+<td align="left">Permitir que os discentes façam avaliações anônimas</td>
+<td align="left">Média</td>
+</tr>
+<tr>
+<td align="left">RF07</td>
+<td align="left">Exibir quantidade de avaliações que o usuário discente já realizou</td>
+<td align="left">Média</td>
+</tr>
+<tr>
+<td align="left">RF08</td>
+<td align="left">A aplicação deve ter a experiência de uso simples e fluída, de linguagem fácil intuitiva</td>
+<td align="left">Alta</td>
+</tr>
+<tr>
+<td align="left">RF09</td>
+<td align="left">Permitir o usuário a denunciar um comentário</td>
+<td align="left">Média</td>
+</tr>
+<tr>
+<td align="left">RF10</td>
+<td align="left">Permitir que o docente veja as avaliações sobre si mesmo</td>
+<td align="left">Média</td>
+</tr>
+<tr>
+<td align="left">RF11</td>
+<td align="left">Exibir ao aluno a quantidade de pessoas que concordam e discordam dos seus comentários</td>
+<td align="left">Baixa</td>
+</tr>
+</tbody>
+</table>
+<h2 id="8-referencias">8. Referências</h2>
+<p>CARVALHO, Durval; et al. Documento de Visão - Acacia. Disponível em: <a href="https://fga-eps-mds.github.io/2019.2-Acacia/#/vision_documents">https://fga-eps-mds.github.io/2019.2-Acacia/#/vision_documents</a>. Acesso em: 04 mar 2021.</p>
+<p>FÉLIX, Bruno; et al. Documento de Visão - Vamos Cuidar. Disponível em: <a href="https://fga-eps-mds.github.io/2020.1-VC_Usuario/#/docs/Documento_de_Visao">https://fga-eps-mds.github.io/2020.1-VC_Usuario/#/docs/Documento_de_Visao</a>. Acesso em: 04 mar 2021.</p>
+<p>LUCAS, Jõao; et al. Documento de Visão - ArBC. Disponível em: <a href="https://jlucassr.github.io/ArBC-Pages/mds/Documento_de_visao/">https://jlucassr.github.io/ArBC-Pages/mds/Documento_de_visao/</a>. Acesso em: 04 mar 2021.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../../sprints/revisao-sprint-12/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Revisão
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../documento-de-arquitetura/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Documento de Arquitetura
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": "navigation.tabs", "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a1609d9a.min.js"></script>
+      
+    
+  </body>
+</html>
