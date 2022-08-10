@@ -53,7 +53,7 @@ class TestUser(unittest.TestCase):
     
     def test_validate_email_upper(self):
         try:
-            UserSchema().validate_email(False)
+            UserSchema().validate_email('FELLIPE@GMAIL.COM')
             self.assertTrue(True)
         except:
             self.assertFalse(False)
