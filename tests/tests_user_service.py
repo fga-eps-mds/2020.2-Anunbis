@@ -50,3 +50,10 @@ class TestUser(unittest.TestCase):
             self.assertTrue(True)
         except:
             self.assertFalse(False)
+    
+    def test_validate_email_upper(self):
+        try:
+            UserSchema().validate_email(False)
+            self.assertTrue(True)
+        except:
+            self.assertFalse(False)
