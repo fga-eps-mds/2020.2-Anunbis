@@ -1,6 +1,6 @@
 from app.schemas.user_schema import UserSchema
 import unittest
-
+''''''
 
 class TestUser(unittest.TestCase):
     '''Deve lançar um erro caso o email seja nulo'''
