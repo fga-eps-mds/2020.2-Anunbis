@@ -5,8 +5,6 @@ import unittest
 
 class TestSchemaProfessor(unittest.TestCase):
 
-    # Teste em SCHAMA DE PROFESSOR
-
     def test_is_validate_name_1(self):
         try:
             ProfessorSchema().validate_name("Lameque")
@@ -15,7 +13,7 @@ class TestSchemaProfessor(unittest.TestCase):
 
     def test_is_validate_name_2(self):
         try:
-            ProfessorSchema().validate_name("Lameque100")
+            ProfessorSchema().validate_name("Lameque Fernandes Azevedo")
         except:
             self.assertTrue(False)
     
@@ -28,57 +26,27 @@ class TestSchemaProfessor(unittest.TestCase):
 
     def test_is_validate_name_4(self):
         try:
-            ProfessorSchema().validate_name("Lameque Fernandes 1000")
+            ProfessorSchema().validate_name("lameque fernandes")
         except:
             self.assertTrue(False)
 
     def test_is_validate_name_5(self):
         try:
-            ProfessorSchema().validate_name("1000")
+            ProfessorSchema().validate_name("asdasdasd asdadasdasd asdasd")
             self.assertTrue(True)
         except:
             self.assertTrue(False)
-
-
-    # Teste em SCHAMA DE USER
-
-    def test_validate_length_1(self):
+    
+    def test_is_validate_name_6(self):
         try:
-            email = "lamequesao@gmail.com"
-            ValidateEmail().validate_length(email)
+            ProfessorSchema().validate_name("asdasdasdasdadasdasdasdasd")
             self.assertTrue(True)
         except:
             self.assertTrue(False)
 
-    def test_validate_length_2(self):
+    def test_is_validate_name_7(self):
         try:
-            string = "1" * 100
-            ValidateEmail().validate_length(string)
+            ProfessorSchema().validate_name(" ")
             self.assertTrue(True)
         except:
             self.assertTrue(False)
-
-    def test_validate_length_3(self):
-        try:
-            string = "1" * 101
-            ValidateEmail().validate_length(string)
-            self.assertTrue(True)
-        except:
-            self.assertTrue(False)
-
-    def test_validate_length_4(self):
-        try:
-            string = "1" * 99
-            ValidateEmail().validate_length(string)
-            self.assertTrue(True)
-        except:
-            self.assertTrue(False)
-
-    def test_validate_length_5(self):
-        try:
-            string = "1" * 98
-            ValidateEmail().validate_length(string)
-            self.assertTrue(True)
-        except:
-            self.assertTrue(False)
-
