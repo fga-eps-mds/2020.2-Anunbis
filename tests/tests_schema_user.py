@@ -1,7 +1,7 @@
 from app.schemas.user_schema import UserSchema
 import unittest
-''''''
 
+''''''
 class TestUser(unittest.TestCase):
     '''Deve lançar um erro caso o email seja nulo'''
     def test_validate_email_none(self):
@@ -27,7 +27,7 @@ class TestUser(unittest.TestCase):
         except:
             self.assertFalse(False)
 
-    '''Deve aceitar o caso se email for valido'''
+    '''Deve aceitar o caso se e-mail for válido'''
     def test_validate_email_correto(self):
         try:
             UserSchema().validate_email('fellipe@gmail.com')
@@ -35,7 +35,7 @@ class TestUser(unittest.TestCase):
         except:
             self.assertTrue(True)
 
-    '''Deve lançar um erro caso o email seja true'''
+    '''Deve lançar um erro caso o e-mail seja true'''
     def test_validate_email_True(self):
         try:
             UserSchema().validate_email(True)
@@ -43,7 +43,7 @@ class TestUser(unittest.TestCase):
         except:
             self.assertFalse(False)
     
-    '''Deve lançar um erro caso o email seja false'''
+    '''Deve lançar um erro caso o e-mail seja false'''
     def test_validate_email_False(self):
         try:
             UserSchema().validate_email(False)
@@ -51,6 +51,7 @@ class TestUser(unittest.TestCase):
         except:
             self.assertFalse(False)
     
+    '''Deve lançar um erro caso o e-mail seja maiusculo'''
     def test_validate_email_upper(self):
         try:
             UserSchema().validate_email('FELLIPE@GMAIL.COM')
@@ -58,6 +59,7 @@ class TestUser(unittest.TestCase):
         except:
             self.assertFalse(False)
 
+    '''Deve aceitar caso o email contenha a palavra aluno'''
     def test_validate_email_Aluno(self):
         try:
             UserSchema().validate_email('aluno@gmail.com')
